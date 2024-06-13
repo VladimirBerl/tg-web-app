@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 
+const tg = window.Telegram.WepApp;
 function App() {
+  
+  useEffect(() => {
+    tg.ready();
+  }, []);
 
-  return (
-    <div>work</div>
-  )
+  const onClose = () => {
+    tg.close();
+  };
+
+  return <button onClick={onClose}>ЗАКРЫТЬ</button>;
 }
 
-export default App
+export default App;
