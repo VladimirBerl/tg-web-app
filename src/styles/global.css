@@ -1,0 +1,30 @@
+@import url(./fons.css);
+@import url(./reset.css);
+
+:root {
+  font-family: "Rubik",sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: #1C1F24;
+  height: 100vh;
+
+  --color-white: #FFFFFF;
+  --color-primary: #FF5A30;
+  --color-menu: #34353A;
+  --border-8px: 8px;
+}
+
+a {
+  color: var(--color-white);
+}
+
+a.active {
+  color: var(--color-primary);
+  background-color: #1D1F26;
+}
+
+a.active svg path,
+a.active svg .svg {
+fill: #FF5A30;
+}
+
