@@ -1,34 +1,26 @@
 .wrapper {
   position: relative;
-  width: 100%;
-  & > .buy, 
-  & > .sell {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  height: 180px;
+  padding: 0px 10px;
 
-    & > div {
-      display: flex;
-      gap: 5px;
-      font-weight: 600;
-    }
-  }
-  & .buy {
-    bottom:30px;
-    right: 10px;
-  }
-  & .sell {
-    top: 30px;
-    left: 10px;
-  }
-  & .iPhone {
-    max-width: 180px;
-    margin: 0 auto;
-  }
-  & a {
+  & div {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  & img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 180px;
   }
 }

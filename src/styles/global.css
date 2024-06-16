@@ -32,3 +32,12 @@ a.active svg path {
 img {
   width: 100%;
 }
+
+button {
+  border-radius: var(--border-8px);
+  background-color: var(--color-menu);
+  border: none;
+  padding: 4px 8px;
+  color: var(--color-white);
+  font-weight: bold;
+}

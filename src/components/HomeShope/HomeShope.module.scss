@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+
+  & button {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.4s;
+    & svg path{
+      transition: all 0.4s;
+    }
+    &:active {
+      background-color: #17181a;
+      color: var(--color-primary);
+      & svg path {
+        fill: var(--color-primary);
+      }
+    }
+  }
+}
