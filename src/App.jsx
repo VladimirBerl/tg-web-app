@@ -4,7 +4,7 @@ import PlanPage from './pages/PlanPage'
 import FriendsPage from './pages/FriendsPage'
 import EarnPage from './pages/EarnPage'
 import LayoutPage from './pages/LayoutPage/LayoutPage'
-import HomePage from './pages/HomePage'
+import HomePage from './pages/HomePage/HomePage'
 
 export default function App() {
   return (
