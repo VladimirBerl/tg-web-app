@@ -13,7 +13,7 @@ export default function HomeIphone() {
       <span>{interactionGroup[1].name}</span>
       <span>{interactionGroup[1].info}</span>
       </div>
-      <img src={iPhoneImage} alt="iphoen" />
+      <img src='src/assets/iphone.png' alt="iphoen" />
     </div>
   );
 }
