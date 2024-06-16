@@ -10,4 +10,41 @@ export const headerTokenInfo = [
 export const interactionGroup = [
   { name: "Покупатели", info: "574" },
   { name: "Продавцы", info: "234" },
-]
+];
+
+export const dataChartOne = {
+  datasets: [
+    {
+      name: 'Платные посты',
+      data: [40, 60],
+      backgroundColor: ["#FF5A30", "#ff593045"],
+      borderWidth: 0,
+      redraw: true,
+      cutout: "75%",
+    },
+  ],
+};
+export const dataChartTwo = {
+  datasets: [
+    {
+      name: 'Бесплатные посты',
+      data: [90, 10],
+      backgroundColor: ["#F89828", "#F8982845"],
+      borderWidth: 0,
+      redraw: true,
+      cutout: "75%",
+    },
+  ],
+};
+export const dataChartTree = {
+  datasets: [
+    {
+      name: 'Реклама',
+      data: [50, 50],
+      backgroundColor: ["#03CEA4", "#03CEA445"],
+      borderWidth: 0,
+      redraw: true,
+      cutout: "75%",
+    },
+  ],
+};

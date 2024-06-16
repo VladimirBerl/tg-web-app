@@ -1,7 +1,7 @@
 import styled from "./HomeIphone.module.scss";
-import HomeTopItem from "../ui/HomeTopItem/HomeTopItem";
-import { interactionGroup } from "../../storage/storage";
+import iPhoneImage from '@/assets/iphone.png';
 
+import { interactionGroup } from "../../storage/storage";
 export default function HomeIphone() {
   return (
     <div className={styled.wrapper}>
@@ -13,7 +13,7 @@ export default function HomeIphone() {
       <span>{interactionGroup[1].name}</span>
       <span>{interactionGroup[1].info}</span>
       </div>
-      <img src="src\assets\iPhone.png" alt="iPhone" />
+      <img src={iPhoneImage} alt="iphoen" />
     </div>
   );
 }

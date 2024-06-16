@@ -35,7 +35,7 @@ export default function HomeTop() {
       </div>
       <div className={styled.item}>
         {headerTokenInfo.map((item) => (
-          <HomeTopItem name={item.name} info={item.info} color={item.color} />
+          <HomeTopItem name={item.name} info={item.info} color={item.color} key={item.color} />
         ))}
       </div>
     </div>

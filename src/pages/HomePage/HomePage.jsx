@@ -1,6 +1,7 @@
 import HomeTop from "../../components/HomeTop/HomeTop";
 import HomeIphone from "../../components/HomeIphone/HomeIphone";
 import HomeShope from "../../components/HomeShope/HomeShope";
+import HomeMain from "../../components/HomeMain/HomeMain";
 import styled from "./HomePage.module.scss";
 const tg = window.Telegram.WebApp;
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       <HomeTop />
       <HomeIphone />
       <HomeShope/>
+      <HomeMain/>
     </div>
   );
 }
