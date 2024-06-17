@@ -1,28 +1,37 @@
 .wrapper {
   position: relative;
+  padding-top: 20px;
   & .chart {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     & canvas {
-      max-width: 30%;
-      height: 90px !important;
+      height: 80px !important;
+    }
+    & canvas:nth-child(2) {
+      margin-top: -20px;
+      height: 100px !important;
+      width: 100px !important;
     }
   }
   & .interest {
     position: absolute;
-    top: 38%;
+    top: 41%;
     transform: translateY(-50%);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     & span {
-      width: 90px;
+      width: 80px;
       text-align: center;
       font-weight: 600;
       font-size: 14px;
+    }
+
+    & span:nth-child(2) {
+      margin-top: -20px;
     }
   }
   & .chart-info {
@@ -31,10 +40,22 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 10px;
-    & span {
-      width: 90px;
+    & div {
+      width: 80px;
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
+      & span {
+        display: block;
+        font-weight: bold;
+      }
+      & .price {
+        color: var(--color-success);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+      }
     }
   }
 }
