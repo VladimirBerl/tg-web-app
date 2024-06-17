@@ -24,4 +24,21 @@
   background-color: var(--color-menu);
   padding: 5.7px 10px;
   border-radius: var(--border-8px);
+  transition: all .4s;
+  text-transform: uppercase;
+}
+
+.user svg:active path {
+  fill: var(--color-primary);
+}
+
+.wallet {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  transition: all .4s;
+}
+
+.wallet:active svg path{
+  fill: var(--color-primary);
 }
