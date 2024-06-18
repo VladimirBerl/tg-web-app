@@ -8,6 +8,7 @@
   font-weight: normal;
   background-color: var(--color-bg);
   height: 100vh;
+  overflow: hidden;
 
   --color-bg: #1c1f24;
   --color-white: #ffffff;
@@ -15,6 +16,10 @@
   --color-menu: #34353a;
   --color-success: #03CEA4;
   --border-8px: 8px;
+}
+
+body {
+  overflow: hidden;
 }
 
 a {

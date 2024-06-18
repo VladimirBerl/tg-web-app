@@ -2,9 +2,9 @@ export const tg = window.Telegram.WebApp;
 export const userName = tg.initDataUnsafe.user?.username;
 
 export const headerTokenInfo = [
-  { name: "Токены", info: "320", color: "#03CEA4" },
-  { name: "Покупки", info: "122", color: "#5A87FC" },
-  { name: "Продажы", info: "410", color: "#FFD370" },
+  // { name: "Токены", info: "320", color: "#5A87FC" },
+  { name: "Покупки", info: "122", color: "#03CEA4" },
+  { name: "Продажы", info: "410", color: "#FF5A30" },
 ];
 
 export const interactionGroup = [

@@ -6,7 +6,7 @@
   padding: 0px 10px;
 
   & div {
-    position: relative;
+    position: absolute;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -14,6 +14,21 @@
     justify-content: center;
     font-size: 18px;
     font-weight: bold;
+
+  }
+
+  & .buy {
+    left: 5%;
+    bottom: 20%;
+    animation-name: buy-iphone;
+    animation-duration: 1s;
+  }
+
+  & .sale {
+    right: 5%;
+    top: 20%;
+    animation-name: sale-iphone;
+    animation-duration: 1s;
   }
 
   & img {
@@ -22,5 +37,23 @@
     left: 50%;
     transform: translate(-50%,-50%);
     max-width: 180px;
+    animation-name: iphone;
+  }
+
+  @keyframes buy-iphone {
+    0% {
+      left: -20%;
+    }
+    100% {
+      left: 5%;
+    }
+  }
+  @keyframes sale-iphone {
+    0% {
+      right: -20%;
+    }
+    100% {
+      right: 5%;
+    }
   }
 }

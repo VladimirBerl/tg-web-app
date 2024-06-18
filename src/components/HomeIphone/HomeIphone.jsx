@@ -4,11 +4,11 @@ import { interactionGroup } from "../../storage/storage";
 export default function HomeIphone() {
   return (
     <div className={styled.wrapper}>
-      <div>
+      <div className={styled.buy}>
         <span>{interactionGroup[0].name}</span>
         <span>{interactionGroup[0].info}</span>
       </div>
-      <div>
+      <div className={styled.sale}>
       <span>{interactionGroup[1].name}</span>
       <span>{interactionGroup[1].info}</span>
       </div>
