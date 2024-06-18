@@ -30,7 +30,7 @@ export default function HomeCoin() {
   return (
     <div className={styled.wrapper}>
       <div className={styled.count}>
-        <img src="src\assets\ui\coin.svg" alt="coin" />
+        <img src="src/assets/ui/coin.svg" alt="coin" />
         <span>{userCoin.toLocaleString("de-DE")}</span>
       </div>
       <div className={styled.farm}>
