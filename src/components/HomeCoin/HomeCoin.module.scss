@@ -1,3 +1,75 @@
-.coin {
-  max-width: 90px;
+.wrapper {
+  margin-top: 20px;
+  padding: 0px 10px;
+  & .count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 5px;
+    & img {
+      max-width: 50px;
+    }
+    & span {
+      font-size: 40px;
+    }
+  }
+  .farm {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: var(--border-8px);
+    background-color: var(--color-warning);
+    height: 50px;
+    overflow: hidden;
+
+    & .timer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      grid: 5px;
+      height: 100%;
+      width: 20%;
+      & svg {
+        width: 20px;
+      }
+      & span {
+        font-size: 10px;
+        color: var(--color-bg);
+        font-weight: bold;
+      }
+    }
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 80%;
+      height: 100%;
+      background-color: var(--color-warning-black);
+      color: var(--color-bg);
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 0px;
+      transition: all .4s;
+    }
+    & button:disabled {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-warning);
+      color: var(--color-white);
+      border-top-right-radius: var(--border-8px);
+      border-bottom-right-radius: var(--border-8px);
+      padding: 0;
+      
+    }
+    & button:active {
+      background-color: var(--color-warning);
+    }
+  }
+  & .clik {
+    
+  }
 }

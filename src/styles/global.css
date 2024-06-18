@@ -15,6 +15,8 @@
   --color-primary: #ff5a30;
   --color-menu: #34353a;
   --color-success: #03CEA4;
+  --color-warning: #FFD370;
+  --color-warning-black: #FFBE2D;
   --border-8px: 8px;
 }
 
@@ -46,4 +48,5 @@ button {
   padding: 4px 8px;
   color: var(--color-white);
   font-weight: bold;
+  cursor: pointer;
 }

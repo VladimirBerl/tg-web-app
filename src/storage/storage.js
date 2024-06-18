@@ -1,6 +1,12 @@
 export const tg = window.Telegram.WebApp;
 export const userName = tg.initDataUnsafe.user?.username;
 
+export const user = {
+  coin: 154003,
+  farm: 24023,
+  time: 5,
+};
+
 export const headerTokenInfo = [
   // { name: "Токены", info: "320", color: "#5A87FC" },
   { name: "Покупки", info: "122", color: "#03CEA4" },
