@@ -1,5 +1,6 @@
 export const tg = window.Telegram.WebApp;
 export const userName = tg.initDataUnsafe.user?.username;
+export const userId = tg.initDataUnsafe.user?.id;
 
 export const user = {
   coin: 154003,

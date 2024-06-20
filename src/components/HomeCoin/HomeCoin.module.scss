@@ -1,11 +1,10 @@
 .wrapper {
-  margin-top: 20px;
-  padding: 0px 10px;
+  margin-top: 10px;
   & .count {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     gap: 5px;
     & img {
       max-width: 50px;
@@ -14,62 +13,30 @@
       font-size: 40px;
     }
   }
-  .farm {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border-radius: var(--border-8px);
-    background-color: var(--color-warning);
-    height: 50px;
-    overflow: hidden;
-
-    & .timer {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      grid: 5px;
-      height: 100%;
-      width: 20%;
-      & svg {
-        width: 20px;
-      }
-      & span {
-        font-size: 10px;
-        color: var(--color-bg);
-        font-weight: bold;
-      }
-    }
+  & .farm {
+    height: 60px;
+    position: relative;
     & button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      width: 80%;
+      width: 100%;
       height: 100%;
-      background-color: var(--color-warning-black);
-      color: var(--color-bg);
       font-size: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      border-radius: 0px;
+      color: var(--color-bg);
+      background-color: var(--color-white);
       transition: all .4s;
     }
-    & button:disabled {
-      background-color: var(--color-bg);
-      border: 1px solid var(--color-warning);
-      color: var(--color-white);
-      border-top-right-radius: var(--border-8px);
-      border-bottom-right-radius: var(--border-8px);
-      padding: 0;
-      
+    & .farming {
+      background-color: var(--color-gray);
     }
     & button:active {
-      background-color: var(--color-warning);
+      background-color: var(--color-gray);
     }
-  }
-  & .clik {
-
+    & .time {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      color: var(--color-gray-text);
+      font-weight: bold;
+    }
   }
 }

@@ -1,13 +1,8 @@
 import styled from "./HomeTop.module.scss";
 import HomeTopItem from "../ui/HomeTopItem/HomeTopItem";
-
-import { headerTokenInfo, userName } from "../../storage/storage";
-import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 export default function HomeTop() {
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    setUser(userName);
-  }, []);
+  const { name } = useSelector((state) => state.user);
   return (
     <div className={styled.top}>
       <div className={styled.user}>
@@ -31,7 +26,7 @@ export default function HomeTop() {
             fill="#fff"
           />
         </svg>
-        {user ? <span>{user}</span> : <span>Defoult</span>}
+        {user ? <span>{name}</span> : <span>Defoult</span>}
       </div>
       <button className={styled.wallet}>
         <svg
