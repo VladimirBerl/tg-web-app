@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function calculateTimeDifference(startDate, endDate) {
   const diffInMs = endDate - startDate; // разница в миллисекундах
@@ -20,24 +20,19 @@ export default function CountData({ finishTime }) {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+    if (finishTime !== 0) {
+      const interval = setInterval(() => {
+        setDate(new Date());
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [finishTime]);
 
   const timeDifference = calculateTimeDifference(date, new Date(finishTime));
 
   function dataFormat(date) {
-    return [
-      date.getHours(),
-      date.getMinutes(),
-      date.getSeconds(),
-    ].join(" ");
+    return [date.getHours(), date.getMinutes(), date.getSeconds()].join(" ");
   }
 
-  return (
-    <span>{timeDifference.seconds}</span>
-  );
+  return <span>{timeDifference.seconds}</span>;
 }

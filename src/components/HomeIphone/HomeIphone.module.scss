@@ -14,7 +14,6 @@
     justify-content: center;
     font-size: 18px;
     font-weight: bold;
-
   }
 
   & .buy {
@@ -35,7 +34,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     max-width: 180px;
     animation-name: iphone;
   }
@@ -54,6 +53,15 @@
     }
     100% {
       right: 5%;
+    }
+  }
+}
+
+@media (max-height: 590px) {
+  .wrapper {
+    height: 100px;
+    & img {
+      max-width: 130px;
     }
   }
 }
