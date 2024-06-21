@@ -21,29 +21,34 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 13px;
+  font-size: 12px;
   background-color: var(--color-menu);
   padding: 4px 10px;
   border-radius: var(--border-8px);
-  transition: all .4s;
-  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.user svg:active path {
-  fill: var(--color-primary);
+.user:active {
+  color: var(--color-primary);
+
+  & svg path {
+    fill: var(--color-primary);
+  }
 }
 
 .wallet {
   display: flex;
   align-items: center;
+  gap: 5px;
   background-color: var(--color-menu);
   padding: 4px 4px;
   border-radius: var(--border-8px);
-
-  transition: all .4s;
+  font-size: 12px;
 }
 
-.wallet:active svg path{
-  fill: var(--color-primary);
-
+.wallet:active {
+  color: var(--color-primary);
+  & svg path {
+    fill: var(--color-primary);
+  }
 }

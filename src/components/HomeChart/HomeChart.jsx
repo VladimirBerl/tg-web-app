@@ -13,6 +13,8 @@ const options = {
   plugins: {
     tooltip: {
       enabled: false,
+      responsive: true,
+      maintainAspectRatio: false,
     },
   },
 };
@@ -21,9 +23,15 @@ export default function HomeChart() {
   return (
     <div className={styled.wrapper}>
       <div className={styled.chart}>
-        <Doughnut data={dataChartOne} options={options} />
-        <Doughnut data={dataChartTwo} options={options} />
-        <Doughnut data={dataChartTree} options={options} />
+        <div className={styled.item}>
+          <Doughnut data={dataChartOne} options={options} />
+        </div>
+        <div className={styled.item}>
+          <Doughnut data={dataChartTwo} options={options} />
+        </div>
+        <div className={styled.item}>
+          <Doughnut data={dataChartTree} options={options} />
+        </div>
       </div>
       <div className={styled.interest}>
         <span>{dataChartOne.datasets[0].data[0]}</span>
@@ -33,7 +41,7 @@ export default function HomeChart() {
       <div className={styled["chart-info"]}>
         <div>
           <span className={styled.price}>
-          <Counter val={dataChartOne.datasets[0].price}/>
+            <Counter val={dataChartOne.datasets[0].price} />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="20px"
@@ -51,8 +59,8 @@ export default function HomeChart() {
         </div>
         <div>
           <span className={styled.price}>
-            <Counter val={dataChartTree.datasets[0].price}/>
-            
+            <Counter val={dataChartTree.datasets[0].price} />
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="20px"

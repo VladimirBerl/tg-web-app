@@ -6,13 +6,14 @@
     align-items: center;
     justify-content: space-between;
 
-    & canvas {
-      height: 80px !important;
+    & .item {
+      max-width: 80px;
+      height: 100%;
     }
-    & canvas:nth-child(2) {
+
+    & .item:nth-child(2) {
       margin-top: -20px;
-      height: 100px !important;
-      width: 100px !important;
+      max-width: 100px;
     }
   }
   & .interest {

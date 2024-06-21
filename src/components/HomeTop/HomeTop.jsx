@@ -44,6 +44,7 @@ export default function HomeTop() {
             fill="white"
           />
         </svg>
+        Connect
       </button>
       <div className={styled.item}>
         {headerTokenInfo.map((item) => (
