@@ -8,17 +8,17 @@ export default function PlanSwiper() {
       <div className={styled.wrapper}>
         <div className={styled.title}>
           <p>Разработка</p>
-          <img src="public/ui/filter.svg" alt="" />
+          <img src="/ui/filter.svg" alt="" />
         </div>
         <Carousel infinite={false}>
           <div className={styled["swaiper-items"]}>
             <div className={styled["swaiper-item"]}>
               <div>
                 <p>Сервис для покупателей /Продавцов маркетплейсов</p>
-                <img src="public/ui/check-round.svg" alt="check" />
+                <img src="/ui/check-round.svg" alt="check" />
               </div>
               <a href="https://t.me/Buyer_Marketplace">
-                BOT Buyer <img src="public/ui/bottom-right.svg" alt="right" />
+                BOT Buyer <img src="/ui/bottom-right.svg" alt="right" />
               </a>
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p>Группа Buyer Marketplace</p>
-                <img src="public/ui/check-round.svg" alt="check" />
+                <img src="/ui/check-round.svg" alt="check" />
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p>Бот TG Buyer - 5 модулей</p>
-                <img src="public/ui/check-round.svg" alt="check" />
+                <img src="/ui/check-round.svg" alt="check" />
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p>Чат для общения</p>
-                <img src="public/ui/check-round.svg" alt="check" />
+                <img src="/ui/check-round.svg" alt="check" />
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p>Чат для общения</p>
-                <img src="public/ui/check-round.svg" alt="check" />
+                <img src="/ui/check-round.svg" alt="check" />
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function PlanSwiper() {
       <div className={styled.wrapper}>
         <div className={styled.title}>
           <p>Ликвидность</p>
-          <img src="public/ui/shield.svg" alt="" />
+          <img src="/ui/shield.svg" alt="" />
         </div>
         <Carousel infinite={false}>
           <div className={styled["swaiper-items"]}>
@@ -75,7 +75,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p className={styled["title-green"]}>+130%</p>
-                <img src="public/ui/check-round.svg" alt="check" />
+                <img src="/ui/check-round.svg" alt="check" />
               </div>
               <p>230 объявлений в группе в день</p>
             </div>
@@ -86,7 +86,7 @@ export default function PlanSwiper() {
       <div className={styled.wrapper}>
         <div className={styled.title}>
           <p>Маркетинг</p>
-          <img src="public/ui/cart.svg" alt="" />
+          <img src="/ui/cart.svg" alt="" />
         </div>
         <Carousel infinite={false}>
           <div className={styled["swaiper-items"]}>
@@ -101,7 +101,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p className={styled["title-red"]}>+26%</p>
-                <img src="public/ui/close-round.svg" alt="check" />
+                <img src="/ui/close-round.svg" alt="check" />
               </div>
               <p>13 объявлений в группе в месяц</p>
             </div>
@@ -112,7 +112,7 @@ export default function PlanSwiper() {
       <div className={styled.wrapper}>
         <div className={styled.title}>
           <p>Реклама</p>
-          <img src="public/ui/budget.svg" alt="" />
+          <img src="/ui/budget.svg" alt="" />
         </div>
         <Carousel infinite={false}>
           <div className={styled["swaiper-items"]}>
@@ -127,7 +127,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p className={styled["title-red"]}>0%</p>
-                <img src="public/ui/close-round.svg" alt="check" />
+                <img src="/ui/close-round.svg" alt="check" />
               </div>
               <p>Объявлений в группе в месяц</p>
             </div>
@@ -138,14 +138,14 @@ export default function PlanSwiper() {
       <div className={styled.wrapper}>
         <div className={styled.title}>
           <p>Токен</p>
-          <img src="public/ui/token.svg" alt="" />
+          <img src="/ui/token.svg" alt="" />
         </div>
         <Carousel infinite={false}>
           <div className={styled["swaiper-items"]}>
             <div className={styled["swaiper-item"]}>
               <div>
                 <p className={styled["title-green"]}>Токена BMT</p>
-                <img src="public/ui/check-round.svg" alt="" />
+                <img src="/ui/check-round.svg" alt="" />
               </div>
               <p>Использование в экосистеме Byer Marketplace</p>
             </div>
@@ -154,7 +154,7 @@ export default function PlanSwiper() {
             <div className={styled["swaiper-item"]}>
               <div>
                 <p className={styled["title-red"]}>0%</p>
-                <img src="public/ui/close-round.svg" alt="check" />
+                <img src="/ui/close-round.svg" alt="check" />
               </div>
               <p>Пока нет информации</p>
             </div>
