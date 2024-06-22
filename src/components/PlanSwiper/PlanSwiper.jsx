@@ -1,5 +1,5 @@
 import styled from "./PlanSwiper.module.scss";
-import { Carousel, ConfigProvider } from "antd";
+import { Carousel } from "antd";
 
 export default function PlanSwiper() {
   return (
