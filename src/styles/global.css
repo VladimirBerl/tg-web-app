@@ -7,7 +7,7 @@
   font-size: 16px;
   font-weight: normal;
   background-color: var(--color-bg);
-  overflow: hidden;
+  overflow: auto;
 
   --color-bg: #1c1f24;
   --color-white: #ffffff;
@@ -51,8 +51,4 @@ button {
   color: var(--color-white);
   font-weight: bold;
   cursor: pointer;
-}
-.slick-track {
-  display: flex !important;
-  gap: 20px;
 }
