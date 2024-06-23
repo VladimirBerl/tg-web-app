@@ -1,0 +1,42 @@
+.wrapper {
+  padding: 0px 10px;
+  & .title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  & .line {
+    position: relative;
+    & img {
+      width: 24px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    & p {
+      position: absolute;
+      top: -20px;
+      right: 0;
+      color: var(--color-gray-text);
+      font-size: 12px;
+      font-weight: bold;
+      & span {
+        color: var(--color-white);
+      }
+    }
+    & div {
+      margin-left: 5px;
+      border-radius: var(--border-8px);
+      height: 10px;
+      background: rgb(44, 255, 150);
+      background: linear-gradient(
+        90deg,
+        rgba(44, 255, 150, 1) 0%,
+        rgba(22, 197, 248, 1) 27%,
+        rgba(109, 94, 233, 1) 60%,
+        rgba(255, 61, 0, 1) 100%
+      );
+    }
+  }
+}
