@@ -52,3 +52,9 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+
+input {
+  background-color: transparent;
+  border: none;
+  color: var(--color-white);
+}

@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import TokenPage from './pages/TokenPage/TokenPage'
 import PlanPage from './pages/PlanPage/PlanPage'
-import FriendsPage from './pages/FriendsPage'
-import EarnPage from './pages/EarnPage'
+import FriendsPage from './pages/FriendsPage/FriendsPage'
+import EarnPage from './pages/EarnPage/EarnPage'
 import LayoutPage from './pages/LayoutPage/LayoutPage'
 import HomePage from './pages/HomePage/HomePage'
 

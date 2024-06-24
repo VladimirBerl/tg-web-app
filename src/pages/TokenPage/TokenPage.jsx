@@ -3,6 +3,7 @@ import TokenInfoCoin from "../../components/TokenInfoCoin/TokenInfoCoin";
 import TokenTable from "../../components/TokenTable/TokenTable";
 import TokenChart from "../../components/TokenChart/TokenChart";
 import TokensBurned from "../../components/TokensBurned/TokensBurned";
+import ExchangePoints from "../../components/ExchangePoints/ExchangePoints";
 
 export default function TokenPage() {
   return (
@@ -19,6 +20,7 @@ export default function TokenPage() {
       </div>
         <TokenChart />
         <TokensBurned/>
+        <ExchangePoints/>
     </div>
   );
 }
