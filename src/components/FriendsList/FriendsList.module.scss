@@ -52,13 +52,11 @@
     }
   }
   & .invate-block {
+    margin-top: 20px;
+    margin-bottom: 86px;
     display: flex;
     align-items: center;
     gap: 10px;
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 82.6px;
     & .invate-bnt {
       width: 80%;
       height: 40px;

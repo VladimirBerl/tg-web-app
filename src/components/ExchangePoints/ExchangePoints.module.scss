@@ -11,6 +11,7 @@
     flex-direction: column;
     gap: 15px;
     position: relative;
+    margin-bottom: 20px;
     & .select {
       padding: 10px;
       background-color: var(--color-card);
@@ -41,5 +42,13 @@
         max-width: 30px;
       }
     }
+  }
+  & .point-bnt {
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-white);
+    text-align: center;
+    color: var(--color-bg);
+    font-size: 16px;
   }
 }
