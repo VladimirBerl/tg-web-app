@@ -1,8 +1,22 @@
 import styled from "./EarnPage.module.scss";
+import EarnTask from "../../components/EarnTask/EarnTask";
+import EarnBonuses from "../../components/EarnBonuses/EarnBonuses";
+import CastomLink from "../../components/ui/CastomLink/CastomLink";
+import { Routes, Route } from "react-router-dom";
+
 export default function EarnPage() {
   return (
-    <div>
-      earn page
+    <div className={styled.earn}>
+      <div className={styled["link-wrapper"]}>
+        <CastomLink className={styled.link} to="/earn/task">Задачи</CastomLink>
+        <CastomLink className={styled.link} to="/earn/bonuses">Бонусы</CastomLink>
+      </div>
+      <div>
+        <Routes>
+          <Route index path="task" element={<EarnTask />} />
+          <Route path="bonuses" element={<EarnBonuses />} />
+        </Routes>
+      </div>
     </div>
   );
 }

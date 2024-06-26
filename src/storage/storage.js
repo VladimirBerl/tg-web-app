@@ -85,3 +85,20 @@ export const dataChartToken = {
     },
   ],
 };
+
+export const itemTasks = [
+  {
+    names: "Buyer",
+    desc: "@TG_Buyer_bot",
+    link: "https://t.me/TG_Buyer_bot",
+    price: 2313,
+    icon: "/ui/telegram.svg",
+  },
+  {
+    names: "Buyer",
+    desc: "@TG_Buyer_bot",
+    link: "https://t.me/TG_Buyer_bot",
+    price: 2313,
+    icon: "/ui/telegram.svg",
+  },
+];

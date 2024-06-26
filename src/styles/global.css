@@ -58,3 +58,7 @@ input {
   border: none;
   color: var(--color-white);
 }
+
+._link_4a8qi_4.active {
+  color: var(--color-menu);
+}

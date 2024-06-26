@@ -14,7 +14,7 @@ export default function App() {
         <Route path="token" element={<TokenPage />} />
         <Route path="plan" element={<PlanPage />} />
         <Route path="friends" element={<FriendsPage />} />
-        <Route path="Earn" element={<EarnPage />} />
+        <Route path="earn/*" element={<EarnPage />} />
       </Route>
     </Routes>
   );

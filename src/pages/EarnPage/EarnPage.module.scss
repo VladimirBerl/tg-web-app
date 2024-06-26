@@ -1,0 +1,25 @@
+.earn {
+  padding: 10px;
+  & .link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    background-color: var(--color-menu);
+    border-radius: var(--border-8px);
+
+    & .link {
+      padding: 5px;
+      border-radius: var(--border-8px);
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      &.active-link {
+        color: var(--color-menu);
+        background-color: var(--color-white);
+        padding: 5px;
+        border-radius: var(--border-8px);
+      }
+    }
+  }
+}
