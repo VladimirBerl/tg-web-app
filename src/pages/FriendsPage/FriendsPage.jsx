@@ -3,7 +3,7 @@ import FriendsList from "../../components/FriendsList/FriendsList";
 import FriendsListTask from "../../components/FriendsListTask/FriendsListTask";
 export default function FriendsPage() {
   return (
-    <>
+    <div className={styled.container}>
       <div className={styled.wrapper}>
         <h2 className={styled["wrapper-title"]}>Пригласите друзей!</h2>
         <span className={styled["wrapper-text"]}>
@@ -40,6 +40,9 @@ export default function FriendsPage() {
       <div className={styled.wrapper}>
         <FriendsList />
       </div>
-    </>
+      <video autoPlay muted loop className={styled.video}>
+        <source src="/video/galactic-bg3.mp4" type="video/mp4" />
+      </video>
+    </div>
   );
 }

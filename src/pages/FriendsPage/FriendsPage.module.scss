@@ -1,3 +1,15 @@
+.container {
+  position: relative;
+  & .video {
+    position: absolute;
+    inset: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+  }
+}
 .wrapper {
   padding: 10px;
   & .wrapper-title {

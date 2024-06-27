@@ -8,8 +8,12 @@ export default function EarnPage() {
   return (
     <div className={styled.earn}>
       <div className={styled["link-wrapper"]}>
-        <CastomLink className={styled.link} to="/earn/task">Задачи</CastomLink>
-        <CastomLink className={styled.link} to="/earn/bonuses">Бонусы</CastomLink>
+        <CastomLink className={styled.link} to="/earn/task">
+          Задачи
+        </CastomLink>
+        <CastomLink className={styled.link} to="/earn/bonuses">
+          Бонусы
+        </CastomLink>
       </div>
       <div>
         <Routes>
@@ -17,6 +21,9 @@ export default function EarnPage() {
           <Route path="bonuses" element={<EarnBonuses />} />
         </Routes>
       </div>
+      <video autoPlay muted loop className={styled.video}>
+        <source src="/video/galactic-bg.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 }

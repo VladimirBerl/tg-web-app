@@ -1,4 +1,6 @@
 .earn {
+  position: relative;
+  height: 100vh;
   padding: 10px;
   & .link-wrapper {
     display: flex;
@@ -21,5 +23,15 @@
         border-radius: var(--border-8px);
       }
     }
+  }
+
+  & .video {
+    position: absolute;
+    inset: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
   }
 }
