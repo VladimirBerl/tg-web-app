@@ -9,7 +9,7 @@ export default function FooterMenu() {
   }
   return (
     <nav className={styled.menu}>
-      <NavLink className={styled.link} to="token">
+      <NavLink onClick={handleButtonClick} className={styled.link} to="token">
         <svg
           width="24"
           height="24"
@@ -30,7 +30,7 @@ export default function FooterMenu() {
         </svg>
         token
       </NavLink>
-      <NavLink className={styled.link} to="plan">
+      <NavLink onClick={handleButtonClick} className={styled.link} to="plan">
         <svg
           width="24"
           height="24"
@@ -88,7 +88,7 @@ export default function FooterMenu() {
         </svg>
         plan
       </NavLink>
-      <NavLink className={styled.link} to="/">
+      <NavLink onClick={handleButtonClick} className={styled.link} to="/">
         <svg
           width="24"
           height="24"
@@ -105,7 +105,7 @@ export default function FooterMenu() {
         </svg>
         home
       </NavLink>
-      <NavLink className={styled.link} to="friends">
+      <NavLink onClick={handleButtonClick} className={styled.link} to="friends">
         <svg
           width="24"
           height="24"
@@ -128,7 +128,7 @@ export default function FooterMenu() {
         </svg>
         friend
       </NavLink>
-      <NavLink className={styled.link} to="earn">
+      <NavLink onClick={handleButtonClick} className={styled.link} to="earn">
         <svg
           width="24"
           height="24"
