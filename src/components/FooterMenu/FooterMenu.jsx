@@ -2,10 +2,15 @@ import styled from "./FooterMenu.module.scss";
 import { NavLink } from "react-router-dom";
 export default function FooterMenu() {
   function handleButtonClick() {
-    if (navigator.vibrate) {
-      navigator.vibrate(200)
+    if (
+      window.Telegram &&
+      window.Telegram.WebApp &&
+      window.Telegram.WebApp.HapticFeedback
+    ) {
+      window.Telegram.WebApp.HapticFeedback.impactOccurred("medium");
+    } else {
+      console.warn("Telegram WebApp HapticFeedback API is not available.");
     }
-    console.log('(((')
   }
   return (
     <nav className={styled.menu}>
