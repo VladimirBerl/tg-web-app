@@ -12,9 +12,16 @@ export default function FooterMenu() {
       console.warn("Telegram WebApp HapticFeedback API is not available.");
     }
   }
+   function handleButtonClickG(){
+    if (navigator.vibrate) {
+      navigator.vibrate(200); // Вибрация на 200 миллисекунд
+    } else {
+      console.warn("Vibration API is not supported by this device.");
+    }
+  };
   return (
     <nav className={styled.menu}>
-      <NavLink onClick={handleButtonClick} className={styled.link} to="token">
+      <NavLink onClick={handleButtonClickG} className={styled.link} to="token">
         <svg
           width="24"
           height="24"
@@ -35,7 +42,7 @@ export default function FooterMenu() {
         </svg>
         token
       </NavLink>
-      <NavLink onClick={handleButtonClick} className={styled.link} to="plan">
+      <NavLink onClick={handleButtonClickG} className={styled.link} to="plan">
         <svg
           width="24"
           height="24"
