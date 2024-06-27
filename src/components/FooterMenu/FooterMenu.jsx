@@ -1,6 +1,12 @@
 import styled from "./FooterMenu.module.scss";
 import { NavLink } from "react-router-dom";
 export default function FooterMenu() {
+  function handleButtonClick() {
+    if (navigator.vibrate) {
+      navigator.vibrate(200)
+    }
+    console.log('(((')
+  }
   return (
     <nav className={styled.menu}>
       <NavLink className={styled.link} to="token">
