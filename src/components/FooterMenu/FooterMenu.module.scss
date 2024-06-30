@@ -1,5 +1,5 @@
 .menu {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -11,7 +11,7 @@
   );
   border-top-left-radius: var(--border-8px);
   border-top-right-radius: var(--border-8px);
-  padding: 5px;
+  // padding: 5px;
   z-index: 10;
   & .gradient {
     position: absolute;
@@ -31,7 +31,7 @@
 
   & .link {
     border-radius: var(--border-8px);
-    padding: 5px;
+    padding: 7px;
     gap: 5px;
     width: 25%;
     display: flex;

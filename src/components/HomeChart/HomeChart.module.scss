@@ -1,61 +1,68 @@
 .wrapper {
   position: relative;
-  padding-top: 20px;
-  & .chart {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & .item {
-      max-width: 80px;
-      height: 100%;
-    }
-
-    & .item:nth-child(2) {
-      margin-top: -20px;
-      max-width: 100px;
-    }
-  }
-  & .interest {
+  box-shadow: inset 0px 0px 58.67px 0px #ffffff23;
+  border-radius: var(--border-8px);
+  &::before {
     position: absolute;
-    top: 41%;
-    transform: translateY(-50%);
-    width: 100%;
+    content: "";
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(
+      90deg,
+      rgba(40, 45, 103, 1) 0%,
+      rgba(83, 73, 84, 1) 50%,
+      rgba(65, 49, 96, 1) 100%
+    );
+    border-radius: var(--border-8px);
+    z-index: -1;
+  }
+  & .info {
+    padding: 10px 40px 10px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     & span {
-      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      max-width: 74px;
+      width: 100%;
       text-align: center;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    & span:nth-child(2) {
-      margin-top: -20px;
+      & img {
+        width: 15px;
+      }
     }
   }
-  & .chart-info {
+  & .info:nth-child(1) {
+    font-size: 14px;
+  }
+  & .chart {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 10px;
-    & div {
-      width: 80px;
-      text-align: center;
-      font-size: 12px;
+    padding: 0px 40px 10px 40px;
+    & .item {
+      max-width: 74px;
+      height: 100%;
+    }
+
+    & .counter {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      top: 60%;
+      left: 0;
+      right: 0;
+      transform: translateY(-60%);
+      padding: 0px 40px 10px 40px;
       & span {
-        display: block;
-        font-weight: bold;
-      }
-      & .price {
-        color: var(--color-success);
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: normal;
+        min-width: 74px;
+        text-align: center;
       }
     }
   }

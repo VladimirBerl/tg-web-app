@@ -22,10 +22,10 @@ export const interactionGroup = [
 export const dataChartOne = {
   datasets: [
     {
-      name: "Платные посты",
-      price: "2200",
+      name: "Посты за монеты",
+      price: "1450",
       data: [40, 60],
-      backgroundColor: ["#FF5A30", "#ff593045"],
+      backgroundColor: ["#C1A130", "#965C16"],
       borderWidth: 0,
       redraw: true,
       cutout: "85%",
@@ -35,9 +35,10 @@ export const dataChartOne = {
 export const dataChartTwo = {
   datasets: [
     {
-      name: "Бесплатные посты",
+      name: "Посты за токены",
+      price: "750",
       data: [90, 10],
-      backgroundColor: ["#F89828", "#F8982845"],
+      backgroundColor: ["#3F4CE3", "#111973"],
       borderWidth: 0,
       redraw: true,
       cutout: "85%",
@@ -47,10 +48,10 @@ export const dataChartTwo = {
 export const dataChartTree = {
   datasets: [
     {
-      name: "Реклама",
-      price: "3040",
+      name: "Посты за рубли",
+      price: "1450",
       data: [50, 50],
-      backgroundColor: ["#03CEA4", "#03CEA445"],
+      backgroundColor: ["#088E35", "#064225"],
       borderWidth: 0,
       redraw: true,
       cutout: "85%",
