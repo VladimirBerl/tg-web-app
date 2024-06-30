@@ -8,12 +8,11 @@ export default function HomePage() {
   return (
     <div className={styled.wrapper}>
       <HomeTop />
-      <HomeIphone />
-      <HomeShope/>
-      <HomeMain/>
-      <video autoPlay muted loop className={styled.video}>
-        <source src="/video/galactic-bg2.mp4" type="video/mp4" />
-      </video>
+      <div className={styled.main}>
+        <HomeIphone />
+        <HomeShope />
+        <HomeMain />
+      </div>
     </div>
   );
 }

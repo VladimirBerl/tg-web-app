@@ -5,14 +5,14 @@ export default function HomeIphone() {
   return (
     <div className={styled.wrapper}>
       <div className={styled.buy}>
-        <span>{interactionGroup[0].name}</span>
+        <span>{interactionGroup[0].name.toUpperCase()}</span>
         <span>{interactionGroup[0].info}</span>
       </div>
       <div className={styled.sale}>
-      <span>{interactionGroup[1].name}</span>
+      <span>{interactionGroup[1].name.toUpperCase()}</span>
       <span>{interactionGroup[1].info}</span>
       </div>
-      <img class="group_iphone" src="//i.imgur.com/H02PRON.png" />
+      <img class="iPhone" src="/images/iPhone.png" />
     </div>
   );
 }

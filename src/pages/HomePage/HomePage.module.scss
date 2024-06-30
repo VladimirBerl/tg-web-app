@@ -1,13 +1,31 @@
 .wrapper {
+  padding: 12px;
   position: relative;
   height: 100vh;
-  & .video {
-    position: absolute;
-    inset: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -2;
+  & .main {
+    position: relative;
+    box-shadow: inset 0px 0px 6px 1px #ffffff14;
+    background-color: #1b1b1bd4;
+    border-top-left-radius: 29.61px;
+    border-top-right-radius: 29.61px;
+    margin-top: 20px;
+    height: calc(100% - 120px);
+    &::before {
+      position: absolute;
+      content: "";
+      top: -1px;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+      background: linear-gradient(
+        90deg,
+        rgba(40, 45, 103, 1) 0%,
+        rgba(83, 73, 84, 1) 50%,
+        rgba(65, 49, 96, 1) 100%
+      );
+      border-top-left-radius: 29.61px;
+      border-top-right-radius: 29.61px;
+      z-index: -1;
+    }
   }
 }

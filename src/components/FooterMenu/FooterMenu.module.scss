@@ -1,12 +1,29 @@
 .menu {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  background-color: var(--color-menu);
-  border-radius: var(--border-8px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 45, 103, 1) 0%,
+    rgba(83, 73, 84, 1) 50%,
+    rgba(65, 49, 96, 1) 100%
+  );
+  border-top-left-radius: var(--border-8px);
+  border-top-right-radius: var(--border-8px);
   padding: 5px;
-  z-index: 99;
+  z-index: 10;
+  & .gradient {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    background: url("/public/images/backgraund.png");
+    border-top-left-radius: var(--border-8px);
+    border-top-right-radius: var(--border-8px);
+  }
 
   display: flex;
   align-items: center;

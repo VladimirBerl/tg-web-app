@@ -6,22 +6,32 @@
   margin-bottom: 25px;
   gap: 5px;
 
-  & button {
+  & > div {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    transition: all 0.4s;
-    & svg path{
-      transition: all 0.4s;
-    }
-    &:active {
-      background-color: #17181a;
-      color: var(--color-primary);
-      & svg path {
-        fill: var(--color-primary);
-      }
+    padding: 8px;
+    
+    position: relative;
+    box-shadow: inset 0px 0px 58.67px 0px #ffffff23;
+    border-radius: var(--border-8px);
+    &::before {
+      position: absolute;
+      content: "";
+      top: -1px;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+      background: linear-gradient(
+        90deg,
+        rgba(40, 45, 103, 1) 0%,
+        rgba(83, 73, 84, 1) 50%,
+        rgba(65, 49, 96, 1) 100%
+      );
+      border-radius: var(--border-8px);
+      z-index: -1;
     }
   }
 }
