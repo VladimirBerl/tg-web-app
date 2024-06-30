@@ -12,7 +12,7 @@ export default function HomeIphone() {
       <span>{interactionGroup[1].name.toUpperCase()}</span>
       <span>{interactionGroup[1].info}</span>
       </div>
-      <img class="iPhone" src="/images/iPhone.png" />
+      <img src="/images/iPhone.png" />
     </div>
   );
 }

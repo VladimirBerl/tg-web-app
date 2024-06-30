@@ -3,7 +3,6 @@ import HomeIphone from "../../components/HomeIphone/HomeIphone";
 import HomeShope from "../../components/HomeShope/HomeShope";
 import HomeMain from "../../components/HomeMain/HomeMain";
 import styled from "./HomePage.module.scss";
-const tg = window.Telegram.WebApp;
 export default function HomePage() {
   return (
     <div className={styled.wrapper}>
