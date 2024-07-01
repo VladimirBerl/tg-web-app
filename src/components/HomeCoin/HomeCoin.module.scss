@@ -1,8 +1,10 @@
-.wrapper {
+.coin {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 15vh;
+  height: 100%;
+}
+.wrapper {
   & .count {
     display: flex;
     align-items: center;

@@ -1,5 +1,8 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  height: calc(100% - 339px);
+  & .coin {
+    flex-grow: 1;
+  }
 }
