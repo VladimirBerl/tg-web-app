@@ -1,30 +1,27 @@
 .info {
-  position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 73.39px;
   gap: 5px;
   align-items: center;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
+  font-size: 10px;
+  font-weight: normal;
+  padding: 3px 7px;
+  & span:nth-child(2) {
+    font-size: 12px;
+  }
 
-  box-shadow: inset 0px 0px 6px 1px #ffffff14;
-  background-color: #1b1b1bd4;
+  position: relative;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-8px);
+  overflow: hidden;
   &::before {
     position: absolute;
     content: "";
-    top: -1px;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    background: linear-gradient(
-      90deg,
-      rgba(40, 45, 103, 1) 0%,
-      rgba(83, 73, 84, 1) 50%,
-      rgba(65, 49, 96, 1) 100%
-    );
-    border-radius: var(--border-8px);
+    inset: 0;
+    filter: blur(10px);
+    background-color: rgb(23 26 30 / 90%);
+    box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
     z-index: -1;
   }
 }

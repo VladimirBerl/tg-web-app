@@ -1,25 +1,20 @@
 .wrapper {
   position: relative;
-  box-shadow: inset 0px 0px 58.67px 0px #ffffff23;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-8px);
+  overflow: hidden;
   &::before {
     position: absolute;
     content: "";
-    top: -1px;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    background: linear-gradient(
-      90deg,
-      rgba(40, 45, 103, 1) 0%,
-      rgba(83, 73, 84, 1) 50%,
-      rgba(65, 49, 96, 1) 100%
-    );
-    border-radius: var(--border-8px);
+    inset: 0;
+    filter: blur(10px);
+    background-color: rgb(23 26 30 / 90%);
+    box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
     z-index: -1;
   }
-  & .info {
-    padding: 10px 40px 10px 40px;
+  & .info,
+  & .info-price {
+    padding: 10px 20px 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,24 +27,49 @@
       width: 100%;
       text-align: center;
       & img {
-        width: 15px;
+        width: 17px;
       }
     }
   }
   & .info:nth-child(1) {
-    font-size: 14px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      filter: blur(10px);
+      background-color: rgb(23 26 30 / 90%);
+      box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+      z-index: -1;
+    }
+  }
+  & .info-price {
+    font-size: 17px;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      filter: blur(10px);
+      background-color: rgb(23 26 30 / 90%);
+      box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+      z-index: -1;
+    }
   }
   & .chart {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 40px 10px 40px;
+    padding: 0px 20px 10px 20px;
     & .item {
       max-width: 74px;
       height: 100%;
     }
-
     & .counter {
       position: absolute;
       display: flex;
@@ -59,7 +79,7 @@
       left: 0;
       right: 0;
       transform: translateY(-60%);
-      padding: 0px 40px 10px 40px;
+      padding: 0px 20px 10px 20px;
       & span {
         min-width: 74px;
         text-align: center;

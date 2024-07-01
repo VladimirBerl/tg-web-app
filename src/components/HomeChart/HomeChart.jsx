@@ -42,7 +42,7 @@ export default function HomeChart() {
           <span>{dataChartTree.datasets[0].data[0]}</span>
         </div>
       </div>
-      <div className={styled.info}>
+      <div className={styled['info-price']}>
         <span style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}>
           <img src="/newUI/coin.svg" alt="coin" />
           {dataChartOne.datasets[0].price}

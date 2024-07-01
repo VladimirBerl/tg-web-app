@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 0px 25px;
   margin-bottom: 15px;
-  gap: 5px;
+  gap: 45px;
 
   & .button {
     width: 100%;
@@ -15,23 +15,16 @@
     padding: 8px;
 
     position: relative;
-    box-shadow: inset 0px 0px 58.67px 0px #ffffff23;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-8px);
-
+    overflow: hidden;
     &::before {
       position: absolute;
       content: "";
-      top: -1px;
-      bottom: -1px;
-      left: -1px;
-      right: -1px;
-      background: linear-gradient(
-        90deg,
-        rgba(40, 45, 103, 1) 0%,
-        rgba(83, 73, 84, 1) 50%,
-        rgba(65, 49, 96, 1) 100%
-      );
-      border-radius: var(--border-8px);
+      inset: 0;
+      filter: blur(10px);
+      background-color: rgb(23 26 30 / 90%);
+      box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
       z-index: -1;
     }
   }

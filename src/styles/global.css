@@ -4,7 +4,7 @@
 :root {
   font-family: "Rubik", sans-serif;
   color: var(--color-white);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   background: url("/public/images/backgraund.png");
   overflow: auto;
@@ -19,8 +19,24 @@
   --color-gray: #5e5e5e;
   --color-gray-text: #9d9d9d;
   --color-card: #41454b;
+
+  --border-color: #413160;
   --border-8px: 8.58px;
 }
+
+/* position: relative;
+border: 1px solid var(--border-color);
+border-radius: var(--border-8px);
+overflow: hidden;
+&::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  filter: blur(10px);
+  background-color: rgb(23 26 30 / 90%);
+  box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+  z-index: -1;
+} */
 
 body {
   overflow: hidden;

@@ -1,3 +1,11 @@
 .wrapper {
-  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  & .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 22vh;
+  }
 }
