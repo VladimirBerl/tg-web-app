@@ -6,9 +6,7 @@ export default function HomeMain() {
   return (
     <div className={styled.wrapper}>
       <HomeChart />
-      <div className={styled.center}>
-        <HomeCoin />
-      </div>
+      <HomeCoin />
     </div>
   );
 }
