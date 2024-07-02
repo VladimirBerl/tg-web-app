@@ -29,7 +29,8 @@
   align-items: center;
   justify-content: space-between;
 
-  & .link {
+  & .link{
+    font-family: 'Inter', sans-serif;
     border-radius: var(--border-8px);
     padding: 7px;
     gap: 5px;

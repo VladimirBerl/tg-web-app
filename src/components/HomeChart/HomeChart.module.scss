@@ -28,11 +28,12 @@
       width: 100%;
       text-align: center;
       & img {
-        width: 17px;
+        width: 15px;
       }
     }
   }
-  & .info:nth-child(1) {
+  & .info {
+    font-family: "Involve", sans-serif;
     border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -47,7 +48,8 @@
     }
   }
   & .info-price {
-    font-size: 17px;
+    font-family: "Bicubik", sans-serif;
+    font-size: 10.27px;
     border-top: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -72,6 +74,8 @@
       height: 100%;
     }
     & .counter {
+      font-family: "Bicubik", sans-serif;
+      font-size: 11.12px;
       position: absolute;
       display: flex;
       align-items: center;

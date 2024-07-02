@@ -2,9 +2,9 @@
 @import url(./reset.css);
 
 :root {
-  font-family: "Rubik", sans-serif;
+  font-family: "UltramonoWide", sans-serif;
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 8.56px;
   font-weight: normal;
   background: url("/public/images/backgraund.png");
   overflow: auto;

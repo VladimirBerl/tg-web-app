@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  min-height: 160px;
+  min-height: 150px;
   padding: 0px 10px;
 
   & div {
@@ -41,10 +41,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     & > span:nth-child(1) {
-      font-size: 12px;
+      font-family: "UltramonoWide", sans-serif;
+      font-size: 7.38px;
     }
     & > span:nth-child(2) {
-      font-size: 35px;
+      font-family: "Bicubik", sans-serif;
+      font-size: 22.15px;
     }
   }
 
@@ -53,7 +55,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 200px;
+    max-width: 170px;
   }
 
   @keyframes buy-iphone {

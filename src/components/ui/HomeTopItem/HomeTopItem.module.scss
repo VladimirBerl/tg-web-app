@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   min-width: 73.39px;
-  gap: 5px;
+  gap: 3px;
+  justify-content: center;
   align-items: center;
-  font-size: 10px;
   font-weight: normal;
   padding: 3px 7px;
   & span:nth-child(2) {
-    font-size: 12px;
+    font-family: "Bicubik", sans-serif;
+    font-size: 10px;
   }
 
   position: relative;

@@ -1,35 +1,15 @@
 @font-face {
-  font-weight: 900;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-Black.ttf");
-}
-@font-face {
-  font-weight: 800;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-ExtraBold.ttf");
-}
-@font-face {
-  font-weight: 700;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-Bold.ttf");
-}
-@font-face {
-  font-weight: 600;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-SemiBold.ttf");
-}
-@font-face {
-  font-weight: 500;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-Medium.ttf");
-}
-@font-face {
+  font-family: "UltramonoWide";
+  src: url("./fonts/UltramonoWide/UltramonoWide-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-Regular.ttf");
 }
 @font-face {
-  font-weight: 300;
-  font-family: "Rubik", sans-serif;
-  src: url("./fonts/Rubik-Light.ttf");
+  font-family: "Involve";
+  src: url("./fonts/Involve/Involve-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Bicubik";
+  src: url("./fonts/Bicubik/Bicubik-71qR.otf") format("truetype");
+  font-weight: 400;
 }
