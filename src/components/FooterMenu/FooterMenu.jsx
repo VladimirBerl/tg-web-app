@@ -1,4 +1,5 @@
 import styled from "./FooterMenu.module.scss";
+import CastomLink from "../ui/CastomLink/CastomLink";
 import { NavLink } from "react-router-dom";
 
 export default function FooterMenu() {
@@ -15,40 +16,41 @@ export default function FooterMenu() {
   }
   return (
     <nav className={styled.menu}>
-      <NavLink onClick={handlerVibrationTg} className={styled.link} to="token">
-        <div>
-          <img src="/newUI/token.svg" alt="icon" />
-        </div>
-        <span>token</span>
-      </NavLink>
-      <NavLink onClick={handlerVibrationTg} className={styled.link} to="plan">
-        <div>
-          <img src="/newUI/plan.svg" alt="icon" />
-        </div>
-        <span>plan</span>
-      </NavLink>
-      <NavLink onClick={handlerVibrationTg} className={styled.link} to="/">
-        <div>
-          <img src="/newUI/home.svg" alt="icon" />
-        </div>
-        <span>home</span>
-      </NavLink>
-      <NavLink
-        onClick={handlerVibrationTg}
-        className={styled.link}
+      <CastomLink
+        srcDisabled="/newUI/token.svg"
+        srcActive="/newUI/token-active.svg"
+        to="token"
+      >
+        token
+      </CastomLink>
+      <CastomLink
+        to="plan"
+        srcDisabled="/newUI/plan.svg"
+        srcActive="/newUI/plan-active.svg"
+      >
+        plan
+      </CastomLink>
+      <CastomLink
+        to=""
+        srcDisabled="/newUI/home.svg"
+        srcActive="/newUI/home-active.svg"
+      >
+        home
+      </CastomLink>
+      <CastomLink
+        srcDisabled="/newUI/friend.svg"
+        srcActive="/newUI/friend-active.svg"
         to="friends"
       >
-        <div>
-          <img src="/newUI/friend.svg" alt="icon" />
-        </div>
-        <span>friend</span>
-      </NavLink>
-      <NavLink onClick={handlerVibrationTg} className={styled.link} to="earn">
-        <div>
-          <img src="/newUI/earn.svg" alt="icon" />
-        </div>
-        <span>earn</span>
-      </NavLink>
+        friend
+      </CastomLink>
+      <CastomLink
+        srcDisabled="/newUI/earn.svg"
+        srcActive="/newUI/earn-active.svg"
+        to="earn"
+      >
+        earn
+      </CastomLink>
     </nav>
   );
 }

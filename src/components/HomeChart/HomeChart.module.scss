@@ -1,7 +1,8 @@
 .wrapper {
   position: relative;
   border: 1px solid var(--border-color);
-  border-radius: 23.96px;
+  border-top-left-radius: 23.96px;
+  border-top-right-radius: 23.96px;
   overflow: hidden;
   flex-shrink: 0;
   &::before {
@@ -54,7 +55,7 @@
   }
   & .info-price {
     font-family: "Bicubik", sans-serif;
-    font-size: 10.27px;
+    font-size: 12px;
     border-top: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;

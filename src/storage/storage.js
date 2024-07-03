@@ -28,7 +28,7 @@ export const dataChartOne = {
       backgroundColor: ["#C1A130", "#965C16"],
       borderWidth: 0,
       redraw: true,
-      cutout: "85%",
+      cutout: "90%",
     },
   ],
 };
@@ -41,7 +41,7 @@ export const dataChartTwo = {
       backgroundColor: ["#3F4CE3", "#111973"],
       borderWidth: 0,
       redraw: true,
-      cutout: "85%",
+      cutout: "90%",
     },
   ],
 };
@@ -54,7 +54,7 @@ export const dataChartTree = {
       backgroundColor: ["#088E35", "#064225"],
       borderWidth: 0,
       redraw: true,
-      cutout: "85%",
+      cutout: "90%",
     },
   ],
 };
