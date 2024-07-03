@@ -6,7 +6,6 @@
   color: var(--color-white);
   font-size: 8.56px;
   font-weight: normal;
-  background: url("/public/images/backgraund.png");
   overflow: auto;
 
   --color-bg: #1c1f24;
@@ -24,31 +23,15 @@
   --border-8px: 8.58px;
 }
 
-/* position: relative;
-border: 1px solid var(--border-color);
-border-radius: var(--border-8px);
-overflow: hidden;
-&::before {
-  position: absolute;
-  content: "";
-  inset: 0;
-  filter: blur(10px);
-  background-color: rgb(23 26 30 / 90%);
-  box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
-  z-index: -1;
-} */
-
 body {
   overflow: hidden;
+  background: url("/public/images/backgraund.png");
+  background-position: 56% 40%;
 }
 
 a {
   color: var(--color-white);
 }
-
-/* a.active {
-  background-color: var(--color-bg);
-} */
 
 a.active > span {
   color: var(--color-primary);
@@ -58,15 +41,6 @@ img {
   width: 100%;
 }
 
-button {
-  border-radius: var(--border-8px);
-  background-color: var(--color-menu);
-  border: none;
-  padding: 4px 8px;
-  color: var(--color-white);
-  font-weight: bold;
-  cursor: pointer;
-}
 
 input {
   background-color: transparent;

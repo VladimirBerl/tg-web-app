@@ -1,21 +1,22 @@
 .wrapper {
   position: relative;
   border: 1px solid var(--border-color);
-  border-radius: var(--border-8px);
+  border-radius: 23.96px;
   overflow: hidden;
   flex-shrink: 0;
   &::before {
     position: absolute;
     content: "";
     inset: 0;
-    filter: blur(10px);
-    background-color: rgb(23 26 30 / 90%);
-    box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
     z-index: -1;
   }
   & .info,
   & .info-price {
-    padding: 10px 20px 10px 20px;
+    height: 34px;
+    padding: 5px 20px 5px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,16 +35,20 @@
   }
   & .info {
     font-family: "Involve", sans-serif;
+    font-size: 10px;
     border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    & span {
+      max-width: 54px;
+    }
     &::before {
       position: absolute;
       content: "";
       inset: 0;
-      filter: blur(10px);
-      background-color: rgb(23 26 30 / 90%);
-      box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+      backdrop-filter: blur(40px);
+      background-color: rgba(255, 255, 255, 0.032);
+      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
       z-index: -1;
     }
   }
@@ -57,9 +62,9 @@
       position: absolute;
       content: "";
       inset: 0;
-      filter: blur(10px);
-      background-color: rgb(23 26 30 / 90%);
-      box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+      backdrop-filter: blur(40px);
+      background-color: rgba(255, 255, 255, 0.032);
+      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
       z-index: -1;
     }
   }

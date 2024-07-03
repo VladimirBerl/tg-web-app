@@ -15,7 +15,6 @@ export default function FooterMenu() {
   }
   return (
     <nav className={styled.menu}>
-      <div className={styled.gradient}></div>
       <NavLink onClick={handlerVibrationTg} className={styled.link} to="token">
         <div>
           <img src="/newUI/token.svg" alt="icon" />

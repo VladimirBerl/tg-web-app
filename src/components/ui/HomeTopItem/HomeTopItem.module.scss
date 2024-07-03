@@ -20,9 +20,9 @@
     position: absolute;
     content: "";
     inset: 0;
-    filter: blur(10px);
-    background-color: rgb(23 26 30 / 90%);
-    box-shadow: inset 0px 0px 17.11px 0px hsla(0, 0%, 100%, 0.19);
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
     z-index: -1;
   }
 }
