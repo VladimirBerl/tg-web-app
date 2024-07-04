@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-export default function CastomLink({ to, children, srcDisabled, srcActive }) {
+export default function CastomLink({ to, children, srcIcon }) {
   function handlerVibrationTg() {
     if (
       window.Telegram &&
@@ -20,10 +20,7 @@ export default function CastomLink({ to, children, srcDisabled, srcActive }) {
       className={`${match.pathname === `/${to}` ? "active" : ""}`}
     >
       <div>
-        <img
-          src={`${match.pathname === `/${to}` ? srcActive : srcDisabled}`}
-          alt="icon"
-        />
+        <img src={srcIcon} alt="icon" />
       </div>
       <span>{children}</span>
     </Link>

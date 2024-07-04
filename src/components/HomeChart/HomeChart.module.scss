@@ -12,6 +12,8 @@
     backdrop-filter: blur(40px);
     background-color: rgba(255, 255, 255, 0.032);
     box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    border-top-left-radius: 25.33px;
+    border-top-right-radius: 25.33px;
     z-index: -1;
   }
   & .info,
@@ -30,7 +32,7 @@
       width: 100%;
       text-align: center;
       & img {
-        width: 15px;
+        width: 18px;
       }
     }
   }
@@ -41,13 +43,15 @@
     position: relative;
     overflow: hidden;
     & span {
-      max-width: 54px;
+      max-width: 74px;
     }
     &::before {
       position: absolute;
       content: "";
       inset: 0;
       backdrop-filter: blur(40px);
+      border-top-left-radius: 25.33px;
+      border-top-right-radius: 25.33px;
       background-color: rgba(255, 255, 255, 0.032);
       box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
       z-index: -1;
@@ -58,11 +62,11 @@
     font-size: 12px;
     border-top: 1px solid var(--border-color);
     position: relative;
-    overflow: hidden;
     &::before {
       position: absolute;
       content: "";
       inset: 0;
+
       backdrop-filter: blur(40px);
       background-color: rgba(255, 255, 255, 0.032);
       box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);

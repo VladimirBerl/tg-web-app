@@ -1,8 +1,22 @@
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 339px);
+  height: calc(100% - 324px);
+
+  overflow: hidden;
   & .coin {
     flex-grow: 1;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-top-left-radius: 25.33px;
+    border-top-right-radius: 25.33px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -1;
   }
 }
