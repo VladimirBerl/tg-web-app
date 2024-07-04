@@ -7,16 +7,14 @@
 .wrapper {
   & .count {
     font-family: "Bicubik", sans-serif;
-    font-size: 25.67px;
+    font-size: 27.67px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 7px;
     gap: 5px;
     & img {
-      max-width: 30px;
-    }
-    & span {
+      max-width: 40px;
     }
   }
   & .farm {

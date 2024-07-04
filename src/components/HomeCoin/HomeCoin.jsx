@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export default function HomeCoin() {
   const [btnText, setBthTex] = useState("Start farming");
-  const [countFarm, setCountFarm] = useState(user.farm);
 
   return (
     <div className={styled.coin}>

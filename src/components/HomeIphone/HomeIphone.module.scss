@@ -46,7 +46,7 @@
     }
     & > span:nth-child(2) {
       font-family: "Bicubik", sans-serif;
-      font-size: 27px;
+      font-size: 23px;
     }
   }
 
@@ -72,6 +72,14 @@
     }
     100% {
       right: 10%;
+    }
+  }
+  @media (max-height: 616px) {
+    & {
+      min-height: 110px;
+      & img {
+        max-width: 110px;
+      }
     }
   }
 }

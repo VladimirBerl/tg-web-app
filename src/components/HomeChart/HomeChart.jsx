@@ -51,7 +51,7 @@ export default function HomeChart() {
           <img src="/newUI/bmt.png" alt="coin" />
           {dataChartTwo.datasets[0].price}
         </span>
-        <span style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}>
+        <span style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}>
           <img src="/newUI/rub.svg" alt="coin" />
           {dataChartTree.datasets[0].price}
         </span>

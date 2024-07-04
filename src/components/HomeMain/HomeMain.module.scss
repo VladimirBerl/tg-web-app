@@ -19,4 +19,9 @@
     box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
     z-index: -1;
   }
+  @media (max-height: 616px) {
+    & {
+      height: calc(100% - 285px);
+    }
+  }
 }
