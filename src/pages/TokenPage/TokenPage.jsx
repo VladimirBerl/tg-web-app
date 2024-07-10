@@ -1,9 +1,9 @@
 import styled from "./TokenPage.module.scss";
-import TokenInfoCoin from "../../components/TokenInfoCoin/TokenInfoCoin";
-import TokenTable from "../../components/TokenTable/TokenTable";
-import TokenChart from "../../components/TokenChart/TokenChart";
-import TokensBurned from "../../components/TokensBurned/TokensBurned";
-import ExchangePoints from "../../components/ExchangePoints/ExchangePoints";
+import TokenInfoCoin from "./ui/TokenInfoCoin/TokenInfoCoin";
+import TokenTable from "./ui/TokenTable/TokenTable";
+import TokenChart from "./ui/TokenChart/TokenChart";
+import TokensBurned from "./ui/TokensBurned/TokensBurned";
+import TokenExchangePoints from "./ui/TokenExchangePoints/TokenExchangePoints";
 
 export default function TokenPage() {
   return (
@@ -20,7 +20,7 @@ export default function TokenPage() {
       </div>
         <TokenChart />
         <TokensBurned/>
-        <ExchangePoints/>
+        <TokenExchangePoints/>
     </div>
   );
 }

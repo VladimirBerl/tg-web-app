@@ -1,7 +1,7 @@
 import styled from "./EarnPage.module.scss";
-import EarnTask from "../../components/EarnTask/EarnTask";
-import EarnBonuses from "../../components/EarnBonuses/EarnBonuses";
-import CastomLink from "../../components/ui/CastomLink/CastomLink";
+import EarnTask from "./ui/EarnTask/EarnTask";
+import EarnBonuses from "./ui/EarnBonuses/EarnBonuses";
+import CastomLink from "@/shared/ui/CastomLink/CastomLink";
 import { Routes, Route } from "react-router-dom";
 
 export default function EarnPage() {

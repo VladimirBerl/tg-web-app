@@ -1,49 +1,66 @@
 import styled from "./FriendsPage.module.scss";
-import FriendsList from "../../components/FriendsList/FriendsList";
-import FriendsListTask from "../../components/FriendsListTask/FriendsListTask";
+
 export default function FriendsPage() {
   return (
-    <>
-      <div className={styled["wrapper-top"]}>
-        <h2 className={styled["wrapper-title"]}>Пригласите друзей!</h2>
-        <span className={styled["wrapper-text"]}>
-          Вы и ваш друг получит бонусы
+    <div className={styled.wrapper}>
+      <div className={styled.top}>
+        <div className={styled["friends-img"]}>
+          <img src="src/shared/assets/images/friends.png" alt="friends" />
+        </div>
+        <h2>0 Друзей</h2>
+      </div>
+
+      <button className={styled["btn-friends"]}>
+        <div className={styled["coin-img"]}>
+          <img src="src/shared/assets/icon/coin.svg" alt="coin" />
+        </div>
+        <span>+50 000</span>
+      </button>
+
+      <div className={styled["invite-friends"]}>
+        <span className={styled.title}>
+          Приглашайте друзей для получения бонусов
         </span>
-        <div className={styled.invite}>
-          <div className={styled["invite-item"]}>
-            <img src="/images/gift-box.svg" alt="gift-box" />
-            <div>
-              <span className={styled["ivent-title"]}>Пригласить друга</span>
-              <div className={styled["ivent-text"]}>
-                <div>
-                  <img src="/newUI/coin.svg" alt="coin" />
-                  <span>+5 000</span>
+        <div className={styled["invite-wrapper"]}>
+          <div className={styled.gift}>
+            <div className={styled["gift-box"]}>
+              <div className={styled["gift-img"]}>
+                <img src="src/shared/assets/icon/gift-box.svg" alt="gift-box" />
+              </div>
+              <span className={styled.task}>Telegram User</span>
+              <div className={styled["price-task"]}>
+                <div className={styled["coin-img"]}>
+                  <img src="src/shared/assets/icon/coin.svg" alt="coin" />
                 </div>
-                <span>для вас и вашего друга</span>
+                <span>+5 000</span>
+              </div>
+            </div>
+            <div className={styled["gift-box"]}>
+              <div className={styled["gift-img"]}>
+                <img
+                  src="src/shared/assets/icon/gift-box-two.svg"
+                  alt="gift-box"
+                />
+              </div>
+              <span className={styled.task}>Telegram User</span>
+              <div className={styled["price-task"]}>
+                <div className={styled["coin-img"]}>
+                  <img src="src/shared/assets/icon/coin.svg" alt="coin" />
+                </div>
+                <span>+5 000</span>
               </div>
             </div>
           </div>
-          <div className={styled["invite-item"]}>
-            <img src="/images/gift-box-two.svg" alt="gift-box" />
-            <div>
-              <span className={styled["ivent-title"]}>
-                Пригласить друга с Telegram Premium
-              </span>
-              <div className={styled["ivent-text"]}>
-                <div>
-                  <img src="/newUI/coin.svg" alt="coin" />
-                  <span>+25 000</span>
-                </div>
-                <span>для вас и вашего друга</span>
-              </div>
-            </div>
-          </div>
+          <span>Для вас и вашего друга</span>
         </div>
       </div>
-      <FriendsListTask />
-      <div className={styled["wrapper-bottom"]}>
-        <FriendsList />
+
+      <div className={styled.link}>
+        <button>+FRIENDS</button>
+        <button>
+          <img src="src/shared/assets/icon/copy.svg" alt="cup" />
+        </button>
       </div>
-    </>
+    </div>
   );
 }

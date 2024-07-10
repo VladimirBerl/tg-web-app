@@ -1,7 +1,7 @@
-import HomeTop from "../../components/HomeTop/HomeTop";
-import HomeIphone from "../../components/HomeIphone/HomeIphone";
-import HomeShope from "../../components/HomeShope/HomeShope";
-import HomeMain from "../../components/HomeMain/HomeMain";
+import HomeTop from "./ui/HomeTop/HomeTop";
+import HomeIphone from "./ui/HomeIphone/HomeIphone";
+import HomeShope from "./ui/HomeShope/HomeShope";
+import HomeMain from "./ui/HomeMain/HomeMain";
 import styled from "./HomePage.module.scss";
 export default function HomePage() {
   return (
