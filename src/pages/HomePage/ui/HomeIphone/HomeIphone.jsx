@@ -12,7 +12,7 @@ const HomeIphone = () => {
       <span>{interactionGroup[1].name.toUpperCase()}</span>
       <span>{interactionGroup[1].info}</span>
       </div>
-      <img src="src/shared/assets/images/iPhone.png" />
+      <img src="/images/iPhone.png" />
     </div>
   );
 }

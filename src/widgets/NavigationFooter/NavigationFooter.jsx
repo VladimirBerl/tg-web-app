@@ -4,19 +4,19 @@ import CastomLink from "@/shared/ui/CastomLink/CastomLink";
 const NavigationFooter = () => {
   return (
     <nav className={styled.menu}>
-      <CastomLink srcIcon="src/shared/assets/icon/token.svg" to="token">
+      <CastomLink srcIcon="/icon/token.svg" to="token">
         token
       </CastomLink>
-      <CastomLink to="plan" srcIcon="src/shared/assets/icon/plan.svg">
+      <CastomLink to="plan" srcIcon="/icon/plan.svg">
         plan
       </CastomLink>
-      <CastomLink to="" srcIcon="src/shared/assets/icon/home.svg">
+      <CastomLink to="" srcIcon="/icon/home.svg">
         home
       </CastomLink>
-      <CastomLink srcIcon="src/shared/assets/icon/friend.svg" to="friends">
+      <CastomLink srcIcon="/icon/friend.svg" to="friends">
         friend
       </CastomLink>
-      <CastomLink srcIcon="src/shared/assets/icon/earn.svg" to="earn">
+      <CastomLink srcIcon="/icon/earn.svg" to="earn">
         earn
       </CastomLink>
     </nav>

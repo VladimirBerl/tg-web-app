@@ -44,15 +44,15 @@ const HomeChart = () => {
       </div>
       <div className={styled["info-price"]}>
         <span style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}>
-          <img src="src/shared/assets/icon/coin.svg" alt="coin" />
+          <img src="/icon/coin.svg" alt="coin" />
           {dataChartOne.datasets[0].price}
         </span>
         <span style={{ color: dataChartTwo.datasets[0].backgroundColor[0] }}>
-          <img style={{width:"25px"}} src="src/shared/assets/icon/bmt.png" alt="coin" />
+          <img style={{width:"25px"}} src="/icon/bmt.png" alt="coin" />
           {dataChartTwo.datasets[0].price}
         </span>
         <span style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}>
-          <img src="src/shared/assets/icon/rub.svg" alt="coin" />
+          <img src="/icon/rub.svg" alt="coin" />
           {dataChartTree.datasets[0].price}
         </span>
       </div>

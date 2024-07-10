@@ -6,13 +6,13 @@ const HomeShope = () => {
       <div className={styled.button}>
         <span>Купить</span>
         <div>
-          <img src="src/shared/assets/icon/buy.svg" alt="icon" />
+          <img src="/icon/buy.svg" alt="icon" />
         </div>
       </div>
       <div className={styled.button}>
         <span>Продать</span>
         <div>
-          <img src="src/shared/assets/icon/sale.svg" alt="icon" />
+          <img src="/icon/sale.svg" alt="icon" />
         </div>
       </div>
     </div>

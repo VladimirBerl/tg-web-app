@@ -8,7 +8,7 @@ const HomeCoin = () => {
     <div className={styled.coin}>
       <div className={styled.wrapper}>
         <div className={styled.count}>
-          <img src="src/shared/assets/icon/coin.svg" alt="coin" />
+          <img src="/icon/coin.svg" alt="coin" />
           <span>1</span>
         </div>
         <div className={styled.farm}>

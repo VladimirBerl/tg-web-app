@@ -10,11 +10,11 @@ const HomeTop = () => {
     <div className={styled.wrapper}>
       <div className={styled["user-info"]}>
         <div className={styled.user}>
-          <img src="src/shared/assets/icon/user.svg" alt="user" />
+          <img src="/icon/user.svg" alt="user" />
           {isLoading ? <span>loading</span> : <span></span>}
         </div>
         <div className={styled.cub}>
-          <img src="src/shared/assets/icon/cup.svg" alt="user" />
+          <img src="/icon/cup.svg" alt="user" />
         </div>
       </div>
       <div className={styled.item}>
