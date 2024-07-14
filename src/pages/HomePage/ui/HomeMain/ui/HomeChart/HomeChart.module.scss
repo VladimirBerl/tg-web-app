@@ -102,3 +102,90 @@
     }
   }
 }
+.info-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 8px;
+
+  & div {
+    min-width: 74px;
+    text-align: center;
+  }
+}
+.modal-content {
+  font-family: "Involve", sans-serif;
+  padding: 26px 0px;
+  & .ruler-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    & img {
+      width: 45px;
+    }
+    & .ruler-title {
+      font-size: 20px;
+    }
+    & .ruler-desc {
+      font-size: 14px;
+      max-width: 240px;
+      text-align: center;
+      margin-bottom: 19px;
+    }
+  }
+  & .ruler {
+    position: relative;
+    max-width: 270px;
+    margin: 0px 15px 32px;
+    & .ruler-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      border-radius: 5px;
+      border: 1px solid #fff;
+      background-color: #836baf;
+      width: 100%;
+      height: 25px;
+      padding: 0 23px;
+      & .target-line {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7px;
+        height: 40px;
+        background-color: #413160;
+        z-index: 1;
+      }
+      & span {
+        width: 1px;
+        height: 80%;
+        background-color: #fff;
+      }
+    }
+    & .ruler-procent {
+      position: absolute;
+      left: -7px;
+      right: -7px;
+      bottom: -10px;
+      display: flex;
+      align-items: center;
+      gap: 14.5px;
+      & span {
+        color: #c1a130;
+        display: block;
+        font-size: 7px;
+        width: 16px;
+      }
+    }
+  }
+  & div .doc {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    max-width: 240px;
+  }
+}

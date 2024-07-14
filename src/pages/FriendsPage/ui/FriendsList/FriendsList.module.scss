@@ -1,0 +1,71 @@
+.wrapper {
+  padding: 0px 22px;
+  & .title {
+    font-size: 15px;
+    font-family: "Involve", sans-serif;
+    margin-bottom: 16px;
+  }
+
+  & .friends {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    & li {
+      position: relative;
+      border-radius: 12.83px;
+      padding: 16px 12px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        border-radius: 12.83px;
+        backdrop-filter: blur(40px);
+        background-color: rgba(255, 255, 255, 0.032);
+        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+        z-index: -2;
+      }
+      & .user {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        & .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: #7f7f7f;
+          font-size: 18px;
+          font-family: "Involve", sans-serif;
+        }
+        & .name {
+          font-size: 14px;
+          font-family: "Involve", sans-serif;
+        }
+      }
+      & .coin {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        & .coin-value {
+          font-family: "Bicubik", sans-serif;
+          font-size: 10px;
+          background: linear-gradient(
+            90deg,
+            rgb(48, 104, 208) 0%,
+            rgb(131, 107, 175) 50%,
+            rgb(151, 130, 98) 100%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+}

@@ -9,9 +9,11 @@ const CastomLink = ({ to, children, srcIcon }) => {
       to={to}
       className={`${match.pathname === `/${to}` ? "active" : ""}`}
     >
-      <div>
-        <img src={srcIcon} alt="icon" />
-      </div>
+      {srcIcon && (
+        <div>
+          <img src={srcIcon} alt="icon" />
+        </div>
+      )}
       <span>{children}</span>
     </Link>
   );

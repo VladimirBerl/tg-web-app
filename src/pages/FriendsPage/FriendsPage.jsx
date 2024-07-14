@@ -1,13 +1,17 @@
 import styled from "./FriendsPage.module.scss";
+import FriendsList from "./ui/FriendsList/FriendsList";
 
 export default function FriendsPage() {
   return (
     <div className={styled.wrapper}>
       <div className={styled.top}>
         <div className={styled["friends-img"]}>
-          <img src="/images/friends.png" alt="friends" />
+          <img src="/icon/friends.svg" alt="friends" />
         </div>
         <h2>0 Друзей</h2>
+        <div className={styled.star}>
+          <img src="/images/star.png" alt="star" />
+        </div>
       </div>
 
       <button className={styled["btn-friends"]}>
@@ -37,10 +41,7 @@ export default function FriendsPage() {
             </div>
             <div className={styled["gift-box"]}>
               <div className={styled["gift-img"]}>
-                <img
-                  src="/icon/gift-box-two.svg"
-                  alt="gift-box"
-                />
+                <img src="/icon/gift-box-two.svg" alt="gift-box" />
               </div>
               <span className={styled.task}>Telegram User</span>
               <div className={styled["price-task"]}>
@@ -51,7 +52,6 @@ export default function FriendsPage() {
               </div>
             </div>
           </div>
-          <span>Для вас и вашего друга</span>
         </div>
       </div>
 
@@ -60,6 +60,10 @@ export default function FriendsPage() {
         <button>
           <img src="/icon/copy.svg" alt="cup" />
         </button>
+      </div>
+
+      <div>
+        <FriendsList />
       </div>
     </div>
   );
