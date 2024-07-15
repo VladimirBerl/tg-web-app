@@ -65,7 +65,7 @@ const HomeChart = () => {
             }}
             style={{ width: " 15px" }}
             className={styled.close}
-            src="/public/images/info.png"
+            src="/images/info.png"
             alt="info"
           />
         </div>
@@ -76,7 +76,7 @@ const HomeChart = () => {
             }}
             style={{ width: " 15px" }}
             className={styled.close}
-            src="/public/images/info.png"
+            src="/images/info.png"
             alt="info"
           />
         </div>
@@ -87,7 +87,7 @@ const HomeChart = () => {
             }}
             style={{ width: " 15px" }}
             className={styled.close}
-            src="/public/images/info.png"
+            src="/images/info.png"
             alt="info"
           />
         </div>
@@ -96,7 +96,7 @@ const HomeChart = () => {
         <HomeModal setShowModal={setShowModal}>
           <div className={styled["modal-content"]}>
             <div className={styled["ruler-info"]}>
-              <img src="/public/images/info.png" alt="info" />
+              <img src="/images/info.png" alt="info" />
               <span className={styled["ruler-title"]}>30%</span>
               <span className={styled["ruler-desc"]}>
                 от полученной суммы пойдут для выкупа и сжигания монеты
@@ -156,7 +156,7 @@ const HomeChart = () => {
         <HomeModal setShowModal={setShowModalRub}>
           <div className={styled["modal-content"]}>
             <div className={styled["ruler-info"]}>
-              <img src="/public/images/info.png" alt="info" />
+              <img src="/images/info.png" alt="info" />
               <span className={styled["ruler-title"]}>50%</span>
               <span className={styled["ruler-desc"]}>
                 от полученной суммы пойдут для выкупа и сжигания токена BMT

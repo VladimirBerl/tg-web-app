@@ -24,7 +24,7 @@ const HomeModalBottom = ({ children, setShowModalBottom }) => {
           setShowModalBottom((prev) => !prev);
         }}
         className={styled.close}
-        src="/public/icon/close.svg"
+        src="/icon/close.svg"
         alt="close"
       />
       {children}
