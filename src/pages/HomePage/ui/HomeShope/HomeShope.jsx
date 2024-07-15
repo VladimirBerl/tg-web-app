@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const HomeShope = () => {
   const [showModalBottomBuy, setShowModalBottomBuy] = useState(false);
-  const [showModalBottomSell, setShowModalBottomSell] = useState(true);
+  const [showModalBottomSell, setShowModalBottomSell] = useState(false);
 
   return (
     <>
@@ -92,7 +92,7 @@ const HomeShope = () => {
         <HomeModalBottom setShowModalBottom={setShowModalBottomSell}>
           <div className={styled["wrapper-modal-bottom"]}>
             <h2>Выберите нужное действие</h2>
-            <div className={styled['scroll']}>
+            <div className={styled["scroll"]}>
               <div className={styled["wrapper-heandel"]}>
                 <div className={styled["heandel-two"]}>
                   <span className={styled.level} style={{ color: "#09AD40" }}>
