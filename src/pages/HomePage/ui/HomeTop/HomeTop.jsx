@@ -1,11 +1,15 @@
 import styled from "./HomeTop.module.scss";
 import HomeTopItem from "../HomeTopItem/HomeTopItem";
-import { headerTokenInfo } from "@/storage/storage.js";
+import HomeModalBottom from "../HomeModalBottom/HomeModalBottom";
+import HomeTopModal from './ui/HomeTopModal/HomeTopModal'
 
+import { useState } from "react";
+import { headerTokenInfo } from "@/storage/storage.js";
 import { useGetUserQuery } from "@/app/api/userApi";
 
 const HomeTop = () => {
-  const { data, error, isLoading } = useGetUserQuery(100)
+  const [showModal, setShowModal] = useState(false);
+  const { data, error, isLoading } = useGetUserQuery(100);
   return (
     <div className={styled.wrapper}>
       <div className={styled["user-info"]}>
@@ -13,7 +17,12 @@ const HomeTop = () => {
           <img src="/icon/user.svg" alt="user" />
           {isLoading ? <span>loading</span> : <span></span>}
         </div>
-        <div className={styled.cub}>
+        <div
+          className={styled.cub}
+          onClick={() => {
+            setShowModal((prev) => !prev);
+          }}
+        >
           <img src="/icon/cup.svg" alt="user" />
         </div>
       </div>
@@ -27,6 +36,11 @@ const HomeTop = () => {
           />
         ))}
       </div>
+      {showModal && (
+        <HomeModalBottom setShowModalBottom={setShowModal}>
+          <HomeTopModal/>
+        </HomeModalBottom>
+      )}
     </div>
   );
 };
