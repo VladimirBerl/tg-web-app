@@ -81,6 +81,7 @@
       transform: scale(1.05);
     }
     & span {
+      text-transform: uppercase;
       background: linear-gradient(
         90deg,
         rgb(48, 104, 208) 0%,
