@@ -10,7 +10,7 @@ export default function TokenInfo() {
             <span>0.23</span>
           </div>
           <div className={styled["img-token"]}>
-            <img src="/images/bnt.png" alt="" />
+            <img src="/icon/bmt.png" alt="" />
           </div>
           <div className={styled["btn-ton"]}>
             <span>TON</span>

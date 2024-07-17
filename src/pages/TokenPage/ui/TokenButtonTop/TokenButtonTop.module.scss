@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 54px;
+  & button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: transparent;
+    padding: 8px;
+    font-family: "UltramonoWide", sans-serif;
+    font-size: 20px;
+    color: #fff;
+    & span {
+      background: linear-gradient(
+        90deg,
+        rgb(48, 104, 208) 0%,
+        rgb(131, 107, 175) 50%,
+        rgb(151, 130, 98) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    & img {
+      width: 35px;
+      height: 35px;
+    }
+    &:active {
+      transform: scale(1.05);
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      backdrop-filter: blur(40px);
+      background-color: rgba(255, 255, 255, 0.032);
+      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+      z-index: -1;
+    }
+  }
+  & button:nth-child(2) {
+    padding: 0px 15px;
+  }
+}

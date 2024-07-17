@@ -29,13 +29,6 @@ export default function TokenTable() {
                     <td>6.000.000</td>
                   </tr>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <td className={styled["table-footer"]} colSpan="2">
-                      Dexs - Stoni.A / DeDust
-                    </td>
-                  </tr>
-                </tfoot>
               </table>
             </div>
           </div>
@@ -64,13 +57,6 @@ export default function TokenTable() {
                     <td>4.000.000</td>
                   </tr>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <td className={styled["table-footer"]} colSpan="3">
-                      Реклама для покупателей
-                    </td>
-                  </tr>
-                </tfoot>
               </table>
             </div>
           </div>
@@ -93,13 +79,6 @@ export default function TokenTable() {
                     <td>3.000.000</td>
                   </tr>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <td className={styled["table-footer"]} colSpan="2">
-                      TG Bot / TG App
-                    </td>
-                  </tr>
-                </tfoot>
               </table>
             </div>
           </div>

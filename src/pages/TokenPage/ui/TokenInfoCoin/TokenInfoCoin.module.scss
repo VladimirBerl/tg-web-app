@@ -1,52 +1,76 @@
 .wrapper {
-  padding: 0px 10px;
+  padding: 0px 13px;
 }
 .bnt-title {
   text-align: center;
   margin-bottom: 10px;
   font-size: 20px;
+  margin-top: 32px;
 }
 .bnt-coin {
-  margin-top: 45px;
+  margin-top: 55px;
   position: relative;
   padding: 10px;
-  background-color: var(--color-card);
-  border-radius: var(--border-8px);
+  background-color: transparent;
+
   margin-bottom: 32px;
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: 15px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -1;
+  }
   & .bnt-wrapper {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 10px;
+    font-size: 15px;
+    color: #fff;
     & .btn-ton {
       & span:nth-child(2) {
+        font-family: "Bicubik", sans-serif;
         color: var(--color-success);
       }
     }
     & .btn-usdt {
       & span:nth-child(2) {
+        font-family: "Bicubik", sans-serif;
         color: var(--color-primary);
       }
     }
     & .img-token {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--color-card);
+      background-color: transparent;
       border-radius: 50%;
       position: absolute;
       left: 50%;
-      top: -65%;
+      top: -55%;
       transform: translateX(-50%);
+      overflow: hidden;
       & img {
         max-width: 80px;
       }
+      &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        backdrop-filter: blur(40px);
+        background-color: rgba(255, 255, 255, 0.032);
+        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+        z-index: -1;
+      }
     }
     & div {
-      font-size: 16px;
-      color: var(--color-gray-text);
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -56,15 +80,26 @@
   }
 }
 .bnt-coin-info {
-  background-color: var(--color-card);
-  border-radius: var(--border-8px);
-  padding: 10px;
+  position: relative;
+  background-color: transparent;
+  padding: 10px 15px;
   margin-bottom: 32px;
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: 15px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -1;
+  }
   & div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 }
-

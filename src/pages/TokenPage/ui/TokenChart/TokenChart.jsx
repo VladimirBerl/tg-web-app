@@ -16,8 +16,8 @@ export default function TokenChart() {
     <div className={styled.wrapper}>
       <div className={styled.chart}>
         <Doughnut data={dataChartToken} options={options} />
+        <img src="/icon/bmt.png" alt="bmt" />
       </div>
-      <img src="/images/bnt.png" alt="bnt" />
     </div>
   );
 }

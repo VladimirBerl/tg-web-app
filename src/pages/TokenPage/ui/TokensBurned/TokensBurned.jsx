@@ -5,7 +5,7 @@ export default function TokensBurned () {
     <div className={styled.wrapper}>
       <p className={styled.title}>Сожженно токенов</p>
       <div className={styled.line}>
-        <img src="/ui/fire.svg" alt="" />
+        <img src="/icon/fire.png" alt="fire" />
         <p>Количество <span>79831</span></p>
         <div></div>
       </div>

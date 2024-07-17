@@ -1,27 +1,36 @@
 .wrapper {
-  margin-bottom: 82.6px;
-  & .button {
-    width: 120px;
-    height: 40px;
-    background-color: var(--color-success);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin: 32px auto;
-    font-size: 17px;
-    & div {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--color-white);
-      border-radius: 50px;
-    }
+  position: relative;
+  margin: 23px 12px 0px 12px;
+  border-top-left-radius: 25.33px;
+  border-top-right-radius: 25.33px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 88.8px;
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-top-left-radius: 25.33px;
+    border-top-right-radius: 25.33px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -2;
   }
   & .coin-wrapper {
-    border-radius: var(--border-8px);
-    border-top: 1px solid var(--color-warning);
-    border-bottom: 1px solid var(--color-warning);
-    box-shadow: 0px 0px 20px 0px var(--color-warning);
-    padding: 32px 0px;
+    position: relative;
+    border-top-left-radius: 25.33px;
+    border-top-right-radius: 25.33px;
+    border: 1px solid var(--border-color);
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      border-top-left-radius: 25.33px;
+      border-top-right-radius: 25.33px;
+      backdrop-filter: blur(40px);
+      background-color: rgba(255, 255, 255, 0.032);
+      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+      z-index: -2;
+    }
   }
 }

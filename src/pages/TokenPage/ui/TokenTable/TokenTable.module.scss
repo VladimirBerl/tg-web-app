@@ -10,11 +10,24 @@ p {
 .swaiper-items {
   padding: 0px 10px;
   min-height: 150px;
+  font-family: "Involve", sans-serif;
+  font-size: 12px;
   & .swaiper-item {
+    position: relative;
     padding: 15px;
     border-radius: 10px;
-    background-color: var(--color-card);
+    background-color: transparent;
     min-height: 150px;
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      border-radius: 15px;
+      backdrop-filter: blur(40px);
+      background-color: rgba(255, 255, 255, 0.032);
+      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+      z-index: -1;
+    }
   }
 }
 td,

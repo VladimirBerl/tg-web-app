@@ -3,24 +3,34 @@
   margin-bottom: 32px;
   & .title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 20px;
   }
   & .line {
     position: relative;
+    font-family: "Involve", sans-serif;
     height: 10px;
     margin-left: 5px;
     border-radius: var(--border-8px);
-    border: 1px solid var(--color-gray-text);
-    background-color: var(--color-card);
-    height: 12px;
+    background-color: transparent;
+    border: 1px solid #413160;
+    height: 17px;
     width: 100%;
-    & img {
-      width: 24px;
+    &::before {
       position: absolute;
-      top: 50%;
-      left: -2px;
-      transform: translateY(-50%);
+      content: "";
+      inset: 0;
+      border-radius: 15px;
+      backdrop-filter: blur(40px);
+      background-color: rgba(255, 255, 255, 0.032);
+      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+      z-index: -1;
+    }
+    & img {
+      width: 35px;
+      position: absolute;
+      left: -7px;
+      bottom: -2px;
       z-index: 1;
     }
     & p {
@@ -28,7 +38,7 @@
       top: -20px;
       right: 0;
       color: var(--color-gray-text);
-      font-size: 12px;
+      font-size: 10px;
       font-weight: bold;
       & span {
         color: var(--color-white);

@@ -48,7 +48,7 @@ a {
 }
 
 a.active > span {
-  color: #C1A130;
+  color: #c1a130;
 }
 
 img {
@@ -59,8 +59,4 @@ input {
   background-color: transparent;
   border: none;
   color: var(--color-white);
-}
-
-._link_4a8qi_4.active {
-  color: var(--color-menu);
 }

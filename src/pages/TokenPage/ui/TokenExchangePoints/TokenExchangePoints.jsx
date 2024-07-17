@@ -10,14 +10,16 @@ export default function TokenExchangePoints() {
           <input type="number" placeholder="0" />
         </div>
         <div className={styled.swap}>
-          <img src="/ui/vertical.svg" alt="vertical" />
+          <img src="/icon/wrap.svg" alt="wrap" />
         </div>
         <div className={styled.select}>
           <span>Token</span>
           <input type="number" placeholder="0" />
         </div>
       </div>
-      <button className={styled["point-bnt"]}>Поменять</button>
+      <button className={styled["point-bnt"]}>
+        <span>Поменять</span>
+      </button>
     </div>
   );
 }
