@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 
-const CastomLink = ({ to, children, srcIcon }) => {
+const CastomLink = ({ to, children, srcIcon, style }) => {
   let match = useLocation();
   return (
     <Link
@@ -14,7 +14,7 @@ const CastomLink = ({ to, children, srcIcon }) => {
           <img src={srcIcon} alt="icon" />
         </div>
       )}
-      <span>{children}</span>
+      <span className={style} >{children}</span>
     </Link>
   );
 };

@@ -1,44 +1,70 @@
 import styled from "./EarnPage.module.scss";
 import EarnTask from "./ui/EarnTask/EarnTask";
 import EarnBonuses from "./ui/EarnBonuses/EarnBonuses";
-import CastomLink from "@/shared/ui/CastomLink/CastomLink";
 import EarnVideo from "./ui/EarnVideo/EarnVideo";
 import EarnGame from "./ui/EarnGame/EarnGame";
+import EarnSubscriptions from "./ui/EarnSubscriptions/EarnSubscriptions";
+import EarnCompleted from "./ui/EarnCompleted/EarnCompleted";
 
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import { Carousel } from "antd";
+
 export default function EarnPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleAfterChange = (current) => {
+    setCurrentSlide(current);
+  };
+
+  const renderComponent = () => {
+    switch (currentSlide) {
+      case 0:
+        return <EarnTask />;
+      case 1:
+        return <EarnGame />;
+      case 2:
+        return <EarnVideo />;
+      case 3:
+        return <EarnBonuses />;
+      case 4:
+        return <EarnSubscriptions />;
+      case 5:
+        return <EarnCompleted />;
+      default:
+        return null;
+    }
+  };
   return (
     <div className={styled.earn}>
       <div className={styled["wrapper-top"]}>
-        <div className={styled.category}>
-          <img src="/public/icon/category.svg" alt="category" />
-        </div>
-        <div className={styled["link-wrapper"]}>
-          <Carousel infinite={false}>
-            <CastomLink className={styled.link} to="/earn/task">
-              Задачи
-            </CastomLink>
-            <CastomLink className={styled.link} to="/earn/bonuses">
-              Бонусы
-            </CastomLink>
-            <CastomLink className={styled.link} to="/earn/video">
-              Видео
-            </CastomLink>
-            <CastomLink className={styled.link} to="/earn/game">
-              Игры
-            </CastomLink>
+        <div style={{ overflow: "auto" }}>
+          <Carousel infinite={false} afterChange={handleAfterChange}>
+            <div className={styled["carousel-btn"]}>
+              <span>Задачи</span>
+              <img src="/icon/task.svg" alt="" />
+            </div>
+            <div className={styled["carousel-btn"]}>
+              <span>Игры</span>
+              <img src="/icon/game.svg" alt="" />
+            </div>
+            <div className={styled["carousel-btn"]}>
+              <span>Видео</span>
+              <img src="/icon/video.svg" alt="" />
+            </div>
+            <div className={styled["carousel-btn"]}>
+              <span>Бонусы</span>
+              <img src="/icon/bonus.svg" alt="" />
+            </div>
+            <div className={styled["carousel-btn"]}>
+              <span>Подписки</span>
+            </div>
+            <div className={styled["carousel-btn"]}>
+              <span>Завершенные</span>
+            </div>
           </Carousel>
         </div>
       </div>
-      <div>
-        <Routes>
-          <Route index path="task" element={<EarnTask />} />
-          <Route path="bonuses" element={<EarnBonuses />} />
-          <Route path="video" element={<EarnVideo />} />
-          <Route path="game" element={<EarnGame />} />
-        </Routes>
-      </div>
+      <div>{renderComponent()}</div>
     </div>
   );
 }
