@@ -6,6 +6,7 @@ import HomeTopModal from './ui/HomeTopModal/HomeTopModal'
 import { useState } from "react";
 import { headerTokenInfo } from "@/storage/storage.js";
 import { useGetUserQuery } from "@/app/api/userApi";
+import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 
 const HomeTop = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,6 +21,7 @@ const HomeTop = () => {
         <div
           className={styled.cub}
           onClick={() => {
+            handlerVibrationTg()
             setShowModal((prev) => !prev);
           }}
         >

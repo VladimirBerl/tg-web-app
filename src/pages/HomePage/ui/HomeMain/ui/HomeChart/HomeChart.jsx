@@ -1,6 +1,6 @@
 import styled from "./HomeChart.module.scss";
 import HomeModal from "../../../HomeModal/HomeModal";
-
+import handlerVibrationTg from '@/shared/lib/handlerVibrationTg'
 import { Doughnut } from "react-chartjs-2";
 import { dataChartOne, dataChartTwo, dataChartTree } from "@/storage/storage";
 import { useState } from "react";
@@ -61,6 +61,7 @@ const HomeChart = () => {
         <div>
           <img
             onClick={() => {
+              handlerVibrationTg()
               setShowModal((prev) => !prev);
             }}
             style={{ width: " 15px" }}
@@ -72,6 +73,7 @@ const HomeChart = () => {
         <div>
           <img
             onClick={() => {
+              handlerVibrationTg()
               setShowModal((prev) => !prev);
             }}
             style={{ width: " 15px" }}
@@ -83,6 +85,7 @@ const HomeChart = () => {
         <div>
           <img
             onClick={() => {
+              handlerVibrationTg()
               setShowModalRub((prev) => !prev);
             }}
             style={{ width: " 15px" }}

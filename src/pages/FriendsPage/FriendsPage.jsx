@@ -1,5 +1,6 @@
 import styled from "./FriendsPage.module.scss";
 import FriendsList from "./ui/FriendsList/FriendsList";
+import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 
 export default function FriendsPage() {
   return (
@@ -56,7 +57,7 @@ export default function FriendsPage() {
       </div>
 
       <div className={styled.link}>
-        <button>+FRIENDS</button>
+        <button onClick={handlerVibrationTg}>+FRIENDS</button>
         <button>
           <img src="/icon/copy.svg" alt="cup" />
         </button>

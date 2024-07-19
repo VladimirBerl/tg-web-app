@@ -1,5 +1,6 @@
 import styled from "./HomeShope.module.scss";
 import HomeModalBottom from "../HomeModalBottom/HomeModalBottom";
+import handlerVibrationTg from '@/shared/lib/handlerVibrationTg'
 import { useState } from "react";
 
 const HomeShope = () => {
@@ -12,6 +13,7 @@ const HomeShope = () => {
         <div className={styled.button}>
           <span
             onClick={() => {
+              handlerVibrationTg()
               setShowModalBottomBuy((prev) => !prev);
             }}
           >
@@ -24,6 +26,7 @@ const HomeShope = () => {
         <div className={styled.button}>
           <span
             onClick={() => {
+              handlerVibrationTg()
               setShowModalBottomSell((prev) => !prev);
             }}
           >
@@ -44,13 +47,13 @@ const HomeShope = () => {
                   1 ур.
                 </span>
                 <span className={styled.title}>Buyer Marketplace</span>
-                <button style={{ marginBottom: "17px" }}>
+                <button onClick={handlerVibrationTg} style={{ marginBottom: "17px" }}>
                   <img src="/icon/shop.svg" alt="shop" />
                   <span>
                     Перейти в группу и выбрать нужный товар со скидкой
                   </span>
                 </button>
-                <button>
+                <button onClick={handlerVibrationTg}>
                   <img src="/icon/search.svg" alt="search" />
                   <span>
                     Перейти в бота и разместить запрос на поиск нужного товара
@@ -92,21 +95,21 @@ const HomeShope = () => {
                   1 ур.
                 </span>
                 <span className={styled.title}>Buyer Marketplace</span>
-                <button style={{ marginBottom: "17px" }}>
+                <button onClick={handlerVibrationTg} style={{ marginBottom: "17px" }}>
                   <div>
                     <img src="/icon/coin.svg" alt="coin" />
                     <span>10 000</span>
                   </div>
                   <span>Разместить пост в группе за монеты</span>
                 </button>
-                <button style={{ marginBottom: "17px" }}>
+                <button onClick={handlerVibrationTg} style={{ marginBottom: "17px" }}>
                   <div>
                     <img src="/icon/bmt.png" alt="bmt" />
                     <span>100</span>
                   </div>
                   <span>Разместить пост в группе за токены</span>
                 </button>
-                <button>
+                <button onClick={handlerVibrationTg}>
                   <div>
                     <img src="/icon/rub.svg" alt="rub" />
                     <span>10 000</span>
