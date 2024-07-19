@@ -104,16 +104,16 @@ const PlanCarousel = ({}) => {
                   <p>{item.dec}</p>
                   <div className={styled.group}>
                     <div>
-                      <img src="/public/icon/question.svg" alt="question" />
+                      <img src="/icon/question.svg" alt="question" />
                     </div>
                     <div>
-                      <img src="/public/icon/watch-w.svg" alt="watch" />
+                      <img src="/icon/watch-w.svg" alt="watch" />
                     </div>
                     <div>
-                      <img src="/public/icon/email.svg" alt="email" />
+                      <img src="/icon/email.svg" alt="email" />
                     </div>
                     <div>
-                      <img src="/public/icon/tg-w.svg" alt="tg" />
+                      <img src="/icon/tg-w.svg" alt="tg" />
                     </div>
                   </div>
                 </div>
