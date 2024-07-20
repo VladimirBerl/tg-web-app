@@ -1,14 +1,22 @@
-import styled from './EarnMain.module.scss'
+import styled from "./EarnMain.module.scss";
 import EarnTask from "../EarnTask/EarnTask";
 import EarnBonuses from "../EarnBonuses/EarnBonuses";
 import EarnVideo from "../EarnVideo/EarnVideo";
 import EarnGame from "../EarnGame/EarnGame";
 import EarnSubscriptions from "../EarnSubscriptions/EarnSubscriptions";
 import EarnCompleted from "../EarnCompleted/EarnCompleted";
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 import { Carousel } from "antd";
 
-const EarnMain = ({currentSlide,setCurrentSlide}) => {
+const EarnMain = ({ currentSlide, setCurrentSlide, setShowModal }) => {
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const goToSlide = () => {
+      carouselRef.current.goTo(currentSlide);
+    };
+    goToSlide();
+  }, [carouselRef]);
 
   const handleAfterChange = (current) => {
     setCurrentSlide(current);
@@ -36,7 +44,11 @@ const EarnMain = ({currentSlide,setCurrentSlide}) => {
     <>
       <div className={styled["wrapper-top"]}>
         <div style={{ overflow: "auto" }}>
-          <Carousel infinite={false} afterChange={handleAfterChange}>
+          <Carousel
+            infinite={false}
+            afterChange={handleAfterChange}
+            ref={carouselRef}
+          >
             <div className={styled["carousel-btn"]}>
               <span>Задачи</span>
               <img src="/icon/task.svg" alt="" />
@@ -61,8 +73,14 @@ const EarnMain = ({currentSlide,setCurrentSlide}) => {
             </div>
           </Carousel>
         </div>
+        <div
+          onClick={() => setShowModal((prev) => !prev)}
+          className={styled.category}
+        >
+          <img src="/icon/category.svg" alt="category" />
+        </div>
       </div>
-      <div style={{height:"80vh"}}>{renderComponent()}</div>
+      <div style={{ height: "80vh" }}>{renderComponent()}</div>
     </>
   );
 };

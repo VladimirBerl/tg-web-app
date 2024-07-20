@@ -13,9 +13,13 @@ export default function EarnPage() {
         <EarnMain
           currentSlide={currentSlide}
           setCurrentSlide={setCurrentSlide}
+          setShowModal={setShowModal}
         />
       ) : (
-        <EarnNavigation setCurrentSlide={setCurrentSlide} setShowModal={setShowModal}/>
+        <EarnNavigation
+          setCurrentSlide={setCurrentSlide}
+          setShowModal={setShowModal}
+        />
       )}
     </div>
   );

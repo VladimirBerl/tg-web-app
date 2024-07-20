@@ -48,8 +48,8 @@ const EarnNavigation = ({ setCurrentSlide, setShowModal }) => {
         <div className={styled.add}>
           <img src="/icon/add.svg" alt="add" />
         </div>
-        <div onClick={()=> setShowModal((prev) => !prev)} className={styled.add}>
-          <img src="/public/icon/category.svg" alt="category" />
+        <div onClick={()=> setShowModal((prev) => !prev)}>
+          <img src="/icon/category.svg" alt="category" />
         </div>
         <span>Категории</span>
       </div>

@@ -4,6 +4,13 @@
   position: relative;
   border-radius: 25.33px;
   margin: 20px;
+  & .category {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+  }
   & .carousel-btn {
     padding-bottom: 25px;
     display: flex !important;
