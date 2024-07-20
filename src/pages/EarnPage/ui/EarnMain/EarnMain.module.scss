@@ -1,0 +1,46 @@
+.wrapper-top {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 25.33px;
+  margin: 20px;
+  & .carousel-btn {
+    padding-bottom: 25px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    & img {
+      max-width: 30px;
+      max-height: 30px;
+    }
+    & span {
+      font-weight: normal;
+      background: linear-gradient(
+        90deg,
+        rgb(48, 104, 208) 0%,
+        rgb(131, 107, 175) 50%,
+        rgb(151, 130, 98) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 17px;
+      font-family: "UltramonoWide", sans-serif;
+      text-transform: uppercase;
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: 0px;
+    border: 1px solid var(--border-color);
+    border-radius: 25.33px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -2;
+  }
+}

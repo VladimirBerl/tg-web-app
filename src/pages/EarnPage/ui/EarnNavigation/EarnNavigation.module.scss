@@ -1,0 +1,48 @@
+.modal {
+  font-family: "Involve", sans-serif;
+  padding: 23px;
+  overflow: auto;
+  & .top {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    margin-bottom: 23px;
+    & span {
+      font-size: 20px;
+    }
+  }
+  & .categgory {
+    overflow: auto;
+    & .task {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 20px;
+      height: 50px;
+      border-radius: 15px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 23px;
+      & img {
+        width: 40px;
+        height: 40px;
+      }
+      & span {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+      & span:nth-child(2) {
+        font-weight: 600;
+        background: linear-gradient(
+          90deg,
+          rgb(48, 104, 208) 0%,
+          rgb(131, 107, 175) 50%,
+          rgb(151, 130, 98) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
