@@ -1,11 +1,16 @@
 import styled from "./HomeTopUser.module.scss";
+import HomeModalBottom from "../../../HomeModalBottom/HomeModalBottom"
+import HomeTopModal from "../../ui/HomeTopModal/HomeTopModal";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
+import { useState } from "react";
 import { useGetUserQuery } from "@/app/api/userApi";
 
 const HomeTopUser = () => {
   const { data, error, isLoading } = useGetUserQuery(100);
+  const [showModal, setShowModal] = useState(false);
 
   return (
+    <>
     <div className={styled.wrapper}>
       <div className={styled["user-info"]}>
         <div className={styled.user}>
@@ -27,6 +32,12 @@ const HomeTopUser = () => {
         <span>Level 1</span>
       </div>
     </div>
+    {showModal && (
+      <HomeModalBottom setShowModalBottom={setShowModal}>
+        <HomeTopModal />
+      </HomeModalBottom>
+    )}
+    </>
   );
 };
 
