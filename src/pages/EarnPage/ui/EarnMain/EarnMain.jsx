@@ -43,7 +43,13 @@ const EarnMain = ({ currentSlide, setCurrentSlide, setShowModal }) => {
   return (
     <>
       <div className={styled["wrapper-top"]}>
-        <div style={{ overflow: "auto" }}>
+        <div className={styled.carousel}>
+          <div
+            onClick={() => setShowModal((prev) => !prev)}
+            className={styled.category}
+          >
+            <img src="/icon/category.svg" alt="category" />
+          </div>
           <Carousel
             infinite={false}
             afterChange={handleAfterChange}
@@ -67,17 +73,13 @@ const EarnMain = ({ currentSlide, setCurrentSlide, setShowModal }) => {
             </div>
             <div className={styled["carousel-btn"]}>
               <span>Подписки</span>
+              <img src="/icon/watch-w.svg" alt="" />
             </div>
             <div className={styled["carousel-btn"]}>
               <span>Завершенные</span>
+              <img src="/icon/ready.svg" alt="" />
             </div>
           </Carousel>
-        </div>
-        <div
-          onClick={() => setShowModal((prev) => !prev)}
-          className={styled.category}
-        >
-          <img src="/icon/category.svg" alt="category" />
         </div>
       </div>
       <div style={{ height: "80vh" }}>{renderComponent()}</div>
