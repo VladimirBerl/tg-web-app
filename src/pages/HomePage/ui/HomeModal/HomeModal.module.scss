@@ -4,11 +4,27 @@
   z-index: 5;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform:translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-color);
+  animation-name: modal;
+  animation-duration: .4s;
+
+  @keyframes modal {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -19,6 +35,7 @@
     box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
     z-index: -5;
   }
+
   & .close {
     position: absolute;
     top: 25px;

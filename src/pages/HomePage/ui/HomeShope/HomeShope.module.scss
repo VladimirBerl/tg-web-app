@@ -129,11 +129,13 @@
       font-size: 10px;
     }
     & button {
-      overflow: hidden;
-      border: 0.1px solid #fff;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      padding: 9px 17px;
+      gap: 11px;
       border-radius: 15px;
+      border: none;
       color: #fff;
       backdrop-filter: blur(40px);
       background-color: rgba(255, 255, 255, 0.032);
@@ -142,25 +144,19 @@
         transform: scale(1.05);
       }
       & div {
-        width: 85px;
         display: flex;
         align-items: center;
-        flex-shrink: 0;
         gap: 5px;
         color: #fff;
-        backdrop-filter: blur(40px);
-        background-color: rgba(255, 255, 255, 0.032);
-        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-        padding: 9px 11px 9px 17px;
-        border-right: 1px solid #fff;
+        
       }
       & img {
         width: 20px;
         height: 20px;
       }
       & > span {
+        width: 63%;
         font-size: 10px;
-        padding: 9px 17px 9px 17px;
       }
     }
   }

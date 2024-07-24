@@ -9,10 +9,10 @@
     justify-content: center;
     & img {
       position: absolute;
-      top: calc(62.7%);
+      top: calc(50% + 38px);
       left: 50%;
       transform: translate(-50%, -50%);
-      max-width: 80px;
+      max-width: 100px;
     }
   }
 }

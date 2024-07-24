@@ -9,12 +9,10 @@
   & .line {
     position: relative;
     font-family: "Involve", sans-serif;
-    height: 10px;
-    margin-left: 5px;
     border-radius: var(--border-8px);
     background-color: transparent;
     border: 1px solid #413160;
-    height: 17px;
+    height: 13px;
     width: 100%;
     &::before {
       position: absolute;
@@ -29,7 +27,7 @@
     & img {
       width: 35px;
       position: absolute;
-      left: -7px;
+      left: -9px;
       bottom: -2px;
       z-index: 1;
     }
@@ -49,7 +47,7 @@
       inset: 0;
       top: -1px;
       bottom: -1px;
-      width: 80%;
+      width: 0%;
       border-radius: var(--border-8px);
       background: rgb(44, 255, 150);
       background: linear-gradient(

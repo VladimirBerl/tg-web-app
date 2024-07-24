@@ -22,7 +22,6 @@
       left: -15px;
       right: -15px;
       text-transform: uppercase;
-      font-family: "Involve", sans-serif;
       font-size: 17px;
       border: 1px solid var(--border-color);
       border-radius: 25.84px;
@@ -31,6 +30,7 @@
       text-align: center;
       z-index: 1;
       font-family: "UltramonoWide", sans-serif;
+      color: #fff;
       &::before {
         position: absolute;
         content: "";
@@ -50,37 +50,6 @@
       background-color: rgba(255, 255, 255, 0.032);
       box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
       z-index: -1;
-    }
-  }
-  & .absolut {
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    & .item {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 0px;
-      & img {
-        width: 93px;
-      }
-      & span {
-        font-size: 7px;
-        padding: 13px;
-        border-radius: 10px;
-        left: 0px;
-        right: 0px;
-      }
-      &::before {
-        content: none;
-      }
-    }
-    & .item:nth-child(1) {
-      left: -60px;
-    }
-    & .item:nth-child(2) {
-      right: -60px;
     }
   }
 }

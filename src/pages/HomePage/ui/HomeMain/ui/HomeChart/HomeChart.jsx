@@ -1,9 +1,10 @@
 import styled from "./HomeChart.module.scss";
 import HomeModal from "../../../HomeModal/HomeModal";
-import handlerVibrationTg from '@/shared/lib/handlerVibrationTg'
+import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 import { Doughnut } from "react-chartjs-2";
 import { dataChartOne, dataChartTwo, dataChartTree } from "@/storage/storage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 const options = {
   plugins: {
     tooltip: {
@@ -17,6 +18,12 @@ const options = {
 const HomeChart = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModalRub, setShowModalRub] = useState(false);
+  const [toggleInfo, setToggleInfo] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setToggleInfo((prev) => !prev), 3000);
+    return clearTimeout();
+  }, [toggleInfo]);
 
   return (
     <>
@@ -43,58 +50,48 @@ const HomeChart = () => {
           </div>
         </div>
         <div className={styled["info-price"]}>
-          <span style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}>
-            <img src="/icon/coin.svg" alt="coin" />
+          <span
+            onClick={() => {
+              handlerVibrationTg();
+              setShowModal((prev) => !prev);
+            }}
+            style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}
+          >
+            <img
+              src={toggleInfo ? "/images/info.png" : "/icon/coin.svg"}
+              alt="coin"
+            />
             {dataChartOne.datasets[0].price}
           </span>
-          <span style={{ color: dataChartTwo.datasets[0].backgroundColor[0] }}>
-            <img style={{ width: "25px" }} src="/icon/bmt.png" alt="coin" />
+          <span
+            onClick={() => {
+              handlerVibrationTg();
+              setShowModal((prev) => !prev);
+            }}
+            style={{ color: dataChartTwo.datasets[0].backgroundColor[0] }}
+          >
+            <img
+              src={toggleInfo ? "/images/info.png" : "/icon/bmt.png"}
+              alt="coin"
+            />
             {dataChartTwo.datasets[0].price}
           </span>
-          <span style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}>
-            <img src="/icon/rub.svg" alt="coin" />
+          <span
+            onClick={() => {
+              handlerVibrationTg();
+              setShowModalRub((prev) => !prev);
+            }}
+            style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}
+          >
+            <img
+              src={toggleInfo ? "/images/info.png" : "/icon/rub.svg"}
+              alt="coin"
+            />
             {dataChartTree.datasets[0].price}
           </span>
         </div>
       </div>
-      <div className={styled["info-modal"]}>
-        <div>
-          <img
-            onClick={() => {
-              handlerVibrationTg()
-              setShowModal((prev) => !prev);
-            }}
-            style={{ width: " 15px" }}
-            className={styled.close}
-            src="/images/info.png"
-            alt="info"
-          />
-        </div>
-        <div>
-          <img
-            onClick={() => {
-              handlerVibrationTg()
-              setShowModal((prev) => !prev);
-            }}
-            style={{ width: " 15px" }}
-            className={styled.close}
-            src="/images/info.png"
-            alt="info"
-          />
-        </div>
-        <div>
-          <img
-            onClick={() => {
-              handlerVibrationTg()
-              setShowModalRub((prev) => !prev);
-            }}
-            style={{ width: " 15px" }}
-            className={styled.close}
-            src="/images/info.png"
-            alt="info"
-          />
-        </div>
-      </div>
+
       {showModal && (
         <HomeModal setShowModal={setShowModal}>
           <div className={styled["modal-content"]}>
@@ -102,7 +99,7 @@ const HomeChart = () => {
               <img src="/images/info.png" alt="info" />
               <span className={styled["ruler-title"]}>30%</span>
               <span className={styled["ruler-desc"]}>
-                от полученной суммы пойдут для выкупа и сжигания монеты
+                полученной суммы пойдут для выкупа и сжигания монеты
               </span>
             </div>
             <div>
@@ -123,15 +120,15 @@ const HomeChart = () => {
                   ></div>
                 </div>
                 <div className={styled["ruler-procent"]}>
-                  <span
-                    style={{ color: "#03CFA4", transform: "translateY(-3px)" }}
-                  >
-                    0%
-                  </span>
+                  <span style={{ color: "#03CFA4" }}>0%</span>
                   <span>10%</span>
                   <span>20%</span>
                   <span
-                    style={{ color: "#FF5A30", transform: "translateY(10px)" }}
+                    style={{
+                      color: "#FF5A30",
+                      transform: "translateY(10px)",
+                      fontSize: "10px",
+                    }}
                   >
                     30%
                   </span>
@@ -141,16 +138,13 @@ const HomeChart = () => {
                   <span>70%</span>
                   <span>80%</span>
                   <span>90%</span>
-                  <span
-                    style={{ color: "#03CFA4", transform: "translateY(-3px)" }}
-                  >
-                    100%
-                  </span>
+                  <span style={{ color: "#03CFA4" }}>100%</span>
                 </div>
               </div>
               <span className={styled.doc}>
                 % определяется с помощью голосования
               </span>
+              <span className={styled.level}>level 95</span>
             </div>
           </div>
         </HomeModal>
@@ -162,7 +156,7 @@ const HomeChart = () => {
               <img src="/images/info.png" alt="info" />
               <span className={styled["ruler-title"]}>50%</span>
               <span className={styled["ruler-desc"]}>
-                от полученной суммы пойдут для выкупа и сжигания токена BMT
+                полученной суммы пойдут для выкупа и сжигания токена BMT
               </span>
             </div>
             <div>
@@ -183,17 +177,17 @@ const HomeChart = () => {
                   ></div>
                 </div>
                 <div className={styled["ruler-procent"]}>
-                  <span
-                    style={{ color: "#03CFA4", transform: "translateY(-3px)" }}
-                  >
-                    0%
-                  </span>
+                  <span style={{ color: "#03CFA4" }}>0%</span>
                   <span>10%</span>
                   <span>20%</span>
                   <span>30%</span>
                   <span>40%</span>
                   <span
-                    style={{ color: "#FF5A30", transform: "translateY(10px)" }}
+                    style={{
+                      color: "#FF5A30",
+                      transform: "translateY(10px)",
+                      fontSize: "10px",
+                    }}
                   >
                     50%
                   </span>
@@ -201,16 +195,13 @@ const HomeChart = () => {
                   <span>70%</span>
                   <span>80%</span>
                   <span>90%</span>
-                  <span
-                    style={{ color: "#03CFA4", transform: "translateY(-3px)" }}
-                  >
-                    100%
-                  </span>
+                  <span style={{ color: "#03CFA4" }}>100%</span>
                 </div>
               </div>
               <span className={styled.doc}>
                 % определяется с помощью голосования
               </span>
+              <span className={styled.level}>level 95</span>
             </div>
           </div>
         </HomeModal>

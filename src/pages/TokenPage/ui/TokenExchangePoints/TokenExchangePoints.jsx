@@ -18,7 +18,8 @@ export default function TokenExchangePoints() {
         </div>
       </div>
       <button className={styled["point-bnt"]}>
-        <span>Поменять</span>
+        <span className={styled["point-bnt-text"]}>Поменять</span>
+        <span className={styled["point-bnt-lvl"]}>level 55</span>
       </button>
     </div>
   );

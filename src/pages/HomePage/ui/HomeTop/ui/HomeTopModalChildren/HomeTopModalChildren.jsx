@@ -14,7 +14,7 @@ const HomeTopModalChildren = ({ items }) => {
       {selectedItemId === item.id ? (
         <div className={styled.task}>
           <span style={{ color: item.id === 1 ? "#09AD40" : "#C82B29" }}>
-            {item.id} уровень
+            {item.id}
           </span>
           <span className={styled["title-task"]}>{item.title}</span>
           <div className={styled.buttons}>
@@ -51,7 +51,7 @@ const HomeTopModalChildren = ({ items }) => {
       ) : (
         <div className={styled.task} onClick={() => handleClick(item.id)}>
           <span style={{ color: item.id === 1 ? "#09AD40" : "#C82B29" }}>
-            {item.id} уровень
+            {item.id}
           </span>
           <img className={styled.img} src={item.icon} alt="icon" />
           <span className={styled["title-task"]}>{item.title}</span>

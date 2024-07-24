@@ -1,33 +1,17 @@
 import styled from "./HomeTop.module.scss";
 import HomeTopItem from "../HomeTopItem/HomeTopItem";
 import HomeModalBottom from "../HomeModalBottom/HomeModalBottom";
-import HomeTopModal from './ui/HomeTopModal/HomeTopModal'
+import HomeTopModal from "./ui/HomeTopModal/HomeTopModal";
+import HomeTopUser from "./ui/HomeTopUser/HomeTopUser";
 
-import { useState } from "react";
 import { headerTokenInfo } from "@/storage/storage.js";
-import { useGetUserQuery } from "@/app/api/userApi";
-import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
+import { useState } from "react";
 
 const HomeTop = () => {
   const [showModal, setShowModal] = useState(false);
-  const { data, error, isLoading } = useGetUserQuery(100);
   return (
     <div className={styled.wrapper}>
-      <div className={styled["user-info"]}>
-        <div className={styled.user}>
-          <img src="/icon/user.svg" alt="user" />
-          {isLoading ? <span>loading</span> : <span></span>}
-        </div>
-        <div
-          className={styled.cub}
-          onClick={() => {
-            handlerVibrationTg()
-            setShowModal((prev) => !prev);
-          }}
-        >
-          <img src="/icon/cup.svg" alt="user" />
-        </div>
-      </div>
+      <HomeTopUser />
       <div className={styled.item}>
         {headerTokenInfo.map((item) => (
           <HomeTopItem
@@ -40,7 +24,7 @@ const HomeTop = () => {
       </div>
       {showModal && (
         <HomeModalBottom setShowModalBottom={setShowModal}>
-          <HomeTopModal/>
+          <HomeTopModal />
         </HomeModalBottom>
       )}
     </div>

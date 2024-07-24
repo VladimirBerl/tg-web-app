@@ -10,22 +10,41 @@ export default function TokenTable() {
           <div className={styled["swaiper-items"]}>
             <div className={styled["swaiper-item"]}>
               <table className={styled["green-table"]}>
-                <thead>
+              <thead>
                   <tr>
-                    <th colSpan="2">Raffles - Launch / Block</th>
+                    <th colSpan="2">Dudex</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>20%</td>
-                    <td>30%</td>
                   </tr>
                   <tr>
                     <td>DEXs LISTING</td>
-                    <td>LAUNCH PAD</td>
                   </tr>
                   <tr>
                     <td>4.000.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className={styled["swaiper-items"]}>
+            <div className={styled["swaiper-item"]}>
+              <table className={styled["green-table"]}>
+              <thead>
+                  <tr>
+                    <th colSpan="2">Raffles</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>30%</td>
+                  </tr>
+                  <tr>
+                    <td>LAUNCH PAD</td>
+                  </tr>
+                  <tr>
                     <td>6.000.000</td>
                   </tr>
                 </tbody>
@@ -37,23 +56,61 @@ export default function TokenTable() {
               <table className={styled["red-table"]}>
                 <thead>
                   <tr>
-                    <th colSpan="3">Реклама для продавцов</th>
+                    <th colSpan="3">Marketing</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>5%</td>
-                    <td>10%</td>
-                    <td>20%</td>
                   </tr>
                   <tr>
                     <td>DROP</td>
-                    <td>STAKE</td>
-                    <td>MARKETING</td>
                   </tr>
                   <tr>
                     <td>1.000.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className={styled["swaiper-items"]}>
+            <div className={styled["swaiper-item"]}>
+              <table className={styled["red-table"]}>
+                <thead>
+                  <tr>
+                    <th colSpan="3">Marketing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10%</td>
+                  </tr>
+                  <tr>
+                    <td>STAKE</td>
+                  </tr>
+                  <tr>
                     <td>2.000.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className={styled["swaiper-items"]}>
+            <div className={styled["swaiper-item"]}>
+              <table className={styled["red-table"]}>
+                <thead>
+                  <tr>
+                    <th colSpan="3">Marketing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>MARKETING</td>
+                  </tr>
+                  <tr>
                     <td>4.000.000</td>
                   </tr>
                 </tbody>

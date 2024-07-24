@@ -6,13 +6,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     position: relative;
     border: 1px solid var(--border-color);
     border-radius: 15px;
-    overflow: hidden;
     background-color: transparent;
-    padding: 8px;
     font-family: "UltramonoWide", sans-serif;
+    padding: 5px;
     font-size: 20px;
     color: #fff;
     & span {
@@ -40,6 +40,7 @@
       background-color: rgba(255, 255, 255, 0.032);
       box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
       z-index: -1;
+      border-radius: 15px;
     }
   }
   & button:nth-child(2) {

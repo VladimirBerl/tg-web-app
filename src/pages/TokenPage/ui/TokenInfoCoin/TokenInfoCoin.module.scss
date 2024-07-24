@@ -56,9 +56,6 @@
       top: -55%;
       transform: translateX(-50%);
       overflow: hidden;
-      & img {
-        max-width: 80px;
-      }
       &::before {
         position: absolute;
         content: "";

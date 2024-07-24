@@ -112,7 +112,7 @@ const HomeShope = () => {
                 <button onClick={handlerVibrationTg}>
                   <div>
                     <img src="/icon/rub.svg" alt="rub" />
-                    <span>10 000</span>
+                    <span>1 000</span>
                   </div>
                   <span>Разместить пост в группе за рубли</span>
                 </button>

@@ -84,22 +84,17 @@ const PlanCarousel = ({}) => {
   return (
     <div className={styled["wrapper-slider"]}>
       {itemCarousel.map((items) => (
-        <div className={styled.wrapper}>
+        <div key={items.title} className={styled.wrapper}>
           <div className={styled.title}>
             <p>{items.title}</p>
             <img style={{ width: items.imgWidth }} src={items.img} alt="" />
           </div>
           <Carousel infinite={false}>
             {items.children.map((item) => (
-              <div className={styled["swaiper-items"]}>
+              <div key={item.text} className={styled["swaiper-items"]}>
                 <div className={styled["swaiper-item"]}>
                   <div>
-                    <p
-                      style={{ color: item.color }}
-                      className={styled["title-yelow"]}
-                    >
-                      {item.text}
-                    </p>
+                    <p style={{ color: item.color }}>{item.text}</p>
                   </div>
                   <p>{item.dec}</p>
                   <div className={styled.group}>

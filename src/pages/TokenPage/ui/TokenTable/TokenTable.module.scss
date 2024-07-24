@@ -36,12 +36,12 @@ th {
   text-align: center;
   color: var(--color-white);
 }
-td:first-child {
-  text-align: left;
-}
-td:last-child {
-  text-align: right;
-}
+// td:first-child {
+//   text-align: left;
+// }
+// td:last-child {
+//   text-align: right;
+// }
 tfoot > tr > .table-footer {
   text-align: center;
   font-weight: 700;

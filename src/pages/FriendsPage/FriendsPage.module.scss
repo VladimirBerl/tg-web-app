@@ -119,11 +119,12 @@
       margin-bottom: 10px;
     }
     & .invite-wrapper {
-      margin: 0px 27px;
+      margin: 0px auto;
       padding: 12px;
       position: relative;
       border-radius: 17.11px;
       overflow: hidden;
+      max-width: 250px;
       &::before {
         position: absolute;
         content: "";
@@ -166,7 +167,7 @@
             }
             & span {
               font-family: "Bicubik", sans-serif;
-              font-size: 10px;
+              font-size: 13px;
               background: linear-gradient(
                 90deg,
                 rgb(48, 104, 208) 0%,
