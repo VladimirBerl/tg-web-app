@@ -1,6 +1,6 @@
 import styled from "./HomeShope.module.scss";
 import HomeModalBottom from "../HomeModalBottom/HomeModalBottom";
-import handlerVibrationTg from '@/shared/lib/handlerVibrationTg'
+import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 import { useState } from "react";
 
 const HomeShope = () => {
@@ -10,28 +10,26 @@ const HomeShope = () => {
   return (
     <>
       <div className={styled.wrapper}>
-        <div className={styled.button}>
-          <span
-            onClick={() => {
-              handlerVibrationTg()
-              setShowModalBottomBuy((prev) => !prev);
-            }}
-          >
-            Купить
-          </span>
+        <div
+          onClick={() => {
+            handlerVibrationTg();
+            setShowModalBottomBuy((prev) => !prev);
+          }}
+          className={styled.button}
+        >
+          <span>Купить</span>
           <div>
             <img src="/icon/buy.svg" alt="icon" />
           </div>
         </div>
-        <div className={styled.button}>
-          <span
-            onClick={() => {
-              handlerVibrationTg()
-              setShowModalBottomSell((prev) => !prev);
-            }}
-          >
-            Продать
-          </span>
+        <div
+          onClick={() => {
+            handlerVibrationTg();
+            setShowModalBottomSell((prev) => !prev);
+          }}
+          className={styled.button}
+        >
+          <span>Продать</span>
           <div>
             <img src="/icon/sale.svg" alt="icon" />
           </div>
@@ -47,7 +45,10 @@ const HomeShope = () => {
                   1 ур.
                 </span>
                 <span className={styled.title}>Buyer Marketplace</span>
-                <button onClick={handlerVibrationTg} style={{ marginBottom: "17px" }}>
+                <button
+                  onClick={handlerVibrationTg}
+                  style={{ marginBottom: "17px" }}
+                >
                   <img src="/icon/shop.svg" alt="shop" />
                   <span>
                     Перейти в группу и выбрать нужный товар со скидкой
@@ -95,14 +96,20 @@ const HomeShope = () => {
                   1 ур.
                 </span>
                 <span className={styled.title}>Buyer Marketplace</span>
-                <button onClick={handlerVibrationTg} style={{ marginBottom: "17px" }}>
+                <button
+                  onClick={handlerVibrationTg}
+                  style={{ marginBottom: "17px" }}
+                >
                   <div>
                     <img src="/icon/coin.svg" alt="coin" />
                     <span>10 000</span>
                   </div>
                   <span>Разместить пост в группе за монеты</span>
                 </button>
-                <button onClick={handlerVibrationTg} style={{ marginBottom: "17px" }}>
+                <button
+                  onClick={handlerVibrationTg}
+                  style={{ marginBottom: "17px" }}
+                >
                   <div>
                     <img src="/icon/bmt.png" alt="bmt" />
                     <span>100</span>

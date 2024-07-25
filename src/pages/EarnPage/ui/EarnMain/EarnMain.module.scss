@@ -6,19 +6,19 @@
   margin: 20px;
   & .carousel {
     overflow: auto;
-    margin-left: 40px;
+    margin-left: 38px;
     & .category {
       position: absolute;
-      top: 50%;
-      left: 8px;
+      top: 24px;
+      left: 12px;
       transform: translateY(-50%);
       width: 32px;
       height: 32px;
     }
     & .carousel-btn {
-      padding: 25px 0px;
+      padding-top: 12px;
+      padding-bottom: 40px;
       display: flex !important;
-      align-items: center;
       justify-content: center;
       gap: 15px;
       & img {
@@ -44,9 +44,12 @@
   &::before {
     position: absolute;
     content: "";
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 28px;
     border: 1px solid var(--border-color);
-    border-radius: 25.33px;
+    border-radius: 15px;
     backdrop-filter: blur(40px);
     background-color: rgba(255, 255, 255, 0.032);
     box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);

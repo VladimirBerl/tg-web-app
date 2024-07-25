@@ -2,6 +2,7 @@
   font-family: "Involve", sans-serif;
   padding: 23px;
   overflow: auto;
+  padding-bottom: 120px;
   & .top {
     display: flex;
     align-items: center;
@@ -24,8 +25,7 @@
       border: 1px solid var(--border-color);
       margin-bottom: 23px;
       & img {
-        width: 40px;
-        height: 40px;
+        width: 25px;
       }
       & span {
         font-size: 18px;

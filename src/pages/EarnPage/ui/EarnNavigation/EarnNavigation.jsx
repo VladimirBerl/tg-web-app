@@ -4,6 +4,12 @@ import { useState } from "react";
 
 const category = [
   {
+    id: 4,
+    name: "Подписки",
+    img: "/icon/watch-w.svg",
+    count: 0,
+  },
+  {
     id: 0,
     name: "Задачи",
     img: "/icon/task.svg",
@@ -27,12 +33,7 @@ const category = [
     img: "/icon/bonus.svg",
     count: 0,
   },
-  {
-    id: 4,
-    name: "Подписки",
-    img: "/icon/watch-w.svg",
-    count: 0,
-  },
+
   {
     id: 5,
     name: "Завершенные",

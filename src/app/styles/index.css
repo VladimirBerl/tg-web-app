@@ -61,3 +61,6 @@ input {
   color: var(--color-white);
 }
 
+.carousel .slick-dots.slick-dots-bottom {
+  margin-right: 34px;
+}
