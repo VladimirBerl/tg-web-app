@@ -36,7 +36,10 @@ const HomeShope = () => {
         </div>
       </div>
       {showModalBottomBuy && (
-        <HomeModalBottom position="-284px" setShowModalBottom={setShowModalBottomBuy}>
+        <HomeModalBottom
+          position="-309px"
+          setShowModalBottom={setShowModalBottomBuy}
+        >
           <div className={styled["wrapper-modal-bottom"]}>
             <h2>Выберите нужное действие</h2>
             <div className={styled["scroll"]}>
@@ -87,7 +90,10 @@ const HomeShope = () => {
         </HomeModalBottom>
       )}
       {showModalBottomSell && (
-        <HomeModalBottom position="-285px" setShowModalBottom={setShowModalBottomSell}>
+        <HomeModalBottom
+          position="-309px"
+          setShowModalBottom={setShowModalBottomSell}
+        >
           <div className={styled["wrapper-modal-bottom"]}>
             <h2>Выберите нужное действие</h2>
             <div className={styled["scroll"]}>
