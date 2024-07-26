@@ -5,20 +5,19 @@
   z-index: 5;
   left: 12px;
   right: 12px;
-  top: 32%;
+  bottom: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-color);
   animation-name: modal;
-  animation-duration: .4s;
+  animation-duration: 0.4s;
 
   @keyframes modal {
     0% {
-      top: 100%;
+      bottom: -100%;
     }
     100% {
-      top: 32%;
     }
   }
 

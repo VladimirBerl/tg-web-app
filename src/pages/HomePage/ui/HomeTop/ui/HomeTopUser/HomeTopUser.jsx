@@ -33,7 +33,7 @@ const HomeTopUser = () => {
       </div>
     </div>
     {showModal && (
-      <HomeModalBottom setShowModalBottom={setShowModal}>
+      <HomeModalBottom position="-318px" setShowModalBottom={setShowModal}>
         <HomeTopModal />
       </HomeModalBottom>
     )}

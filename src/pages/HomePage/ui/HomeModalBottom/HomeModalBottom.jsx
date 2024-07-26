@@ -1,33 +1,41 @@
-import styled from "./HomeModalBottom.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-const HomeModalBottom = ({ children, setShowModalBottom }) => {
+import styled from "./HomeModalBottom.module.scss";
+
+const HomeModalBottom = ({
+  children,
+  setShowModalBottom,
+  position = "32px",
+}) => {
   const modalRef = useRef();
+  const firstBlockRef = useRef();
+  const [topPosition, setTopPosition] = useState(position); // Начальная позиция
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setShowModalBottom((prev) => !prev);
+        setShowModalBottom(false);
       }
     };
-
-    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [modalRef]);
+  }, [setShowModalBottom]);
+
   return createPortal(
-    <div className={styled.modal} ref={modalRef}>
+    <div
+      className={styled.modal}
+      ref={modalRef}
+      style={{ bottom: topPosition, transition: "top 0.4s" }} // Добавьте анимацию через CSS transition
+    >
       <img
-        onClick={() => {
-          setShowModalBottom((prev) => !prev);
-        }}
+        onClick={() => setShowModalBottom(false)}
         className={styled.close}
         src="/icon/close.svg"
         alt="close"
       />
-      {children}
+      <div ref={firstBlockRef}>{children}</div>
     </div>,
     document.getElementById("portal")
   );
