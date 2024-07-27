@@ -37,7 +37,7 @@ const HomeShope = () => {
       </div>
       {showModalBottomBuy && (
         <HomeModalBottom
-          position="-309px"
+          position="-290px"
           setShowModalBottom={setShowModalBottomBuy}
         >
           <div className={styled["wrapper-modal-bottom"]}>
@@ -91,7 +91,7 @@ const HomeShope = () => {
       )}
       {showModalBottomSell && (
         <HomeModalBottom
-          position="-309px"
+          position="-290px"
           setShowModalBottom={setShowModalBottomSell}
         >
           <div className={styled["wrapper-modal-bottom"]}>
