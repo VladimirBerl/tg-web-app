@@ -1,0 +1,67 @@
+.task {
+  font-family: "Involve", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 13px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+
+  border-left: none;
+  border: 1px solid var(--border-color);
+  border-bottom-right-radius: 20px;
+
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -1;
+  }
+  & .telegram {
+    width: 45px;
+    height: 45px;
+  }
+  & .ready {
+    width: 26px;
+    height: 26px;
+  }
+  & .task-info {
+    & span {
+      font-size: 15px;
+      background: linear-gradient(
+        90deg,
+        rgb(48, 104, 208) 0%,
+        rgb(131, 107, 175) 50%,
+        rgb(151, 130, 98) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    & .price-task {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      & .coin-img {
+        max-width: 15px;
+      }
+      & span {
+        font-family: "Bicubik", sans-serif;
+        font-size: 13px;
+        background: linear-gradient(
+          90deg,
+          rgb(48, 104, 208) 0%,
+          rgb(131, 107, 175) 50%,
+          rgb(151, 130, 98) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

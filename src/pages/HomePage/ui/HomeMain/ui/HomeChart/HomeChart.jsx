@@ -58,7 +58,7 @@ const HomeChart = () => {
             style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}
           >
             <img
-              src={toggleInfo ? "/images/info.png" : "/icon/coin.svg"}
+              src={toggleInfo ? "/images/info.png" : "/icon/coin.png"}
               alt="coin"
             />
             {dataChartOne.datasets[0].price}
@@ -84,7 +84,7 @@ const HomeChart = () => {
             style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}
           >
             <img
-              src={toggleInfo ? "/images/info.png" : "/icon/rub.svg"}
+              src={toggleInfo ? "/images/info.png" : "/icon/rub.png"}
               alt="coin"
             />
             {dataChartTree.datasets[0].price}
