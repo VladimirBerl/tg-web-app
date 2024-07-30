@@ -6,18 +6,18 @@ const PlanTopSwiper = () => {
       <div style={{ overflow: "auto" }}>
         <Carousel style={{ textAlign: "center" }} infinite={false}>
           <div className={styled.item}>
-            <img src="/images/plan-Iphone.png" alt="Iphone" />
+            <img src="/images/plan-Iphone.svg" alt="Iphone" />
             <span>описание задачи</span>
           </div>
           <div className={styled.item}>
-            <img src="/images/plan-Iphone.png" alt="Iphone" />
+            <img src="/images/plan-Iphone.svg" alt="Iphone" />
             <span>
               описание
               <br /> задачи
             </span>
           </div>
           <div className={styled.item}>
-            <img src="/images/plan-Iphone.png" alt="Iphone" />
+            <img src="/images/plan-Iphone.svg" alt="Iphone" />
             <span>
               описание
               <br /> задачи
