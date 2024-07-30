@@ -82,7 +82,7 @@ const EarnMain = ({ currentSlide, setCurrentSlide, setShowModal }) => {
           </Carousel>
         </div>
       </div>
-      <div style={{ height: "80vh" }}>{renderComponent()}</div>
+      <div style={{ height: "80vh",marginBottom: "100px" }}>{renderComponent()}</div>
     </div>
   );
 };

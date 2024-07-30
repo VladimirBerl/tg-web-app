@@ -1,5 +1,5 @@
 import styled from "./HomeChart.module.scss";
-import HomeModal from "../../../HomeModal/HomeModal";
+import Modal from "@/shared/ui/Modal/Modal";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 import { Doughnut } from "react-chartjs-2";
 import { dataChartOne, dataChartTwo, dataChartTree } from "@/storage/storage";
@@ -18,12 +18,12 @@ const options = {
 const HomeChart = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModalRub, setShowModalRub] = useState(false);
-  const [toggleInfo, setToggleInfo] = useState(true);
+  const [toggleInfo, setToggleInfo] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => setToggleInfo((prev) => !prev), 3000);
-    return clearTimeout();
-  }, [toggleInfo]);
+  // useEffect(() => {
+  //   setTimeout(() => setToggleInfo((prev) => !prev), 3000);
+  //   return clearTimeout();
+  // }, [toggleInfo]);
 
   return (
     <>
@@ -58,7 +58,7 @@ const HomeChart = () => {
             style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}
           >
             <img
-              src={toggleInfo ? "/images/info.png" : "/icon/coin.png"}
+              src={toggleInfo ? "/images/info.png" : "/icon/coin.svg"}
               alt="coin"
             />
             {dataChartOne.datasets[0].price}
@@ -71,7 +71,7 @@ const HomeChart = () => {
             style={{ color: dataChartTwo.datasets[0].backgroundColor[0] }}
           >
             <img
-              src={toggleInfo ? "/images/info.png" : "/icon/bmt.png"}
+              src={toggleInfo ? "/images/info.png" : "/icon/bmt.svg"}
               alt="coin"
             />
             {dataChartTwo.datasets[0].price}
@@ -84,7 +84,7 @@ const HomeChart = () => {
             style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}
           >
             <img
-              src={toggleInfo ? "/images/info.png" : "/icon/rub.png"}
+              src={toggleInfo ? "/images/info.png" : "/icon/rub.svg"}
               alt="coin"
             />
             {dataChartTree.datasets[0].price}
@@ -93,7 +93,7 @@ const HomeChart = () => {
       </div>
 
       {showModal && (
-        <HomeModal setShowModal={setShowModal}>
+        <Modal setShowModal={setShowModal}>
           <div className={styled["modal-content"]}>
             <div className={styled["ruler-info"]}>
               <img src="/images/info.png" alt="info" />
@@ -147,10 +147,10 @@ const HomeChart = () => {
               <span className={styled.level}>level 95</span>
             </div>
           </div>
-        </HomeModal>
+        </Modal>
       )}
       {showModalRub && (
-        <HomeModal setShowModal={setShowModalRub}>
+        <Modal setShowModal={setShowModalRub}>
           <div className={styled["modal-content"]}>
             <div className={styled["ruler-info"]}>
               <img src="/images/info.png" alt="info" />
@@ -204,7 +204,7 @@ const HomeChart = () => {
               <span className={styled.level}>level 95</span>
             </div>
           </div>
-        </HomeModal>
+        </Modal>
       )}
     </>
   );

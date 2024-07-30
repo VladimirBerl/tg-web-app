@@ -6,7 +6,10 @@ import EarnPage from "@/pages/EarnPage/EarnPage";
 import LayoutPage from "@/app/providers";
 import HomePage from "@/pages/HomePage/HomePage";
 
+import scrollTop from "@/shared/lib/scrollTop";
+
 const Routing = () => {
+  scrollTop()
   return (
     <Routes>
       <Route path="/" element={<LayoutPage />}>

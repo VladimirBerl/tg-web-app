@@ -1,5 +1,5 @@
 import styled from "./EarnNavigation.module.scss";
-import EarnModal from "../EarnModal/EarnModal";
+import Modal from "@/shared/ui/Modal/Modal";
 import { useState } from "react";
 
 const category = [
@@ -81,7 +81,7 @@ const EarnNavigation = ({ setCurrentSlide, setShowModal }) => {
         </div>
       </div>
       {showPopup && (
-        <EarnModal setShowModal={setShowPopup}>
+        <Modal setShowModal={setShowPopup}>
           <div className={styled["modal-content"]}>
             <div className={styled["ruler-info"]}>
               <img src="/images/info.png" alt="info" />
@@ -91,7 +91,7 @@ const EarnNavigation = ({ setCurrentSlide, setShowModal }) => {
             </div>
             <button className={styled["ruler-btn"]}>@Manager_Vip_Client</button>
           </div>
-        </EarnModal>
+        </Modal>
       )}
     </>
   );

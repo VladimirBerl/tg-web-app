@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import styled from "./HomeModal.module.scss";
-const HomeModal = ({ children, setShowModal }) => {
+import styled from "./Modal.module.scss";
+const Modal = ({ children, setShowModal }) => {
+  
   const modalRef = useRef();
 
   useEffect(() => {
@@ -17,6 +18,7 @@ const HomeModal = ({ children, setShowModal }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [modalRef]);
+
   return createPortal(
     <div className={styled.modal} ref={modalRef}>
       <img
@@ -33,4 +35,4 @@ const HomeModal = ({ children, setShowModal }) => {
   );
 };
 
-export default HomeModal;
+export default Modal;

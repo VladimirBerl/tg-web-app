@@ -1,5 +1,5 @@
-import styled from "./HomeTopUser.module.scss";
-import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
+import styled from "./HeaderTopUser.module.scss";
+
 import HomeTopModal from "../../ui/HomeTopModal/HomeTopModal";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 import { useState } from "react";
@@ -30,11 +30,7 @@ const HomeTopUser = () => {
           <span>Level 1</span>
         </div>
       </div>
-      {showModal && (
-        <ModalBottom position="-297px" setShowModalBottom={setShowModal}>
-          <HomeTopModal />
-        </ModalBottom>
-      )}
+      {showModal && <HomeTopModal setShowModal={setShowModal} />}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import styled from "./HomeTopModal.module.scss";
 import HomeTopModalChildren from "../HomeTopModalChildren/HomeTopModalChildren";
-
+import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
 const cubLevel = [
   {
     id: 1,
@@ -55,14 +55,16 @@ const cubLevel = [
   },
 ];
 
-const HomeTopModal = () => {
+const HomeTopModal = ({setShowModal}) => {
   return (
-    <div className={styled.task}>
-      <h2 className={styled.title}>
-        Открывай уровни получай больше возможностей
-      </h2>
+    <ModalBottom position="-297px" setShowModalBottom={setShowModal}>
+      <div className={styled.task}>
+        <h2 className={styled.title}>
+          Открывай уровни получай больше возможностей
+        </h2>
         <HomeTopModalChildren items={cubLevel} />
-    </div>
+      </div>
+    </ModalBottom>
   );
 };
 

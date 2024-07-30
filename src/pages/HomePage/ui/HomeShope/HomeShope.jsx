@@ -1,5 +1,5 @@
 import styled from "./HomeShope.module.scss";
-import HomeModalBottom from "../HomeModalBottom/HomeModalBottom";
+import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 import { useState } from "react";
 
@@ -36,7 +36,7 @@ const HomeShope = () => {
         </div>
       </div>
       {showModalBottomBuy && (
-        <HomeModalBottom
+        <ModalBottom
           position="-290px"
           setShowModalBottom={setShowModalBottomBuy}
         >
@@ -87,10 +87,10 @@ const HomeShope = () => {
               </div>
             </div>
           </div>
-        </HomeModalBottom>
+        </ModalBottom>
       )}
       {showModalBottomSell && (
-        <HomeModalBottom
+        <ModalBottom
           position="-290px"
           setShowModalBottom={setShowModalBottomSell}
         >
@@ -117,7 +117,7 @@ const HomeShope = () => {
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
-                    <img src="/icon/bmt.png" alt="bmt" />
+                    <img src="/icon/bmt.svg" alt="bmt" />
                     <span>100</span>
                   </div>
                   <span>Разместить пост в группе за токены</span>
@@ -153,7 +153,7 @@ const HomeShope = () => {
               </div>
             </div>
           </div>
-        </HomeModalBottom>
+        </ModalBottom>
       )}
     </>
   );
