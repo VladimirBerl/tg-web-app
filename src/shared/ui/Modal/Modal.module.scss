@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-color);
   animation-name: modal;
   animation-duration: 0.4s;
 
@@ -23,17 +22,6 @@
     100% {
       transform: translate(-50%, -50%) scale(1);
     }
-  }
-
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-    border-radius: 50px;
-    backdrop-filter: blur(20px);
-    background-color: rgba(255, 255, 255, 0.032);
-    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-    z-index: -5;
   }
 
   & .close {

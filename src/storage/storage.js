@@ -8,56 +8,7 @@ export const user = {
   time: 5,
 };
 
-export const headerTokenInfo = [
-  // { name: "Токены", info: "320", color: "#5A87FC" },
-  { name: "Покупки", info: "122", color: "#03CEA4" },
-  { name: "Продажы", info: "410", color: "#FF5A30" },
-];
 
-export const interactionGroup = [
-  { name: "Покупатели", info: "574" },
-  { name: "Продавцы", info: "234" },
-];
-
-export const dataChartOne = {
-  datasets: [
-    {
-      name: "Посты за монеты",
-      price: "1450",
-      data: [40, 60],
-      backgroundColor: ["#C1A130", "#965C16"],
-      borderWidth: 0,
-      redraw: true,
-      cutout: "90%",
-    },
-  ],
-};
-export const dataChartTwo = {
-  datasets: [
-    {
-      name: "Посты за токены",
-      price: "750",
-      data: [90, 10],
-      backgroundColor: ["#3F4CE3", "#111973"],
-      borderWidth: 0,
-      redraw: true,
-      cutout: "90%",
-    },
-  ],
-};
-export const dataChartTree = {
-  datasets: [
-    {
-      name: "Посты за рубли",
-      price: "1450",
-      data: [50, 50],
-      backgroundColor: ["#088E35", "#064225"],
-      borderWidth: 0,
-      redraw: true,
-      cutout: "90%",
-    },
-  ],
-};
 export const dataChartToken = {
   labels: [
     "LAUNCH PAD",

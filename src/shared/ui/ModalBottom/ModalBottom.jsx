@@ -1,6 +1,6 @@
+import styled from "./ModalBottom.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import styled from "./ModalBottom.module.scss";
 
 const ModalBottom = ({ children, setShowModalBottom, position = "32px" }) => {
   const modalRef = useRef();
@@ -22,9 +22,9 @@ const ModalBottom = ({ children, setShowModalBottom, position = "32px" }) => {
 
   return createPortal(
     <div
-      className={styled.modal}
+      className={`${styled.modal} background-br`}
       ref={modalRef}
-      style={{ bottom: topPosition, transition: "top 0.4s" }} // Добавьте анимацию через CSS transition
+      style={{ bottom: topPosition, transition: "top 0.4s" }}
     >
       <img
         onClick={() => setShowModalBottom(false)}

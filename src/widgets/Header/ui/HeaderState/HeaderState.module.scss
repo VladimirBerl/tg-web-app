@@ -3,14 +3,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 6px;
-  padding: 8px 6px;
+  padding: 8px;
   height: 100%;
   width: 100%;
-
-  border: 1px solid var(--border-color);
-  position: relative;
+  font-size: 12px;
   border-radius: var(--border-8px);
-  overflow: hidden;
 
   & .name,
   & .procent,
@@ -23,24 +20,12 @@
   & .procent,
   & .time {
     gap: 4px;
-    padding: 6px 2px;
+    padding: 6px 0px;
     border-radius: 8.58px;
-    position: relative;
-    overflow: hidden;
-    width: 33%;
-
-    &::before {
-      position: absolute;
-      content: "";
-      inset: 0;
-      backdrop-filter: blur(40px);
-      background-color: rgba(255, 255, 255, 0.032);
-      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      z-index: -1;
-    }
+    width: 100%;
+    border: none;
   }
   & .name {
-    font-size: 10px;
     font-weight: bold;
     & img {
       width: 23px;
@@ -48,21 +33,13 @@
     }
   }
   & .time {
+    max-width: 80px;
     & img {
-      width: 9px;
-      height: 9px;
+      width: 14px;
+      height: 14px;
     }
   }
   & .procent span:nth-child(2) {
     color: #ffffff7a;
-  }
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-    backdrop-filter: blur(40px);
-    background-color: rgba(255, 255, 255, 0.032);
-    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-    z-index: -1;
   }
 }

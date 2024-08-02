@@ -1,78 +1,96 @@
-import styled from "./PlanCarousel.module.scss";
+import styles from "./PlanCarousel.module.scss";
+import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
 import { Carousel } from "antd";
-const itemCarousel = [
+import { useState } from "react";
+
+const planSlideItems = [
   {
+    id: 1,
     title: "Ликвидность",
     img: "/icon/shield.svg",
-    children: [
+    sliders: [
       {
-        text: "100 объявлений",
+        id: 1,
+        task: "100 объявлений",
         color: "#ffd370",
         dec: "Пул ликвидности в группе в день",
       },
       {
-        text: "+130%",
+        id: 2,
+        task: "+130%",
         color: "#03cea4",
         dec: "230 объявлений в группе в день",
       },
     ],
   },
   {
+    id: 2,
     title: "Разработка",
     img: "/icon/filter.svg",
     imgWidth: "37px",
-    children: [
+    sliders: [
       {
+        id: 1,
         dec: "Сервис для покупателей / Продавцов маркетплейсов",
       },
       {
+        id: 2,
         dec: "Группа Buyer Marketplace",
       },
       {
+        id: 3,
         dec: "Бот TG Buyer - 5 модулей",
       },
     ],
   },
   {
+    id: 3,
     title: "Маркетинг",
     img: "/icon/cart.svg",
-    children: [
+    sliders: [
       {
-        text: "100 объявлений",
+        id: 1,
+        task: "100 объявлений",
         color: "#ffd370",
         dec: "Бесплатные размещения в группу в месяц",
       },
       {
-        text: "26%",
+        id: 2,
+        task: "26%",
         color: "#ff5a30",
         dec: "13 объявлений в гуппе в месяц",
       },
     ],
   },
   {
+    id: 4,
     title: "Реклама",
     img: "/icon/budget.svg",
     imgWidth: "29px",
-    children: [
+    sliders: [
       {
-        text: "50 объявлений",
+        id: 1,
+        task: "50 объявлений",
         color: "#ffd370",
         dec: "Платные размещения в группу в месяц",
       },
       {
-        text: "0%",
+        id: 2,
+        task: "0%",
         color: "#ff5a30",
         dec: "Объявлений в группе в месяц",
       },
     ],
   },
   {
+    id: 5,
     title: "Токен",
     img: "/icon/token-w.svg",
     imgWidth: "27px",
-    children: [
+    sliders: [
       {
-        text: "Токена BMT",
+        id: 1,
+        task: "Токена BMT",
         color: "#ffd370",
         dec: "Использование в экосистеме Buyer Marketplace",
       },
@@ -80,44 +98,49 @@ const itemCarousel = [
   },
 ];
 
-const PlanCarousel = ({}) => {
+const PlanCarousel = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <div className={styled["wrapper-slider"]}>
-      {itemCarousel.map((items) => (
-        <div key={items.title} className={styled.wrapper}>
-          <div className={styled.title}>
-            <p>{items.title}</p>
-            <img style={{ width: items.imgWidth }} src={items.img} alt="" />
-          </div>
-          <Carousel infinite={false}>
-            {items.children.map((item) => (
-              <div key={item.text} className={styled["swaiper-items"]}>
-                <div className={styled["swaiper-item"]}>
-                  <div>
-                    <p style={{ color: item.color }}>{item.text}</p>
-                  </div>
-                  <p>{item.dec}</p>
-                  <div className={styled.group}>
-                    <div>
-                      <img src="/icon/question.svg" alt="question" />
-                    </div>
-                    <div>
-                      <img src="/icon/watch-w.svg" alt="watch" />
-                    </div>
-                    <div>
-                      <img src="/icon/email.svg" alt="email" />
-                    </div>
-                    <div>
-                      <img src="/icon/tg-w.svg" alt="tg" />
+    <>
+      {showModal && (
+        <ModalBottom setShowModalBottom={setShowModal}>123</ModalBottom>
+      )}
+      <div className={styles.wrapper}>
+        {planSlideItems.map(({ title, img, imgWidth, sliders, id }) => (
+          <div key={id} className={styles.wrapper}>
+            <div className={styles.title}>
+              <p>{title}</p>
+              <img style={{ width: imgWidth }} src={img} alt={title} />
+            </div>
+            <Carousel>
+              {sliders.map(({ task, color, dec, id }) => (
+                <div key={id} className={styles["swaiper-items"]}>
+                  <div className={styles["swaiper-item"]}>
+                    <p style={{ color }}>{task}</p>
+                    <p>{dec}</p>
+                    <div className={styles.group}>
+                      <div onClick={() => setShowModal((prev) => !prev)}>
+                        <img src="/icon/question.svg" alt="question" />
+                      </div>
+                      <div onClick={() => setShowModal((prev) => !prev)}>
+                        <img src="/icon/watch-w.svg" alt="watch" />
+                      </div>
+                      <div onClick={() => setShowModal((prev) => !prev)}>
+                        <img src="/icon/email.svg" alt="email" />
+                      </div>
+                      <div onClick={() => setShowModal((prev) => !prev)}>
+                        <img src="/icon/tg-w.svg" alt="tg" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Carousel>
-        </div>
-      ))}
-    </div>
+              ))}
+            </Carousel>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

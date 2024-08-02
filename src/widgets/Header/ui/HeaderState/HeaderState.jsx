@@ -1,24 +1,26 @@
 import styled from "./HeaderState.module.scss";
+
 const HeaderState = ({ isHome }) => {
   return (
-    <div style={isHome ? {} : { fontSize: "12px" }} className={styled.state}>
-      <div style={isHome ? {} : { fontSize: "14px" }} className={styled.name}>
+    <div className={`${styled.state} background-br`}>
+      <div style={isHome ? { fontSize: "10px" } : {}} className={styled.name}>
         <span>2B</span>
         <img src="/icon/rub.svg" alt="rub" />
         <span>BMP</span>
       </div>
-      <div className={styled.procent}>
+      <div
+        style={isHome ? { fontSize: "10px" } : {}}
+        className={`${styled.procent} background-br`}
+      >
         <span>68.213%</span>
         <span>Mined</span>
       </div>
-      <div className={styled.time}>
-        <img
-          style={isHome ? {} : { width: "14px", height: "14px" }}
-          src="/icon/time.svg"
-          alt="time"
-        />
-        <span>30d 17h</span>
-      </div>
+      {!isHome && (
+        <div className={`${styled.time} background-br`}>
+          <img src="/icon/time.svg" alt="time" />
+          <span>30d 17h</span>
+        </div>
+      )}
     </div>
   );
 };

@@ -9,14 +9,14 @@ const HomeTopUser = () => {
 
   return (
     <>
-      <div className={styled.wrapper}>
+      <div>
         <div className={styled["user-info"]}>
-          <div className={styled.user}>
+          <div className={`${styled.user} background-br`}>
             <img src="/icon/user.svg" alt="user" />
             <span>User</span>
           </div>
           <div
-            className={styled.cub}
+            className={`${styled.cub} background-br`}
             onClick={() => {
               handlerVibrationTg();
               setShowModal((prev) => !prev);
@@ -27,9 +27,10 @@ const HomeTopUser = () => {
         </div>
         <div className={styled.progress}>
           <div className={styled.line}></div>
-          <span>Level 1</span>
+          <span className={styled.level}>Level 1</span>
         </div>
       </div>
+
       {showModal && <HomeTopModal setShowModal={setShowModal} />}
     </>
   );

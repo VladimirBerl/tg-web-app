@@ -74,12 +74,4 @@
       right: 10%;
     }
   }
-  @media (max-height: 616px) {
-    & {
-      min-height: 110px;
-      & img {
-        max-width: 110px;
-      }
-    }
-  }
 }

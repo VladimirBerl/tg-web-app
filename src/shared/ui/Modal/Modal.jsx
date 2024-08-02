@@ -1,6 +1,7 @@
+import styled from "./Modal.module.scss";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import styled from "./Modal.module.scss";
+
 const Modal = ({ children, setShowModal }) => {
   
   const modalRef = useRef();
@@ -20,7 +21,7 @@ const Modal = ({ children, setShowModal }) => {
   }, [modalRef]);
 
   return createPortal(
-    <div className={styled.modal} ref={modalRef}>
+    <div className={`${styled.modal} background-br`} ref={modalRef}>
       <img
         onClick={() => {
           setShowModal((prev) => !prev);

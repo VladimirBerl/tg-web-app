@@ -1,0 +1,22 @@
+.info {
+  font-family: "Involve", sans-serif;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
+  padding: 5px 20px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  border-top-left-radius: 23.96px;
+  border-top-right-radius: 23.96px;
+  & span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    max-width: 74px;
+    width: 100%;
+    text-align: center;
+  }
+}

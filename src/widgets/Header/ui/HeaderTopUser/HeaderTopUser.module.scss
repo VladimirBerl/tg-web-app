@@ -1,13 +1,15 @@
-.wrapper {
   .user-info {
     display: flex;
     align-items: center;
     gap: 9.41px;
     & .user {
+      font-family: "UltramonoWide", sans-serif;
       display: flex;
       align-items: center;
       padding: 4px 5px;
       gap: 6px;
+      font-size: 10px;
+      text-transform: uppercase;
       & img {
         width: 24px;
         height: 24px;
@@ -26,29 +28,17 @@
     & .cub,
     & .user {
       min-height: 32px;
-      border: 1px solid var(--border-color);
-      position: relative;
-      border: 1px solid var(--border-color);
       border-radius: var(--border-8px);
-      overflow: hidden;
-      &::before {
-        position: absolute;
-        content: "";
-        inset: 0;
-        backdrop-filter: blur(40px);
-        background-color: rgba(255, 255, 255, 0.032);
-        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-        z-index: -1;
-      }
     }
   }
-  & .progress {
+  .progress {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 9.41px;
-    & div {
+    & .line {
       position: relative;
-      width: 41.6px;
+      flex-grow: 1;
       height: 5px;
       border-radius: 5px;
       background-color: #d9d9d9;
@@ -70,7 +60,7 @@
         border-radius: 5px;
       }
     }
-    & span {
+    & .level {
       display: block;
       width: 32px;
       text-align: center;
@@ -86,4 +76,3 @@
       -webkit-text-fill-color: transparent;
     }
   }
-}
