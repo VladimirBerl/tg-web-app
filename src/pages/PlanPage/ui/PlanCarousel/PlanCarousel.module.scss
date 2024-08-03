@@ -19,8 +19,8 @@
       position: relative;
       padding: 15px;
       border-radius: 10px;
-      background-color: transparent;
       min-height: 150px;
+      border: none;
       & p {
         display: block;
         margin: 0 auto;
@@ -50,16 +50,6 @@
         & .title-red {
           color: var(--color-primary);
         }
-      }
-      &::before {
-        position: absolute;
-        content: "";
-        inset: 0;
-        border-radius: 15px;
-        backdrop-filter: blur(40px);
-        background-color: rgba(255, 255, 255, 0.032);
-        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-        z-index: -1;
       }
     }
   }

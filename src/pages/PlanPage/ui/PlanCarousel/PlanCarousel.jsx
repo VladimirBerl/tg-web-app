@@ -102,11 +102,8 @@ const planSlideItems = [
 const PlanCarousel = () => {
   const [showModal, setShowModal] = useState(false);
   const [contentModal, setContentModal] = useState("");
-
   const OpenModalContent = (id) => {
-    setContentModal(
-      (prev) => (prev = planSlideItems.find((item) => item.id === id).title)
-    );
+    setContentModal(planSlideItems.find((item) => item.id === id).title);
     setShowModal((prev) => !prev);
   };
 
@@ -127,7 +124,7 @@ const PlanCarousel = () => {
             <Carousel>
               {sliders.map(({ task, color, dec, id, idItem = id }) => (
                 <div key={id} className={styles["swaiper-items"]}>
-                  <div className={styles["swaiper-item"]}>
+                  <div className={`${styles["swaiper-item"]} background-br`}>
                     <p style={{ color }}>{task}</p>
                     <p>{dec}</p>
                     <GroupIcon
