@@ -7,11 +7,21 @@ const PlanTopSwiper = () => {
   const handleBeforeChange = (from, to) => {
     setActiveIndex(to);
   };
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: false,
+    centerPadding: "22%",
+    // slidesToShow: 1,
+    // speed: 500,
+  };
   return (
     <div className={styled["plan-carousel"]}>
       <h3 className={styled.title}>Plan</h3>
       <div className={styled["plan-items"]}>
         <Carousel
+          {...settings}
           beforeChange={handleBeforeChange}
           style={{ textAlign: "center" }}
         >
