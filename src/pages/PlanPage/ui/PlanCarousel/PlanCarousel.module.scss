@@ -21,22 +21,6 @@
       border-radius: 10px;
       background-color: transparent;
       min-height: 150px;
-      & .group {
-        align-items: center;
-        justify-content: center;
-        & div {
-          width: 40px;
-          height: 40px;
-          border-radius: 13.12px;
-          z-index: -1;
-          background-color: rgba(217, 217, 217, 0.05);
-          backdrop-filter: blur(43.73px);
-          box-shadow: inset 0px 0px 17.49px 0px rgba(255, 255, 255, 0.05);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
       & p {
         display: block;
         margin: 0 auto;

@@ -2,10 +2,9 @@ import styled from "./ModalBottom.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-const ModalBottom = ({ children, setShowModalBottom, position = "32px" }) => {
+const ModalBottom = ({ children, setShowModalBottom, position = null }) => {
   const modalRef = useRef();
-  const firstBlockRef = useRef();
-  
+
   const [topPosition, setTopPosition] = useState(position);
 
   useEffect(() => {
@@ -15,6 +14,7 @@ const ModalBottom = ({ children, setShowModalBottom, position = "32px" }) => {
       }
     };
 
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -24,7 +24,7 @@ const ModalBottom = ({ children, setShowModalBottom, position = "32px" }) => {
     <div
       className={`${styled.modal} background-br`}
       ref={modalRef}
-      style={{ bottom: topPosition, transition: "top 0.4s" }}
+      style={{ bottom: topPosition, transition: "bottom 0.4s" }}
     >
       <img
         onClick={() => setShowModalBottom(false)}
@@ -32,7 +32,7 @@ const ModalBottom = ({ children, setShowModalBottom, position = "32px" }) => {
         src="/icon/close.svg"
         alt="close"
       />
-      <div ref={firstBlockRef}>{children}</div>
+      <div>{children}</div>
     </div>,
     document.getElementById("portal")
   );

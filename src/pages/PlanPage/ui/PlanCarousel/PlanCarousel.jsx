@@ -1,4 +1,5 @@
 import styles from "./PlanCarousel.module.scss";
+import GroupIcon from "./ui/GroupIcon/GroupIcon";
 import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
 import { Carousel } from "antd";
 import { useState } from "react";
@@ -100,11 +101,21 @@ const planSlideItems = [
 
 const PlanCarousel = () => {
   const [showModal, setShowModal] = useState(false);
+  const [contentModal, setContentModal] = useState("");
+
+  const OpenModalContent = (id) => {
+    setContentModal(
+      (prev) => (prev = planSlideItems.find((item) => item.id === id).title)
+    );
+    setShowModal((prev) => !prev);
+  };
 
   return (
     <>
       {showModal && (
-        <ModalBottom setShowModalBottom={setShowModal}>123</ModalBottom>
+        <ModalBottom position="0%" setShowModalBottom={setShowModal}>
+          <div style={{ height: "300px" }}>{contentModal}</div>
+        </ModalBottom>
       )}
       <div className={styles.wrapper}>
         {planSlideItems.map(({ title, img, imgWidth, sliders, id }) => (
@@ -114,25 +125,15 @@ const PlanCarousel = () => {
               <img style={{ width: imgWidth }} src={img} alt={title} />
             </div>
             <Carousel>
-              {sliders.map(({ task, color, dec, id }) => (
+              {sliders.map(({ task, color, dec, id, idItem = id }) => (
                 <div key={id} className={styles["swaiper-items"]}>
                   <div className={styles["swaiper-item"]}>
                     <p style={{ color }}>{task}</p>
                     <p>{dec}</p>
-                    <div className={styles.group}>
-                      <div onClick={() => setShowModal((prev) => !prev)}>
-                        <img src="/icon/question.svg" alt="question" />
-                      </div>
-                      <div onClick={() => setShowModal((prev) => !prev)}>
-                        <img src="/icon/watch-w.svg" alt="watch" />
-                      </div>
-                      <div onClick={() => setShowModal((prev) => !prev)}>
-                        <img src="/icon/email.svg" alt="email" />
-                      </div>
-                      <div onClick={() => setShowModal((prev) => !prev)}>
-                        <img src="/icon/tg-w.svg" alt="tg" />
-                      </div>
-                    </div>
+                    <GroupIcon
+                      id={idItem}
+                      OpenModalContent={OpenModalContent}
+                    />
                   </div>
                 </div>
               ))}

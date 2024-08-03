@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Carousel } from "antd";
 const PlanTopSwiper = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  
   const handleBeforeChange = (from, to) => {
     setActiveIndex(to);
   };
@@ -11,10 +11,8 @@ const PlanTopSwiper = () => {
   const settings = {
     className: "center",
     centerMode: true,
-    infinite: false,
+    infinite: true,
     centerPadding: "22%",
-    // slidesToShow: 1,
-    // speed: 500,
   };
   return (
     <div className={styled["plan-carousel"]}>
