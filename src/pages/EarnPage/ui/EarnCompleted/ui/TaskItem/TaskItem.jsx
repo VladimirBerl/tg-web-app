@@ -29,7 +29,7 @@ const task = [
 
 const TaskItem = () => {
   return task.map((item) => (
-    <div key={item.id} className={styled.task}>
+    <div key={item.id} className={`${styled.task} background-br`}>
       <img className={styled.telegram} src={item.icon} alt="icon" />
       <div className={styled["task-info"]}>
         <span>{item.title}</span>

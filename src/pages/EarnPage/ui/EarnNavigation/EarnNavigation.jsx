@@ -1,5 +1,6 @@
 import styled from "./EarnNavigation.module.scss";
-import Modal from "@/shared/ui/Modal/Modal";
+import ModalContent from "./ui/ModalContent/ModalContent";
+import CategoryItem from "./ui/CategoryItem/CategoryItem";
 import { useState } from "react";
 
 const category = [
@@ -49,9 +50,10 @@ const EarnNavigation = ({ setCurrentSlide, setShowModal }) => {
     setShowModal((prev) => !prev);
     setCurrentSlide(current);
   };
+
   return (
     <>
-      <div className={styled.modal}>
+      <div className={styled.navigation}>
         <div className={styled.top}>
           <div
             onClick={() => setShowPopup((prev) => !prev)}
@@ -64,35 +66,15 @@ const EarnNavigation = ({ setCurrentSlide, setShowModal }) => {
           </div>
           <span>Категории</span>
         </div>
-        <div className={styled.categgory}>
-          {category.map((task) => (
-            <div
-              className={styled.task}
-              key={task.id}
-              onClick={() => handleAfterChange(task.id)}
-            >
-              <div>
-                <span>{task.count}</span>
-                <span>{task.name}</span>
-              </div>
-              {task.img && <img src={task.img} alt="icon" />}
-            </div>
-          ))}
-        </div>
+        {category.map((task) => (
+          <CategoryItem
+            key={task.id}
+            task={task}
+            handleAfterChange={handleAfterChange}
+          />
+        ))}
       </div>
-      {showPopup && (
-        <Modal setShowModal={setShowPopup}>
-          <div className={styled["modal-content"]}>
-            <div className={styled["ruler-info"]}>
-              <img src="/images/info.png" alt="info" />
-              <span className={styled["ruler-desc"]}>
-                Чтобы добавить ваше задание, отправьте запрос в телеграм
-              </span>
-            </div>
-            <button className={styled["ruler-btn"]}>@Manager_Vip_Client</button>
-          </div>
-        </Modal>
-      )}
+      <ModalContent showPopup={showPopup} setShowPopup={setShowPopup} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-.wrapper {
+.info {
   font-family: "Involve", sans-serif;
   & h3 {
     font-size: 20px;
@@ -6,27 +6,15 @@
     margin-bottom: 17px;
   }
   & .btn-friends {
-    position: relative;
-    overflow: hidden;
-    border-radius: 17.11px;
-    background-color: transparent;
-    min-width: 250px;
-    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    border-radius: 17.11px;
+    min-width: 250px;
+    border: none;
     padding: 14px 0px;
     margin: 0px auto 16px;
-    &::before {
-      position: absolute;
-      content: "";
-      inset: 0;
-      backdrop-filter: blur(40px);
-      background-color: rgba(255, 255, 255, 0.032);
-      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      z-index: -1;
-    }
     & .coin-img {
       width: 28px;
     }
@@ -41,9 +29,6 @@
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-    &:active {
-      transform: scale(1.05);
     }
   }
 }

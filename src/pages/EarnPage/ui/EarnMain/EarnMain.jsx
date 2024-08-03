@@ -1,4 +1,4 @@
-import styled from "./EarnMain.module.scss";
+import Navigation from "./ui/Navigation/Navigation";
 import EarnTask from "../EarnTask/EarnTask";
 import EarnBonuses from "../EarnBonuses/EarnBonuses";
 import EarnVideo from "../EarnVideo/EarnVideo";
@@ -6,7 +6,6 @@ import EarnGame from "../EarnGame/EarnGame";
 import EarnSubscriptions from "../EarnSubscriptions/EarnSubscriptions";
 import EarnCompleted from "../EarnCompleted/EarnCompleted";
 import { useRef, useEffect } from "react";
-import { Carousel } from "antd";
 
 const EarnMain = ({ currentSlide, setCurrentSlide, setShowModal }) => {
   const carouselRef = useRef(null);
@@ -41,49 +40,16 @@ const EarnMain = ({ currentSlide, setCurrentSlide, setShowModal }) => {
     }
   };
   return (
-    <div className="carousel">
-      <div className={styled["wrapper-top"]}>
-        <div className={styled.carousel}>
-          <div
-            onClick={() => setShowModal((prev) => !prev)}
-            className={styled.category}
-          >
-            <img src="/icon/category.svg" alt="category" />
-          </div>
-          <Carousel
-            infinite={false}
-            afterChange={handleAfterChange}
-            ref={carouselRef}
-          >
-            <div className={styled["carousel-btn"]}>
-              <span>Задачи</span>
-              <img src="/icon/task.svg" alt="" />
-            </div>
-            <div className={styled["carousel-btn"]}>
-              <span>Игры</span>
-              <img src="/icon/game.svg" alt="" />
-            </div>
-            <div className={styled["carousel-btn"]}>
-              <span>Видео</span>
-              <img src="/icon/video.svg" alt="" />
-            </div>
-            <div className={styled["carousel-btn"]}>
-              <span>Бонусы</span>
-              <img src="/icon/bonus.svg" alt="" />
-            </div>
-            <div className={styled["carousel-btn"]}>
-              <span>Подписки</span>
-              <img src="/icon/watch-w.svg" alt="" />
-            </div>
-            <div className={styled["carousel-btn"]}>
-              <span>Завершенные</span>
-              <img src="/icon/ready.svg" alt="" />
-            </div>
-          </Carousel>
-        </div>
+    <>
+      <Navigation
+        setShowModal={setShowModal}
+        handleAfterChange={handleAfterChange}
+        carouselRef={carouselRef}
+      />
+      <div style={{ height: "80vh" }}>
+        {renderComponent()}
       </div>
-      <div style={{ height: "80vh",marginBottom: "100px" }}>{renderComponent()}</div>
-    </div>
+    </>
   );
 };
 
