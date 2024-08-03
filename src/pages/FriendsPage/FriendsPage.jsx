@@ -6,12 +6,12 @@ import FriendsInvate from "./ui/FriendsInvate/FriendsInvate";
 
 export default function FriendsPage() {
   return (
-    <>
+    <div style={{ padding: "0px 16px 10px" }}>
       <FriendsCount />
       <FriendsBonuse />
       <FriendsTask />
       <FriendsInvate />
       <FriendsList />
-    </>
+    </div>
   );
 }

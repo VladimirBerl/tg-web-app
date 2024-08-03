@@ -3,40 +3,21 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  max-width: 250px;
-  margin: 0px auto 19px;
+  margin: 0px 0px 25px;
   & button {
-    position: relative;
-    border-radius: 12.83px;
-    border: 1px solid var(--border-color);
-    font-family: "UltramonoWide", sans-serif;
-    font-size: 14.83px;
-    background-color: transparent;
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    &:active {
-      transform: scale(1.05);
-    }
-    &::before {
-      position: absolute;
-      content: "";
-      inset: 0;
-      border-radius: 12.83px;
-      backdrop-filter: blur(40px);
-      background-color: rgba(255, 255, 255, 0.032);
-      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      z-index: -2;
-    }
+    font-family: "UltramonoWide", sans-serif;
+    font-size: 14.83px;
+    color: #fff;
+    border-radius: 15px;
   }
   & button:nth-child(1) {
-    min-width: 74%;
+    width: 155px;
     min-height: 34px;
   }
   & button:nth-child(2) {
-    min-width: 34px;
-    min-height: 34px;
     padding: 10px;
   }
 }

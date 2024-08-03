@@ -1,74 +1,20 @@
-.invite-friends {
-  padding: 0px 22px;
-  margin-bottom: 17px;
+.invite {
+  margin-bottom: 16px;
+  font-family: "Involve", sans-serif;
   & .title {
     display: block;
-    font-family: "Involve", sans-serif;
     font-size: 12px;
     font-weight: bold;
     color: #c1a130;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   & .invite-wrapper {
-    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 8px 12px;
-    position: relative;
+    border: none;
     border-radius: 17.11px;
-    overflow: hidden;
-    &::before {
-      position: absolute;
-      content: "";
-      inset: 0;
-      backdrop-filter: blur(40px);
-      background-color: rgba(255, 255, 255, 0.032);
-      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      z-index: -2;
-    }
-    & > span {
-      display: block;
-      font-family: "Involve", sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      color: #c1a130;
-      text-align: center;
-    }
-    & .gift {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      & .gift-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        & .task {
-          text-align: center;
-          font-size: 16px;
-          font-family: "Involve", sans-serif;
-        }
-        & .price-task {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          & .coin-img {
-            max-width: 15px;
-          }
-          & span {
-            font-family: "Bicubik", sans-serif;
-            font-size: 13px;
-            background: linear-gradient(
-              90deg,
-              rgb(48, 104, 208) 0%,
-              rgb(131, 107, 175) 50%,
-              rgb(151, 130, 98) 100%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-        }
-      }
-    }
   }
 }

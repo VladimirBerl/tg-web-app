@@ -1,4 +1,5 @@
 import styled from "./FriendsList.module.scss";
+import FriendItem from "./ui/FriendItem/FriendItem";
 
 const friends = [
   {
@@ -23,19 +24,8 @@ const FriendsList = () => {
     <div className={styled.wrapper}>
       <h2 className={styled.title}>Friends List</h2>
       <ul className={styled.friends}>
-        {friends.map((item) => (
-          <li key={item.id}>
-            <div className={styled.user}>
-              <div className={styled.icon}>
-                {item.name.charAt(0).toUpperCase()}
-              </div>
-              <span className={styled.name}>{item.name}</span>
-            </div>
-            <div className={styled.coin}>
-              <img src="/icon/coin.svg" alt="coin" />
-              <span className={styled["coin-value"]}>+{item.coin}</span>
-            </div>
-          </li>
+        {friends.map((friend) => (
+          <FriendItem key={friend.id} friend={friend} />
         ))}
       </ul>
     </div>
