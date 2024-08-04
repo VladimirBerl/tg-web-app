@@ -1,11 +1,10 @@
 .modal {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  position: fixed; /* Изменено на fixed */
+  position: absolute;
   z-index: 16;
   left: 12px;
   right: 12px;
-  bottom: 0; /* Начальное значение для bottom */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +16,7 @@
       bottom: -100%;
     }
     100% {
-      bottom: 0;
+      bottom: 0%;
     }
   }
 

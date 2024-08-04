@@ -27,6 +27,9 @@ li {
     display: flex;
     align-items: center;
     gap: 5px;
+    & img {
+      max-width: 20px;
+    }
     & .coin-value {
       font-family: "Bicubik", sans-serif;
       font-size: 13px;

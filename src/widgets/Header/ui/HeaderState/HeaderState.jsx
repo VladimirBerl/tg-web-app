@@ -5,7 +5,7 @@ const HeaderState = ({ isHome }) => {
     <div className={`${styled.state} background-br`}>
       <div style={isHome ? { fontSize: "10px" } : {}} className={styled.name}>
         <span>2B</span>
-        <img src="/icon/rub.svg" alt="rub" />
+        <img src="/icon/rub-min.png" alt="rub" />
         <span>BMP</span>
       </div>
       <div

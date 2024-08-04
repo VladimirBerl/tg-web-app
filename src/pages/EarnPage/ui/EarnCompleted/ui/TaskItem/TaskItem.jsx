@@ -35,7 +35,7 @@ const TaskItem = () => {
         <span>{item.title}</span>
         <div className={styled["price-task"]}>
           <div className={styled["coin-img"]}>
-            <img src="/icon/coin.svg" alt="coin" />
+            <img src="/icon/coin-min.png" alt="coin" />
           </div>
           <span>+{item.price}</span>
         </div>

@@ -7,7 +7,7 @@ import TokenExchangePoints from "../TokenExchangePoints/TokenExchangePoints";
 
 const TokenMain = () => {
   return (
-    <div className={styled["coin-main"]}>
+    <div className={`${styled["coin-main"]} background-br`}>
       <TokenInfoCoin />
       <TokenTable />
       <TokenChart />

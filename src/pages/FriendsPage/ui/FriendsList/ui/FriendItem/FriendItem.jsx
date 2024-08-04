@@ -8,7 +8,7 @@ const FriendItem = ({ friend }) => {
         <span className={styled.name}>{friend.name}</span>
       </div>
       <div className={styled.coin}>
-        <img src="/icon/coin.svg" alt="coin" />
+        <img src="/icon/coin-min.png" alt="coin" />
         <span className={styled["coin-value"]}>+{friend.coin}</span>
       </div>
     </li>

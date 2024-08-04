@@ -10,7 +10,7 @@ export default function TokenInfo() {
             <span>0.23</span>
           </div>
           <div className={styled["img-token"]}>
-            <img src="/icon/bmt-token.svg" alt="" />
+            <img src="/icon/bmt-token-min.png" alt="" />
           </div>
           <div className={styled["btn-ton"]}>
             <span>TON</span>
@@ -19,7 +19,7 @@ export default function TokenInfo() {
         </div>
       </div>
       <p className={styled["bnt-title"]}>Информация</p>
-      <div className={styled["bnt-coin-info"]}>
+      <div className={`${styled["bnt-coin-info"]} background-br`}>
         <div>
           <span>Сеть</span>
           <span>TON</span>

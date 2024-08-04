@@ -12,7 +12,6 @@
   position: relative;
   padding: 10px;
   background-color: transparent;
-
   margin-bottom: 32px;
   &::before {
     position: absolute;
@@ -60,6 +59,7 @@
         position: absolute;
         content: "";
         inset: 0;
+        border-radius: 50%;
         backdrop-filter: blur(40px);
         background-color: rgba(255, 255, 255, 0.032);
         box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
@@ -77,22 +77,13 @@
   }
 }
 .bnt-coin-info {
-  position: relative;
   background-color: transparent;
   padding: 10px 15px;
   margin-bottom: 32px;
   font-family: "Involve", sans-serif;
   font-size: 14px;
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-    border-radius: 15px;
-    backdrop-filter: blur(40px);
-    background-color: rgba(255, 255, 255, 0.032);
-    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-    z-index: -1;
-  }
+  border-radius: 15px;
+  border: none;
   & div {
     display: flex;
     align-items: center;

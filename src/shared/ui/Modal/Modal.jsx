@@ -27,7 +27,7 @@ const Modal = ({ children, setShowModal }) => {
           setShowModal((prev) => !prev);
         }}
         className={styled.close}
-        src="/icon/close.svg"
+        src="/icon/close-min.svg"
         alt="close"
       />
       {children}

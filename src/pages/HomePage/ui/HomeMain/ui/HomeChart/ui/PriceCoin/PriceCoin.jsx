@@ -21,7 +21,7 @@ const PriceCoin = ({
         }}
         style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}
       >
-        <img src="/icon/coin.svg" alt="coin" />
+        <img src="/icon/coin-min.png" alt="coin" />
         {dataChartOne.datasets[0].price}
       </span>
       <span
@@ -31,7 +31,7 @@ const PriceCoin = ({
         }}
         style={{ color: dataChartTwo.datasets[0].backgroundColor[0] }}
       >
-        <img src="/icon/bmt.svg" alt="coin" />
+        <img src="/icon/bmt-min.png" alt="coin" />
         {dataChartTwo.datasets[0].price}
       </span>
       <span
@@ -41,7 +41,7 @@ const PriceCoin = ({
         }}
         style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}
       >
-        <img src="/icon/rub.svg" alt="coin" />
+        <img src="/icon/rub-min.png" alt="coin" />
         {dataChartTree.datasets[0].price}
       </span>
     </div>

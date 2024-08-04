@@ -82,7 +82,7 @@ const ModalContainer = ({
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
-                    <img src="/icon/coin.svg" alt="coin" />
+                    <img src="/icon/coin-min.png" alt="coin" />
                     <span>10 000</span>
                   </div>
                   <span>Разместить пост в группе за монеты</span>
@@ -92,14 +92,14 @@ const ModalContainer = ({
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
-                    <img src="/icon/bmt.svg" alt="bmt" />
+                    <img src="/icon/bmt-min.png" alt="bmt" />
                     <span>100</span>
                   </div>
                   <span>Разместить пост в группе за токены</span>
                 </button>
                 <button onClick={handlerVibrationTg}>
                   <div>
-                    <img src="/icon/rub.svg" alt="rub" />
+                    <img src="/icon/rub-min.png" alt="rub" />
                     <span>1 000</span>
                   </div>
                   <span>Разместить пост в группе за рубли</span>

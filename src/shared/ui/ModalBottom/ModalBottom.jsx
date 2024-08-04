@@ -29,7 +29,7 @@ const ModalBottom = ({ children, setShowModalBottom, position = null }) => {
       <img
         onClick={() => setShowModalBottom(false)}
         className={styled.close}
-        src="/icon/close.svg"
+        src="/icon/close-min.svg"
         alt="close"
       />
       <div>{children}</div>

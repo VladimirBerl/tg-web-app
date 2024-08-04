@@ -9,7 +9,7 @@ const TaskItem = ({ task }) => {
       <span className={styled.task}>{task.name}</span>
       <div className={styled["price-task"]}>
         <div className={styled["coin-img"]}>
-          <img src="/icon/coin.svg" alt="coin" />
+          <img src="/icon/coin-min.png" alt="coin" />
         </div>
         <span>+{task.price}</span>
       </div>
