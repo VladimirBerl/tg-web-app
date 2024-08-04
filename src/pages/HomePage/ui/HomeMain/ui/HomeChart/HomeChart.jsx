@@ -5,6 +5,8 @@ import PriceCoin from "./ui/PriceCoin/PriceCoin";
 import ChartContainer from "./ui/ChartContainer/ChartContainer";
 import { useState } from "react";
 
+
+
 const dataChartOne = {
   datasets: [
     {
@@ -58,11 +60,13 @@ const HomeChart = () => {
           dataChartTwo={dataChartTwo}
           dataChartTree={dataChartTree}
         />
+
         <ChartContainer
           dataChartOne={dataChartOne}
           dataChartTwo={dataChartTwo}
           dataChartTree={dataChartTree}
         />
+
         <PriceCoin
           setShowModal={setShowModal}
           setShowModalRub={setShowModalRub}
