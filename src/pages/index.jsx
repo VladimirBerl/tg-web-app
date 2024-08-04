@@ -1,16 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-// import HomePage from "@/pages/HomePage/HomePage";
-// import PlanPage from "@/pages/PlanPage/PlanPage";
-// import FriendsPage from "@/pages/FriendsPage/FriendsPage";
-// import EarnPage from "@/pages/EarnPage/EarnPage";
-// import LayoutPage from "@/app/providers";
-// import TokenPage from "@/pages/TokenPage/TokenPage";
-
 import scrollTop from "@/shared/lib/scrollTop";
-import Loading from "@/widgets/Loading/Loading";
+// import Loading from "@/widgets/Loading/Loading";
 
+const Loading = lazy(() => import("@/widgets/Loading/Loading"));
 const HomePage = lazy(() => import("@/pages/HomePage/HomePage.jsx"));
 const PlanPage = lazy(() => import("@/pages/PlanPage/PlanPage.jsx"));
 const FriendsPage = lazy(() => import("@/pages/FriendsPage/FriendsPage.jsx"));
