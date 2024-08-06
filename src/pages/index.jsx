@@ -2,8 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import scrollTop from "@/shared/lib/scrollTop";
-
-const Loading = lazy(() => import("@/widgets/Loading/Loading"));
+import Loading from "../widgets/Loading/Loading";
 const HomePage = lazy(() => import("@/pages/HomePage/HomePage.jsx"));
 const PlanPage = lazy(() => import("@/pages/PlanPage/PlanPage.jsx"));
 const FriendsPage = lazy(() => import("@/pages/FriendsPage/FriendsPage.jsx"));
