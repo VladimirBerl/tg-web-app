@@ -18,7 +18,7 @@ const Routing = () => {
       <Route
         path="/"
         element={
-          <Suspense>
+          <Suspense fallback={<Loading />}>
             <LayoutPage />
           </Suspense>
         }

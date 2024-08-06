@@ -4,7 +4,7 @@ import { Spin } from "antd";
 const Loading = () => {
   return (
     <div className={styled.wrapper}>
-      <Spin size="large" />
+      {/* <Spin size="large" /> */}
       <span>Loading...</span>
     </div>
   );
