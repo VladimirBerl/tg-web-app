@@ -2,15 +2,14 @@ import "./styles/index.css";
 import Routing from "@/pages";
 import Loading from "../widgets/Loading/Loading";
 import { useState, useEffect } from "react";
-// import preloadResources from "@/shared/lib/preloadResources.js";
+import preloadResources from "@/shared/lib/preloadResources.js";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  // const [resources, setResources] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   preloadResources(setIsLoading, setResources);
-  // }, []);
+  useEffect(() => {
+    preloadResources(setIsLoading);
+  }, []);
 
   if (isLoading) {
     return <Loading />;
