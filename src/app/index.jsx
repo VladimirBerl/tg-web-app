@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import preloadResources from "@/shared/lib/preloadResources.js";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     preloadResources(setIsLoading);
