@@ -2,7 +2,7 @@ import styled from "./ModalBottom.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-const ModalBottom = ({ children, setShowModalBottom, position = null }) => {
+const ModalBottom = ({ children, setShowModalBottom, position }) => {
   const modalRef = useRef();
 
   const [topPosition, setTopPosition] = useState(position);

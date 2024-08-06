@@ -4,12 +4,12 @@ export const userApi = createApi({
   reducerPath: "userApi",
   tagTypes: ["User"],
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://368b-188-68-160-86.ngrok-free.app/",
+    baseUrl: "http://localhost:8000/api",
   }),
   endpoints: (build) => ({
     getUser: build.query({
       query: (id) => ({
-        url: `api/get_user_info/${id}`,
+        url: `get_user_info/${id}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export const userApi = createApi({
     }),
     createUser: build.mutation({
       query: (body) => ({
-        url: `api/create_user`,
+        url: `create_user`,
         method: "POST",
         body,
       }),

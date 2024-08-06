@@ -55,7 +55,7 @@ const cubLevel = [
   },
 ];
 
-const HomeTopModal = ({setShowModal}) => {
+const HomeTopModal = ({ setShowModal }) => {
   return (
     <ModalBottom position="-297px" setShowModalBottom={setShowModal}>
       <div className={styled.task}>

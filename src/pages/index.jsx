@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import scrollTop from "@/shared/lib/scrollTop";
-// import Loading from "@/widgets/Loading/Loading";
 
 const Loading = lazy(() => import("@/widgets/Loading/Loading"));
 const HomePage = lazy(() => import("@/pages/HomePage/HomePage.jsx"));
@@ -19,7 +18,7 @@ const Routing = () => {
       <Route
         path="/"
         element={
-          <Suspense fallback={<Loading />}>
+          <Suspense>
             <LayoutPage />
           </Suspense>
         }
