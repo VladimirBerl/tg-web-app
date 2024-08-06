@@ -3,9 +3,9 @@ import { Spin } from "antd";
 
 const Loading = () => {
   return (
-    <div className={styled.wrapper}>
+    <div className={`${styled.wrapper} background-br`}>
+      <span>Loading</span>
       <Spin size="large" />
-      <span>Loading...</span>
     </div>
   );
 };

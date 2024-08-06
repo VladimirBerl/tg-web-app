@@ -1,21 +1,12 @@
 .wrapper {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   gap: 15px;
-  position: relative;
-  height: 100vh;
+  border: none;
   & span {
     font-size: 18px;
-  }
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-    backdrop-filter: blur(40px);
-    background-color: rgba(255, 255, 255, 0.032);
-    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-    z-index: -1;
   }
 }
