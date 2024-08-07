@@ -8,6 +8,14 @@ const ModalContainer = ({
   setShowModalBottomBuy,
   setShowModalBottomSell,
 }) => {
+  const handleClick = () => {
+    if (window.PuzleBot) {
+      window.PuzleBot.sendComand("/menu/catalog");
+    } else {
+      console.error("PuzleBot is not defined");
+    }
+  };
+
   return (
     <>
       {showModalBottomBuy && (
@@ -28,7 +36,7 @@ const ModalContainer = ({
                   style={{ marginBottom: "17px" }}
                 >
                   <img src="/icon/shop.svg" alt="shop" />
-                  <span>
+                  <span onClick={handleClick}>
                     Перейти в группу и выбрать нужный товар со скидкой
                   </span>
                 </button>
