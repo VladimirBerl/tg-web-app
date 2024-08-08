@@ -9,7 +9,7 @@ const ModalContainer = ({
   setShowModalBottomSell,
 }) => {
   const handleClick = () => {
-    PuzleBot.sendComand("/menu");
+    
   };
 
   return (
@@ -32,13 +32,13 @@ const ModalContainer = ({
                   style={{ marginBottom: "17px" }}
                 >
                   <img src="/icon/shop.svg" alt="shop" />
-                  <span onClick={handleClick}>
+                  <span onClick={() => PuzzleBot.sendCommand('/catalog')}>
                     Перейти в группу и выбрать нужный товар со скидкой
                   </span>
                 </button>
                 <button onClick={handlerVibrationTg}>
                   <img src="/icon/search.svg" alt="search" />
-                  <span>
+                  <span onClick={() => PuzzleBot.sendCommand('/public')}>
                     Перейти в бота и разместить запрос на поиск нужного товара
                   </span>
                 </button>
