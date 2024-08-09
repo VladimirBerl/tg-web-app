@@ -8,8 +8,12 @@ const ModalContainer = ({
   setShowModalBottomBuy,
   setShowModalBottomSell,
 }) => {
-  const handleClick = () => {
-    
+  const openLinkTg = () => {
+    if (window.Telegram.WebApp) {
+      window.Telegram.WebApp.openLink("https://t.me/Buyer_Marketplace");
+    } else {
+      console.error("Telegram WebApp is not defined");
+    }
   };
 
   return (
@@ -32,13 +36,13 @@ const ModalContainer = ({
                   style={{ marginBottom: "17px" }}
                 >
                   <img src="/icon/shop.svg" alt="shop" />
-                  <span onClick={() => PuzzleBot.sendCommand('/catalog')}>
+                  <span onClick={openLinkTg}>
                     Перейти в группу и выбрать нужный товар со скидкой
                   </span>
                 </button>
                 <button onClick={handlerVibrationTg}>
                   <img src="/icon/search.svg" alt="search" />
-                  <span onClick={() => PuzzleBot.sendCommand('/public')}>
+                  <span onClick={() => PuzzleBot.sendCommand("/search")}>
                     Перейти в бота и разместить запрос на поиск нужного товара
                   </span>
                 </button>
@@ -82,7 +86,10 @@ const ModalContainer = ({
                 </span>
                 <span className={styled.title}>Buyer Marketplace</span>
                 <button
-                  onClick={handlerVibrationTg}
+                  onClick={() => {
+                    PuzzleBot.sendCommand("/money");
+                    handlerVibrationTg;
+                  }}
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
@@ -92,7 +99,10 @@ const ModalContainer = ({
                   <span>Разместить пост в группе за монеты</span>
                 </button>
                 <button
-                  onClick={handlerVibrationTg}
+                  onClick={() => {
+                    PuzzleBot.sendCommand("/token");
+                    handlerVibrationTg;
+                  }}
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
@@ -101,7 +111,12 @@ const ModalContainer = ({
                   </div>
                   <span>Разместить пост в группе за токены</span>
                 </button>
-                <button onClick={handlerVibrationTg}>
+                <button
+                  onClick={() => {
+                    PuzzleBot.sendCommand("/rub");
+                    handlerVibrationTg;
+                  }}
+                >
                   <div>
                     <img src="/icon/rub-min.png" alt="rub" />
                     <span>1 000</span>

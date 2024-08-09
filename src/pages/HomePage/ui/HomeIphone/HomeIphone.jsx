@@ -4,6 +4,14 @@ const interactionGroup = [
   { name: "Продавцы", info: "234" },
 ];
 const HomeIphone = () => {
+  const openLinkTg = () => {
+    if (window.Telegram.WebApp) {
+      window.Telegram.WebApp.openLink("https://t.me/Buyer_Marketplace");
+    } else {
+      console.error("Telegram WebApp is not defined");
+    }
+  };
+
   return (
     <div className={styled.wrapper}>
       <div className={styled.buy}>
@@ -14,7 +22,7 @@ const HomeIphone = () => {
         <span>{interactionGroup[1].name.toUpperCase()}</span>
         <span>{interactionGroup[1].info}</span>
       </div>
-      <img src="/images/iPhone.png" alt="iPhone" />
+      <img onClick={openLinkTg} src="/images/iPhone.png" alt="iPhone" />
     </div>
   );
 };
