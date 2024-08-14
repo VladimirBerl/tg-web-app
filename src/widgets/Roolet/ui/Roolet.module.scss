@@ -10,7 +10,8 @@
     transform: translate3d(-50%, -14px, 0);
   }
   .title {
-    font-size: 20px;
+    font-size: 18px;
+    white-space: nowrap;
     position: absolute;
     left: 50%;
     transform: translate3d(-50%, -50px, 0);
