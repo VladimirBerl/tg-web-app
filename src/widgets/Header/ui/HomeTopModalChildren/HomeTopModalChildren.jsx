@@ -1,5 +1,6 @@
-import { useState } from "react";
 import styled from "./HomeTopModalChildren.module.scss";
+import { useState } from "react";
+import {Roolet} from "@/widgets/Roolet";
 
 const HomeTopModalChildren = ({ items }) => {
   const [selectedItemId, setSelectedItemId] = useState(null);
@@ -24,28 +25,30 @@ const HomeTopModalChildren = ({ items }) => {
             </button>
           </div>
           <div className={styled["task-variation"]}>
-            {selectedItemTogle
-              ? item.conditions.map((task) => (
-                  <div key={task} className={styled["task-variation-item"]}>
-                    <div className={styled.id}>{task.id}</div>
-                    <div className={styled.item}>
-                      <span>{task.title}</span>
-                      <div>
-                        <span className={styled.target}>0/{task.target}</span>
-                        <img src="/icon/watch.svg" alt="watch" />
-                      </div>
-                    </div>
-                  </div>
-                ))
-              : item.possibilities.map((task) => (
-                  <div key={task} className={styled["task-variation-item"]}>
-                    <div className={styled.id}>{task.id}</div>
-                    <div className={styled.item}>
-                      <span>{task.title}</span>
+            {selectedItemTogle ? (
+              item.conditions.map((task) => (
+                <div key={task} className={styled["task-variation-item"]}>
+                  <div className={styled.id}>{task.id}</div>
+                  <div className={styled.item}>
+                    <span>{task.title}</span>
+                    <div>
+                      <span className={styled.target}>0/{task.target}</span>
                       <img src="/icon/watch.svg" alt="watch" />
                     </div>
                   </div>
-                ))}
+                </div>
+              ))
+            ) : (
+              // : item.possibilities.map((task) => (
+              //     <div key={task} className={styled["task-variation-item"]}>
+              //       <div className={styled.id}>{task.id}</div>
+              //       <div className={styled.item}>
+              //         <span>{task.title}</span>
+              //         <img src="/icon/watch.svg" alt="watch" />
+              //       </div>
+              //     </div>
+              <Roolet />
+            )}
           </div>
         </div>
       ) : (
