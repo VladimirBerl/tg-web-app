@@ -5,23 +5,23 @@ import InfoItem from "./ui/InfoItem/InfoItem";
 const InfoItems = [
   {
     text: "Покупайте и продавайте токен, добавляйте ликвидность и получайте монеты в награду",
-    icon: "/public/icon/token.svg",
+    icon: "/icon/token.svg",
   },
   {
     text: "Участвуйте в совместной разработке приложения и получайте награды в монетах",
-    icon: "/public/icon/plan.svg",
+    icon: "/icon/plan.svg",
   },
   {
     text: "Заходите каждый день в приложение и фармите монеты",
-    icon: "/public/icon/home.svg",
+    icon: "/icon/home.svg",
   },
   {
     text: "Приглашайте друзей в приложение и получайте монеты за каждого друга",
-    icon: "/public/icon/friend.svg",
+    icon: "/icon/friend.svg",
   },
   {
     text: "Выполняйте задания и зарабатывайте больше монет",
-    icon: "/public/icon/earn.svg",
+    icon: "/icon/earn.svg",
   },
 ];
 
