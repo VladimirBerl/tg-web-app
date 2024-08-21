@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & .value {
+    display: block;
+    text-align: center;
+    color: #836baf;
+    min-width: 86px;
+    min-height: 42px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    padding: 12px 6px;
+  }
+}

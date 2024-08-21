@@ -1,0 +1,14 @@
+.task {
+  font-family: "Involve", sans-serif;
+  padding: 23px;
+  width: 100%;
+  margin-bottom: 88px;
+  & .title {
+    color: #c1a130;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-bottom: 6px;
+    margin: 0px 30px 6px;
+  }
+}

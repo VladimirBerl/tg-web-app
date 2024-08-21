@@ -1,0 +1,31 @@
+@import url(./fons.css);
+@import url(./reset.css);
+@import url(./helpers.css);
+
+:root {
+  font-family: "UltramonoWide", sans-serif;
+  color: var(--color-white);
+  font-size: 8.56px;
+  font-weight: normal;
+  overflow: auto;
+
+  --color-bg: #1c1f24;
+  --color-white: #ffffff;
+  --color-primary: #ff5a30;
+  --color-menu: #34353a;
+  --color-success: #03cea4;
+  --color-warning: #ffd370;
+  --color-warning-black: #ffbe2d;
+  --color-gray: #5e5e5e;
+  --color-gray-text: #9d9d9d;
+  --color-card: #41454b;
+
+  --border-color: #413160;
+  --border-8px: 8.58px;
+}
+
+body {
+  overflow: hidden;
+  background: url("/public/images/backgraund.png");
+  background-position: 56% 30%;
+}

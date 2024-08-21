@@ -1,0 +1,35 @@
+.modal {
+  border-radius: 30px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: modal;
+  animation-duration: 0.4s;
+
+  @keyframes modal {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  & .close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 4;
+    width: 20px;
+    height: 20px;
+  }
+}

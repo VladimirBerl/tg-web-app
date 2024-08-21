@@ -1,0 +1,28 @@
+.chart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px 10px 20px;
+  & .item {
+    max-width: 74px;
+    height: 100%;
+  }
+  & .counter {
+    font-family: "Bicubik", sans-serif;
+    font-size: 11.12px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 60%;
+    left: 0;
+    right: 0;
+    transform: translateY(-60%);
+    padding: 0px 20px 10px 20px;
+    & span {
+      min-width: 74px;
+      text-align: center;
+    }
+  }
+}

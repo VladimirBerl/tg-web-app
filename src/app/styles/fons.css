@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "UltramonoWide";
+  src: url("./fonts/UltramonoWide/UltramonoWide-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Involve";
+  src: url("./fonts/Involve/Involve-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Bicubik";
+  src: url("./fonts/Bicubik/Bicubik-71qR.otf") format("truetype");
+  font-weight: 400;
+}

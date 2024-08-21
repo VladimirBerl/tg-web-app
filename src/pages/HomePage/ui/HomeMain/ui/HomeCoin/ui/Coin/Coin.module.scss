@@ -1,0 +1,12 @@
+.count {
+  font-family: "Bicubik", sans-serif;
+  font-size: 32.67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7px;
+  gap: 10px;
+  & img {
+    max-width: 40px;
+  }
+}

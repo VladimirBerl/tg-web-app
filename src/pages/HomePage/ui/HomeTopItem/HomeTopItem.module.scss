@@ -1,0 +1,28 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 73.39px;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  padding: 3px 7px;
+  & span:nth-child(2) {
+    font-family: "Bicubik", sans-serif;
+    font-size: 10px;
+  }
+
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-8px);
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -1;
+  }
+}

@@ -1,0 +1,45 @@
+.state {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  border-radius: var(--border-8px);
+
+  & .name,
+  & .procent,
+  & .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  & .procent,
+  & .time {
+    gap: 4px;
+    padding: 6px 0px;
+    border-radius: 8.58px;
+    width: 100%;
+    border: none;
+  }
+  & .name {
+    font-weight: bold;
+    & img {
+      width: 23px;
+      height: 23px;
+    }
+  }
+  & .time {
+    max-width: 80px;
+    & img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  & .procent span:nth-child(2) {
+    color: #ffffff7a;
+  }
+}

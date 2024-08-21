@@ -1,0 +1,14 @@
+.info {
+  font-family: "Involve", sans-serif;
+  font-size: 12px;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 25.33px;
+  padding: 25px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

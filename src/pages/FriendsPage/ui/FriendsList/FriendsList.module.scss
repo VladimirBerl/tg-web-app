@@ -1,0 +1,12 @@
+.wrapper {
+  & .title {
+    font-size: 15px;
+    font-family: "Involve", sans-serif;
+    margin-bottom: 16px;
+  }
+  & .friends {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}

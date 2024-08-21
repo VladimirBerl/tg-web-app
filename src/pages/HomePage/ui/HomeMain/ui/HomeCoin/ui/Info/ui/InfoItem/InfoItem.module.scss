@@ -1,0 +1,13 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+  & p {
+    font-size: 13px;
+  }
+  & img {
+    width: 27px;
+    height: 27px;
+  }
+}

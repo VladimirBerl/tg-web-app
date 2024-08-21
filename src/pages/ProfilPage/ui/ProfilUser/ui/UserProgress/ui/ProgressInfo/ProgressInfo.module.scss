@@ -1,0 +1,11 @@
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  font-size: 9px;
+  margin-bottom: 4px;
+  & .next {
+    color: #ffffff80;
+  }
+}

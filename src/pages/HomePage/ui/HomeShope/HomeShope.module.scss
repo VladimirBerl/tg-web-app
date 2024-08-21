@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 25px;
+  margin-bottom: 20px;
+  gap: 51px;
+
+  & .button {
+    font-family: "UltramonoWide", sans-serif;
+    font-size: 10px;
+    width: 100%;
+    max-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 0px;
+    border-radius: 7.34px;
+    & img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+

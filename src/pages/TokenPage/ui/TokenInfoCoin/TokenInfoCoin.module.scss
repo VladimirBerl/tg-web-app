@@ -1,0 +1,93 @@
+.wrapper {
+  padding: 0px 13px;
+}
+.bnt-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  margin-top: 32px;
+}
+.bnt-coin {
+  margin-top: 55px;
+  position: relative;
+  padding: 10px;
+  background-color: transparent;
+  margin-bottom: 32px;
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: 15px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+    z-index: -1;
+  }
+  & .bnt-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 15px;
+    color: #fff;
+    & .btn-ton {
+      & span:nth-child(2) {
+        font-family: "Bicubik", sans-serif;
+        color: var(--color-success);
+      }
+    }
+    & .btn-usdt {
+      & span:nth-child(2) {
+        font-family: "Bicubik", sans-serif;
+        color: var(--color-primary);
+      }
+    }
+    & .img-token {
+      width: 84px;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: -55%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        border-radius: 50%;
+        backdrop-filter: blur(40px);
+        background-color: rgba(255, 255, 255, 0.032);
+        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+        z-index: -1;
+      }
+    }
+    & div {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      min-width: 45px;
+    }
+  }
+}
+.bnt-coin-info {
+  background-color: transparent;
+  padding: 10px 15px;
+  margin-bottom: 32px;
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  border-radius: 15px;
+  border: none;
+  & div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+}

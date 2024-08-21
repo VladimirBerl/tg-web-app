@@ -1,0 +1,26 @@
+.btn-friends {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 17.11px;
+  border: none;
+  gap: 10px;
+  padding: 14px 0px;
+  margin-bottom: 16px;
+  & .coin-img {
+    width: 28px;
+  }
+  & span {
+    font-family: "Bicubik", sans-serif;
+    font-size: 16.49px;
+    background: linear-gradient(
+      90deg,
+      rgb(48, 104, 208) 0%,
+      rgb(131, 107, 175) 50%,
+      rgb(151, 130, 98) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
