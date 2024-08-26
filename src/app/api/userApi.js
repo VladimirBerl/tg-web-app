@@ -2,7 +2,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const userApi = createApi({
   reducerPath: "userApi",
-  tagTypes: ["User"],
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:8000/api",
   }),
@@ -12,16 +11,21 @@ export const userApi = createApi({
         url: `get_user_info/${id}`,
         method: "GET",
         headers: {
+          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
-      providesTags: (result) =>
-        result && result.id_telegram
-          ? [
-              { type: "User", id_telegram: result.id_telegram },
-              { type: "User", id_telegram: "LIST" },
-            ]
-          : [{ type: "User", id_telegram: "LIST" }],
+      providesTags: (result, error, id) => [{ type: 'User', id }],
+    }),
+    getUserFriends: build.query({
+      query: (id) => ({
+        url: `friends/${id}`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
     }),
     createUser: build.mutation({
       query: (body) => ({
@@ -29,21 +33,22 @@ export const userApi = createApi({
         method: "POST",
         body,
       }),
-      invalidatesTags: [{ type: "User", id_telegram: "LIST" }],
     }),
     changeUserCount: build.mutation({
-      query: ({ id, count_token }) => ({
-        url: `user/${id}`,
+      query: ({ id, body }) => ({
+        url: `change_token/${id}`,
         method: "PATCH",
-        body: { count_token },
+        body,
       }),
-      invalidatesTags: [{ type: "User", id_telegram: "LIST" }],
+      invalidatesTags: (result, error, { id }) => [{ type: 'User', id }],
     }),
   }),
 });
 
 export const {
   useGetUserQuery,
+  useGetUserFriendsQuery,
+  useLazyGetUserQuery,
   useChangeUserCountMutation,
   useCreateUserMutation,
 } = userApi;

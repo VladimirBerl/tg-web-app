@@ -1,7 +1,7 @@
 import styles from './UserLevel.module.scss'
-const UserLevel = () => {
+const UserLevel = ({level}) => {
   return (
-    <p className={styles.level}>Уровень 1</p>
+    <p className={styles.level}>Уровень {level}</p>
   )
 }
 

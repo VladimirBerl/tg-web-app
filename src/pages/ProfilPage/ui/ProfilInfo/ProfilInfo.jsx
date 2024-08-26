@@ -3,7 +3,7 @@ import InfoItems from "./ui/InfoItems/InfoItems";
 
 const ProfilInfo = () => {
   return (
-    <div className={`${styles.info} background-br`}>
+    <div className={styles.info}>
       <ul>
         <InfoItems />
       </ul>

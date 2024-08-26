@@ -1,7 +1,7 @@
 import styles from './UserName.module.scss'
-const UserName = () => {
+const UserName = ({name}) => {
   return (
-    <p className={styles.name}>User Name</p>
+    <p className={styles.name}>{name}</p>
   )
 }
 

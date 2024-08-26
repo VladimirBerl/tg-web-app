@@ -2,10 +2,16 @@
   font-family: "Involve", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 25px;
-  border: none;
-  border-bottom: 1px solid var(--border-color);
-  border-radius: 25.33px;
+  gap: 20px;
+  padding-top: 10px;
+  margin-top: 60px;
   margin-bottom: 22px;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    rgb(48, 104, 208) 0%,
+    rgb(131, 107, 175) 50%,
+    rgb(151, 130, 98) 100%
+  );
+  border-image-slice: 1;
 }

@@ -1,19 +1,24 @@
 import "./styles/index.css";
 import Routing from "@/pages";
-import Loading from "../widgets/Loading/Loading";
-import { useState, useEffect } from "react";
-import preloadResources from "@/shared/lib/preloadResources.js";
+import { useCheckAndCreateUser } from "@/app/services/userService";
+import { useEffect } from "react";
+import { user } from "@/shared/const/userInfo.js";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const checkAndCreateUser = useCheckAndCreateUser();
 
   useEffect(() => {
-    preloadResources(setIsLoading);
+    const initUser = async () => {
+      try {
+        await checkAndCreateUser(user);
+      } catch (error) {
+        console.error("Failed to initialize user:", error);
+      }
+    };
+
+    initUser();
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
   return <Routing />;
 };
 
