@@ -1,33 +1,6 @@
 .wrapper {
+  font-family: "UltramonoWide", sans-serif;
   display: flex;
   justify-content: space-between;
   padding: 25px 54px;
-  & button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 15px;
-    font-family: "UltramonoWide", sans-serif;
-    padding: 5px;
-    font-size: 20px;
-    color: #fff;
-    & span {
-      background: linear-gradient(
-        90deg,
-        rgb(48, 104, 208) 0%,
-        rgb(131, 107, 175) 50%,
-        rgb(151, 130, 98) 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    & img {
-      width: 35px;
-      height: 35px;
-    }
-  }
-  & button:nth-child(2) {
-    padding: 0px 15px;
-  }
 }

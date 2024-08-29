@@ -1,0 +1,11 @@
+.button {
+  
+  & .text {
+  }
+  & .left {
+    width: 40px;
+  }
+  & .right {
+    width: 40px;
+  }
+}

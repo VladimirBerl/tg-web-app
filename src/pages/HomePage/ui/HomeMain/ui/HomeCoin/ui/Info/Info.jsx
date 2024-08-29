@@ -27,9 +27,8 @@ const InfoItems = [
 
 const Info = ({ setShowModalBottom }) => {
   return (
-    <ModalBottom position="89px" setShowModalBottom={setShowModalBottom}>
+    <ModalBottom title="Как можно получить больше монет?" setShowModalBottom={setShowModalBottom}>
       <div className={styles.wrapper}>
-        <h3 className={styles.title}>Как можно получить больше монет?</h3>
         <ul className={styles.items}>
           <InfoItem item={InfoItems} />
         </ul>

@@ -6,7 +6,7 @@ export const user = {
     { user_name: "lena", count_coins: 0, level: 0 },
     { user_name: "dima", count_coins: 0, level: 0 },
   ],
-  id_telegram: 123,
+  id_telegram: 11,
   level: 0,
   purchase_count: 0,
   registration_date: "2024-08-25",

@@ -4,14 +4,5 @@
   flex-direction: column;
   gap: 20px;
   padding-top: 10px;
-  margin-top: 60px;
   margin-bottom: 22px;
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(
-    90deg,
-    rgb(48, 104, 208) 0%,
-    rgb(131, 107, 175) 50%,
-    rgb(151, 130, 98) 100%
-  );
-  border-image-slice: 1;
 }

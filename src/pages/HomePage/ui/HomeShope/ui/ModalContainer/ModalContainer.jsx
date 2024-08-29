@@ -20,11 +20,10 @@ const ModalContainer = ({
     <>
       {showModalBottomBuy && (
         <ModalBottom
-          position="-290px"
+          title="Выберите нужное действие"
           setShowModalBottom={setShowModalBottomBuy}
         >
           <div className={styled["wrapper-modal-bottom"]}>
-            <h2>Выберите нужное действие</h2>
             <div className={styled["scroll"]}>
               <div className={styled.heandel}>
                 <span className={styled.level} style={{ color: "#09AD40" }}>
@@ -74,11 +73,10 @@ const ModalContainer = ({
       )}
       {showModalBottomSell && (
         <ModalBottom
-          position="-290px"
+          title="Выберите нужное действие"
           setShowModalBottom={setShowModalBottomSell}
         >
           <div className={styled["wrapper-modal-bottom"]}>
-            <h2>Выберите нужное действие</h2>
             <div className={styled["scroll"]}>
               <div className={styled["heandel-two"]}>
                 <span className={styled.level} style={{ color: "#09AD40" }}>

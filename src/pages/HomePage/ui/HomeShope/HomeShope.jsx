@@ -1,6 +1,6 @@
 import styled from "./HomeShope.module.scss";
 import ModalContainer from "./ui/ModalContainer/ModalContainer";
-import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
+import { Button } from "@/shared/ui/Buttom";
 import { useState } from "react";
 
 const HomeShope = () => {
@@ -10,30 +10,24 @@ const HomeShope = () => {
   return (
     <>
       <div className={styled.wrapper}>
-        <button
-          onClick={() => {
-            handlerVibrationTg();
-            setShowModalBottomBuy((prev) => !prev);
-          }}
-          className={`${styled.button} background-br`}
+        <Button
+          click={setShowModalBottomBuy}
+          maxwidth="120px"
+          rightItem="/icon/buy.svg"
+          sizeIcon="14px"
+          showborder="true"
         >
-          <span>Купить</span>
-          <div>
-            <img src="/icon/buy.svg" alt="icon" />
-          </div>
-        </button>
-        <button
-          onClick={() => {
-            handlerVibrationTg();
-            setShowModalBottomSell((prev) => !prev);
-          }}
-          className={`${styled.button} background-br`}
+          Купить
+        </Button>
+        <Button
+          click={setShowModalBottomSell}
+          maxwidth="120px"
+          rightItem="/icon/sale.svg"
+          sizeIcon="14px"
+          showborder="true"
         >
-          <span>Продать</span>
-          <div>
-            <img src="/icon/sale.svg" alt="icon" />
-          </div>
-        </button>
+          Продать
+        </Button>
       </div>
       <ModalContainer
         showModalBottomBuy={showModalBottomBuy}

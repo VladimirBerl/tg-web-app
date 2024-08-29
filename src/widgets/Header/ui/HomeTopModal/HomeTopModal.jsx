@@ -57,11 +57,11 @@ const cubLevel = [
 
 const HomeTopModal = ({ setShowModal }) => {
   return (
-    <ModalBottom position="-297px" setShowModalBottom={setShowModal}>
-      <div className={styled.task}>
-        <h2 className={styled.title}>
-          Открывай уровни получай больше возможностей
-        </h2>
+    <ModalBottom
+      title="Открывай уровни получай больше возможностей"
+      setShowModalBottom={setShowModal}
+    >
+      <div className={styled.wrapper}>
         <HomeTopModalChildren items={cubLevel} />
       </div>
     </ModalBottom>

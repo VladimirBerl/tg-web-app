@@ -15,11 +15,21 @@ export const userApi = createApi({
           "Content-Type": "application/json",
         },
       }),
-      providesTags: (result, error, id) => [{ type: 'User', id }],
+      providesTags: (id) => [{ type: "User", id }],
     }),
     getUserFriends: build.query({
       query: (id) => ({
         url: `friends/${id}`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
+    getTransactions: build.query({
+      query: (id) => ({
+        url: `get_transactions/${id}`,
         method: "GET",
         headers: {
           "ngrok-skip-browser-warning": true,
@@ -36,16 +46,17 @@ export const userApi = createApi({
     }),
     changeUserCount: build.mutation({
       query: ({ id, body }) => ({
-        url: `change_token/${id}`,
+        url: `change_coins/${id}`,
         method: "PATCH",
         body,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: 'User', id }],
+      invalidatesTags: ({ id }) => [{ type: "User", id }],
     }),
   }),
 });
 
 export const {
+  useGetTransactionsQuery,
   useGetUserQuery,
   useGetUserFriendsQuery,
   useLazyGetUserQuery,

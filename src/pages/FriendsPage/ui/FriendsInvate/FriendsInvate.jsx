@@ -1,15 +1,24 @@
 import styled from "./FriendsInvate.module.scss";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
-
+import { Button } from "@/shared/ui/Buttom";
 const FriendsInvate = () => {
   return (
     <div className={styled.link}>
-      <button className="background-br" onClick={handlerVibrationTg}>
+      <Button
+        padding=" 8px"
+        showborder="true"
+        sizeborder="15px"
+        sizetext="14.83px"
+      >
         +FRIENDS
-      </button>
-      <button className="background-br" onClick={handlerVibrationTg}>
-        <img src="/icon/copy.svg" alt="cup" />
-      </button>
+      </Button>
+      <Button
+        padding="10px"
+        showborder="true"
+        sizeborder="15px"
+        leftItem="/icon/copy.svg"
+        sizeIcon="17px"
+      />
     </div>
   );
 };

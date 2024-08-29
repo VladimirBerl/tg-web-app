@@ -1,10 +1,12 @@
 .item {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 14px;
   margin-bottom: 12px;
   & p {
     font-size: 13px;
+    text-align: unset;
   }
   & img {
     width: 27px;

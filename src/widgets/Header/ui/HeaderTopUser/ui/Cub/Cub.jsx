@@ -1,17 +1,13 @@
-import styles from "./Cub.module.scss";
-import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
+import { Button } from "@/shared/ui/Buttom";
 
-const Cub = ({setShowModal}) => {
+const Cub = ({ setShowModal }) => {
   return (
-    <div
-      className={`${styles.cub} background-br`}
-      onClick={() => {
-        handlerVibrationTg();
-        setShowModal((prev) => !prev);
-      }}
-    >
-      <img src="/icon/cup.svg" alt="user" />
-    </div>
+    <Button
+      click={setShowModal}
+      padding="4px"
+      showborder="true"
+      leftItem="/icon/cup.svg"
+    />
   );
 };
 

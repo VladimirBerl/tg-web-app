@@ -1,15 +1,25 @@
 import styled from "./TokenButtonTop.module.scss";
+import { Button } from "@/shared/ui/Buttom";
 
 const TokenButtonTop = () => {
   return (
     <div className={styled.wrapper}>
-      <button className="background-br">
-        <img src="/icon/wallet.svg" alt="wallet" />
-      </button>
-      <button className="background-br">
-        <span>BUY</span>
-        <img src="/icon/shop.svg" alt="shop" />
-      </button>
+      <Button
+        leftItem="/icon/wallet.svg"
+        maxwidth="46.6px"
+        showborder="true"
+        padding="5px 5px"
+      />
+      <Button
+        gradient="true"
+        sizetext="20px"
+        rightItem="/icon/shop.svg"
+        maxwidth="130px"
+        showborder="true"
+        padding="0px 15px"
+      >
+        BUY
+      </Button>
     </div>
   );
 };
