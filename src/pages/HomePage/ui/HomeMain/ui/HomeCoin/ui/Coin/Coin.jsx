@@ -15,7 +15,7 @@ const Coin = () => {
           alt="coin"
           onClick={() => setModal((prev) => !prev)}
         />
-        <span>{data?.count_coins}</span>
+        <span>{data?.count_coins.toLocaleString('de-DE')}</span>
       </div>
       {modal && <Info setShowModalBottom={setModal} />}
     </>
