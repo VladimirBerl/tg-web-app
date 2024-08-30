@@ -117,6 +117,7 @@ const Farm = () => {
             setTimerActive(false);
             setText("Claim");
             localStorage.removeItem("farmingTimer");
+            lineRef.current.style.right = "100%";
             return 0;
           }
 
