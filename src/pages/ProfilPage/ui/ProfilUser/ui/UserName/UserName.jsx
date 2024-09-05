@@ -5,7 +5,7 @@ const UserName = () => {
   const [username, setUsername] = useState(null);
 
   useEffect(() => {
-    const usernames = window.Telegram.WebApp.initDataUnsafe.user.username;
+    const usernames = window.Telegram.WebApp.initDataUnsafe.user.id;
     setUsername(usernames);
   }, []);
 
