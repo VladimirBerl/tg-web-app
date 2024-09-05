@@ -1,21 +1,8 @@
-import { useEffect, useState } from "react";
-import styles from "./UserName.module.scss";
-
-const UserName = () => {
-  const [username, setUsername] = useState(null);
-
-  useEffect(() => {
-    const usernames = window.Telegram.WebApp.initDataUnsafe.user.id;
-    setUsername(usernames);
-  }, []);
-
+import styles from './UserName.module.scss'
+const UserName = ({name}) => {
   return (
-    <div>
-      <p className={styles.name}>
-        {username ? `Username: ${username}` : "Loading..."}
-      </p>
-    </div>
-  );
-};
+    <p className={styles.name}>{name}</p>
+  )
+}
 
-export default UserName;
+export default UserName

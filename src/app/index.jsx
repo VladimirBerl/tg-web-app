@@ -12,6 +12,8 @@ const App = () => {
   useEffect(() => {
     const initUser = async () => {
       try {
+        const usernames = window.Telegram.WebApp.initDataUnsafe.user.username;
+
         await checkAndCreateUser(user);
       } catch (error) {
         console.error("Failed to initialize user:", error);
