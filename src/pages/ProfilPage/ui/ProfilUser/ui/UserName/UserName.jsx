@@ -5,15 +5,8 @@ const UserName = () => {
   const [username, setUsername] = useState(null);
 
   useEffect(() => {
-    window.Telegram.WebApp.ready();
-    const initDataUnsafe = window.Telegram.WebApp.initDataUnsafe;
-
-    if (initDataUnsafe && initDataUnsafe.user) {
-      const usernameFromTelegram = initDataUnsafe.user.username;
-      setUsername(usernameFromTelegram);
-    } else {
-      console.error("User data not available");
-    }
+    const usernames = window.Telegram.WebApp.initDataUnsafe.user.username;
+    setUsername(usernames);
   }, []);
 
   return (
