@@ -9,14 +9,15 @@
   align-items: center;
   justify-content: center;
   animation-name: modal;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
+  transition: all 0.3s;
 
   @keyframes modal {
     0% {
       opacity: 0;
-      transform: translate(-50%, -50%) scale(0.5);
+      transform: translate(-50%, -50%) scale(0.9);
     }
-    10% {
+    5% {
       opacity: 1;
     }
     100% {

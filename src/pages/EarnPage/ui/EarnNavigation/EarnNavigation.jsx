@@ -34,7 +34,6 @@ const category = [
     img: "/icon/bonus.svg",
     count: 0,
   },
-
   {
     id: 5,
     name: "Завершенные",

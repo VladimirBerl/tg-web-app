@@ -1,8 +1,14 @@
-import styles from './UserName.module.scss'
-const UserName = ({name}) => {
+import styles from "./UserName.module.scss";
+window.Telegram.WebApp.ready();
+const initDataUnsafe = window.Telegram.WebApp.initDataUnsafe;
+const userId = initDataUnsafe.user?.id;
+const UserName = ({ name }) => {
   return (
-    <p className={styles.name}>{name}</p>
-  )
-}
+    <div>
+      <p className={styles.name}>{name}</p>
+      <p className={styles.name}>{userId}</p>
+    </div>
+  );
+};
 
-export default UserName
+export default UserName;

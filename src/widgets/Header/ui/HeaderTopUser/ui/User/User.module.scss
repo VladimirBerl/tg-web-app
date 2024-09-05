@@ -1,0 +1,16 @@
+.wrapper {
+}
+.user {
+  display: flex;
+  align-items: center;
+  padding: 4px 5px;
+  gap: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  min-height: 32px;
+  border-radius: var(--border-8px);
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}

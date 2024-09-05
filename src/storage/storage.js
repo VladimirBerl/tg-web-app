@@ -1,14 +1,3 @@
-export const tg = window.Telegram.WebApp;
-export const userName = tg.initDataUnsafe.user?.username;
-export const userId = tg.initDataUnsafe.user?.id;
-
-export const user = {
-  coin: 154003,
-  farm: 24023,
-  time: 5,
-};
-
-
 export const dataChartToken = {
   labels: [
     "LAUNCH PAD",
@@ -38,19 +27,4 @@ export const dataChartToken = {
   ],
 };
 
-export const itemTasks = [
-  {
-    names: "Buyer",
-    desc: "@TG_Buyer_bot",
-    link: "https://t.me/TG_Buyer_bot",
-    price: 2313,
-    icon: "/ui/telegram.svg",
-  },
-  {
-    names: "Buyer",
-    desc: "@TG_Buyer_bot",
-    link: "https://t.me/TG_Buyer_bot",
-    price: 2313,
-    icon: "/ui/telegram.svg",
-  },
-];
+

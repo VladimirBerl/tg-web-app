@@ -1,17 +1,17 @@
 import styled from "./HomeShope.module.scss";
 import ModalContainer from "./ui/ModalContainer/ModalContainer";
 import { Button } from "@/shared/ui/Buttom";
-import { useState } from "react";
+import { useModal } from "@/shared/hooks/modal.js";
 
 const HomeShope = () => {
-  const [showModalBottomBuy, setShowModalBottomBuy] = useState(false);
-  const [showModalBottomSell, setShowModalBottomSell] = useState(false);
+  const { isOpen, toggle } = useModal();
+  const { isOpen: isOpenTwo, toggle: toggleTwo } = useModal();
 
   return (
     <>
       <div className={styled.wrapper}>
         <Button
-          click={setShowModalBottomBuy}
+          click={toggle}
           maxwidth="120px"
           rightItem="/icon/buy.svg"
           sizeIcon="14px"
@@ -20,7 +20,7 @@ const HomeShope = () => {
           Купить
         </Button>
         <Button
-          click={setShowModalBottomSell}
+          click={toggleTwo}
           maxwidth="120px"
           rightItem="/icon/sale.svg"
           sizeIcon="14px"
@@ -30,10 +30,10 @@ const HomeShope = () => {
         </Button>
       </div>
       <ModalContainer
-        showModalBottomBuy={showModalBottomBuy}
-        showModalBottomSell={showModalBottomSell}
-        setShowModalBottomBuy={setShowModalBottomBuy}
-        setShowModalBottomSell={setShowModalBottomSell}
+        showModalBottomBuy={isOpen}
+        showModalBottomSell={isOpenTwo}
+        setShowModalBottomBuy={toggle}
+        setShowModalBottomSell={toggleTwo}
       />
     </>
   );

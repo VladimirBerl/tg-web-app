@@ -1,0 +1,20 @@
+.farm {
+
+  & .text {
+    
+  }
+  & .line {
+    
+  }
+}
+
+.farm:disabled {
+  & .line {
+ 
+  }
+  & .timer {
+    
+  }
+  & .text {
+  }
+}

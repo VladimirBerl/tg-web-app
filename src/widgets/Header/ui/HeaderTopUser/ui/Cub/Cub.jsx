@@ -1,13 +1,20 @@
 import { Button } from "@/shared/ui/Buttom";
+import HomeTopModal from "../../../HomeTopModal/HomeTopModal";
+import { useModal } from "@/shared/hooks/modal.js";
 
-const Cub = ({ setShowModal }) => {
+const Cub = () => {
+  const { isOpen, toggle } = useModal();
+
   return (
-    <Button
-      click={setShowModal}
-      padding="4px"
-      showborder="true"
-      leftItem="/icon/cup.svg"
-    />
+    <>
+      <Button
+        click={toggle}
+        padding="4px"
+        showborder="true"
+        leftItem="/icon/cup.svg"
+      />
+      {isOpen && <HomeTopModal setShowModal={toggle} />}
+    </>
   );
 };
 
