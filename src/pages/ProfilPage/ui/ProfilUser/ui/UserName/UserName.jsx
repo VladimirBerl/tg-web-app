@@ -1,37 +1,25 @@
 import { useEffect, useState } from "react";
 import styles from "./UserName.module.scss";
 
-const UserName = ({ name }) => {
-  const [userId, setUserId] = useState(null);
-  const [loading, setLoading] = useState(true);
+const UserName = () => {
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
-    if (window.Telegram && window.Telegram.WebApp) {
-      // Инициализируем Telegram WebApp
-      window.Telegram.WebApp.ready();
+    window.Telegram.WebApp.ready();
+    const initDataUnsafe = window.Telegram.WebApp.initDataUnsafe;
 
-      const initDataUnsafe = window.Telegram.WebApp.initDataUnsafe;
-      alert(`initDataUnsafe: ${JSON.stringify(initDataUnsafe)}`); // Показать данные через alert
-
-      if (initDataUnsafe && initDataUnsafe.user) {
-        const userIdFromTelegram = initDataUnsafe.user.id;
-        alert(`User ID: ${userIdFromTelegram}`); // Показать ID через alert
-        setUserId(userIdFromTelegram);
-      } else {
-        alert("User data not available in initDataUnsafe.");
-      }
+    if (initDataUnsafe && initDataUnsafe.user) {
+      const usernameFromTelegram = initDataUnsafe.user.username;
+      setUsername(usernameFromTelegram);
     } else {
-      alert("Telegram WebApp API is not available.");
+      console.error("User data not available");
     }
-
-    setLoading(false); // Завершаем загрузку
   }, []);
 
   return (
     <div>
-      <p className={styles.name}>{name}</p>
       <p className={styles.name}>
-        {loading ? "Loading..." : userId ? userId : "User ID not found"}
+        {username ? `Username: ${username}` : "Loading..."}
       </p>
     </div>
   );
