@@ -20,7 +20,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    initUser();
+    setTimeout(initUser, 5000)
   }, []);
 
   if (loading) {
