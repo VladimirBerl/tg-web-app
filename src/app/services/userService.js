@@ -21,7 +21,7 @@ export const useCheckAndCreateUser = () => {
         return false;
       }
     } catch (error) {
-      alert("Error:", JSON.stringify(error));
+      console.log("Error:", error);
       throw error;
     }
   };
