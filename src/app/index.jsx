@@ -9,9 +9,10 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
-  
+
   const initUser = async () => {
     try {
+      alert(userTg);
       const respons = await checkAndCreateUser(userTg ? userTg : user);
       setLoading(respons);
     } catch (error) {
@@ -20,7 +21,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    setTimeout(initUser, 5000)
+    setTimeout(initUser, 5000);
   }, []);
 
   if (loading) {
