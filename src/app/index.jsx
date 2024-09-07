@@ -9,23 +9,24 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
+  const [text, setText] = useState("");
 
   const initUser = async () => {
     try {
-      alert(userTg);
       const respons = await checkAndCreateUser(userTg ? userTg : user);
-      setLoading(respons);
+      setText(JSON.stringify(respons));
+      // setLoading(respons);
     } catch (error) {
       console.error("Failed to initialize user:", error);
     }
   };
 
   useEffect(() => {
-    setTimeout(initUser, 5000);
+    initUser();
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <div>{text}</div>;
   }
 
   return <Routing />;
