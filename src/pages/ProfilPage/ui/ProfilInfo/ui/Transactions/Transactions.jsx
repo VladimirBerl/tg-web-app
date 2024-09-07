@@ -1,7 +1,6 @@
 import styles from "./Transaction.module.scss";
 import { useUser } from "@/app/context/UserContext";
 import { useGetTransactionsQuery } from "@/app/api";
-import { useEffect, useState } from "react";
 
 const Transactions = () => {
   const { user } = useUser();

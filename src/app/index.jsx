@@ -8,11 +8,12 @@ import Loading from "../widgets/Loading/Loading";
 const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
+  const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
 
   useEffect(() => {
     const initUser = async () => {
       try {
-        await checkAndCreateUser(user);
+        await checkAndCreateUser(userTg ? userTg : user);
       } catch (error) {
         console.error("Failed to initialize user:", error);
       } finally {

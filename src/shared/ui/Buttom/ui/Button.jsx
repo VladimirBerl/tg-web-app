@@ -17,6 +17,14 @@ const StyledButton = styled.button`
   &::before {
     border-radius: ${({ sizeborder = "8px" }) => sizeborder};
   }
+  &:disabled {
+    background: linear-gradient(
+      90deg,
+      rgb(48, 104, 208) 0%,
+      rgb(131, 107, 175) 50%,
+      rgb(151, 130, 98) 100%
+    );
+  }
 `;
 
 const Text = styled.span`
@@ -28,6 +36,12 @@ const Text = styled.span`
     background: linear-gradient(90deg, rgb(48, 104, 208) 0%, rgb(131, 107, 175) 50%, rgb(151, 130, 98) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  `}
+  ${({ disabled }) =>
+    disabled &&
+    `
+    -webkit-text-fill-color: white;
+    
   `}
 `;
 
@@ -56,6 +70,7 @@ export const Button = memo(
     maxwidth,
     sizetext,
     sizeIcon,
+    disabled = false,
   }) => {
     return (
       <StyledButton
@@ -66,11 +81,12 @@ export const Button = memo(
           maxwidth,
           padding,
         }}
+        disabled={disabled}
         className={`background-br`}
       >
         {leftItem && <Icon src={leftItem} alt="icon" sizeIcon={sizeIcon} />}
         {children && (
-          <Text gradient={gradient} sizetext={sizetext}>
+          <Text disabled={disabled} gradient={gradient} sizetext={sizetext}>
             {children}
           </Text>
         )}

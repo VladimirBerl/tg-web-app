@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://9206-45-137-113-194.ngrok-free.app/api",
+    baseUrl: "https://bea7-185-211-158-217.ngrok-free.app/api",
   }),
   endpoints: (build) => ({
     getUser: build.query({
@@ -37,6 +37,26 @@ export const userApi = createApi({
         },
       }),
     }),
+    getTask: build.query({
+      query: ({ type }) => ({
+        url: `tasks/${type}`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
+    getCheckTaskComplete: build.query({
+      query: ({ id, id_task }) => ({
+        url: `check_task_complete/${id}/${id_task}`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
     createUser: build.mutation({
       query: (body) => ({
         url: `create_user`,
@@ -59,6 +79,8 @@ export const {
   useGetTransactionsQuery,
   useGetUserQuery,
   useGetUserFriendsQuery,
+  useGetTaskQuery,
+  useLazyGetCheckTaskCompleteQuery,
   useLazyGetUserQuery,
   useChangeUserCountMutation,
   useCreateUserMutation,

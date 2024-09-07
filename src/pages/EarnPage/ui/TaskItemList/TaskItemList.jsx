@@ -1,10 +1,10 @@
 import styles from './TaskItemList.module.scss'
-import TaskItem from "./ui/TaskItem/TaskItem";
+import TaskItems from "./ui/TaskItems/TaskItems";
 
 const TaskItemList = ({ task }) => {
   return (
     <div className={styles.wrapper}>
-      {task.map((item) => <TaskItem task={item} />)}
+      {task.map((item) => <TaskItems task={item} />)}
     </div>
   );
 };
