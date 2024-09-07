@@ -37,7 +37,7 @@ const ButtonChek = ({ url, id }) => {
 
   useEffect(() => {
     setButtonText(localStorage?.taskButtonSate || "Перейти");
-    // chekSatusTask();
+    chekSatusTask();
   }, []);
 
   return (
