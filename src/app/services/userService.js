@@ -14,14 +14,14 @@ export const useCheckAndCreateUser = () => {
         const createdUser = await createUser(body).unwrap();
         setUser(createdUser);
         console.log("User created successfully:", createdUser);
-        return createdUser;
+        return false;
       } else if (user) {
         setUser(user);
         console.log("User exists:", user);
-        return user;
+        return false;
       }
     } catch (error) {
-      console.error("Error:", error);
+      alert("Error:", JSON.stringify(error));
       throw error;
     }
   };
