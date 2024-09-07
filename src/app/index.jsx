@@ -15,7 +15,7 @@ const App = () => {
     try {
       const respons = await checkAndCreateUser(userTg ? userTg : user);
       setText(JSON.stringify(respons));
-      // setLoading(respons);
+      setLoading(respons);
     } catch (error) {
       console.error("Failed to initialize user:", error);
     }
