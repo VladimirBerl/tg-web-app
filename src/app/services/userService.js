@@ -22,7 +22,7 @@ export const useCheckAndCreateUser = () => {
       }
     } catch (error) {
       console.log("Error:", error);
-      return error.message;
+      throw error;
     }
   };
 

@@ -9,12 +9,10 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
-  const [text, setText] = useState("");
 
   const initUser = async () => {
     try {
       const respons = await checkAndCreateUser(userTg ? userTg : user);
-      setText(JSON.stringify(respons));
       setLoading(respons);
     } catch (error) {
       console.error("Failed to initialize user:", error);
@@ -26,7 +24,7 @@ const App = () => {
   }, []);
 
   if (loading) {
-    return <div>{text}</div>;
+    return <Loading />;
   }
 
   return <Routing />;
