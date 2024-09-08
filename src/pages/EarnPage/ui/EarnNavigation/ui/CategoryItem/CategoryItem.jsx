@@ -1,17 +1,17 @@
 import styled from "./CategoryItem.module.scss";
 
-const CategoryItem = ({ task, handleAfterChange }) => {
+const CategoryItem = ({ category, handleAfterChange }) => {
   return (
     <div
-      className={`${styled.task} background-br`}
-      key={task.id}
-      onClick={() => handleAfterChange(task.id)}
+      className={`${styled.category} background-br`}
+      key={category.id}
+      onClick={() => handleAfterChange(category.id)}
     >
-      <div>
-        <span>{task.count}</span>
-        <span>{task.name}</span>
+      <div className={styled['category-title']}>
+        <span>{category.countTasks}</span>
+        <span>{category.categoryName}</span>
       </div>
-      {task.img && <img src={task.img} alt="icon" />}
+      {category.categoryIcon && <img src={category.categoryIcon} alt="icon" />}
     </div>
   );
 };

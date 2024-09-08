@@ -27,4 +27,81 @@ export const dataChartToken = {
   ],
 };
 
-
+export const categories = [
+  {
+    id: 1,
+    countTasks: 21,
+    categoryName: "subscribe",
+    categoryIcon: "/icon/task.svg",
+    tasks: [
+      {
+        id: 1,
+        description: "Подписаться на канал Buyer_Marketplace",
+        url: "https://t.me/Buyer_Marketplace",
+        type_task: "subscribe",
+      },
+    ],
+  },
+  {
+    id: 2,
+    countTasks: 2,
+    categoryName: "comment",
+    categoryIcon: "/icon/task.svg",
+    tasks: [
+      {
+        id: 1,
+        description: "Коментарий на пост",
+        url: "https://t.me/Buyer_Marketplace",
+        type_task: "subscribe",
+      },
+    ],
+  },
+  {
+    id: 3,
+    countTasks: 2,
+    categoryName: "like",
+    categoryIcon: "/icon/video.svg",
+    tasks: [
+      {
+        id: 1,
+        description: "Лайк на пост",
+        url: "https://t.me/Buyer_Marketplace",
+        type_task: "subscribe",
+      },
+    ],
+  },
+  {
+    id: 4,
+    countTasks: 2,
+    categoryName: "save",
+    categoryIcon: "/icon/bonus.svg",
+    tasks: [
+      {
+        id: 1,
+        description: "Сохранить что-то...",
+        url: "https://t.me/Buyer_Marketplace",
+        type_task: "subscribe",
+      },
+    ],
+  },
+  {
+    id: 5,
+    countTasks: 2,
+    categoryName: "watch",
+    categoryIcon: "/icon/watch-w.svg",
+    tasks: [
+      {
+        id: 1,
+        description: "Посмотреть видео на Buyer",
+        url: "https://t.me/Buyer_Marketplace",
+        type_task: "subscribe",
+      },
+    ],
+  },
+  {
+    id: 6,
+    countTasks: 2,
+    categoryName: "completed",
+    categoryIcon: "/icon/ready.svg",
+  },
+];

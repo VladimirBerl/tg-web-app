@@ -1,4 +1,4 @@
-.task {
+.category {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,20 +9,24 @@
   & img {
     width: 25px;
   }
-  & span {
-    font-size: 18px;
-    margin-right: 20px;
-  }
-  & span:nth-child(2) {
-    font-weight: 600;
-    background: linear-gradient(
-      90deg,
-      rgb(48, 104, 208) 0%,
-      rgb(131, 107, 175) 50%,
-      rgb(151, 130, 98) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
+  & .category-title {
+    display: flex;
+    & span {
+      font-size: 18px;
+      margin-right: 5px;
+      min-width: 20px;
+    }
+    & span:nth-child(2) {
+      font-weight: 600;
+      background: linear-gradient(
+        90deg,
+        rgb(48, 104, 208) 0%,
+        rgb(131, 107, 175) 50%,
+        rgb(151, 130, 98) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
   }
 }

@@ -1,0 +1,25 @@
+.carousel-btn {
+  padding-top: 12px;
+  padding-bottom: 40px;
+  display: flex !important;
+  justify-content: center;
+  gap: 15px;
+  & img {
+    width: 25px;
+    height: 25px;
+  }
+  & span {
+    font-weight: normal;
+    background: linear-gradient(
+      90deg,
+      rgb(48, 104, 208) 0%,
+      rgb(131, 107, 175) 50%,
+      rgb(151, 130, 98) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 15px;
+    font-family: "UltramonoWide", sans-serif;
+    text-transform: uppercase;
+  }
+}

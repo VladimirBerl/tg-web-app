@@ -5,21 +5,18 @@ import { useGetTransactionsQuery } from "@/app/api";
 const Transactions = () => {
   const { user } = useUser();
 
-  // Получаем данные транзакций, статус загрузки и ошибки из запроса
   const { data, error, isLoading } = useGetTransactionsQuery(user.id_telegram);
-
-  // Извлекаем массив транзакций из данных
+  console.log(data);
+  
   const transactions = data?.transactions || [];
 
   return (
     <div className={styles.wrapper}>
       <h3>Ваши транзакции</h3>
 
-      {/* Обработка статусов загрузки и ошибок */}
       {isLoading && <p>Загрузка транзакций...</p>}
       {error && <p>Ошибка загрузки транзакций</p>}
 
-      {/* Отображение данных транзакций */}
       <div className={styles.transactions}>
         {transactions.length > 0
           ? transactions.map((item) => (

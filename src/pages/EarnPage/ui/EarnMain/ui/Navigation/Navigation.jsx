@@ -1,7 +1,13 @@
 import styled from "./Navigation.module.scss";
 import { Carousel } from "antd";
+import NavigationItem from "./ui/NavigationItem/NavigationItem";
 
-const Navigation = ({ setShowModal, handleAfterChange, carouselRef }) => {
+const Navigation = ({
+  categories,
+  setShowModal,
+  handleAfterChange,
+  carouselRef,
+}) => {
   return (
     <div className={`${styled.navigation} carousel `}>
       <div className={styled.carousel}>
@@ -16,30 +22,9 @@ const Navigation = ({ setShowModal, handleAfterChange, carouselRef }) => {
           afterChange={handleAfterChange}
           ref={carouselRef}
         >
-          <div className={styled["carousel-btn"]}>
-            <span>Задачи</span>
-            <img src="/icon/task.svg" alt="" />
-          </div>
-          <div className={styled["carousel-btn"]}>
-            <span>Игры</span>
-            <img src="/icon/game.svg" alt="" />
-          </div>
-          <div className={styled["carousel-btn"]}>
-            <span>Видео</span>
-            <img src="/icon/video.svg" alt="" />
-          </div>
-          <div className={styled["carousel-btn"]}>
-            <span>Бонусы</span>
-            <img src="/icon/bonus.svg" alt="" />
-          </div>
-          <div className={styled["carousel-btn"]}>
-            <span>Подписки</span>
-            <img src="/icon/watch-w.svg" alt="" />
-          </div>
-          <div className={styled["carousel-btn"]}>
-            <span>Завершенные</span>
-            <img src="/icon/ready.svg" alt="" />
-          </div>
+          {categories.map((category) => (
+            <NavigationItem key={category.id} category={category} />
+          ))}
         </Carousel>
       </div>
     </div>
