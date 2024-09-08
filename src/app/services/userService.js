@@ -8,8 +8,9 @@ export const useCheckAndCreateUser = () => {
 
   const checkAndCreateUser = async (body) => {
     try {
-      const { data: user, error } = await getUser(body.id_telegram);
-
+      const { data: user, error } = await getUser(
+        body.id ? body.id : body.id_telegram
+      );
       if (error && error.status === 404) {
         const createdUser = await createUser(body).unwrap();
         setUser(createdUser);
