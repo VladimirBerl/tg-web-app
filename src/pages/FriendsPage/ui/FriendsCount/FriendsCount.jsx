@@ -1,5 +1,6 @@
 import styled from "./FriendsCount.module.scss";
 import { useUser } from "@/app/context/UserContext";
+
 const FriendsCount = () => {
   const {user} = useUser();
   return (

@@ -7,7 +7,7 @@ import { useModal } from "@/shared/hooks/modal.js";
 const Coin = () => {
   const { isOpen, toggle } = useModal();
   const { user } = useUser();
-  const { data } = useGetUserQuery(user.id_telegram);
+  const { data } = useGetUserQuery(user?.id_telegram);
   return (
     <>
       <div className={styled.count}>

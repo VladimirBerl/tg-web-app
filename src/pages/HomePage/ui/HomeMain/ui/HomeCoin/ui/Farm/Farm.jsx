@@ -80,7 +80,7 @@ const Line = styled.div`
 const Farm = () => {
   const { updateCoins, user } = useUpdateUserCoins();
 
-  const totalCoins = user.count_pharmd;
+  const totalCoins = user?.count_pharmd;
   const time = 6000;
   const incrementPerSecond = (totalCoins / time).toFixed(3);
 

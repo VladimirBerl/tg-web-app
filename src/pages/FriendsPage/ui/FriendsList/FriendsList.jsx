@@ -5,7 +5,7 @@ import { useGetUserFriendsQuery } from "@/app/api";
 
 const FriendsList = () => {
   const { user } = useUser();
-  const { data, loading, error } = useGetUserFriendsQuery(user.id_telegram);
+  const { data, loading, error } = useGetUserFriendsQuery(user?.id_telegram);
 
   return (
     <div className={styled.wrapper}>
