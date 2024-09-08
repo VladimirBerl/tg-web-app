@@ -9,10 +9,14 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
+  console.log(userTg);
+  console.log(user.id_telegram)
 
   const initUser = async () => {
     try {
-      const respons = await checkAndCreateUser(userTg ? userTg : user);
+      const respons = await checkAndCreateUser(
+        userTg ? userTg : user.id_telegram
+      );
       setLoading(respons);
     } catch (error) {
       console.error("Failed to initialize user:", error);
