@@ -19,7 +19,6 @@ const EarnMain = ({
   }, [carouselRef]);
 
   const handleAfterChange = (current) => {
-    console.log(current);
     setCurrentSlide(current);
   };
 

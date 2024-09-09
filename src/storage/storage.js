@@ -49,7 +49,7 @@ export const categories = [
     categoryIcon: "/icon/task.svg",
     tasks: [
       {
-        id: 1,
+        id: 2,
         description: "Коментарий на пост",
         url: "https://t.me/Buyer_Marketplace",
         type_task: "subscribe",
@@ -63,7 +63,7 @@ export const categories = [
     categoryIcon: "/icon/video.svg",
     tasks: [
       {
-        id: 1,
+        id: 3,
         description: "Лайк на пост",
         url: "https://t.me/Buyer_Marketplace",
         type_task: "subscribe",
@@ -77,7 +77,7 @@ export const categories = [
     categoryIcon: "/icon/bonus.svg",
     tasks: [
       {
-        id: 1,
+        id: 4,
         description: "Сохранить что-то...",
         url: "https://t.me/Buyer_Marketplace",
         type_task: "subscribe",
@@ -91,7 +91,7 @@ export const categories = [
     categoryIcon: "/icon/watch-w.svg",
     tasks: [
       {
-        id: 1,
+        id: 5,
         description: "Посмотреть видео на Buyer",
         url: "https://t.me/Buyer_Marketplace",
         type_task: "subscribe",
