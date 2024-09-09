@@ -1,64 +1,70 @@
 import { Button } from "@/shared/ui/Buttom";
 import { useLazyGetCheckTaskCompleteQuery } from "@/app/api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useUser } from "@/app/context/UserContext";
 import { ModalInfo } from "@/shared/ui/ModalInfo";
 import { useModal } from "@/shared/hooks/modal.js";
+import handlerVibrationTg from "@/shared/lib/handlerVibrationTg.js";
 
 const ButtonChek = ({ url, id }) => {
-  const buttonId = `taskButtonSate${id}`;
+  const buttonId = `taskButtonState${id}`; // Уникальный идентификатор для каждой кнопки
   const { user } = useUser();
   const [status, setStatus] = useState(false);
-  const [buttonText, setButtonText] = useState("");
+  const [buttonText, setButtonText] = useState("Перейти");
+  const [loading, setLoading] = useState(false);
   const [getCheckTaskComplete] = useLazyGetCheckTaskCompleteQuery();
   const { isOpen, toggle } = useModal();
 
-  const chekSatusTask = async () => {
+  // Функция для проверки статуса задачи
+  const chekSatusTask = useCallback(async () => {
+    setLoading(true);
     try {
       const { data } = await getCheckTaskComplete({
         id: user.id_telegram,
         id_task: id,
       });
       setStatus(data.complete);
+      if (data.complete) {
+        setButtonText("Задача выполнена");
+      }
     } catch (error) {
       console.log(error);
       setButtonText("Ошибка");
+    } finally {
+      setLoading(false);
     }
-  };
+  }, [getCheckTaskComplete, user.id_telegram, id]);
 
-  const heandleClick = () => {
+  // Логика обработки состояния кнопки и работы с localStorage
+  const handleClick = () => {
     if (buttonText === "Перейти") {
       location.href = url;
-      localStorage.buttonId = "Проверить";
-      // setTimeout(() => {
-      //   console.log("work");
-
-      //   delete localStorage.buttonId;
-      //   setButtonText("Перейти");
-      // }, 5000);
-      setButtonText(localStorage.buttonId);
-    }
-    if (buttonText === "Проверить") {
-      delete localStorage.buttonId;
+      localStorage.setItem(buttonId, "Проверить");
+      setButtonText("Проверить");
+    } else if (buttonText === "Проверить") {
       chekSatusTask();
       if (!status) {
-        toggle();
+        toggle(); // Открываем модальное окно
+        handlerVibrationTg()
         setTimeout(() => {
-          console.log("work");
           setButtonText("Еще раз");
-          toggle();
-        }, 1000);
+          toggle(); // Закрываем модальное окно
+        }, 2000);
       }
-    }
-    if (buttonText === "Еще раз") {
+    } else if (buttonText === "Еще раз") {
       setButtonText("Перейти");
+      localStorage.setItem(buttonId, "Перейти");
     }
   };
 
   useEffect(() => {
-    setButtonText(localStorage?.buttonId || "Перейти");
+    // Получаем значение кнопки из localStorage
+    const storedButtonText = localStorage.getItem(buttonId) || "Перейти";
+    setButtonText(storedButtonText);
+
+    // Проверяем статус задачи при монтировании компонента
     chekSatusTask();
-  }, []);
+  }, [buttonId, chekSatusTask]);
 
   return (
     <div>
@@ -70,13 +76,12 @@ const ButtonChek = ({ url, id }) => {
         />
       ) : (
         <Button
-          disabled={status}
           padding="8px"
           gradient="true"
           sizetext="12px"
-          click={heandleClick}
+          click={handleClick}
         >
-          {buttonText}
+          {loading ? "Загрузка..." : buttonText}
         </Button>
       )}
       {isOpen && <ModalInfo>Задача не выполнена</ModalInfo>}
