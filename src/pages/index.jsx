@@ -9,9 +9,8 @@ const FriendsPage = lazy(() => import("@/pages/FriendsPage/FriendsPage.jsx"));
 const LayoutPage = lazy(() => import("@/app/providers"));
 const TokenPage = lazy(() => import("@/pages/TokenPage/TokenPage.jsx"));
 const EarnPage = lazy(() => import("@/pages/EarnPage/EarnPage.jsx"));
-
+const RankPage = lazy(() => import("@/pages/RankPage/RankPage.jsx"));
 const ProfilPage = lazy(() => import("@/pages/ProfilPage/ProfilPage.jsx"));
-
 
 const Routing = () => {
   scrollTop();
@@ -31,6 +30,7 @@ const Routing = () => {
         <Route path="friends" element={<FriendsPage />} />
         <Route path="earn/*" element={<EarnPage />} />
         <Route path="profile" element={<ProfilPage />} />
+        <Route path="rank" element={<RankPage />} />
       </Route>
     </Routes>
   );

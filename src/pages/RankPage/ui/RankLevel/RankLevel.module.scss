@@ -1,0 +1,18 @@
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 9px;
+  & .level {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    backdrop-filter: blur(41.42px);
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  & .rank-name {
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+}

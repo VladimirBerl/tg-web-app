@@ -9,11 +9,13 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
-
+  console.log('work');
+  
   const initUser = async () => {
     try {
       const respons = await checkAndCreateUser(
-        userTg ? userTg : user.id_telegram
+        userTg === undefined ? user.id_telegram : userTg,
+        user
       );
       setLoading(respons);
     } catch (error) {

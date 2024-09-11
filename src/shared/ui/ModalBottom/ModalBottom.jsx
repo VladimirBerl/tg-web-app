@@ -1,6 +1,7 @@
 import styled from "./ModalBottom.module.scss";
 import { createPortal } from "react-dom";
 import { useEffect, useRef } from "react";
+import CloseBtn  from "../CloseBtn/CloseBtn";
 
 const ModalBottom = ({ children, setShowModalBottom, title }) => {
   const modalRef = useRef();
@@ -32,12 +33,7 @@ const ModalBottom = ({ children, setShowModalBottom, title }) => {
     <div ref={modalRef} className={`${styled.modal} background-br`}>
       <div className={styled.top}>
         {title && <h3>{title}</h3>}
-        <img
-          onClick={closeModal}
-          className={styled.close}
-          src="/icon/close-min.svg"
-          alt="close"
-        />
+        <CloseBtn close={closeModal} />
       </div>
       <div className={styled.children}>{children}</div>
     </div>,

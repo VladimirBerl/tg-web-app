@@ -1,0 +1,14 @@
+.coins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+  gap: 6px;
+  & img {
+    width: 20px;
+    height: 20px;
+  }
+  & span {
+    font-size: 12px;
+  }
+}

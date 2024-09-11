@@ -1,0 +1,62 @@
+.progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 230px;
+  & .progress-item {
+    border: 1px solid #fff;
+    width: 20px;
+    height: 14px;
+  }
+  & .progress-item:first-child {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+  & .progress-item:nth-child(10) {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+  & .target {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+
+    transition: 0.4s width cubic-bezier(0.74, -0.01, 0.44, 1);
+    animation: progress 0.6s cubic-bezier(0.74, -0.01, 0.44, 1);
+
+    border: 1px solid #fff;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    background: linear-gradient(
+      90deg,
+      rgba(91, 235, 251, 1) 0%,
+      rgba(120, 81, 254, 1) 50%,
+      rgba(25, 114, 254, 1) 100%
+    );
+    & .line {
+      position: absolute;
+      top: 50%;
+      right: -1px;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 30px;
+      background: linear-gradient(
+        180deg,
+        rgba(91, 235, 251, 1) 0%,
+        rgba(120, 81, 254, 1) 50%,
+        rgba(25, 114, 254, 1) 100%
+      );
+      border-radius: 30px;
+    }
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0px;
+  }
+}

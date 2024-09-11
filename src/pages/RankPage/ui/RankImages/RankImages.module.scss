@@ -1,0 +1,22 @@
+.rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    width: 120px;
+    height: 120px;
+    animation: rank 0.4s ;
+  }
+}
+
+@keyframes rank {
+  0% {
+    transform: scale(0.8);
+  }
+  95% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

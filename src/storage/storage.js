@@ -105,3 +105,9 @@ export const categories = [
     categoryIcon: "/icon/ready.svg",
   },
 ];
+
+export const userRank = {
+  name: "stone",
+  lvl: 1,
+  countCoin: 0,
+};

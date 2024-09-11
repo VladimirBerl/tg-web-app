@@ -6,11 +6,11 @@ export const useCheckAndCreateUser = () => {
   const [getUser] = useLazyGetUserQuery();
   const { setUser } = useUser();
 
-  const checkAndCreateUser = async (body) => {
+  const checkAndCreateUser = async (body, users) => {
     try {
       const { data: user, error } = await getUser(body);
-      if (error && error.status === 404) {
-        const createdUser = await createUser(body).unwrap();
+      if (error) {
+        const createdUser = await createUser(users).unwrap();
         setUser(createdUser);
         console.log("User created successfully:", createdUser);
         return false;

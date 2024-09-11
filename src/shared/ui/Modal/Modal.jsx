@@ -1,6 +1,7 @@
 import styled from "./Modal.module.scss";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import CloseBtn from "../CloseBtn/CloseBtn";
 
 const Modal = ({ children, setShowModal }) => {
   const modalRef = useRef();
@@ -31,12 +32,7 @@ const Modal = ({ children, setShowModal }) => {
 
   return createPortal(
     <div className={`${styled.modal} background-br`} ref={modalRef}>
-      <img
-        onClick={closeModal}
-        className={styled.close}
-        src="/icon/close-min.svg"
-        alt="close"
-      />
+      <CloseBtn close={closeModal} />
       {children}
     </div>,
     document.getElementById("portal")

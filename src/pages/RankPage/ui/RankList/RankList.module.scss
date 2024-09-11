@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 22px;
+  animation: rank-list 0.4s;
+}
+
+@keyframes rank-list {
+  0% {
+    transform: translateY(10%);
+  }
+}

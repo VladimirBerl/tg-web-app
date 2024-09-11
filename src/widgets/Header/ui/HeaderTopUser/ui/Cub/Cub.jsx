@@ -1,20 +1,10 @@
 import { Button } from "@/shared/ui/Buttom";
-import HomeTopModal from "../../../HomeTopModal/HomeTopModal";
-import { useModal } from "@/shared/hooks/modal.js";
-
+import { Link } from "react-router-dom";
 const Cub = () => {
-  const { isOpen, toggle } = useModal();
-
   return (
-    <>
-      <Button
-        click={toggle}
-        padding="4px"
-        showborder="true"
-        leftItem="/icon/cup.svg"
-      />
-      {isOpen && <HomeTopModal setShowModal={toggle} />}
-    </>
+    <Link to="rank">
+      <Button padding="4px" showborder="true" leftItem="/icon/cup.svg"></Button>
+    </Link>
   );
 };
 
