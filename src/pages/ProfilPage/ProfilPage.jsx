@@ -1,12 +1,21 @@
-import React from "react";
-import ProfilUser from "./ui/ProfilUser/ProfilUser";
-import ProfilInfo from "./ui/ProfilInfo/ProfilInfo";
+import styles from "./ProfilPage.module.scss";
+import CloseBtn from "@/shared/ui/CloseBtn/CloseBtn";
+import SwitchingTabs from "./ui/SwitchingTabs/SwitchingTabs";
+import RenderTabsItem from "./ui/RenderTabsItem/RenderTabsItem";
+import { useState } from "react";
 
 const ProfilPage = () => {
+  const [indexTab, setIndexTab] = useState("Профиль");
+
+  const toggleTabs = (tabName) => {
+    setIndexTab(tabName);
+  };
+
   return (
-    <div style={{marginBottom: '50px'}}>
-      <ProfilUser />
-      <ProfilInfo/>
+    <div className={styles.wrapper}>
+      <CloseBtn />
+      <SwitchingTabs activeTab={indexTab} toggle={toggleTabs} />
+      <RenderTabsItem tab={indexTab} />
     </div>
   );
 };

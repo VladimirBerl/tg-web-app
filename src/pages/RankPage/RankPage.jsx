@@ -16,9 +16,52 @@ const cards = [
     rank: "stone",
     coins: 0,
     tasks: [
-      { id: 1, description: "Заработать 100к монет" },
-      { id: 2, description: "Пригласить 1 друга" },
-      { id: 3, description: "Выполнить 3 задания" },
+      {
+        level: 1,
+        conditions: [
+          {
+            id: 1,
+            type: "coins",
+            description: "Заработать 100 000 монет",
+            target: 100000,
+          },
+          {
+            id: 2,
+            type: "friends",
+            description: "Пригласить 1 друга",
+            target: 1,
+          },
+          {
+            id: 3,
+            type: "task",
+            description: "Выполнить 10 заданий",
+            target: 10,
+          },
+        ],
+      },
+      {
+        level: 2,
+        conditions: [
+          {
+            id: 1,
+            description: "Заработать 200 000 монет",
+            target: 200000,
+            type: "coins",
+          },
+          {
+            id: 2,
+            description: "Пригласить 2 друга",
+            target: 2,
+            type: "friends",
+          },
+          {
+            id: 3,
+            description: "Выполнить 20 заданий",
+            target: 20,
+            type: "task",
+          },
+        ],
+      },
     ],
   },
   {

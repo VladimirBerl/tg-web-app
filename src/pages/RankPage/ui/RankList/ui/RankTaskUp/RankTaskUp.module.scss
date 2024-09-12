@@ -4,6 +4,21 @@
     font-weight: normal;
     text-transform: capitalize;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  & .warning,
+  & .wins,
+  & .no-task {
+    display: block;
+    font-size: 10px;
+    color: #ff5a30;
+    text-align: center;
+    margin-top: 15px;
+  }
+  & .wins {
+    color: #c1a130;
+  }
+  & .no-task {
+    color: #fff;
   }
 }

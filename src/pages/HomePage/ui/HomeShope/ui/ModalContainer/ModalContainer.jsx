@@ -20,6 +20,7 @@ const ModalContainer = ({
     <>
       {showModalBottomBuy && (
         <ModalBottom
+          position="-138px"
           title="Выберите нужное действие"
           setShowModalBottom={setShowModalBottomBuy}
         >
@@ -46,33 +47,13 @@ const ModalContainer = ({
                   </span>
                 </button>
               </div>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#C82B29" }}>
-                  2 ур.
-                </span>
-                <span className={styled.title}>Buyer China Marketplace</span>
-                <span className={styled.close}>Закрыт</span>
-              </div>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#C82B29" }}>
-                  3 ур.
-                </span>
-                <span className={styled.title}>Buyer Europa Marketplace</span>
-                <span className={styled.close}>Закрыт</span>
-              </div>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#C82B29" }}>
-                  4 ур.
-                </span>
-                <span className={styled.title}>Buyer Telegram</span>
-                <span className={styled.close}>Закрыт</span>
-              </div>
             </div>
           </div>
         </ModalBottom>
       )}
       {showModalBottomSell && (
         <ModalBottom
+          position="-138px"
           title="Выберите нужное действие"
           setShowModalBottom={setShowModalBottomSell}
         >
@@ -121,27 +102,6 @@ const ModalContainer = ({
                   </div>
                   <span>Разместить пост в группе за рубли</span>
                 </button>
-              </div>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#C82B29" }}>
-                  2 ур.
-                </span>
-                <span className={styled.title}>Buyer China Marketplace</span>
-                <span className={styled.close}>Закрыт</span>
-              </div>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#C82B29" }}>
-                  3 ур.
-                </span>
-                <span className={styled.title}>Buyer Europa Marketplace</span>
-                <span className={styled.close}>Закрыт</span>
-              </div>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#C82B29" }}>
-                  4 ур.
-                </span>
-                <span className={styled.title}>Buyer Telegram</span>
-                <span className={styled.close}>Закрыт</span>
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 import styled from "./ModalBottom.module.scss";
 import { createPortal } from "react-dom";
 import { useEffect, useRef } from "react";
-import CloseBtn  from "../CloseBtn/CloseBtn";
+import CloseBtn from "../CloseBtn/CloseBtn";
 
-const ModalBottom = ({ children, setShowModalBottom, title }) => {
+const ModalBottom = ({ children, setShowModalBottom, title, position }) => {
   const modalRef = useRef();
 
   const closeModal = () => {
@@ -16,6 +16,7 @@ const ModalBottom = ({ children, setShowModalBottom, title }) => {
   };
 
   useEffect(() => {
+    modalRef.current.style.bottom = position ? position : "0";
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         closeModal();

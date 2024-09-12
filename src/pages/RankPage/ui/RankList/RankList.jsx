@@ -24,7 +24,7 @@ const RankList = ({ cards }) => {
           title="Открывай уровни получай больше возможностей"
           setShowModalBottom={toggle}
         >
-          <RankTaskUp tasks={cards[rankIdOpen]} />
+          <RankTaskUp tasks={cards[rankIdOpen].tasks} />
         </ModalBottom>
       )}
     </>

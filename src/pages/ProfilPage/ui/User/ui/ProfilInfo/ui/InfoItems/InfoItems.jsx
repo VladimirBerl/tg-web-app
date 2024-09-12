@@ -26,9 +26,7 @@ const InfoItems = () => {
     },
   ];
   return (
-    <ul>
       <InfoItem items={progress} />
-    </ul>
   );
 };
 
