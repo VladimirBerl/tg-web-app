@@ -65,10 +65,6 @@ const ModalContainer = ({
                 </span>
                 <span className={styled.title}>Buyer Marketplace</span>
                 <button
-                  onClick={() => {
-                    PuzzleBot.sendCommand("/money");
-                    handlerVibrationTg;
-                  }}
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
@@ -78,10 +74,6 @@ const ModalContainer = ({
                   <span>Разместить пост в группе за монеты</span>
                 </button>
                 <button
-                  onClick={() => {
-                    PuzzleBot.sendCommand("/token");
-                    handlerVibrationTg;
-                  }}
                   style={{ marginBottom: "17px" }}
                 >
                   <div>
@@ -91,10 +83,6 @@ const ModalContainer = ({
                   <span>Разместить пост в группе за токены</span>
                 </button>
                 <button
-                  onClick={() => {
-                    PuzzleBot.sendCommand("/rub");
-                    handlerVibrationTg;
-                  }}
                 >
                   <div>
                     <img src="/icon/rub-min.png" alt="rub" />

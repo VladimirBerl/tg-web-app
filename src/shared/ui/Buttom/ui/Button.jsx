@@ -50,10 +50,13 @@ const Icon = styled.img`
   height: ${({ sizeIcon = "24px" }) => sizeIcon};
 `;
 
-const handleClick = (click) => {
+const handleClick = (click, eventclick) => {
   handlerVibrationTg();
   if (click) {
     click((prev) => !prev);
+  }
+  if (eventclick) {
+    eventclick();
   }
 };
 
@@ -62,6 +65,7 @@ export const Button = memo(
     leftItem,
     rightItem,
     click,
+    eventclick,
     children,
     showborder,
     sizeborder,
@@ -74,7 +78,7 @@ export const Button = memo(
   }) => {
     return (
       <StyledButton
-        onClick={() => handleClick(click)}
+        onClick={() => handleClick(click, eventclick)}
         {...{
           showborder,
           sizeborder,
