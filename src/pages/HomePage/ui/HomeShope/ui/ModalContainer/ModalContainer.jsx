@@ -9,7 +9,7 @@ const buy = [
     decs: "Перейти в группу и выбрать нужный товар со скидкой",
   },
   {
-    url: "https://t.me/Testapimybot",
+    url: "https://t.me/Testapimybot?start",
     icon: "/icon/search.svg",
     decs: "Перейти в бота и разместить запрос на поиск нужного товара",
   },
@@ -17,13 +17,13 @@ const buy = [
 
 const sell = [
   {
-    url: "https://t.me/Testapimybot",
+    url: "https://t.me/Testapimybot?start",
     icon: "/icon/coin-min.png",
     decs: "Разместить пост в группе за монеты",
     price: "10 000",
   },
   {
-    url: "https://t.me/Testapimybot",
+    url: "https://t.me/Testapimybot?start",
     icon: "/icon/rub-min.png",
     decs: "Разместить пост в группе за рубли",
     price: "1 000",
