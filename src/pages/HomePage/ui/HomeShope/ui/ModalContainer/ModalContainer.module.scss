@@ -1,128 +1,13 @@
-.wrapper-modal-bottom {
-  position: relative;
-  font-family: "Involve", sans-serif;
-  margin-bottom: auto;
-  margin-bottom: 88px;
-
-  & h2 {
-    margin-left: 37px;
-    margin-bottom: 17px;
-    font-size: 17;
-    font-weight: 400;
+.wrapper {
+  & .title {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 13px;
   }
-  & .scroll > *:not(:first-child) {
-    border-top: 1px solid transparent;
-    border-image: linear-gradient(
-      90deg,
-      rgba(48, 104, 208, 1) 0%,
-      rgba(131, 107, 175, 1) 50%,
-      rgba(151, 130, 98, 1) 100%
-    );
-    border-image-slice: 1;
-  }
-  & .heandel {
-    padding: 15px 13px;
-    position: relative;
-
-    & .level {
-      position: absolute;
-      top: 15px;
-      left: 0;
-    }
-    & .title {
-      font-size: 18px;
-      display: block;
-      text-align: center;
-      margin-bottom: 13px;
-    }
-    & button {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding: 9px 17px;
-      gap: 11px;
-      border-radius: 15px;
-      border: none;
-      color: #fff;
-      backdrop-filter: blur(40px);
-      background-color: rgba(255, 255, 255, 0.032);
-      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      &:active {
-        transform: scale(1.05);
-      }
-      & img {
-        width: 20px;
-        height: 20px;
-      }
-      & span {
-        font-size: 10px;
-      }
-    }
-    & .close {
-      font-size: 15px;
-      display: block;
-      text-align: center;
-    }
-  }
-  & .heandel-two {
-    padding: 15px 13px;
-    & .level {
-      position: absolute;
-      top: 15px;
-      left: 0;
-    }
-    & .title {
-      font-size: 18px;
-      display: block;
-      text-align: center;
-      margin-bottom: 13px;
-    }
-    & img {
-      width: 20px;
-      height: 20px;
-    }
-    & span {
-      font-size: 10px;
-    }
-    & button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      height: 42px;
-      gap: 11px;
-      overflow: hidden;
-      border-radius: 15px;
-      border: 0.1px solid #fff;
-      color: #fff;
-      backdrop-filter: blur(40px);
-      background-color: rgba(255, 255, 255, 0.032);
-      box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      &:active {
-        transform: scale(1.05);
-      }
-      & div {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding-left: 17px;
-        height: 42px;
-        width: 35%;
-        color: #fff;
-        border-right: 0.1px solid #fff;
-        backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.032);
-        box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
-      }
-      & img {
-        width: 20px;
-        height: 20px;
-      }
-      & > span {
-        width: 63%;
-        font-size: 10px;
-        padding-right: 17px;
-      }
-    }
+  & .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 }

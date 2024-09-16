@@ -17,16 +17,10 @@ const FriendsInvate = () => {
       .then(() => {
         setCopyText("Скопировано");
         toggle();
-        setTimeout(() => {
-          toggle();
-        }, 3000);
       })
       .catch(() => {
         setCopyText("Ошибка");
         toggle();
-        setTimeout(() => {
-          toggle();
-        }, 3000);
       });
   };
 

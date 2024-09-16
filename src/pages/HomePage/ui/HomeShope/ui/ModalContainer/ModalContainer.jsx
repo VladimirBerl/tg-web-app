@@ -1,6 +1,34 @@
 import styled from "./ModalContainer.module.scss";
 import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
-import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
+import ButtinShop from "../ButtonShop/ButtonShop";
+
+const buy = [
+  {
+    url: "https://t.me/Buyer_Marketplace",
+    icon: "/icon/shop.svg",
+    decs: "Перейти в группу и выбрать нужный товар со скидкой",
+  },
+  {
+    url: "https://t.me/Testapimybot",
+    icon: "/icon/search.svg",
+    decs: "Перейти в бота и разместить запрос на поиск нужного товара",
+  },
+];
+
+const sell = [
+  {
+    url: "https://t.me/Testapimybot",
+    icon: "/icon/coin-min.png",
+    decs: "Разместить пост в группе за монеты",
+    price: "10 000",
+  },
+  {
+    url: "https://t.me/Testapimybot",
+    icon: "/icon/rub-min.png",
+    decs: "Разместить пост в группе за рубли",
+    price: "1 000",
+  },
+];
 
 const ModalContainer = ({
   showModalBottomBuy,
@@ -8,14 +36,6 @@ const ModalContainer = ({
   setShowModalBottomBuy,
   setShowModalBottomSell,
 }) => {
-  const openLinkTg = () => {
-    if (window.Telegram.WebApp) {
-      window.Telegram.WebApp.openLink("https://t.me/Buyer_Marketplace");
-    } else {
-      console.error("Telegram WebApp is not defined");
-    }
-  };
-
   return (
     <>
       {showModalBottomBuy && (
@@ -24,29 +44,17 @@ const ModalContainer = ({
           title="Выберите нужное действие"
           setShowModalBottom={setShowModalBottomBuy}
         >
-          <div className={styled["wrapper-modal-bottom"]}>
-            <div className={styled["scroll"]}>
-              <div className={styled.heandel}>
-                <span className={styled.level} style={{ color: "#09AD40" }}>
-                  1 ур.
-                </span>
-                <span className={styled.title}>Buyer Marketplace</span>
-                <button
-                  onClick={handlerVibrationTg}
-                  style={{ marginBottom: "17px" }}
-                >
-                  <img src="/icon/shop.svg" alt="shop" />
-                  <span onClick={openLinkTg}>
-                    Перейти в группу и выбрать нужный товар со скидкой
-                  </span>
-                </button>
-                <button onClick={handlerVibrationTg}>
-                  <img src="/icon/search.svg" alt="search" />
-                  <span onClick={() => PuzzleBot.sendCommand("/search")}>
-                    Перейти в бота и разместить запрос на поиск нужного товара
-                  </span>
-                </button>
-              </div>
+          <div className={styled.wrapper}>
+            <span className={styled.title}>Buyer Marketplace</span>
+            <div className={styled.item}>
+              {buy.map((item, index) => (
+                <ButtinShop
+                  key={index}
+                  url={item.url}
+                  icon={item.icon}
+                  decs={item.decs}
+                />
+              ))}
             </div>
           </div>
         </ModalBottom>
@@ -57,40 +65,18 @@ const ModalContainer = ({
           title="Выберите нужное действие"
           setShowModalBottom={setShowModalBottomSell}
         >
-          <div className={styled["wrapper-modal-bottom"]}>
-            <div className={styled["scroll"]}>
-              <div className={styled["heandel-two"]}>
-                <span className={styled.level} style={{ color: "#09AD40" }}>
-                  1 ур.
-                </span>
-                <span className={styled.title}>Buyer Marketplace</span>
-                <button
-                  style={{ marginBottom: "17px" }}
-                >
-                  <div>
-                    <img src="/icon/coin-min.png" alt="coin" />
-                    <span>10 000</span>
-                  </div>
-                  <span>Разместить пост в группе за монеты</span>
-                </button>
-                <button
-                  style={{ marginBottom: "17px" }}
-                >
-                  <div>
-                    <img src="/icon/bmt-min.png" alt="bmt" />
-                    <span>100</span>
-                  </div>
-                  <span>Разместить пост в группе за токены</span>
-                </button>
-                <button
-                >
-                  <div>
-                    <img src="/icon/rub-min.png" alt="rub" />
-                    <span>1 000</span>
-                  </div>
-                  <span>Разместить пост в группе за рубли</span>
-                </button>
-              </div>
+          <div className={styled.wrapper}>
+            <span className={styled.title}>Buyer Marketplace</span>
+            <div className={styled.item}>
+              {sell.map((item, index) => (
+                <ButtinShop
+                  key={index}
+                  url={item.url}
+                  price={item.price}
+                  icon={item.icon}
+                  decs={item.decs}
+                />
+              ))}
             </div>
           </div>
         </ModalBottom>

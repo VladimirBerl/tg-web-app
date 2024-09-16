@@ -7,7 +7,7 @@ import { useModal } from "@/shared/hooks/modal.js";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg.js";
 
 const ButtonChek = ({ url, id }) => {
-  const buttonId = `taskButtonState${id}`; // Уникальный идентификатор для каждой кнопки
+  const buttonId = `taskButtonState${id}`;
   const { user } = useUser();
   const [status, setStatus] = useState(false);
   const [buttonText, setButtonText] = useState("Перейти");
@@ -15,7 +15,6 @@ const ButtonChek = ({ url, id }) => {
   const [getCheckTaskComplete] = useLazyGetCheckTaskCompleteQuery();
   const { isOpen, toggle } = useModal();
 
-  // Функция для проверки статуса задачи
   const chekSatusTask = useCallback(async () => {
     setLoading(true);
     try {
@@ -35,7 +34,6 @@ const ButtonChek = ({ url, id }) => {
     }
   }, [getCheckTaskComplete, user.id_telegram, id]);
 
-  // Логика обработки состояния кнопки и работы с localStorage
   const handleClick = () => {
     if (buttonText === "Перейти") {
       location.href = url;
@@ -44,12 +42,8 @@ const ButtonChek = ({ url, id }) => {
     } else if (buttonText === "Проверить") {
       chekSatusTask();
       if (!status) {
-        toggle(); // Открываем модальное окно
-        handlerVibrationTg()
-        setTimeout(() => {
-          setButtonText("Еще раз");
-          toggle(); // Закрываем модальное окно
-        }, 2000);
+        toggle();
+        handlerVibrationTg();
       }
     } else if (buttonText === "Еще раз") {
       setButtonText("Перейти");
@@ -58,11 +52,8 @@ const ButtonChek = ({ url, id }) => {
   };
 
   useEffect(() => {
-    // Получаем значение кнопки из localStorage
     const storedButtonText = localStorage.getItem(buttonId) || "Перейти";
     setButtonText(storedButtonText);
-
-    // Проверяем статус задачи при монтировании компонента
     chekSatusTask();
   }, [buttonId, chekSatusTask]);
 

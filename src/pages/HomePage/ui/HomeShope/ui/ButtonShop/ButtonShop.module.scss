@@ -1,0 +1,40 @@
+.button-shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 42px;
+  gap: 11px;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 0.1px solid #fff;
+  color: #fff;
+  backdrop-filter: blur(40px);
+  background-color: rgba(255, 255, 255, 0.032);
+  box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+  &:active {
+    transform: scale(1.03);
+  }
+  & .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 77px;
+    height: 42px;
+    color: #fff;
+    border-right: 0.1px solid #fff;
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.032);
+    box-shadow: inset 0px 0px 50.11px 0px rgba(255, 255, 255, 0.032);
+  }
+  & img {
+    width: 20px;
+    height: 20px;
+  }
+  & > span {
+    width: 63%;
+    font-size: 10px;
+    padding-right: 17px;
+  }
+}
