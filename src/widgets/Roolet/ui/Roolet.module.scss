@@ -4,11 +4,13 @@
   background-color: #1b1f24;
   border-radius: 10px;
   margin: 140px 0;
+
   .pointer {
     position: absolute;
     left: 50%;
     transform: translate3d(-50%, -14px, 0);
   }
+
   .title {
     font-size: 18px;
     white-space: nowrap;
@@ -16,29 +18,33 @@
     left: 50%;
     transform: translate3d(-50%, -50px, 0);
   }
+
   .scope {
     overflow: hidden;
+
     .list {
       display: inline-flex;
       position: relative;
       left: 0;
       transform: rotate3d(0, 0, 0);
       transition: 5s cubic-bezier(0.21, 0.53, 0.29, 0.99);
+
       .item {
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        $sizes: 100px;
-        width: $sizes;
-        height: calc($sizes * 0.8);
+        width: 100px; // Убедитесь, что ширина совпадает с itemWidth
+        height: 80px;
         opacity: 0.5;
         transition: 0.3s ease;
         font-size: 16px;
         font-weight: 600;
+
         &:nth-child(2n) {
           background-color: #00000010;
         }
+
         &.active {
           opacity: 1;
           transform: scale(1.1);
@@ -46,6 +52,7 @@
       }
     }
   }
+
   .button {
     position: absolute;
     top: 100%;
