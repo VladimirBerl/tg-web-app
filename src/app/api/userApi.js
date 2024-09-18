@@ -57,6 +57,17 @@ export const userApi = createApi({
         },
       }),
     }),
+    changeUserCount: build.mutation({
+      query: ({ id, body }) => ({
+        url: `change_coins/${id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ({ id }) => [{ type: "User", id }],
+    }),
+    
+
+
     createUser: build.mutation({
       query: (body) => ({
         url: `create_user`,
@@ -67,14 +78,6 @@ export const userApi = createApi({
         },
         body,
       }),
-    }),
-    changeUserCount: build.mutation({
-      query: ({ id, body }) => ({
-        url: `change_coins/${id}`,
-        method: "PATCH",
-        body,
-      }),
-      invalidatesTags: ({ id }) => [{ type: "User", id }],
     }),
   }),
 });

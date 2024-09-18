@@ -9,7 +9,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
-  console.log('work');
   
   const initUser = async () => {
     try {

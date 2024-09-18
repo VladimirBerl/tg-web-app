@@ -5,12 +5,12 @@ export const useUpdateUserCoins = () => {
   const { user } = useUser();
   const [changeUserCount] = useChangeUserCountMutation();
 
-  const updateCoins = async () => {
+  const updateCoins = async (amount) => {
     try {
       await changeUserCount({
         id: user.id_telegram,
         body: {
-          amount: user.count_pharmd,
+          amount,
           add: true,
         },
       }).unwrap();

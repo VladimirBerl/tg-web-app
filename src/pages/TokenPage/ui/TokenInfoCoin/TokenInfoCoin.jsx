@@ -33,7 +33,7 @@ export default function TokenInfo() {
           <span style={{ color: "#03CEA4" }}>20.000.000</span>
         </div>
         <div>
-          <span>Токонов в обработке</span>
+          <span>Токенов в обработке</span>
           <span style={{ color: "#ff5a30" }}>8.500.000</span>
         </div>
       </div>
