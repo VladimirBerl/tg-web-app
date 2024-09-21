@@ -97,7 +97,7 @@ const Farm = () => {
 
   const handleButtonClick = () => {
     if (timerFinish) {
-      updateCoins(user.count_pharmd);
+      updateCoins(user.count_pharmd, 'Фарм монет');
       setTimerFinish(false);
     } else if (!timerActive) {
       setTimeLeft(time);

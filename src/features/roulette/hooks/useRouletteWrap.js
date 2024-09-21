@@ -53,8 +53,7 @@ export const useRouletteWrap = (styles, toggle) => {
 
       toggle(); // Открытие модального окна
       setStartGame(false); // Остановка игры
-      // updateCoins(selectedItemValue); // Обновление монет пользователя
-      console.log("Coins updated");
+      updateCoins(selectedItemValue, 'Рулетка');
     }
   }, [toggle, updateCoins]);
 
