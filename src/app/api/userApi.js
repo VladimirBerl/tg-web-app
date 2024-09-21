@@ -57,6 +57,16 @@ export const userApi = createApi({
         },
       }),
     }),
+    getCountPostsByType: build.query({
+      query: () => ({
+        url: `count_posts_by_type`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
     changeUserCount: build.mutation({
       query: ({ id, body }) => ({
         url: `change_coins/${id}`,
@@ -81,6 +91,7 @@ export const userApi = createApi({
 });
 
 export const {
+  useGetCountPostsByTypeQuery,
   useGetTransactionsQuery,
   useGetUserQuery,
   useGetUserFriendsQuery,

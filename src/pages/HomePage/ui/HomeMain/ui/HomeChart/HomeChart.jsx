@@ -3,9 +3,8 @@ import ModalContainer from "./ui/ModalContainer/ModalContainer";
 import InfoCoin from "./ui/InfoCoin/InfoCoin";
 import PriceCoin from "./ui/PriceCoin/PriceCoin";
 import ChartContainer from "./ui/ChartContainer/ChartContainer";
-import { useState } from "react";
-
-
+import { useState, useEffect } from "react";
+import { useGetCountPostsByTypeQuery } from "@/app/api";
 
 const dataChartOne = {
   datasets: [
@@ -50,23 +49,35 @@ const dataChartTree = {
 const HomeChart = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModalRub, setShowModalRub] = useState(false);
-  // const [showModalRub, setShowModalRub] = useState(false);
+  const [transData, setTransData] = useState([]);
+  const { data, error, isLoading } = useGetCountPostsByTypeQuery();
+
+  function transformation(dataSet) {
+    return dataSet.slice(1).map((item) => ({
+      datasets: [
+        {
+          ...item,
+          backgroundColor: ["#088E35", "#064225"],
+          borderWidth: 0,
+          redraw: true,
+          cutout: "90%",
+        },
+      ],
+    }));
+  }
+  useEffect(() => {
+    if (!isLoading) {
+      setTransData(transformation(data));
+    }
+  }, [isLoading]);
+
+
 
   return (
     <>
       <div className={`${styled.wrapper} background-br`}>
-        <InfoCoin
-          dataChartOne={dataChartOne}
-          dataChartTwo={dataChartTwo}
-          dataChartTree={dataChartTree}
-        />
-
-        <ChartContainer
-          dataChartOne={dataChartOne}
-          dataChartTwo={dataChartTwo}
-          dataChartTree={dataChartTree}
-        />
-
+        <InfoCoin data={transData} />
+        <ChartContainer data={transData} />
         <PriceCoin
           setShowModal={setShowModal}
           setShowModalRub={setShowModalRub}

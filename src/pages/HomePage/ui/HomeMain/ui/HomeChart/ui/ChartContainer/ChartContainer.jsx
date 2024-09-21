@@ -1,8 +1,8 @@
 import styled from "./ChartContainer.module.scss";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-
 ChartJS.register(ArcElement, Tooltip, Legend);
+
 const options = {
   plugins: {
     tooltip: {
@@ -13,22 +13,18 @@ const options = {
   },
 };
 
-const ChartContainer = ({ dataChartOne, dataChartTwo, dataChartTree }) => {
+const ChartContainer = ({ data }) => {
   return (
     <div className={styled.chart}>
-      <div className={styled.item}>
-        <Doughnut data={dataChartOne} options={options} />
-      </div>
-      <div className={styled.item}>
-        <Doughnut data={dataChartTwo} options={options} />
-      </div>
-      <div className={styled.item}>
-        <Doughnut data={dataChartTree} options={options} />
-      </div>
+      {data.map((item, index) => (
+        <div key={index} className={styled.item}>
+          <Doughnut data={item} options={options} />
+        </div>
+      ))}
       <div className={styled.counter}>
-        <span>{dataChartOne.datasets[0].data[0]}</span>
-        <span>{dataChartTwo.datasets[0].data[0]}</span>
-        <span>{dataChartTree.datasets[0].data[0]}</span>
+        {data.map((item, index) => (
+          <span key={index}>{item.datasets[0].current}</span>
+        ))}
       </div>
     </div>
   );
