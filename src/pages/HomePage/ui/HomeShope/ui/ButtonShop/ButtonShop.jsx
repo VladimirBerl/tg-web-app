@@ -1,9 +1,12 @@
 import styles from "./ButtonShop.module.scss";
 
-const ButtonShop = ({ price, icon, decs, url, disable }) => {
+const ButtonShop = ({ price, icon, decs, url, disable, type }) => {
   function openLinkTg() {
-    if (window.Telegram.WebApp) {
-      window.Telegram.WebApp.openTelegramLink(url);
+    const tg = window.Telegram.WebApp;
+    if (type === "bot") {
+      tg.sendData(url);
+    } else if (type === "link") {
+      tg.openTelegramLink(url);
     } else {
       console.error("Telegram WebApp is not defined");
     }

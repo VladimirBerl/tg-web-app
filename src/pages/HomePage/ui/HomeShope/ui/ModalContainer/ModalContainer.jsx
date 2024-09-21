@@ -4,12 +4,14 @@ import ButtinShop from "../ButtonShop/ButtonShop";
 
 const buy = [
   {
+    type: "link",
     url: "https://t.me/Buyer_Marketplace",
     icon: "/icon/shop.svg",
     decs: "Перейти в группу и выбрать нужный товар со скидкой",
   },
   {
-    url: "https://t.me/Testapimybot?start",
+    type: "bot",
+    url: "/start",
     icon: "/icon/search.svg",
     decs: "Перейти в бота и разместить запрос на поиск нужного товара",
   },
@@ -17,13 +19,15 @@ const buy = [
 
 const sell = [
   {
-    url: "https://t.me/Testapimybot?start",
+    type: "bot",
+    url: "/start",
     icon: "/icon/coin-min.png",
     decs: "Разместить пост в группе за монеты",
     price: "10 000",
   },
   {
-    url: "https://t.me/Testapimybot?start",
+    type: "bot",
+    url: "/start",
     icon: "/icon/rub-min.png",
     decs: "Разместить пост в группе за рубли",
     price: "1 000",
@@ -53,6 +57,7 @@ const ModalContainer = ({
                   url={item.url}
                   icon={item.icon}
                   decs={item.decs}
+                  type={item.type}
                 />
               ))}
             </div>
@@ -75,6 +80,7 @@ const ModalContainer = ({
                   price={item.price}
                   icon={item.icon}
                   decs={item.decs}
+                  type={item.type}
                 />
               ))}
             </div>
