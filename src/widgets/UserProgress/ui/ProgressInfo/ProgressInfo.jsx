@@ -3,7 +3,7 @@ const ProgressInfo = () => {
   return (
     <div className={styles.info}>
       <p className={styles.next}>След. уровень:</p>
-      <p className={styles.task}>0/3 заданий</p>
+      <p className={styles.task}>0/10 заданий</p>
     </div>
   );
 };

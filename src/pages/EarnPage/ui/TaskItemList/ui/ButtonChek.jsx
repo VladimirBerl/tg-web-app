@@ -70,7 +70,7 @@ const ButtonChek = ({ url, id }) => {
           padding="8px"
           gradient="true"
           sizetext="12px"
-          click={handleClick}
+          eventclick={handleClick}
         >
           {loading ? "Загрузка..." : buttonText}
         </Button>

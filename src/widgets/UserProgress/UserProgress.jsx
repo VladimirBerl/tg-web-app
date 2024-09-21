@@ -1,11 +1,12 @@
 import ProgressInfo from "./ui/ProgressInfo/ProgressInfo";
-import styles from "./UserProgress.module.scss";
+import ProgressLine from "./ui/ProgressLine/ProgressLine";
+
 const UserProgress = () => {
   return (
-    <div>
+    <>
       <ProgressInfo />
-      <div className={styles.progress}></div>
-    </div>
+      <ProgressLine progress="10"/>
+    </>
   );
 };
 

@@ -20,7 +20,7 @@ export const Roulette = () => {
   } = useRouletteWrap(styles, toggle);
 
   function chekValidPlayGame() {
-    if (user.spinners === 1) {
+    if (user?.spinners === 1) {
       setStatusBtn("Нет спинов");
     } else if (startGame) {
       setStatusBtn("Идет прокрутка...");
@@ -36,7 +36,7 @@ export const Roulette = () => {
     <div className={styles.wrapper}>
       <div className={styles.decs}>
         <h3 className={styles.title}>Получить бонус</h3>
-        <span>Доступные крутки: {user.spinners}</span>
+        <span>Доступные крутки: {user?.spinners}</span>
       </div>
       <div className={styles.role}>
         <div className={styles.pointer}>

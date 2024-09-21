@@ -6,15 +6,22 @@
   backdrop-filter: blur(41.42px);
   background-color: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0px 0px 58.67px 0px rgba(255, 255, 255, 0.05);
-  &::before {
+  & .line {
     position: absolute;
     content: "";
     top: 50%;
     left: 0;
-    right: 30%;
     height: 100%;
+    animation: progress 0.6s cubic-bezier(0.74, -0.01, 0.44, 1);
+    transition: 0.4s width cubic-bezier(0.74, -0.01, 0.44, 1);
     transform: translateY(-50%);
     border-radius: 15px;
     background: linear-gradient(90deg, #321233 15.47%, #836baf 85.41%);
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0px;
   }
 }

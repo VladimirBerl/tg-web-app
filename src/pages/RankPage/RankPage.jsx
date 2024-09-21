@@ -1,5 +1,5 @@
 import styles from "./RankPage.module.scss";
-import PankImages from "./ui/RankImages/RankImages";
+import PankImages from "@/shared/ui/RankImages/RankImages";
 import PankLevel from "./ui/RankLevel/RankLevel";
 import UserProgress from "@/widgets/UserProgress/UserProgress";
 import RankCoinsCount from "./ui/RankCoinsCount/RankCoinsCount";
@@ -104,8 +104,8 @@ const RankPage = () => {
         <CloseBtn />
       </Link>
       <PankImages rank={userRank.name} />
-      <PankLevel level={user.level} rankName={userRank.name} />
-      <RankCoinsCount coins={user.count_coins} />
+      <PankLevel level={user?.level} rankName={userRank.name} />
+      <RankCoinsCount coins={user?.count_coins} />
       <UserProgress />
       <RankList cards={cards} />
     </div>

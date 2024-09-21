@@ -6,19 +6,19 @@ const InfoItems = () => {
   const progress = [
     {
       text: "Дата регистрации",
-      value: user.registration_date,
+      value: user?.registration_date,
     },
     {
       text: "Пригласил друзей",
-      value: user.count_invited_friends,
+      value: user?.count_invited_friends,
     },
     {
       text: "Покупки",
-      value: user.purchase_count,
+      value: user?.purchase_count,
     },
     {
       text: "Продажи",
-      value: user.sale_count,
+      value: user?.sale_count,
     },
     {
       text: "Выполненных заданий",

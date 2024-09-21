@@ -26,9 +26,9 @@ const App = () => {
     initUser();
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return <Routing />;
 };
