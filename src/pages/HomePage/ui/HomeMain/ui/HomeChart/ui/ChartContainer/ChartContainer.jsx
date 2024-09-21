@@ -3,7 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const options = {
+const CHART_OPTIONS = {
   plugins: {
     tooltip: {
       enabled: false,
@@ -18,7 +18,7 @@ const ChartContainer = ({ data }) => {
     <div className={styled.chart}>
       {data.map((item, index) => (
         <div key={index} className={styled.item}>
-          <Doughnut data={item} options={options} />
+          <Doughnut data={item} options={CHART_OPTIONS} />
         </div>
       ))}
       <div className={styled.counter}>

@@ -1,49 +1,24 @@
 import styled from "./PriceCoin.module.scss";
-import handlerVibrationTg from "@/shared/lib/handlerVibrationTg";
 
-const PriceCoin = ({
-  dataChartOne,
-  dataChartTwo,
-  dataChartTree,
-  setShowModalRub,
-  setShowModal,
-}) => {
+const CHART_ICONS = {
+  0: "/icon/bmt-min.png",
+  1: "/icon/coin-min.png",
+  2: "/icon/rub-min.png",
+};
+
+const PriceCoin = ({ data }) => {
   return (
     <div
       className={`
       ${styled.info} background-br
     `}
     >
-      <span
-        onClick={() => {
-          handlerVibrationTg();
-          setShowModal((prev) => !prev);
-        }}
-        style={{ color: dataChartOne.datasets[0].backgroundColor[0] }}
-      >
-        <img src="/icon/coin-min.png" alt="coin" />
-        {dataChartOne.datasets[0].price}
-      </span>
-      <span
-        onClick={() => {
-          handlerVibrationTg();
-          setShowModal((prev) => !prev);
-        }}
-        style={{ color: dataChartTwo.datasets[0].backgroundColor[0] }}
-      >
-        <img src="/icon/bmt-min.png" alt="coin" />
-        {dataChartTwo.datasets[0].price}
-      </span>
-      <span
-        onClick={() => {
-          handlerVibrationTg();
-          setShowModalRub((prev) => !prev);
-        }}
-        style={{ color: dataChartTree.datasets[0].backgroundColor[0] }}
-      >
-        <img src="/icon/rub-min.png" alt="coin" />
-        {dataChartTree.datasets[0].price}
-      </span>
+      {data.map((item, index) => (
+        <span key={index}>
+          <img src={CHART_ICONS[index]} alt="coin" />
+          {item.datasets[0].price}
+        </span>
+      ))}
     </div>
   );
 };

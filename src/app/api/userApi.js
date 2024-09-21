@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://2e4c-185-211-159-221.ngrok-free.app/api",
+    baseUrl: "https://3bfd-185-211-159-247.ngrok-free.app/api",
   }),
   endpoints: (build) => ({
     getUser: build.query({
@@ -38,8 +38,8 @@ export const userApi = createApi({
       }),
     }),
     getTask: build.query({
-      query: ({ type }) => ({
-        url: `tasks/${type}`,
+      query: () => ({
+        url: `tasks`,
         method: "GET",
         headers: {
           "ngrok-skip-browser-warning": true,
@@ -60,6 +60,16 @@ export const userApi = createApi({
     getCountPostsByType: build.query({
       query: () => ({
         url: `count_posts_by_type`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
+    getCountMembers: build.query({
+      query: () => ({
+        url: `count_members`,
         method: "GET",
         headers: {
           "ngrok-skip-browser-warning": true,
@@ -91,6 +101,7 @@ export const userApi = createApi({
 });
 
 export const {
+  useGetCountMembersQuery,
   useGetCountPostsByTypeQuery,
   useGetTransactionsQuery,
   useGetUserQuery,
