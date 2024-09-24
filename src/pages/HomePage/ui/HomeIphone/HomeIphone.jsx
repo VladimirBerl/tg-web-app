@@ -6,7 +6,6 @@ const interactionGroup = [
 ];
 const HomeIphone = () => {
   const { data} = useGetCountMembersQuery();
-  console.log(data);
 
   function openLinkTg() {
     if (window.Telegram.WebApp) {

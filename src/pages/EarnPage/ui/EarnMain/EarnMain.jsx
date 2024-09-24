@@ -30,7 +30,7 @@ const EarnMain = ({
         handleAfterChange={handleAfterChange}
         carouselRef={carouselRef}
       />
-      {currentSlide === 5 ? (
+      {currentSlide === 7 ? (
         <EarnCompleted />
       ) : (
         <TaskItemList tasks={categories[currentSlide].tasks} />

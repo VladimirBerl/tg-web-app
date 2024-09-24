@@ -6,60 +6,87 @@ import { ModalInfo } from "@/shared/ui/ModalInfo";
 import { useModal } from "@/shared/hooks/modal.js";
 import handlerVibrationTg from "@/shared/lib/handlerVibrationTg.js";
 
-const ButtonChek = ({ url, id }) => {
-  const buttonId = `taskButtonState${id}`;
+const ButtonCheck = ({ url, id }) => {
   const { user } = useUser();
-  const [status, setStatus] = useState(false);
-  const [buttonText, setButtonText] = useState("Перейти");
-  const [loading, setLoading] = useState(false);
-  const [getCheckTaskComplete] = useLazyGetCheckTaskCompleteQuery();
   const { isOpen, toggle } = useModal();
+  const [getCheckTaskComplete] = useLazyGetCheckTaskCompleteQuery();
 
-  const chekSatusTask = useCallback(async () => {
-    setLoading(true);
+  const [isTaskComplete, setIsTaskComplete] = useState(false);
+  const [buttonText, setButtonText] = useState("Перейти");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const buttonStorageKey = `taskButtonState${id}`;
+
+  const fetchTaskStatus = useCallback(async () => {
+    setIsLoading(true);
     try {
       const { data } = await getCheckTaskComplete({
         id: user.id_telegram,
         id_task: id,
       });
-      setStatus(data.complete);
+
+      setIsTaskComplete(data.complete);
+
       if (data.complete) {
         setButtonText("Задача выполнена");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error checking task status:", error);
       setButtonText("Ошибка");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }, [getCheckTaskComplete, user.id_telegram, id]);
 
-  const handleClick = () => {
-    if (buttonText === "Перейти") {
-      location.href = url;
-      localStorage.setItem(buttonId, "Проверить");
-      setButtonText("Проверить");
-    } else if (buttonText === "Проверить") {
-      chekSatusTask();
-      if (!status) {
-        toggle();
-        handlerVibrationTg();
-      }
-    } else if (buttonText === "Еще раз") {
-      setButtonText("Перейти");
-      localStorage.setItem(buttonId, "Перейти");
+  const handleButtonClick = () => {
+    switch (buttonText) {
+      case "Перейти":
+        navigateToTask();
+        break;
+      case "Проверить":
+        checkTaskCompletion();
+        break;
+      case "Еще раз":
+        resetButtonState();
+        break;
+      default:
+        break;
     }
   };
 
+  const navigateToTask = () => {
+    location.href = url;
+    updateButtonText("Проверить");
+  };
+
+  const checkTaskCompletion = () => {
+    fetchTaskStatus();
+    if (!isTaskComplete) {
+      resetButtonState();
+      toggle();
+      handlerVibrationTg();
+    }
+  };
+
+  const resetButtonState = () => {
+    updateButtonText("Перейти");
+  };
+
+  const updateButtonText = (text) => {
+    setButtonText(text);
+    localStorage.setItem(buttonStorageKey, text);
+    setTimeout(() => localStorage.removeItem(buttonStorageKey), 5000);
+  };
+
   useEffect(() => {
-    const storedButtonText = localStorage.getItem(buttonId) || "Перейти";
-    setButtonText(storedButtonText);
-    chekSatusTask();
-  }, [buttonId, chekSatusTask]);
+    const storedText = localStorage.getItem(buttonStorageKey) || "Перейти";
+    setButtonText(storedText);
+    fetchTaskStatus();
+  }, [buttonStorageKey, fetchTaskStatus]);
 
   return (
     <div>
-      {status ? (
+      {isTaskComplete ? (
         <img
           style={{ width: "28px", height: "28px" }}
           src="/icon/ready.svg"
@@ -70,14 +97,14 @@ const ButtonChek = ({ url, id }) => {
           padding="8px"
           gradient="true"
           sizetext="12px"
-          eventclick={handleClick}
+          eventclick={handleButtonClick}
         >
-          {loading ? "Загрузка..." : buttonText}
+          {isLoading ? "Загрузка..." : buttonText}
         </Button>
       )}
-      {isOpen && <ModalInfo>Задача не выполнена</ModalInfo>}
+      {isOpen && <ModalInfo>Задача не выполнена{id}</ModalInfo>}
     </div>
   );
 };
 
-export default ButtonChek;
+export default ButtonCheck;

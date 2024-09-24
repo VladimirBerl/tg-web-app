@@ -8,10 +8,10 @@ const CategoryItem = ({ category, handleAfterChange }) => {
       onClick={() => handleAfterChange(category.id)}
     >
       <div className={styled['category-title']}>
-        <span>{category.countTasks}</span>
-        <span>{category.categoryName}</span>
+        <span>{category.count_tasks}</span>
+        <span>{category.name}</span>
       </div>
-      {category.categoryIcon && <img src={category.categoryIcon} alt="icon" />}
+      {/* {category.categoryIcon && <img src={category.categoryIcon} alt="icon" />} */}
     </div>
   );
 };

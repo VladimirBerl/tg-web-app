@@ -9,7 +9,7 @@ const HomeTop = () => {
   return (
     <div className={styled.wrapper}>
       {isHome && <HeaderTopUser />}
-      <HeaderState isHome={isHome} />
+      <HeaderState paths={pathname} />
     </div>
   );
 };

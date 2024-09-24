@@ -105,6 +105,128 @@ export const categories = [
     categoryIcon: "/icon/ready.svg",
   },
 ];
+[
+  {
+      "id": 1,
+      "count_tasks": 3,
+      "name": "subscribe",
+      "tasks": [
+          {
+              "id": 1,
+              "description": "Подписаться на канал BUYER",
+              "url": "https://t.me/Buyer_Marketplace"
+          },
+          {
+              "id": 3,
+              "description": "Подписаться на канал EFT психология ",
+              "url": "https://t.me/EFT_Russia_chat"
+          },
+          {
+              "id": 2,
+              "description": "Подписаться на канал ДПМГ",
+              "url": "https://t.me/dpdg_emdr_free"
+          }
+      ]
+  },
+  {
+      "id": 2,
+      "count_tasks": 2,
+      "name": "games",
+      "tasks": [
+          {
+              "id": 12,
+              "description": "Empire X",
+              "url": "https://t.me/empirebot"
+          },
+          {
+              "id": 13,
+              "description": "Magnilove",
+              "url": "https://t.me/Magnilove_bot"
+          }
+      ]
+  },
+  {
+      "id": 3,
+      "count_tasks": 2,
+      "name": "watch",
+      "tasks": [
+          {
+              "id": 5,
+              "description": "Видео про планировку задач",
+              "url": "https://www.youtube.com/watch?v=bQpfvz1bIoE"
+          },
+          {
+              "id": 4,
+              "description": "Посмотреть видео про python",
+              "url": "https://www.youtube.com/watch?v=FfitVqUAVl8"
+          }
+      ]
+  },
+  {
+      "id": 4,
+      "count_tasks": 1,
+      "name": "like",
+      "tasks": [
+          {
+              "id": 6,
+              "description": "Поставить лайк в группу ВК",
+              "url": "https://vk.com/tennisprimesport?w=wall-212808533_4225824"
+          }
+      ]
+  },
+  {
+      "id": 5,
+      "count_tasks": 2,
+      "name": "comment",
+      "tasks": [
+          {
+              "id": 7,
+              "description": "Оставить комментарий к товару на OZON",
+              "url": "https://www.ozon.ru/product/lofery-salamander-1635651513/?avtc=1&avte=2&avts=1727092592"
+          },
+          {
+              "id": 8,
+              "description": "Оставить комментарий к товару на WB",
+              "url": "https://www.wildberries.ru/catalog/7213826/detail.aspx"
+          }
+      ]
+  },
+  {
+      "id": 6,
+      "count_tasks": 2,
+      "name": "save",
+      "tasks": [
+          {
+              "id": 10,
+              "description": "Добавить в избранное товар на OZON",
+              "url": "https://www.ozon.ru/product/posudomoechnaya-mashina-vstraivaemaya-kuppersberg-gsm-4574-modifikatsiya-2024-goda-382762300/?avtc=1&avte=4&avts=1727092517"
+          },
+          {
+              "id": 9,
+              "description": "Добавить в избранное товар на WB",
+              "url": "https://www.wildberries.ru/catalog/163352671/detail.aspx"
+          }
+      ]
+  },
+  {
+      "id": 7,
+      "count_tasks": 1,
+      "name": "bonus",
+      "tasks": [
+          {
+              "id": 11,
+              "description": "Подписаться на группу ",
+              "url": "https://t.me/iforextest"
+          }
+      ]
+  },
+  {
+      "id": 8,
+      "count_tasks": 0,
+      "name": "completed",
+      "tasks": []
+  }
+]
 
 export const userRank = {
   name: "stone",
