@@ -8,7 +8,12 @@ const TaskInfo = ({ tasks }) => {
         <div className={styled["coin-img"]}>
           <img src="/icon/coin-min.png" alt="coin" />
         </div>
-        <span>+{((tasks.length - 1) * 5000).toLocaleString("de-DE")}</span>
+        <span>
+          +
+          {tasks.length > 0
+            ? ((tasks.length - 1) * 5000).toLocaleString("de-DE")
+            : 0}
+        </span>
       </button>
     </div>
   );

@@ -27,8 +27,10 @@ const ButtonCheck = ({ url, id }) => {
 
       setIsTaskComplete(data.complete);
 
-      if (data.complete) {
-        setButtonText("Задача выполнена");
+      if (!data.complete) {
+        resetButtonState();
+        toggle();
+        handlerVibrationTg();
       }
     } catch (error) {
       console.error("Error checking task status:", error);
@@ -61,11 +63,6 @@ const ButtonCheck = ({ url, id }) => {
 
   const checkTaskCompletion = () => {
     fetchTaskStatus();
-    if (!isTaskComplete) {
-      resetButtonState();
-      toggle();
-      handlerVibrationTg();
-    }
   };
 
   const resetButtonState = () => {
@@ -81,7 +78,6 @@ const ButtonCheck = ({ url, id }) => {
   useEffect(() => {
     const storedText = localStorage.getItem(buttonStorageKey) || "Перейти";
     setButtonText(storedText);
-    fetchTaskStatus();
   }, [buttonStorageKey, fetchTaskStatus]);
 
   return (
@@ -102,7 +98,7 @@ const ButtonCheck = ({ url, id }) => {
           {isLoading ? "Загрузка..." : buttonText}
         </Button>
       )}
-      {isOpen && <ModalInfo>Задача не выполнена{id}</ModalInfo>}
+      {isOpen && <ModalInfo>Задача не выполнена</ModalInfo>}
     </div>
   );
 };
