@@ -1,6 +1,6 @@
 import styled from "./TaskInfo.module.scss";
 
-const TaskInfo = () => {
+const TaskInfo = ({ tasks }) => {
   return (
     <div className={styled.info}>
       <h3>Заработано</h3>
@@ -8,7 +8,7 @@ const TaskInfo = () => {
         <div className={styled["coin-img"]}>
           <img src="/icon/coin-min.png" alt="coin" />
         </div>
-        <span>+50 000</span>
+        <span>+{((tasks.length - 1) * 5000).toLocaleString("de-DE")}</span>
       </button>
     </div>
   );

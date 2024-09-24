@@ -1,0 +1,57 @@
+.task {
+  font-family: "Involve", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  margin-right: 10px;
+  gap: 10px;
+
+  border-left: none;
+  border-bottom-right-radius: 20px;
+
+  & .telegram {
+    width: 45px;
+    height: 45px;
+  }
+  & .ready {
+    width: 26px;
+    height: 26px;
+  }
+  & .task-info {
+    margin-right: auto;
+    & span {
+      font-size: 13px;
+      background: linear-gradient(
+        90deg,
+        rgb(48, 104, 208) 0%,
+        rgb(131, 107, 175) 50%,
+        rgb(151, 130, 98) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    & .price-task {
+      margin-top: 10px;
+
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      & .coin-img {
+        max-width: 15px;
+      }
+      & span {
+        font-family: "Bicubik", sans-serif;
+        font-size: 13px;
+        background: linear-gradient(
+          90deg,
+          rgb(48, 104, 208) 0%,
+          rgb(131, 107, 175) 50%,
+          rgb(151, 130, 98) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

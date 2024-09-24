@@ -1,9 +1,11 @@
 import TaskInfo from "./ui/TaskInfo/TaskInfo";
+import TaskComlited from "./ui/TaskComlited/TaskComlited";
 
-const EarnCompleted = () => {
+const EarnCompleted = ({ tasks }) => {
   return (
     <>
-      <TaskInfo />
+      <TaskInfo tasks={tasks} />
+      <TaskComlited tasks={tasks} />
     </>
   );
 };
