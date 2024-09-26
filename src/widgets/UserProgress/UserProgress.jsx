@@ -6,8 +6,8 @@ const UserProgress = () => {
   const { user } = useUser();
   return (
     <>
-      <ProgressInfo progress={user.level}/>
-      <ProgressLine progress={user.level} />
+      <ProgressInfo progress={user.rank.level}/>
+      <ProgressLine progress={user.rank.level} />
     </>
   );
 };

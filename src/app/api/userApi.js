@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://2939-185-211-159-200.ngrok-free.app/api",
+    baseUrl: "https://adb1-185-211-159-206.ngrok-free.app/api",
   }),
   endpoints: (build) => ({
     getUser: build.query({
@@ -87,6 +87,26 @@ export const userApi = createApi({
         },
       }),
     }),
+    getRanksList: build.query({
+      query: () => ({
+        url: `ranks_list`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
+    getRanksInfo: build.query({
+      query: (id) => ({
+        url: `get_rank_info/${id}`,
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
     changeUserCount: build.mutation({
       query: ({ id, body }) => ({
         url: `change_coins/${id}`,
@@ -111,6 +131,8 @@ export const userApi = createApi({
 });
 
 export const {
+  useGetRanksInfoQuery,
+  useGetRanksListQuery,
   useGetPullInfoQuery,
   useGetCountMembersQuery,
   useGetCountPostsByTypeQuery,

@@ -4,17 +4,17 @@ import { useState } from "react";
 
 import { useUser } from "@/app/context/UserContext";
 import { useGetTaskQuery } from "@/app/api";
+import Loading from "../../widgets/Loading/Loading";
 
 export default function EarnPage() {
   const { user } = useUser();
   const { data: categories, isLoading } = useGetTaskQuery(user.id_telegram);
-  console.log(categories);
 
   const [showModal, setShowModal] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   return (

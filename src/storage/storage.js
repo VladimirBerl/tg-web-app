@@ -229,7 +229,29 @@ export const categories = [
 ]
 
 export const userRank = {
-  name: "stone",
-  lvl: 1,
-  countCoin: 0,
+  // id текущего ранга
+  id: 1, 
+  rank: "stone",
+  // lvl уровень выполненных задач т.с выполнено например 0 из 10 текущего ранга 
+  lvl: 0,
+  conditions: [
+    {
+      id: 1,
+      type: "coins",
+      description: "Заработать 100 000 монет",
+      target: 100000,
+    },
+    {
+      id: 2,
+      type: "friends",
+      description: "Пригласить 1 друга",
+      target: 1,
+    },
+    {
+      id: 3,
+      type: "task",
+      description: "Выполнить 10 заданий",
+      target: 10,
+    },
+  ],
 };

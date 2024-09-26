@@ -3,20 +3,19 @@ import RankItem from "./ui/RankItem/RankItem";
 import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
 import RankTaskUp from "./ui/RankTaskUp/RankTaskUp";
 import { useModal } from "@/shared/hooks/modal.js";
-import { useState } from "react";
 
-const RankList = ({ cards }) => {
-  const [rankIdOpen, setRankIdOpen] = useState(0);
+const RankList = ({ ranks, conditions }) => {
   const { isOpen, toggle } = useModal();
-  const hendlerTaskModal = (id) => {
+  const hendlerTaskModal = () => {
+    console.log('asd');
+    
     toggle();
-    setRankIdOpen(id - 1);
   };
   return (
     <>
       <div className={styles.wrapper}>
-        {cards.map((card) => (
-          <RankItem key={card.id} card={card} click={hendlerTaskModal} />
+        {ranks.map((rank) => (
+          <RankItem key={rank.id} rank={rank} click={hendlerTaskModal} />
         ))}
       </div>
       {isOpen && (
@@ -24,7 +23,7 @@ const RankList = ({ cards }) => {
           title="Открывай уровни получай больше возможностей"
           setShowModalBottom={toggle}
         >
-          <RankTaskUp tasks={cards[rankIdOpen].tasks} />
+          <RankTaskUp conditions={conditions} />
         </ModalBottom>
       )}
     </>

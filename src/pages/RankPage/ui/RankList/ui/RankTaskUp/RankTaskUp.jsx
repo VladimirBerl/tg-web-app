@@ -1,24 +1,21 @@
 import styles from "./RankTaskUp.module.scss";
 import RankProgressBar from "./ui/RankProgressBar/RankProgressBar";
 import RankTaskList from "./ui/RankTaskList/RankTaskList";
-import { useUser } from "@/app/context/UserContext";
 
-const RankTaskUp = ({ tasks }) => {
-  const { user } = useUser();
-
+const RankTaskUp = ({ conditions }) => {
   return (
     <div className={styles.wrapper}>
       <h3 className={styles.title}>
-        {tasks.rank} byuer {tasks.id}/10
+        {conditions.rank} byuer {conditions.level}/10
       </h3>
       <RankProgressBar />
       <span className={styles.warning}>
         Выполните 3 условия чтобы повысить уровень
       </span>
-      {tasks.length === 0 ? (
-        <span className={styles['no-task']}>Нет задач</span>
+      {conditions.conditions.length === 0 ? (
+        <span className={styles["no-task"]}>Нет задач</span>
       ) : (
-        <RankTaskList conditions={tasks[user.level].conditions} />
+        <RankTaskList conditions={conditions.conditions} />
       )}
 
       <span className={styles.wins}>

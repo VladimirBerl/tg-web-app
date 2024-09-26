@@ -10,7 +10,7 @@ const ProfilUser = () => {
   return (
     <div className={styles.profil}>
       <UserName name={user?.user_name} />
-      <RankImages rank='stone'/>
+      <RankImages rank={user.rank.rank} />
       <UserLevel level={user?.level} />
       <UserProgress />
     </div>
