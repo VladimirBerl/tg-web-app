@@ -17,8 +17,8 @@ const Button = styled.button`
     color: #717171;
     border: none;
     background-color: hsla(0, 0%, 100%, 0.3);
-  }
-`;
+  }`
+;
 
 const WrapperText = styled.div`
   text-transform: uppercase;
@@ -31,8 +31,8 @@ const WrapperText = styled.div`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: ${({ timerActive, timerFinish }) =>
-    timerActive || timerFinish ? "#fff" : "transparent"};
-`;
+    timerActive || timerFinish ? "#fff" : "transparent"};`
+;
 
 const Farming = styled.div`
   display: flex;
@@ -52,8 +52,8 @@ const Farming = styled.div`
   & img {
     width: 17px;
     height: 17px;
-  }
-`;
+  }`
+;
 
 const Timer = styled.div`
   font-family: "Involve", sans-serif;
@@ -62,8 +62,8 @@ const Timer = styled.div`
   position: absolute;
   top: 50%;
   right: 15px;
-  transform: translateY(-50%);
-`;
+  transform: translateY(-50%);`
+;
 
 const Line = styled.div`
   visibility: ${({ timerActive }) => (timerActive ? "visible" : "hidden")};
@@ -74,8 +74,8 @@ const Line = styled.div`
   bottom: 0;
   transition: 0.4s right;
   border-radius: var(--border-8px);
-  background-color: hsla(0, 0%, 100%, 0.3);
-`;
+  background-color: hsla(0, 0%, 100%, 0.3);`
+;
 
 const Farm = () => {
   const { updateCoins, user } = useUpdateUserCoins();
@@ -97,6 +97,7 @@ const Farm = () => {
 
   const handleButtonClick = () => {
     if (timerFinish) {
+      localStorage.removeItem("farminFinish");
       updateCoins(user.count_pharmd, "Фарм монет");
       setTimerFinish(false);
     } else if (!timerActive) {

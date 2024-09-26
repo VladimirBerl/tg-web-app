@@ -11,7 +11,7 @@ const ProfilUser = () => {
     <div className={styles.profil}>
       <UserName name={user?.user_name} />
       <RankImages rank={user.rank.rank} />
-      <UserLevel level={user?.level} />
+      <UserLevel level={user?.rank.level} />
       <UserProgress />
     </div>
   );

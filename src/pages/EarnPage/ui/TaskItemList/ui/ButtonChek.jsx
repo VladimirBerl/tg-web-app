@@ -10,12 +10,15 @@ const ButtonCheck = ({ url, id }) => {
   const { user } = useUser();
   const { isOpen, toggle } = useModal();
   const [getCheckTaskComplete] = useLazyGetCheckTaskCompleteQuery();
+  
+  const buttonStorageKey = `taskButtonState${id}`;
 
-  const [isTaskComplete, setIsTaskComplete] = useState(false);
+  const [isTaskComplete, setIsTaskComplete] = useState(
+    sessionStorage.getItem(buttonStorageKey) === "true" || false
+  );
   const [buttonText, setButtonText] = useState("Перейти");
   const [isLoading, setIsLoading] = useState(false);
 
-  const buttonStorageKey = `taskButtonState${id}`;
 
   const fetchTaskStatus = useCallback(async () => {
     setIsLoading(true);
@@ -26,7 +29,7 @@ const ButtonCheck = ({ url, id }) => {
       });
 
       setIsTaskComplete(data.complete);
-
+      sessionStorage.setItem(buttonStorageKey, true);
       if (!data.complete) {
         resetButtonState();
         toggle();
@@ -62,6 +65,7 @@ const ButtonCheck = ({ url, id }) => {
   };
 
   const checkTaskCompletion = () => {
+    resetButtonState();
     fetchTaskStatus();
   };
 
@@ -71,8 +75,10 @@ const ButtonCheck = ({ url, id }) => {
 
   const updateButtonText = (text) => {
     setButtonText(text);
-    localStorage.setItem(buttonStorageKey, text);
-    setTimeout(() => localStorage.removeItem(buttonStorageKey), 5000);
+    localStorage.removeItem(buttonStorageKey);
+    if (text === "Проверить") {
+      localStorage.setItem(buttonStorageKey, text);
+    }
   };
 
   useEffect(() => {

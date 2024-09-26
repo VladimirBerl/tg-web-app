@@ -7,29 +7,45 @@ export const useFarmTimer = (totalTime, incrementPerSecond) => {
   const [coins, setCoins] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
-  const [timerFinish, setTimerFinish] = useState(false);
+  const [timerFinish, setTimerFinish] = useState(
+    JSON.parse(localStorage.getItem("farminFinish")) || false
+  );
 
+  // Checking timer state on initialization
   useEffect(() => {
-    const savedTime = localStorage.getItem("farmingTimer");
-    if (savedTime) {
-      const remainingTime = parseInt(savedTime, 10) - Date.now();
-      if (remainingTime > 0) {
+    const savedEndTime = localStorage.getItem("farmingEndTime");
+    if (savedEndTime) {
+      const currentTime = Date.now();
+      if (currentTime >= parseInt(savedEndTime, 10)) {
+        // Timer has already finished
+        setTimerFinish(true);
+        setTimerActive(false);
+        localStorage.setItem("farminFinish", true);
+        localStorage.removeItem("farmingEndTime");
+        localStorage.removeItem("farmingTimer");
+      } else {
+        // Timer is still running
+        const remainingTime = parseInt(savedEndTime, 10) - currentTime;
         setTimeLeft(remainingTime);
         setTimerActive(true);
       }
     }
   }, []);
 
+  // When timer starts
   useEffect(() => {
     if (timerActive && timeLeft > 0) {
-      localStorage.setItem("farmingTimer", Date.now() + timeLeft);
+      const endTime = Date.now() + timeLeft;
+      localStorage.setItem("farmingEndTime", endTime); // Save the end time
 
       timerRef.current = setInterval(() => {
         setTimeLeft((prevTimeLeft) => {
           const newTimeLeft = prevTimeLeft - 1000;
 
           const progress = ((newTimeLeft / totalTime) * 100).toFixed(0);
-          lineRef.current.style.right = `${progress}%`;
+          if (lineRef.current) {
+            lineRef.current.style.right = `${progress}%`;
+          }
 
           setCoins((prev) => prev + +incrementPerSecond);
 
@@ -38,8 +54,12 @@ export const useFarmTimer = (totalTime, incrementPerSecond) => {
             setTimerFinish(true);
             setTimerActive(false);
             setCoins(0);
+            localStorage.setItem("farminFinish", true);
+            localStorage.removeItem("farmingEndTime");
             localStorage.removeItem("farmingTimer");
-            lineRef.current.style.right = "100%";
+            if (lineRef.current) {
+              lineRef.current.style.right = "100%";
+            }
             return 0;
           }
 
