@@ -8,7 +8,7 @@ const TRANSITION_DURATION = 6000;
 const INITIAL_TRANSFORM = "-20%";
 const FINAL_TRANSFORM = "-50%";
 
-export const useRouletteWrap = (styles, toggle) => {
+export const useRouletteWrap = (styles, toggle, spinners) => {
   const { updateCoins } = useUpdateUserCoins();
   const [startGame, setStartGame] = useState(false);
   const [generatedElements, setGeneratedElements] = useState([]);
@@ -53,12 +53,15 @@ export const useRouletteWrap = (styles, toggle) => {
 
       toggle(); // Открытие модального окна
       setStartGame(false); // Остановка игры
-      updateCoins(selectedItemValue, 'Рулетка');
+      updateCoins(selectedItemValue, "Рулетка");
     }
   }, [toggle, updateCoins]);
 
   // Запуск игры
   const startRoulette = useCallback(() => {
+    if (spinners === 0) {
+      return;
+    }
     if (!startGame) {
       setStartGame(true);
       setResultItem(null);

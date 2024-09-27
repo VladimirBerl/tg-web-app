@@ -1,11 +1,9 @@
 import styled from "./InfoCoin.module.scss";
 
-const InfoCoin = ({ data }) => {
+const InfoCoin = ({ nameChart }) => {
   return (
     <div className={`${styled.info} background-br`}>
-      {data.map((item) => (
-        <span key={item.datasets[0].name}>{item.datasets[0].name}</span>
-      ))}
+      <span>{nameChart}</span>
     </div>
   );
 };

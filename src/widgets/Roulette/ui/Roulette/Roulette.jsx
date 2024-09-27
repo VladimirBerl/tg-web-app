@@ -17,10 +17,10 @@ export const Roulette = () => {
     sheetElements,
     startGame,
     resultItem,
-  } = useRouletteWrap(styles, toggle);
+  } = useRouletteWrap(styles, toggle, user.spinners);
 
   function chekValidPlayGame() {
-    if (user?.spinners === 1) {
+    if (user?.spinners === 0) {
       setStatusBtn("Нет спинов");
     } else if (startGame) {
       setStatusBtn("Идет прокрутка...");

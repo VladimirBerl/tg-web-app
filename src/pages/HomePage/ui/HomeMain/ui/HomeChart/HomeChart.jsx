@@ -1,93 +1,53 @@
 import styled from "./HomeChart.module.scss";
-import InfoCoin from "./ui/InfoCoin/InfoCoin";
-import PriceCoin from "./ui/PriceCoin/PriceCoin";
-import ChartContainer from "./ui/ChartContainer/ChartContainer";
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useGetCountPostsByTypeQuery } from "@/app/api";
+import Loading from "@/widgets/Loading/Loading";
+import ChartWrapper from "./ui/ChartWrapper/ChartWrapper";
 
-const FAKE_DATA = [
-  {
-    datasets: [
-      {
-        name: "Посты за токены",
-        price: 750,
-        data: [26, 74],
-        current: 8,
-        need: 30,
-        backgroundColor: ["#C1A130", "#965C16"],
-        borderWidth: 0,
-        redraw: true,
-        cutout: "90%",
-      },
-    ],
-  },
-  {
-    datasets: [
-      {
-        name: "Посты за монеты",
-        price: 10000,
-        data: [10, 90],
-        current: 6,
-        need: 60,
-        backgroundColor: ["#3F4CE3", "#111973"],
-        borderWidth: 0,
-        redraw: true,
-        cutout: "90%",
-      },
-    ],
-  },
-  {
-    datasets: [
-      {
-        name: "Посты за рубли",
-        price: 1000,
-        data: [24, 76],
-        current: 12,
-        need: 50,
-        backgroundColor: ["#088E35", "#064225"],
-        borderWidth: 0,
-        redraw: true,
-        cutout: "90%",
-      },
-    ],
-  },
-];
+const CHART_ICONS = {
+  0: "",
+  1: "/icon/bmt-min.png",
+  2: "/icon/coin-min.png",
+  3: "/icon/rub-min.png",
+  4: "/icon/star.png",
+  5: "",
+};
 
 const CHART_COLOR = {
-  0: ["#C1A130", "#965C16"],
   1: ["#3F4CE3", "#111973"],
+  0: ["#C1A130", "#965C16"],
   2: ["#088E35", "#064225"],
+  3: ["#C1A130", "#965C16"],
+  4: ["#3F4CE3", "#111973"],
+  5: ["#088E35", "#064225"],
 };
 
 const HomeChart = () => {
-  const [transData, setTransData] = useState([]);
-  const { data, isLoading } = useGetCountPostsByTypeQuery();
+  const { data: charts, isLoading } = useGetCountPostsByTypeQuery();
+  const [index, setIndex] = useState(0);
 
-  function transformation(dataSet) {
-    return dataSet.slice(1).map((item, index) => ({
-      datasets: [
-        {
-          ...item,
-          backgroundColor: CHART_COLOR[index],
-          borderWidth: 0,
-          redraw: true,
-          cutout: "90%",
-        },
-      ],
-    }));
+  if (isLoading) {
+    return <Loading />;
   }
 
-  useEffect(() => {
-    if (!isLoading) {
-      setTransData(transformation(data));
-    }
-  }, [isLoading]);
+  const changeIndex = (index) => {
+    console.log(index);
+
+    setIndex(index);
+  };
+
+  console.log(charts || "no");
 
   return (
     <div className={`${styled.wrapper} background-br`}>
-      <InfoCoin data={data ? transData : FAKE_DATA} />
-      <ChartContainer data={data ? transData : FAKE_DATA} />
-      <PriceCoin data={data ? transData : FAKE_DATA} />
+      <ChartWrapper
+        changeIndex={changeIndex}
+        charts={charts}
+        data={charts[index]}
+        colors={CHART_COLOR}
+        color={CHART_COLOR[index]}
+        icon={CHART_ICONS[index]}
+      />
     </div>
   );
 };

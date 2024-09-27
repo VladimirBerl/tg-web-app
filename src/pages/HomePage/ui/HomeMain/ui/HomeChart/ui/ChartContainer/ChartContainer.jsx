@@ -13,18 +13,26 @@ const CHART_OPTIONS = {
   },
 };
 
-const ChartContainer = ({ data }) => {
+const ChartContainer = ({ data, color }) => {
+  const dataSet = {
+    datasets: [
+      {
+        ...data,
+        backgroundColor: color,
+        borderWidth: 0,
+        redraw: true,
+        cutout: "90%",
+      },
+    ],
+  };
+
   return (
     <div className={styled.chart}>
-      {data.map((item, index) => (
-        <div key={index} className={styled.item}>
-          <Doughnut data={item} options={CHART_OPTIONS} />
-        </div>
-      ))}
+      <div className={styled.item}>
+        <Doughnut data={dataSet} options={CHART_OPTIONS} />
+      </div>
       <div className={styled.counter}>
-        {data.map((item, index) => (
-          <span key={index}>{item.datasets[0].current}</span>
-        ))}
+        <span>{data.current}</span>
       </div>
     </div>
   );
