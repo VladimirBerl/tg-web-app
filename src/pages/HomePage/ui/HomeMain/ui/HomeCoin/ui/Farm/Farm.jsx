@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useUpdateUserCoins } from "@/entities/user/api.js";
 import { useFarmTimer } from "@/features/farming/hooks/useFarmTimer.js";
 import { formatTime } from "@/shared/lib/formatTime.js";
+import { useUser } from "@/app/context/UserContext";
 
 const Button = styled.button`
   position: relative;
@@ -17,9 +18,8 @@ const Button = styled.button`
     color: #717171;
     border: none;
     background-color: hsla(0, 0%, 100%, 0.3);
-  }`
-;
-
+  }
+`;
 const WrapperText = styled.div`
   text-transform: uppercase;
   font-size: 15px;
@@ -31,9 +31,8 @@ const WrapperText = styled.div`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: ${({ timerActive, timerFinish }) =>
-    timerActive || timerFinish ? "#fff" : "transparent"};`
-;
-
+    timerActive || timerFinish ? "#fff" : "transparent"};
+`;
 const Farming = styled.div`
   display: flex;
   align-items: center;
@@ -52,9 +51,8 @@ const Farming = styled.div`
   & img {
     width: 17px;
     height: 17px;
-  }`
-;
-
+  }
+`;
 const Timer = styled.div`
   font-family: "Involve", sans-serif;
   font-size: 10px;
@@ -62,9 +60,8 @@ const Timer = styled.div`
   position: absolute;
   top: 50%;
   right: 15px;
-  transform: translateY(-50%);`
-;
-
+  transform: translateY(-50%);
+`;
 const Line = styled.div`
   visibility: ${({ timerActive }) => (timerActive ? "visible" : "hidden")};
   position: absolute;
@@ -74,10 +71,10 @@ const Line = styled.div`
   bottom: 0;
   transition: 0.4s right;
   border-radius: var(--border-8px);
-  background-color: hsla(0, 0%, 100%, 0.3);`
-;
-
+  background-color: hsla(0, 0%, 100%, 0.3);
+`;
 const Farm = () => {
+  const { setUser } = useUser();
   const { updateCoins, user } = useUpdateUserCoins();
 
   const totalCoins = user?.count_pharmd;
@@ -99,6 +96,10 @@ const Farm = () => {
     if (timerFinish) {
       localStorage.removeItem("farminFinish");
       updateCoins(user.count_pharmd, "Фарм монет");
+      setUser((prevUser) => ({
+        ...prevUser,
+        count_coins: prevUser.count_coins + prevUser.count_pharmd,
+      }));
       setTimerFinish(false);
     } else if (!timerActive) {
       setTimeLeft(time);

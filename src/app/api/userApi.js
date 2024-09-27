@@ -15,6 +15,7 @@ export const userApi = createApi({
           "Content-Type": "application/json",
         },
       }),
+      providesTags: (id) => [{ type: "User", id }],
     }),
     getUserFriends: build.query({
       query: (id) => ({
