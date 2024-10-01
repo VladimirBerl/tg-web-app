@@ -18,11 +18,11 @@ const groupIcon = [
     icon: "/icon/tg-w.svg",
   },
 ];
-const GroupIcon = ({ OpenModalContent, id }) => {
+const GroupIcon = () => {
   return (
     <div className={styled.group}>
       {groupIcon.map((icon) => (
-        <button key={icon.name} className="background-br" onClick={() => OpenModalContent(id)}>
+        <button key={icon.name} className="background-br">
           <img src={icon.icon} alt="question" />
         </button>
       ))}

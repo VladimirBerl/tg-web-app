@@ -1,144 +1,241 @@
 import styles from "./PlanCarousel.module.scss";
-import GroupIcon from "./ui/GroupIcon/GroupIcon";
-import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
+import { GroupPlan } from "./ui/GroupPlan/GroupPlan";
 import { Carousel } from "antd";
-import { useState } from "react";
 
 const planSlideItems = [
   {
     id: 1,
     title: "Ликвидность",
+    decs: "Пул ликвидности в группе в день",
     img: "/icon/shield.svg",
+    type: "text",
     sliders: [
       {
         id: 1,
-        task: "100 объявлений",
-        color: "#ffd370",
-        dec: "Пул ликвидности в группе в день",
+        color: "#8ECF03",
+        percent: "+440%",
+        presently: 5400,
+        destination: 1000,
       },
       {
         id: 2,
-        task: "+130%",
-        color: "#03cea4",
-        dec: "230 объявлений в группе в день",
+        color: "#8ECF03",
+        percent: "+9%",
+        presently: 5400,
+        destination: 5000,
+      },
+      {
+        id: 3,
+        color: "#DF7E7E",
+        percent: "-46%",
+        presently: 5400,
+        destination: 10000,
+      },
+      {
+        id: 3,
+        color: "#DF7E7E",
+        percent: "-70%",
+        presently: 5400,
+        destination: 20000,
       },
     ],
   },
   {
     id: 2,
-    title: "Разработка",
-    img: "/icon/filter.svg",
-    imgWidth: "37px",
+    title: "Маркетинг",
+    decs: "Бесплатные размещения в группе в месяц",
+    img: "/icon/cart.svg",
+    type: "text",
+    imgWidth: "24px",
     sliders: [
       {
         id: 1,
-        dec: "Сервис для покупателей / Продавцов маркетплейсов",
+        color: "#8ECF03",
+        percent: "+365%",
+        presently: 5400,
+        destination: 990,
       },
       {
         id: 2,
-        dec: "Группа Buyer Marketplace",
+        color: "#8ECF03",
+        percent: "+10%",
+        presently: 5400,
+        destination: 4900,
       },
       {
         id: 3,
-        dec: "Бот TG Buyer - 5 модулей",
+        color: "#DF7E7E",
+        percent: "-40%",
+        presently: 5400,
+        destination: 9000,
+      },
+      {
+        id: 3,
+        color: "#DF7E7E",
+        percent: "-90%",
+        presently: 5400,
+        destination: 15000,
       },
     ],
   },
   {
     id: 3,
-    title: "Маркетинг",
-    img: "/icon/cart.svg",
+    title: "Реклама",
+    decs: "Платные размещения постов в группе в месяц",
+    img: "/icon/budget.svg",
+    imgWidth: "29px",
+    type: "text",
     sliders: [
       {
         id: 1,
-        task: "100 объявлений",
-        color: "#ffd370",
-        dec: "Бесплатные размещения в группу в месяц",
+        color: "#DF7E7E",
+        percent: "-60%",
+        presently: 10,
+        destination: 50,
       },
       {
         id: 2,
-        task: "26%",
-        color: "#ff5a30",
-        dec: "13 объявлений в гуппе в месяц",
+        color: "#DF7E7E",
+        percent: "-90%",
+        presently: 10,
+        destination: 100,
+      },
+      {
+        id: 3,
+        color: "#DF7E7E",
+        percent: "-900%",
+        presently: 10,
+        destination: 1000,
+      },
+      {
+        id: 3,
+        color: "#DF7E7E",
+        percent: "-4900%",
+        presently: 10,
+        destination: 5000,
       },
     ],
   },
   {
     id: 4,
-    title: "Реклама",
-    img: "/icon/budget.svg",
-    imgWidth: "29px",
+    title: "Разработка",
+    decs: "Сервис для покупателей и продавцов маркетплейсов TG Bueyr - Mini App",
+    img: "/icon/filter.svg",
+    type: "icon",
+    imgWidth: "32px",
     sliders: [
       {
         id: 1,
-        task: "50 объявлений",
-        color: "#ffd370",
-        dec: "Платные размещения в группу в месяц",
+        icon: ["plan/tg.png", "plan/pc.png", "plan/robot.png"],
       },
       {
         id: 2,
-        task: "0%",
-        color: "#ff5a30",
-        dec: "Объявлений в группе в месяц",
+        icon: [
+          "plan/tg.png",
+          "plan/pc.png",
+          "plan/robot.png",
+          "plan/gpt.png",
+          "plan/client.png",
+        ],
+      },
+      {
+        id: 3,
+        icon: [
+          "plan/tg.png",
+          "plan/pc.png",
+          "plan/robot.png",
+          "plan/gpt.png",
+          "plan/client.png",
+        ],
+      },
+      {
+        id: 4,
+        icon: [
+          "plan/tg.png",
+          "plan/pc.png",
+          "plan/robot.png",
+          "plan/gpt.png",
+          "plan/client.png",
+        ],
       },
     ],
   },
   {
     id: 5,
+    title: "Дизайн",
+    decs: "Дизайн Mini App - TG Buyer",
+    type: "icon",
+    sliders: [
+      {
+        id: 1,
+        icon: ["plan/folder.png", "plan/figma.png"],
+      },
+      {
+        id: 2,
+        icon: ["plan/folder.png", "plan/figma.png"],
+      },
+      {
+        id: 3,
+        icon: ["plan/folder.png", "plan/figma.png"],
+      },
+      {
+        id: 4,
+        icon: ["plan/folder.png", "plan/figma.png"],
+      },
+    ],
+  },
+  {
+    id: 6,
     title: "Токен",
+    decs: "Токена BMT",
     img: "/icon/token-w.svg",
+    type: "icon",
     imgWidth: "27px",
     sliders: [
       {
         id: 1,
-        task: "Токена BMT",
-        color: "#ffd370",
-        dec: "Использование в экосистеме Buyer Marketplace",
+        icon: ["plan/ton.png", "/icon/bmt-min.png"],
+      },
+      {
+        id: 2,
+        icon: ["plan/ton.png", "/icon/bmt-min.png"],
+      },
+      {
+        id: 3,
+        icon: ["plan/ton.png", "/icon/bmt-min.png"],
+      },
+      {
+        id: 4,
+        icon: ["plan/ton.png", "/icon/bmt-min.png"],
       },
     ],
   },
 ];
 
-const PlanCarousel = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [contentModal, setContentModal] = useState("");
-  const OpenModalContent = (id) => {
-    setContentModal(planSlideItems.find((item) => item.id === id).title);
-    setShowModal((prev) => !prev);
-  };
-
+const PlanCarousel = ({ indexSlide }) => {
   return (
-    <>
-      {showModal && (
-        <ModalBottom position="0%" setShowModalBottom={setShowModal}>
-          <div style={{ height: "300px" }}>{contentModal}</div>
-        </ModalBottom>
-      )}
-      <div className={styles.wrapper}>
-        {planSlideItems.map(({ title, img, imgWidth, sliders, id }) => (
+    <div className={styles.wrapper}>
+      {planSlideItems.map(
+        ({ title, img, imgWidth, id, sliders, type, decs }) => (
           <div key={id} className={styles.wrapper}>
             <div className={styles.title}>
               <p>{title}</p>
-              <img style={{ width: imgWidth }} src={img} alt={title} />
+              {img && <img style={{ width: imgWidth }} src={img} alt={title} />}
             </div>
-            <Carousel>
-              {sliders.map(({ task, color, dec, id, idItem = id }) => (
-                <div key={id} className={styles["swaiper-items"]}>
-                  <div className={`${styles["swaiper-item"]} background-br`}>
-                    <p style={{ color }}>{task}</p>
-                    <p>{dec}</p>
-                    <GroupIcon
-                      id={idItem}
-                      OpenModalContent={OpenModalContent}
-                    />
-                  </div>
-                </div>
+            <Carousel slickGoTo={1}>
+              {sliders.map((slide) => (
+                <GroupPlan
+                  key={slide.id}
+                  slide={slide}
+                  type={type}
+                  decs={decs}
+                />
               ))}
             </Carousel>
           </div>
-        ))}
-      </div>
-    </>
+        )
+      )}
+    </div>
   );
 };
 

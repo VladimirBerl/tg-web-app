@@ -95,7 +95,7 @@ const Farm = () => {
   const handleButtonClick = () => {
     if (timerFinish) {
       localStorage.removeItem("farminFinish");
-      updateCoins(user.count_pharmd, "Фарм монет");
+      updateCoins(user.count_pharmd, "Farming");
       setUser((prevUser) => ({
         ...prevUser,
         count_coins: prevUser.count_coins + prevUser.count_pharmd,
