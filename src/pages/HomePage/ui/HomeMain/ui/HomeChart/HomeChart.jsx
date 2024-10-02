@@ -1,5 +1,5 @@
 import styled from "./HomeChart.module.scss";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useGetCountPostsByTypeQuery } from "@/app/api";
 import Loading from "@/widgets/Loading/Loading";
 import ChartWrapper from "./ui/ChartWrapper/ChartWrapper";
@@ -23,21 +23,12 @@ const CHART_COLOR = {
 };
 
 const HomeChart = () => {
-  const { data: charts, isLoading } = useGetCountPostsByTypeQuery();
+  const { data: charts } = useGetCountPostsByTypeQuery();
   const [index, setIndex] = useState(0);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   const changeIndex = (index) => {
-    console.log(index);
-
     setIndex(index);
   };
-
-  console.log(charts || "no");
-
   return (
     <div className={`${styled.wrapper} background-br`}>
       <ChartWrapper

@@ -212,7 +212,7 @@ const planSlideItems = [
   },
 ];
 
-const PlanCarousel = ({ indexSlide }) => {
+const PlanCarousel = () => {
   return (
     <div className={styles.wrapper}>
       {planSlideItems.map(
@@ -222,7 +222,7 @@ const PlanCarousel = ({ indexSlide }) => {
               <p>{title}</p>
               {img && <img style={{ width: imgWidth }} src={img} alt={title} />}
             </div>
-            <Carousel slickGoTo={1}>
+            <Carousel>
               {sliders.map((slide) => (
                 <GroupPlan
                   key={slide.id}

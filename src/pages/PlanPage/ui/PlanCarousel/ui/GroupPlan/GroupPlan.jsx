@@ -16,7 +16,7 @@ export const GroupPlan = ({ slide, type, decs }) => {
               </div>
             </div>
             <div className={styles.row}>
-              <span style={{ color:slide.color }}>{slide.percent}</span>
+              <span style={{ color: slide.color }}>{slide.percent}</span>
               <img src="plan/row.svg" alt="row" />
             </div>
             <div className={styles.destination}>
@@ -29,8 +29,8 @@ export const GroupPlan = ({ slide, type, decs }) => {
           </div>
         ) : (
           <div className={styles.icon}>
-            {slide.icon.map((icon) => (
-              <img src={icon} alt="" />
+            {slide.icon.map((icon, index) => (
+              <img key={index} src={icon} alt="" />
             ))}
           </div>
         )}

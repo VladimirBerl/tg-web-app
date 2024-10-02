@@ -4,7 +4,6 @@ export const useFarmTimer = (totalTime, incrementPerSecond) => {
   const lineRef = useRef(null);
   const timerRef = useRef(null);
 
-  const [coins, setCoins] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
   const [timerFinish, setTimerFinish] = useState(
@@ -46,14 +45,10 @@ export const useFarmTimer = (totalTime, incrementPerSecond) => {
           if (lineRef.current) {
             lineRef.current.style.right = `${progress}%`;
           }
-
-          setCoins((prev) => prev + +incrementPerSecond);
-
           if (newTimeLeft <= 0) {
             clearInterval(timerRef.current);
             setTimerFinish(true);
             setTimerActive(false);
-            setCoins(0);
             localStorage.setItem("farminFinish", true);
             localStorage.removeItem("farmingEndTime");
             localStorage.removeItem("farmingTimer");
@@ -72,7 +67,6 @@ export const useFarmTimer = (totalTime, incrementPerSecond) => {
   }, [timerActive, timeLeft, totalTime, incrementPerSecond]);
 
   return {
-    coins,
     timeLeft,
     timerActive,
     timerFinish,

@@ -1,11 +1,10 @@
 import HomeChart from "./ui/HomeChart/HomeChart";
-import HomeCoin from "./ui/HomeCoin/HomeCoin";
-
+import FarmButton from '@/widgets/FarmButton/FarmButton'
 export default function HomeMain() {
   return (
     <>
       <HomeChart />
-      <HomeCoin />
+      <FarmButton />
     </>
   );
 }

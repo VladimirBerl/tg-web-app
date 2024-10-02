@@ -1,4 +1,5 @@
 import { useUpdateUserCoins } from "@/entities/user/api";
+import { useChangeSpinnersMutation } from "@/app/api";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 // Константы для улучшения читаемости
@@ -9,7 +10,9 @@ const INITIAL_TRANSFORM = "-20%";
 const FINAL_TRANSFORM = "-50%";
 
 export const useRouletteWrap = (styles, toggle, spinners) => {
-  const { updateCoins } = useUpdateUserCoins();
+  const { updateCoins, user } = useUpdateUserCoins();
+  const [updateSpinners] = useChangeSpinnersMutation();
+
   const [startGame, setStartGame] = useState(false);
   const [generatedElements, setGeneratedElements] = useState([]);
   const sheetElements = useRef(null);
@@ -54,6 +57,13 @@ export const useRouletteWrap = (styles, toggle, spinners) => {
       toggle(); // Открытие модального окна
       setStartGame(false); // Остановка игры
       updateCoins(selectedItemValue, "Рулетка");
+      updateSpinners({
+        id: user.id_telegram,
+        body: {
+          amount: 1,
+          add: false,
+        },
+      });
     }
   }, [toggle, updateCoins]);
 

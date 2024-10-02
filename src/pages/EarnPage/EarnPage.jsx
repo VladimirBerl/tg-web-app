@@ -1,6 +1,6 @@
 import EarnMain from "./ui/EarnMain/EarnMain";
 import EarnNavigation from "./ui/EarnNavigation/EarnNavigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 
 import { useUser } from "@/app/context/UserContext";
 import { useGetTaskQuery } from "@/app/api";
@@ -14,11 +14,11 @@ export default function EarnPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   if (isLoading) {
-    return <Loading/>;
+    return;
   }
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       {showModal ? (
         <EarnMain
           categories={categories}
@@ -33,6 +33,6 @@ export default function EarnPage() {
           setShowModal={setShowModal}
         />
       )}
-    </>
+    </Suspense>
   );
 }

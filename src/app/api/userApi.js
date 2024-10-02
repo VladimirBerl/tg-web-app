@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://dafa-185-211-159-195.ngrok-free.app/api",
+    baseUrl: "https://1609-45-137-112-96.ngrok-free.app/api",
   }),
   endpoints: (build) => ({
     getUser: build.query({
@@ -107,6 +107,7 @@ export const userApi = createApi({
         },
       }),
     }),
+
     changeUserCount: build.mutation({
       query: ({ id, body }) => ({
         url: `change_coins/${id}`,
@@ -114,6 +115,13 @@ export const userApi = createApi({
         body,
       }),
       invalidatesTags: ({ id }) => [{ type: "User", id }],
+    }),
+    changeSpinners: build.mutation({
+      query: ({ id, body }) => ({
+        url: `change_spinners/${id}`,
+        method: "PATCH",
+        body,
+      }),
     }),
 
     createUser: build.mutation({
@@ -131,6 +139,7 @@ export const userApi = createApi({
 });
 
 export const {
+  useChangeSpinnersMutation,
   useGetRanksInfoQuery,
   useGetRanksListQuery,
   useGetPullInfoQuery,

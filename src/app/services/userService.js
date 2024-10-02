@@ -1,4 +1,4 @@
-import { useCreateUserMutation, useLazyGetUserQuery } from "@/app/api";
+import { useCreateUserMutation, useLazyGetUserQuery,useGetCountPostsByTypeQuery,useGetRanksListQuery } from "@/app/api";
 import { useUser } from "@/app/context/UserContext";
 
 export const useCheckAndCreateUser = () => {
@@ -6,21 +6,21 @@ export const useCheckAndCreateUser = () => {
   const [getUser] = useLazyGetUserQuery();
   const { setUser } = useUser();
 
+  useGetCountPostsByTypeQuery();
+  useGetRanksListQuery()
+
   const checkAndCreateUser = async (id, users) => {
     try {
       const { data: user, error } = await getUser(id);
       if (error) {
         const createdUser = await createUser(users).unwrap();
         setUser(createdUser);
-        console.log("User created successfully:", createdUser);
         return false;
       } else if (user) {
         setUser(user);
-        console.log("User exists:", user);
         return false;
       }
     } catch (error) {
-      console.log("Error:", error);
       throw error;
     }
   };

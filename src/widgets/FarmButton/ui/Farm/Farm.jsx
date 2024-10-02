@@ -77,12 +77,11 @@ const Farm = () => {
   const { setUser } = useUser();
   const { updateCoins, user } = useUpdateUserCoins();
 
-  const totalCoins = user?.count_pharmd;
-  const time = 6000;
-  const incrementPerSecond = (totalCoins / time).toFixed(3);
+  const totalCoins = 2000;
+  const time = 25200000;
+  const incrementPerSecond = (totalCoins / (time / 1000)).toFixed(2);
 
   const {
-    coins,
     timeLeft,
     timerActive,
     timerFinish,
@@ -95,7 +94,8 @@ const Farm = () => {
   const handleButtonClick = () => {
     if (timerFinish) {
       localStorage.removeItem("farminFinish");
-      updateCoins(user.count_pharmd, "Farming");
+      localStorage.removeItem("farmingStart");
+      updateCoins(totalCoins, "Farming");
       setUser((prevUser) => ({
         ...prevUser,
         count_coins: prevUser.count_coins + prevUser.count_pharmd,
@@ -104,6 +104,7 @@ const Farm = () => {
     } else if (!timerActive) {
       setTimeLeft(time);
       setTimerActive(true);
+      localStorage.setItem("farmingStart", Date.now()); // Save the end time
     }
   };
 
@@ -119,7 +120,9 @@ const Farm = () => {
           <Farming>
             <span>Farming</span>
             <img src="/icon/coin-farm.svg" alt="coin-farm" />
-            <span>{coins}</span>
+            <span>
+              {(((time - timeLeft) / 1000) * incrementPerSecond).toFixed(1)}
+            </span>
           </Farming>
         ) : timerFinish ? (
           <Farming>
