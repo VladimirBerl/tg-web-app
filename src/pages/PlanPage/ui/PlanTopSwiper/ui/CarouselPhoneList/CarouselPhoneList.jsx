@@ -131,9 +131,7 @@ const plan = [
   },
 ];
 
-const CarouselPhoneList = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
+const CarouselPhoneList = ({ setActiveIndex, activeIndex }) => {
   const handleBeforeChange = (from, to) => {
     setActiveIndex(to);
   };

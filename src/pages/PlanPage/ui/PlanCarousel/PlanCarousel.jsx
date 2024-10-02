@@ -1,6 +1,5 @@
 import styles from "./PlanCarousel.module.scss";
-import { GroupPlan } from "./ui/GroupPlan/GroupPlan";
-import { Carousel } from "antd";
+import Slide from "./ui/Slide/Slide";
 
 const planSlideItems = [
   {
@@ -212,7 +211,7 @@ const planSlideItems = [
   },
 ];
 
-const PlanCarousel = () => {
+const PlanCarousel = ({activeIndex}) => {
   return (
     <div className={styles.wrapper}>
       {planSlideItems.map(
@@ -222,16 +221,7 @@ const PlanCarousel = () => {
               <p>{title}</p>
               {img && <img style={{ width: imgWidth }} src={img} alt={title} />}
             </div>
-            <Carousel>
-              {sliders.map((slide) => (
-                <GroupPlan
-                  key={slide.id}
-                  slide={slide}
-                  type={type}
-                  decs={decs}
-                />
-              ))}
-            </Carousel>
+            <Slide activeIndex={activeIndex} sliders={sliders} type={type} decs={decs} />
           </div>
         )
       )}
