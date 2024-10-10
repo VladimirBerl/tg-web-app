@@ -29,6 +29,7 @@ const App = () => {
 
   useEffect(() => {
     initUser();
+    window.Telegram.WebApp.expand();
   }, []);
 
   if (loading) {
