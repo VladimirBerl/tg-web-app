@@ -10,7 +10,6 @@ export const userApi = createApi({
       query: (id) => ({
         url: `get_user_info/${id}`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -22,7 +21,6 @@ export const userApi = createApi({
       query: (id) => ({
         url: `friends/${id}`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -33,7 +31,6 @@ export const userApi = createApi({
       query: (id) => ({
         url: `get_transactions/${id}`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -44,7 +41,6 @@ export const userApi = createApi({
       query: (id) => ({
         url: `tasks/${id}/`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -55,7 +51,6 @@ export const userApi = createApi({
       query: ({ id, id_task }) => ({
         url: `check_task_complete/${id}/${id_task}`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -66,7 +61,6 @@ export const userApi = createApi({
       query: () => ({
         url: `count_posts_by_type`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -77,7 +71,6 @@ export const userApi = createApi({
       query: () => ({
         url: `pulls_info`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -88,7 +81,6 @@ export const userApi = createApi({
       query: () => ({
         url: `count_members`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -99,7 +91,6 @@ export const userApi = createApi({
       query: () => ({
         url: `ranks_list`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -110,7 +101,6 @@ export const userApi = createApi({
       query: (id) => ({
         url: `get_rank_info/${id}`,
         method: "GET",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
@@ -122,7 +112,6 @@ export const userApi = createApi({
       query: ({ id, body }) => ({
         url: `change_coins/${id}`,
         method: "PATCH",
-        mode: "no-cors",
         body,
       }),
       invalidatesTags: ({ id }) => [{ type: "User", id }],
@@ -131,7 +120,6 @@ export const userApi = createApi({
       query: ({ id, body }) => ({
         url: `change_spinners/${id}`,
         method: "PATCH",
-        mode: "no-cors",
         body,
       }),
     }),
@@ -140,7 +128,6 @@ export const userApi = createApi({
       query: (body) => ({
         url: `create_user`,
         method: "POST",
-        mode: "no-cors",
         headers: {
           "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
