@@ -9,7 +9,12 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
   const userTg = window.Telegram.WebApp.initDataUnsafe.user?.id;
-  
+
+  if (Telegram.WebApp.platform === "desktop") {
+    alert("Это приложение доступно только на мобильных устройствах.");
+    Telegram.WebApp.close();
+  }
+
   const initUser = async () => {
     try {
       const respons = await checkAndCreateUser(

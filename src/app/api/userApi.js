@@ -11,7 +11,7 @@ export const userApi = createApi({
         url: `get_user_info/${id}`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
+          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }),
@@ -22,7 +22,6 @@ export const userApi = createApi({
         url: `friends/${id}`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -32,7 +31,6 @@ export const userApi = createApi({
         url: `get_transactions/${id}`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -42,7 +40,6 @@ export const userApi = createApi({
         url: `tasks/${id}/`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -52,7 +49,6 @@ export const userApi = createApi({
         url: `check_task_complete/${id}/${id_task}`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -62,7 +58,6 @@ export const userApi = createApi({
         url: `count_posts_by_type`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -72,7 +67,6 @@ export const userApi = createApi({
         url: `pulls_info`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -82,7 +76,6 @@ export const userApi = createApi({
         url: `count_members`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -92,7 +85,6 @@ export const userApi = createApi({
         url: `ranks_list`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -102,7 +94,6 @@ export const userApi = createApi({
         url: `get_rank_info/${id}`,
         method: "GET",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
@@ -129,7 +120,6 @@ export const userApi = createApi({
         url: `create_user`,
         method: "POST",
         headers: {
-          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
         body,

@@ -6,8 +6,7 @@ const ButtonShop = ({ price, icon, decs, url, type }) => {
     if (window.Telegram && window.Telegram.WebApp) {
       const tg = window.Telegram.WebApp;
       if (type === "bot") {
-        tg.sendData(url);
-        tg.expand(false);
+        tg.close()
       } else if (type === "link") {
         tg.openTelegramLink(url);
       } else {
