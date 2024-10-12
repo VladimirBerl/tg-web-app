@@ -1,6 +1,7 @@
 import styles from "./RankTaskListItem.module.scss";
 import { useEffect, useState } from "react";
 import { useUser } from "@/app/context/UserContext";
+import { formatNumber } from "@/shared/lib/formatNumber";
 
 const RankTaskListItem = ({ condition, index }) => {
   const { user } = useUser();
@@ -12,15 +13,13 @@ const RankTaskListItem = ({ condition, index }) => {
     const friends = user.count_invited_friends;
     const coins = user.count_coins;
     const tasks = user.count_tasks;
-    
+
     switch (condition.type) {
       case "coins":
         if (target <= coins) {
           setCompleted(true);
         }
-        setTarget(
-          `${String(coins).slice(0, 3)}к/${String(target).slice(0, 3)}к`
-        );
+        setTarget(`${formatNumber(coins)}/${formatNumber(target)}`);
         break;
       case "friends":
         if (target <= friends) {

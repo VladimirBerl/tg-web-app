@@ -5,17 +5,18 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://tgbuyer.ru/api",
   }),
+  tagTypes: ["Task", "User", "Transactions"],
   endpoints: (build) => ({
     getUser: build.query({
       query: (id) => ({
         url: `get_user_info/${id}`,
         method: "GET",
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "ngrok-skip-browser-warning": true,
           "Content-Type": "application/json",
         },
       }),
-      providesTags: (id) => [{ type: "User", id }],
+      providesTags: ["User"],
     }),
     getUserFriends: build.query({
       query: (id) => ({
@@ -34,6 +35,7 @@ export const userApi = createApi({
           "Content-Type": "application/json",
         },
       }),
+      providesTags: ["Transactions"],
     }),
     getTask: build.query({
       query: (id) => ({
@@ -43,6 +45,7 @@ export const userApi = createApi({
           "Content-Type": "application/json",
         },
       }),
+      providesTags: ["Task"],
     }),
     getCheckTaskComplete: build.query({
       query: ({ id, id_task }) => ({
@@ -52,6 +55,7 @@ export const userApi = createApi({
           "Content-Type": "application/json",
         },
       }),
+      invalidatesTags: ["Task", "User"],
     }),
     getCountPostsByType: build.query({
       query: () => ({
@@ -105,7 +109,7 @@ export const userApi = createApi({
         method: "PATCH",
         body,
       }),
-      invalidatesTags: ({ id }) => [{ type: "User", id }],
+      invalidatesTags: ["User", "Transactions", "Task"],
     }),
     changeSpinners: build.mutation({
       query: ({ id, body }) => ({

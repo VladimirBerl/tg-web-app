@@ -22,8 +22,8 @@ export const GroupPlan = ({ slide, type, decs }) => {
             <div className={styles.destination}>
               <span>Цель</span>
               <div>
-                <img src="icon/check-mark.png" alt="check-mark" />
                 <span>{slide.destination}</span>
+                <img src="icon/check-mark.png" alt="check-mark" />
               </div>
             </div>
           </div>

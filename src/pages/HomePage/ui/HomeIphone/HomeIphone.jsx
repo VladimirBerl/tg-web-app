@@ -5,11 +5,11 @@ const interactionGroup = [
   { name: "Продавцы", info: "1" },
 ];
 const HomeIphone = () => {
-  const { data} = useGetCountMembersQuery();
+  const { data } = useGetCountMembersQuery();
 
   function openLinkTg() {
     if (window.Telegram.WebApp) {
-      window.Telegram.WebApp.openLink("https://t.me/Buyer_Marketplace");
+      window.Telegram.WebApp.openTelegramLink("https://t.me/Buyer_Marketplace");
     } else {
       console.error("Telegram WebApp is not defined");
     }

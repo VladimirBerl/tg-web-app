@@ -9,7 +9,7 @@ const Slide = ({ sliders, type, decs, activeIndex }) => {
   }, [activeIndex]);
 
   return (
-    <Carousel ref={sliderRef}>
+    <Carousel swipe={false} dots={false} ref={sliderRef}>
       {sliders.map((slide) => (
         <GroupPlan key={slide.id} slide={slide} type={type} decs={decs} />
       ))}

@@ -51,7 +51,7 @@ const HeaderState = ({ paths }) => {
       {currentPull && (
         <div onClick={toggle} className={`${styled.state} background-br`}>
           <div className={styled.name}>
-            <span>{currentPull.size.toLocaleString("de-DE")}</span>
+            <span>{(currentPull.size - currentPull.current_size).toLocaleString("de-DE")}</span>
             <img src="/icon/rub-min.png" alt="rub" />
             <span>BMP</span>
           </div>

@@ -1,4 +1,7 @@
 import styled from "./GroupIcon.module.scss";
+import { useState } from "react";
+import ModalBottom from "@/shared/ui/ModalBottom/ModalBottom";
+import InfoGroupIcon from "./ui/InfoGroupIcon/InfoGroupIcon";
 
 const groupIcon = [
   {
@@ -19,14 +22,31 @@ const groupIcon = [
   },
 ];
 const GroupIcon = () => {
+  const [openInfoPlan, setOpenInfoPlan] = useState(false);
+
+  const handlerOpenInfoPlan = () => {
+    setOpenInfoPlan(!openInfoPlan);
+  };
+
   return (
-    <div className={styled.group}>
-      {groupIcon.map((icon) => (
-        <button key={icon.name} className="background-br">
-          <img src={icon.icon} alt="question" />
-        </button>
-      ))}
-    </div>
+    <>
+      <div onClick={handlerOpenInfoPlan} className={styled.group}>
+        {groupIcon.map((icon) => (
+          <button key={icon.name} className="background-br">
+            <img src={icon.icon} alt="question" />
+          </button>
+        ))}
+      </div>
+      {openInfoPlan && (
+        <ModalBottom
+          title="Информация"
+          position="-204px"
+          setShowModalBottom={setOpenInfoPlan}
+        >
+          <InfoGroupIcon />
+        </ModalBottom>
+      )}
+    </>
   );
 };
 

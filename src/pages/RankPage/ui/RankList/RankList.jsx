@@ -6,9 +6,7 @@ import { useModal } from "@/shared/hooks/modal.js";
 
 const RankList = ({ ranks, conditions }) => {
   const { isOpen, toggle } = useModal();
-  const hendlerTaskModal = () => {
-    console.log('asd');
-    
+  const hendlerTaskModal = () => {    
     toggle();
   };
   return (
