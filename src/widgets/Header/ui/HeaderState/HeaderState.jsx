@@ -52,11 +52,10 @@ const HeaderState = ({ paths }) => {
         <div onClick={toggle} className={`${styled.state} background-br`}>
           <div className={styled.name}>
             <span>{(currentPull.size - currentPull.current_size).toLocaleString("de-DE")}</span>
-            <img src="/icon/rub-min.png" alt="rub" />
-            <span>BMP</span>
+            <img src="/icon/coin-min.png" alt="rub" />
           </div>
           <div className={`${styled.procent} background-br`}>
-            <span>{currentPull.percent}%</span>
+            <span>{(currentPull.percent).toFixed(1)}%</span>
             <span>Mined</span>
           </div>
           {!isHome && (

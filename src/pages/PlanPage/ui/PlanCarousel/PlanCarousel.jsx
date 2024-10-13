@@ -1,5 +1,6 @@
 import styles from "./PlanCarousel.module.scss";
 import Slide from "./ui/Slide/Slide";
+import { newMount } from "@/shared/lib/getMonth.js";
 
 const planSlideItems = [
   {
@@ -42,7 +43,7 @@ const planSlideItems = [
   {
     id: 2,
     title: "Маркетинг",
-    decs: "Бесплатные размещения в группе в месяц",
+    decs: `Бесплатные размещения в группе за ${newMount}`,
     img: "/icon/cart.svg",
     type: "text",
     imgWidth: "24px",
@@ -80,7 +81,7 @@ const planSlideItems = [
   {
     id: 3,
     title: "Реклама",
-    decs: "Платные размещения постов в группе в месяц",
+    decs: `Платные размещения постов в группе за ${newMount}`,
     img: "/icon/budget.svg",
     imgWidth: "29px",
     type: "text",
@@ -211,7 +212,7 @@ const planSlideItems = [
   },
 ];
 
-const PlanCarousel = ({activeIndex}) => {
+const PlanCarousel = ({ activeIndex }) => {
   return (
     <div className={styles.wrapper}>
       {planSlideItems.map(
@@ -221,7 +222,12 @@ const PlanCarousel = ({activeIndex}) => {
               <p>{title}</p>
               {img && <img style={{ width: imgWidth }} src={img} alt={title} />}
             </div>
-            <Slide activeIndex={activeIndex} sliders={sliders} type={type} decs={decs} />
+            <Slide
+              activeIndex={activeIndex}
+              sliders={sliders}
+              type={type}
+              decs={decs}
+            />
           </div>
         )
       )}
