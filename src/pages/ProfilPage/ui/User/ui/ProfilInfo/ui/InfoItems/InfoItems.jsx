@@ -22,7 +22,7 @@ const InfoItems = () => {
     },
     {
       text: "Выполненных заданий",
-      value: 0,
+      value: user?.count_tasks,
     },
   ];
   return (
