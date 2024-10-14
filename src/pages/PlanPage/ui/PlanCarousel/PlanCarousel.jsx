@@ -10,7 +10,7 @@ const PlanCarousel = ({ activeIndex }) => {
     return current >= destination ? "#8ECF03" : "#DF7E7E";
   };
   const getPercent = (current, destination) => {
-    return ((current / destination) * 100).toFixedixed(2);
+    return ((current / destination) * 100).toFixed(2);
   };
 
   const planSlideItems = [
