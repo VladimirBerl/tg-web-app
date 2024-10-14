@@ -102,6 +102,15 @@ export const userApi = createApi({
         },
       }),
     }),
+    getPlanInfo: build.query({
+      query: () => ({
+        url: `plan_info`,
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+    }),
 
     changeUserCount: build.mutation({
       query: ({ id, body }) => ({
@@ -133,6 +142,7 @@ export const userApi = createApi({
 });
 
 export const {
+  useGetPlanInfoQuery,
   useChangeSpinnersMutation,
   useGetRanksInfoQuery,
   useGetRanksListQuery,

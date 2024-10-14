@@ -1,4 +1,10 @@
-import { useCreateUserMutation, useLazyGetUserQuery,useGetCountPostsByTypeQuery,useGetRanksListQuery } from "@/app/api";
+import {
+  useGetPlanInfoQuery,
+  useCreateUserMutation,
+  useLazyGetUserQuery,
+  useGetCountPostsByTypeQuery,
+  useGetRanksListQuery,
+} from "@/app/api";
 import { useUser } from "@/app/context/UserContext";
 
 export const useCheckAndCreateUser = () => {
@@ -7,7 +13,8 @@ export const useCheckAndCreateUser = () => {
   const { setUser } = useUser();
 
   useGetCountPostsByTypeQuery();
-  useGetRanksListQuery()
+  useGetRanksListQuery();
+  useGetPlanInfoQuery();
 
   const checkAndCreateUser = async (id, users) => {
     try {
