@@ -31,8 +31,7 @@ const EarnMain = ({
         carouselRef={carouselRef}
       />
       {currentSlide === categories.length - 1 ? (
-        // <EarnCompleted tasks={categories[currentSlide].tasks} />
-        <EarnCompleted />
+        <EarnCompleted tasks={categories[currentSlide].tasks} />
       ) : (
         <TaskItemList tasks={categories[currentSlide].tasks} />
       )}
