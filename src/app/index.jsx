@@ -4,19 +4,15 @@ import { useCheckAndCreateUser } from "@/app/services/userService";
 import { useEffect, useState } from "react";
 import Loading from "../widgets/Loading/Loading";
 import { TELEGRAM_USER, TELEGRAM } from "@/shared/const/telegramApi";
+import checkForDesktop from "@/shared/lib/checkForDesktop";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
-
-  const isDesktop =
-    TELEGRAM.platform === "tdesktop" &&
-    !/Mobi|Android/i.test(navigator.userAgent);
-    
-  if (isDesktop) {
-    TELEGRAM.close();
-    return <div>Это приложение доступно только на мобильных устройствах.</div>;
-  }
+  
+  useEffect(() => {
+    checkForDesktop();
+  }, []);
 
   const initUser = async () => {
     try {

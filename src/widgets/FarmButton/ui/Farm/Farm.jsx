@@ -3,6 +3,7 @@ import { useUpdateUserCoins } from "@/entities/user/api.js";
 import { useFarmTimer } from "@/features/farming/hooks/useFarmTimer.js";
 import { formatTime } from "@/shared/lib/formatTime.js";
 import { useUser } from "@/app/context/UserContext";
+import { TELEGRAM } from "@/shared/const/telegramApi";
 
 const Button = styled.button`
   position: relative;
