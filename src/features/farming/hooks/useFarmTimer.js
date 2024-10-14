@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { TELEGRAM } from "@/shared/const/telegramApi";
 
 export const useFarmTimer = (totalTime, incrementPerSecond) => {
   const lineRef = useRef(null);
