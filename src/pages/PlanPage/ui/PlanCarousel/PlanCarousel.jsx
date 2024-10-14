@@ -1,10 +1,10 @@
 import styles from "./PlanCarousel.module.scss";
 import Slide from "./ui/Slide/Slide";
 import { newMount } from "@/shared/lib/getMonth.js";
-import { useGetCountPostsByTypeQuery } from "@/app/api";
+import { useGetPlanInfoQuery } from "@/app/api";
 
 const PlanCarousel = ({ activeIndex }) => {
-  const { data: postPlan } = useGetCountPostsByTypeQuery();
+  const { data: postPlan } = useGetPlanInfoQuery();
 
   const generatorColor = (current, destination) => {
     return current >= destination ? "#8ECF03" : "#DF7E7E";

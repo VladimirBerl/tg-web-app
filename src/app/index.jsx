@@ -2,7 +2,6 @@ import "./styles/index.css";
 import Routing from "@/pages";
 import { useCheckAndCreateUser } from "@/app/services/userService";
 import { useEffect, useState } from "react";
-import { user } from "@/shared/const/userInfo.js";
 import Loading from "../widgets/Loading/Loading";
 
 const App = () => {
@@ -17,10 +16,7 @@ const App = () => {
 
   const initUser = async () => {
     try {
-      const respons = await checkAndCreateUser(
-        userTg === undefined ? user.id_telegram : userTg,
-        user
-      );
+      const respons = await checkAndCreateUser(userTg);
       setLoading(respons);
     } catch (error) {
       console.error("Failed to initialize user:", error);

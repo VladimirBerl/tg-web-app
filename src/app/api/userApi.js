@@ -127,17 +127,6 @@ export const userApi = createApi({
         body,
       }),
     }),
-
-    createUser: build.mutation({
-      query: (body) => ({
-        url: `create_user`,
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body,
-      }),
-    }),
   }),
 });
 
@@ -156,5 +145,4 @@ export const {
   useLazyGetCheckTaskCompleteQuery,
   useLazyGetUserQuery,
   useChangeUserCountMutation,
-  useCreateUserMutation,
 } = userApi;

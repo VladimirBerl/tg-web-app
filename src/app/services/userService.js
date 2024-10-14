@@ -1,6 +1,5 @@
 import {
   useGetPlanInfoQuery,
-  useCreateUserMutation,
   useLazyGetUserQuery,
   useGetCountPostsByTypeQuery,
   useGetRanksListQuery,
@@ -8,7 +7,6 @@ import {
 import { useUser } from "@/app/context/UserContext";
 
 export const useCheckAndCreateUser = () => {
-  const [createUser] = useCreateUserMutation();
   const [getUser] = useLazyGetUserQuery();
   const { setUser } = useUser();
 
@@ -16,15 +14,14 @@ export const useCheckAndCreateUser = () => {
   useGetRanksListQuery();
   useGetPlanInfoQuery();
 
-  const checkAndCreateUser = async (id, users) => {
+  const checkAndCreateUser = async (id) => {
     try {
-      const { data: user, error } = await getUser(id);
-      if (error) {
-        const createdUser = await createUser(users).unwrap();
-        setUser(createdUser);
-        return false;
-      } else if (user) {
+      const { data: user } = await getUser(id);
+      if (user) {
         setUser(user);
+        return false;
+      } else {
+        alert("Ошибка загрузки");
         return false;
       }
     } catch (error) {
