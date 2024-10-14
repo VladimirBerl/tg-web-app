@@ -22,10 +22,6 @@ const EarnMain = ({
     setCurrentSlide(current);
   };
 
-  console.log(categories);
-  console.log(currentSlide);
-  
-
   return (
     <>
       <Navigation
@@ -34,7 +30,7 @@ const EarnMain = ({
         handleAfterChange={handleAfterChange}
         carouselRef={carouselRef}
       />
-      {currentSlide === 5 ? (
+      {currentSlide === categories.length - 1 ? (
         <EarnCompleted tasks={categories[currentSlide].tasks} />
       ) : (
         <TaskItemList tasks={categories[currentSlide].tasks} />
