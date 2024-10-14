@@ -10,9 +10,7 @@ const TaskInfo = ({ tasks }) => {
         </div>
         <span>
           +
-          {tasks.length > 0
-            ? ((tasks.length) * 5000).toLocaleString("de-DE")
-            : 0}
+          {tasks.length > 0 ? (tasks.length * 5000).toLocaleString("de-DE") : 0}
         </span>
       </button>
     </div>

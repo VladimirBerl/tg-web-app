@@ -73,7 +73,7 @@ const HeaderState = ({ paths }) => {
           setShowModalBottom={toggle}
           title="Условия получения наград с пула"
         >
-          <ModalContent data={currentPull} />
+          <ModalContent currentPull={currentPull} />
         </ModalBottom>
       )}
     </>
