@@ -12,11 +12,11 @@ export const GroupPlan = ({ slide, type, decs }) => {
               <span>Сейчас</span>
               <div>
                 <img src="icon/develop.png" alt="check-mark" />
-                <span>+{slide.presently}%</span>
+                <span>{slide.presently}</span>
               </div>
             </div>
             <div className={styles.row}>
-              <span style={{ color: slide.color }}>{slide.percent}</span>
+              <span style={{ color: slide.color }}>+{slide.percent}%</span>
               <img src="plan/row.svg" alt="row" />
             </div>
             <div className={styles.destination}>

@@ -1,14 +1,12 @@
 import styles from "./PlanCarousel.module.scss";
 import Slide from "./ui/Slide/Slide";
 import { newMount } from "@/shared/lib/getMonth.js";
-import { useGetPlanInfoQuery } from "@/app/api";
 
-const PlanCarousel = ({ activeIndex }) => {
-  const { data: postPlan } = useGetPlanInfoQuery();
-
+const PlanCarousel = ({ activeIndex, postPlan }) => {
   const generatorColor = (current, destination) => {
     return current >= destination ? "#8ECF03" : "#DF7E7E";
   };
+
   const getPercent = (current, destination) => {
     return ((current / destination) * 100).toFixed(2);
   };
@@ -64,30 +62,33 @@ const PlanCarousel = ({ activeIndex }) => {
       sliders: [
         {
           id: 1,
-          color: "#8ECF03",
-          percent: "+365%",
-          presently: 5400,
-          destination: 990,
+          color: generatorColor(
+            postPlan[2].data.current,
+            postPlan[2].data.need
+          ),
+          percent: getPercent(postPlan[2].data.current, postPlan[2].data.need),
+          presently: postPlan[2].data.current,
+          destination: postPlan[2].data.need,
         },
         {
           id: 2,
-          color: "#8ECF03",
-          percent: "+10%",
-          presently: 5400,
+          color: generatorColor(postPlan[2].data.current, 4900),
+          percent: getPercent(postPlan[2].data.current, 4900),
+          presently: postPlan[2].data.current,
           destination: 4900,
         },
         {
           id: 3,
-          color: "#DF7E7E",
-          percent: "-40%",
-          presently: 5400,
+          color: generatorColor(postPlan[2].data.current, 9000),
+          percent: getPercent(postPlan[2].data.current, 9000),
+          presently: postPlan[2].data.current,
           destination: 9000,
         },
         {
           id: 3,
-          color: "#DF7E7E",
-          percent: "-90%",
-          presently: 5400,
+          color: generatorColor(postPlan[2].data.current, 15000),
+          percent: getPercent(postPlan[2].data.current, 15000),
+          presently: postPlan[2].data.current,
           destination: 15000,
         },
       ],
@@ -102,30 +103,33 @@ const PlanCarousel = ({ activeIndex }) => {
       sliders: [
         {
           id: 1,
-          color: "#DF7E7E",
-          percent: "-60%",
-          presently: 10,
-          destination: 50,
+          color: generatorColor(
+            postPlan[1].data.current,
+            postPlan[1].data.need
+          ),
+          percent: getPercent(postPlan[1].data.current, postPlan[1].data.need),
+          presently: postPlan[1].data.current,
+          destination: postPlan[1].data.need,
         },
         {
           id: 2,
-          color: "#DF7E7E",
-          percent: "-90%",
-          presently: 10,
+          color: generatorColor(postPlan[1].data.current, 100),
+          percent: getPercent(postPlan[1].data.current, 100),
+          presently: postPlan[1].data.current,
           destination: 100,
         },
         {
           id: 3,
-          color: "#DF7E7E",
-          percent: "-900%",
-          presently: 10,
+          color: generatorColor(postPlan[1].data.current, 1000),
+          percent: getPercent(postPlan[1].data.current, 1000),
+          presently: postPlan[1].data.current,
           destination: 1000,
         },
         {
           id: 3,
-          color: "#DF7E7E",
-          percent: "-4900%",
-          presently: 10,
+          color: generatorColor(postPlan[1].data.current, 5000),
+          percent: getPercent(postPlan[1].data.current, 5000),
+          presently: postPlan[1].data.current,
           destination: 5000,
         },
       ],

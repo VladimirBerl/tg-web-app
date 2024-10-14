@@ -13,8 +13,8 @@ const groupIcon = [
     icon: "/icon/watch-w.svg",
   },
   {
-    name: "email",
-    icon: "/icon/email.svg",
+    name: "dollars",
+    icon: "/icon/dollars.svg",
   },
   {
     name: "telegram",
