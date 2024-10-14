@@ -15,7 +15,7 @@ const plan = [
     title: "Этап 1",
     tasks: [
       {
-        description: "Количество участников в приложение",
+        description: "Количество участников в приложения",
         target: 1000,
         complited: true,
       },
@@ -41,7 +41,7 @@ const plan = [
     title: "Этап 2",
     tasks: [
       {
-        description: "Количество участников в приложение",
+        description: "Количество участников в приложения",
         target: 10000,
         complited: false,
       },
@@ -72,7 +72,7 @@ const plan = [
     title: "Этап 3",
     tasks: [
       {
-        description: "Количество участников в приложение",
+        description: "Количество участников в приложения",
         target: 100000,
         complited: false,
       },
@@ -103,7 +103,7 @@ const plan = [
     title: "Этап 4",
     tasks: [
       {
-        description: "Количество участников в приложение",
+        description: "Количество участников в приложения",
         target: 1000000,
         complited: false,
       },
