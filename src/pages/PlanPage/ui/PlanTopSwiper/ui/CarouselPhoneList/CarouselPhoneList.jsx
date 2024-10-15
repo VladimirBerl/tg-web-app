@@ -1,6 +1,5 @@
 import styles from "./CarouselPhoneList.module.scss";
 import { Carousel } from "antd";
-import { useState } from "react";
 
 const settings = {
   className: "center",
@@ -15,7 +14,7 @@ const plan = [
     title: "Этап 1",
     tasks: [
       {
-        description: "Количество участников в приложения",
+        description: "Количество участников в приложении",
         target: 1000,
         complited: true,
       },
@@ -41,7 +40,7 @@ const plan = [
     title: "Этап 2",
     tasks: [
       {
-        description: "Количество участников в приложения",
+        description: "Количество участников в приложении",
         target: 10000,
         complited: false,
       },
@@ -72,7 +71,7 @@ const plan = [
     title: "Этап 3",
     tasks: [
       {
-        description: "Количество участников в приложения",
+        description: "Количество участников в приложении",
         target: 100000,
         complited: false,
       },
@@ -103,7 +102,7 @@ const plan = [
     title: "Этап 4",
     tasks: [
       {
-        description: "Количество участников в приложения",
+        description: "Количество участников в приложении",
         target: 1000000,
         complited: false,
       },
