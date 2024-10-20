@@ -9,31 +9,31 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const checkAndCreateUser = useCheckAndCreateUser();
 
-  const isDesktop =
-    TELEGRAM.platform === "tdesktop" &&
-    !/Mobi|Android/i.test(navigator.userAgent);
+  // const isDesktop =
+  //   TELEGRAM.platform === "tdesktop" &&
+  //   !/Mobi|Android/i.test(navigator.userAgent);
 
-  if (isDesktop) {
-    useEffect(() => {
-      setTimeout(() => {
-        TELEGRAM.close();
-      }, 5000);
-    }, []);
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: 18,
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        Это приложение доступно только на мобильных устройствах.
-      </div>
-    );
-  }
+  // if (isDesktop) {
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       TELEGRAM.close();
+  //     }, 5000);
+  //   }, []);
+  //   return (
+  //     <div
+  //       style={{
+  //         display: "flex",
+  //         justifyContent: "center",
+  //         alignItems: "center",
+  //         fontSize: 18,
+  //         width: "100%",
+  //         height: "100%",
+  //       }}
+  //     >
+  //       Это приложение доступно только на мобильных устройствах.
+  //     </div>
+  //   );
+  // }
 
   const initUser = async () => {
     try {
