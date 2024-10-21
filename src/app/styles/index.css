@@ -23,6 +23,11 @@
   --border-color: #413160;
   --border-8px: 8.58px;
 }
+html, body {
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
 
 body {
   overflow: hidden;
