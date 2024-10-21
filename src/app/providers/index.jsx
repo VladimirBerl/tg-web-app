@@ -5,7 +5,7 @@ const LayoutPage = () => {
   return (
     <div className="app">
       <Header />
-      <div className="layout background-br">
+      <div className="layout">
         <div className=" background-br">
           <Outlet />
         </div>
