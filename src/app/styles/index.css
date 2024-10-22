@@ -27,7 +27,7 @@
 html,
 body {
   overflow: hidden; /* Скролл полностью отключен */
-  overscroll-behavior: none; /* Отключение эффекта инерционного скролла */
+  overscroll-behavior: contain /* Отключение эффекта инерционного скролла */
 }
 
 body {
@@ -36,9 +36,8 @@ body {
 }
 
 .scrollable {
-  overflow: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: auto; /* Внутренние элементы продолжают скролл */
+  overflow-y: auto;
 }
 .scrollable * {
   -webkit-transform: translate3d(0, 0, 0);
