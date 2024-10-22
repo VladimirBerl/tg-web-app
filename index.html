@@ -17,40 +17,16 @@
       document.addEventListener("DOMContentLoaded", function () {
         Telegram.WebApp.disableVerticalSwipes();
       });
-      // document.body.style.overflow = "hidden";
-      // window.addEventListener(
-      //   "touchmove",
-      //   function (e) {
-      //     document.getElementById("nav").style.bottom = "0";
-      //     if (!e.target.closest(".scrollable-container")) {
-      //       e.preventDefault(); // Останавливаем скролл
-      //     }
-      //   },
-      //   { passive: false }
-      // );
-      const scrollableContainer = document.querySelector(
-        ".scrollable-container"
+      document.body.style.overflow = "hidden";
+      window.addEventListener(
+        "touchmove",
+        function (e) {
+          if (!e.target.closest(".scrollable-container")) {
+            e.preventDefault(); // Останавливаем скролл
+          }
+        },
+        { passive: false }
       );
-
-      // Функция для проверки состояния скролла в контейнере
-      function handleScroll(e) {
-        const container = e.target;
-
-        // Проверяем, дошли ли до начала или до конца контейнера
-        const atBottom =
-          container.scrollHeight - container.scrollTop ===
-          container.clientHeight;
-
-        if (atBottom && e.deltaY > 0) {
-          // Если находимся в конце контейнера и прокручиваем вниз
-          e.preventDefault();
-        }
-      }
-
-      // Добавляем обработчик событий на колесо мыши для блокировки скролла страницы
-      scrollableContainer.addEventListener("touchmove", handleScroll, {
-        passive: false,
-      });
     </script>
   </body>
 </html>
