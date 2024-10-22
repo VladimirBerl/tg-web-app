@@ -6,7 +6,7 @@ import Loading from "../widgets/Loading/Loading";
 const HomePage = lazy(() => import("@/pages/HomePage/HomePage.jsx"));
 const PlanPage = lazy(() => import("@/pages/PlanPage/PlanPage.jsx"));
 const FriendsPage = lazy(() => import("@/pages/FriendsPage/FriendsPage.jsx"));
-const LayoutPage = lazy(() => import("@/app/providers"));
+const LayoutPage = lazy(() => import("@/widgets/LayoutPage/LayoutPage.jsx"));
 const TokenPage = lazy(() => import("@/pages/TokenPage/TokenPage.jsx"));
 const EarnPage = lazy(() => import("@/pages/EarnPage/EarnPage.jsx"));
 const RankPage = lazy(() => import("@/pages/RankPage/RankPage.jsx"));

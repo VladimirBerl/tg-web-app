@@ -23,18 +23,17 @@
   --border-color: #413160;
   --border-8px: 8.58px;
 }
+
 html,
 body {
-  overscroll-behavior: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Скролл полностью отключен */
+  overscroll-behavior: none; /* Отключение эффекта инерционного скролла */
 }
 
 body {
-  min-height: 100vh;
   background: url("/public/images/backgraund.png");
   background-position: 56% 30%;
-}
-
-html.scroll-lock,
-body.scroll-lock {
-  overflow: hidden;
 }
