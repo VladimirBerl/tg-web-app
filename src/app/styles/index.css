@@ -23,14 +23,18 @@
   --border-color: #413160;
   --border-8px: 8.58px;
 }
-html, body {
+html,
+body {
   overscroll-behavior: none;
-  overflow: hidden;
-  height: 100%;
 }
 
 body {
-  overflow: hidden;
+  min-height: 100vh;
   background: url("/public/images/backgraund.png");
   background-position: 56% 30%;
+}
+
+html.scroll-lock,
+body.scroll-lock {
+  overflow: hidden;
 }
