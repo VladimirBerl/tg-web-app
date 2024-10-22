@@ -25,9 +25,8 @@
 }
 
 html,
-body,
-#root {
-  height: 400px;
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden; /* Скролл полностью отключен */
@@ -35,7 +34,6 @@ body,
 }
 
 body {
-  background-color: #fff;
-  /* background: url("/public/images/backgraund.png"); */
-  /* background-position: 56% 30%; */
+  background: url("/public/images/backgraund.png");
+  background-position: 56% 30%;
 }

@@ -2,8 +2,8 @@
   margin: 0px 12px;
   border-top-left-radius: 25.33px;
   border-top-right-radius: 25.33px;
-  /* margin-bottom: 88.8px; */
-  /* min-height: calc(100vh - 88.8px); */
+  margin-bottom: 88.8px;
+  min-height: calc(100vh - 88.8px);
 }
 
 button {

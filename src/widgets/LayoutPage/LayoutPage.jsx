@@ -8,7 +8,7 @@ const LayoutPage = () => {
       <div className="layout background-br">
         <Outlet />
       </div>
-      {/* <NavigationFooter /> */}
+      <NavigationFooter />
     </>
   );
 };
