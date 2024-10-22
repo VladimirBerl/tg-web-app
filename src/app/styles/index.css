@@ -24,6 +24,9 @@
   --border-8px: 8.58px;
 }
 
+* {
+  overscroll-behavior: none;
+}
 html,
 body {
   overflow: hidden; /* Скролл полностью отключен */
