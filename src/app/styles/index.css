@@ -24,13 +24,10 @@
   --border-8px: 8.58px;
 }
 
-* {
-  overscroll-behavior: none;
-}
 html,
 body {
+  min-height: 100vh;
   overflow: hidden; /* Скролл полностью отключен */
-  overscroll-behavior: none; /* Отключение эффекта инерционного скролла */
   scroll-behavior: smooth;
 }
 
