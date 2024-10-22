@@ -18,6 +18,16 @@
         Telegram.WebApp.disableVerticalSwipes();
       });
       document.body.style.overflow = "hidden";
+      window.addEventListener("scroll", function () {
+        window.scrollTo(0, 0); // Останавливает прокрутку на позиции (0,0)
+      });
+      window.addEventListener(
+        "touchmove",
+        function (e) {
+          e.preventDefault();
+        },
+        { passive: false }
+      );
     </script>
   </body>
 </html>

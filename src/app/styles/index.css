@@ -30,3 +30,7 @@ body {
   overscroll-behavior: none; /* Отключение эффекта инерционного скролла */
 }
 
+body {
+  background: url("/public/images/backgraund.png");
+  background-position: 56% 30%;
+}

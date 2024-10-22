@@ -1,16 +1,12 @@
 import NavigationFooter from "@/widgets/NavigationFooter/NavigationFooter";
 import Header from "@/widgets/Header/Header";
 import { Outlet } from "react-router-dom";
-import scrollTop from "@/shared/lib/scrollTop";
 const LayoutPage = () => {
-  scrollTop();
   return (
     <>
-      <div className="main-container">
-        <Header />
-        <div className="layout background-br">
-          <Outlet />
-        </div>
+      <Header />
+      <div className="layout background-br">
+        <Outlet />
       </div>
       <NavigationFooter />
     </>
