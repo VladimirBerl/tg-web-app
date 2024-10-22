@@ -21,7 +21,7 @@
         "touchmove",
         function (e) {
           // Если скролл происходит внутри контейнера с классом .scrollable — разрешаем
-          if (e.target.closest(".layout")) {
+          if (e.target.closest(".scroll")) {
             return; // разрешаем скролл внутри контейнера
           }
           e.preventDefault(); // блокируем скролл на остальных частях страницы
