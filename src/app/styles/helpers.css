@@ -13,6 +13,9 @@
   right: 0;
   bottom: 0;
   overflow: auto;
+  background: url("/public/images/backgraund.png");
+  background-position: 56% 30%;
+  overscroll-behavior: none;
 }
 
 button {
