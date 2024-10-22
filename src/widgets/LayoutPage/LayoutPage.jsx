@@ -1,7 +1,12 @@
 import NavigationFooter from "@/widgets/NavigationFooter/NavigationFooter";
 import Header from "@/widgets/Header/Header";
 import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import scrollTop from "@/shared/lib/scrollTop";
 const LayoutPage = () => {
+  useEffect(() => {
+    scrollTop();
+  }, []);
   return (
     <>
       <div className="main-container">

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 
 import scrollTop from "@/shared/lib/scrollTop";
 import Loading from "../widgets/Loading/Loading";
@@ -13,7 +13,9 @@ const RankPage = lazy(() => import("@/pages/RankPage/RankPage.jsx"));
 const ProfilPage = lazy(() => import("@/pages/ProfilPage/ProfilPage.jsx"));
 
 const Routing = () => {
-  scrollTop();
+  useEffect(() => {
+    scrollTop();
+  }, []);
   return (
     <Routes>
       <Route
