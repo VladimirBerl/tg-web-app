@@ -1,7 +1,7 @@
 .layout {
-  border: 1px solid var(--border-color);
   overflow: auto;
   margin: 0 12px 88.8px;
+  border: 1px solid var(--border-color);
   border-top-left-radius: 25.33px;
   border-top-right-radius: 25.33px;
   height: calc(100vh - 155.2px);
