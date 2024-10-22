@@ -6,17 +6,6 @@
   min-height: calc(100vh - (88.8px + 66.4px));
 }
 
-/* .main-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-
-  overscroll-behavior: none;
-} */
-
 button {
   background-color: transparent;
   color: #fff;
