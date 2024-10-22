@@ -17,17 +17,6 @@
       document.addEventListener("DOMContentLoaded", function () {
         Telegram.WebApp.disableVerticalSwipes();
       });
-      document.addEventListener(
-        "touchmove",
-        function (e) {
-          // Если скролл происходит внутри контейнера с классом .scrollable — разрешаем
-          if (e.target.closest(".scrollable")) {
-            return; // разрешаем скролл внутри контейнера
-          }
-          e.preventDefault(); // блокируем скролл на остальных частях страницы
-        },
-        { passive: false }
-      );
     </script>
   </body>
 </html>
