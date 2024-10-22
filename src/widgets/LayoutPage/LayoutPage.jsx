@@ -4,9 +4,11 @@ import { Outlet } from "react-router-dom";
 const LayoutPage = () => {
   return (
     <>
-      <Header />
-      <div className="layout background-br">
-        <Outlet />
+      <div className="main-container">
+        <Header />
+        <div className="layout background-br">
+          <Outlet />
+        </div>
       </div>
       <NavigationFooter />
     </>
