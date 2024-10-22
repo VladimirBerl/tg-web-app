@@ -26,18 +26,20 @@
 
 html,
 body {
-  /* overflow: hidden; /* Скролл полностью отключен */
-  /* overscroll-behavior: none; Отключение эффекта инерционного скролла  */
-  overflow: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-
-body * {
-  -webkit-transform: translate3d(0, 0, 0);
+  overflow: hidden; /* Скролл полностью отключен */
+  overscroll-behavior: none; /* Отключение эффекта инерционного скролла */
 }
 
 body {
   background: url("/public/images/backgraund.png");
   background-position: 56% 30%;
+}
+
+.scrollable {
+  overflow: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollable * {
+  -webkit-transform: translate3d(0, 0, 0);
 }

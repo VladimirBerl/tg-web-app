@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const LayoutPage = () => {
   return (
     <>
-      <div className="scrollable-container">
+      <div className="scrollable">
         <Header />
         <div className="layout background-br">
           <Outlet />

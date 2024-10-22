@@ -13,49 +13,21 @@
   <body>
     <div id="root"></div>
     <div id="portal"></div>
-    <!-- <script>
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         Telegram.WebApp.disableVerticalSwipes();
       });
-      document.body.style.overflow = "hidden";
-
-      const scrollableContainer = document.querySelector(
-        ".scrollable-container"
+      document.addEventListener(
+        "touchmove",
+        function (e) {
+          // Если скролл происходит внутри контейнера с классом .scrollable — разрешаем
+          if (e.target.closest(".scrollable")) {
+            return; // разрешаем скролл внутри контейнера
+          }
+          e.preventDefault(); // блокируем скролл на остальных частях страницы
+        },
+        { passive: false }
       );
-
-      // Функция для проверки состояния скролла в контейнере
-      function handleScroll(e) {
-        const container = e.target;
-
-        // Проверяем, есть ли скролл внутри контейнера
-        const containerHasScrollableContent =
-          container.scrollHeight > container.clientHeight;
-
-        if (!containerHasScrollableContent) {
-          return; // Если скролла нет, выходим из функции
-        }
-
-        // Проверяем, дошли ли до начала или конца контейнера
-        const atTop = container.scrollTop === 0;
-        const atBottom =
-          container.scrollHeight - container.scrollTop ===
-          container.clientHeight;
-
-        if (atTop && e.deltaY <= 0) {
-          // Если в начале и прокручиваем вверх, блокируем скролл страницы
-          e.preventDefault();
-        }
-
-        if (atBottom && e.deltaY >= 0) {
-          // Если в конце и прокручиваем вниз, блокируем скролл страницы
-          e.preventDefault();
-        }
-      }
-
-      // Добавляем обработчик событий на колесо мыши
-      scrollableContainer.addEventListener("touchmove", handleScroll, {
-        passive: false,
-      });
-    </script> -->
+    </script>
   </body>
 </html>
