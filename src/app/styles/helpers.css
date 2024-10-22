@@ -1,9 +1,11 @@
 .layout {
-  margin: 0px 12px;
+  margin: 0 12px 88.8px;
   border-top-left-radius: 25.33px;
   border-top-right-radius: 25.33px;
-  margin-bottom: 88.8px;
-  min-height: calc(100vh - (88.8px + 66.4px));
+  height: calc(100vh - 155.2px);
+  backdrop-filter: blur(41.42px);
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0px 0px 58.67px 0px rgba(255, 255, 255, 0.05);
 }
 
 button {

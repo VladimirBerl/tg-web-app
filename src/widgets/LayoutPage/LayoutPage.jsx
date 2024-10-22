@@ -5,7 +5,7 @@ const LayoutPage = () => {
   return (
     <>
       <Header />
-      <div className="layout background-br">
+      <div className="layout">
         <Outlet />
       </div>
       <NavigationFooter />
