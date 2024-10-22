@@ -26,8 +26,8 @@
 html,
 body {
   overflow: hidden;
-  overscroll-behavior: none;
-  scroll-behavior: smooth;
+  /* overscroll-behavior: none; */
+  /* scroll-behavior: smooth; */
 }
 
 body {
