@@ -1,4 +1,6 @@
 .layout {
+  border: 1px solid var(--border-color);
+  overflow: auto;
   margin: 0 12px 88.8px;
   border-top-left-radius: 25.33px;
   border-top-right-radius: 25.33px;
