@@ -3,7 +3,7 @@ import CastomLink from "@/shared/ui/CastomLink/CastomLink";
 
 const NavigationFooter = () => {
   return (
-    <nav className={styled.menu}>
+    <nav className={styled.menu} id="nav">
       <CastomLink srcIcon="/icon/token.svg" to="token">
         token
       </CastomLink>

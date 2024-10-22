@@ -21,6 +21,7 @@
       window.addEventListener(
         "touchmove",
         function (e) {
+          document.getElementById("nav").style.bottom = "0";
           if (!e.target.closest(".scrollable-container")) {
             e.preventDefault(); // Останавливаем скролл
           }
