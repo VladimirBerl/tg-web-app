@@ -18,15 +18,44 @@
         Telegram.WebApp.disableVerticalSwipes();
       });
       document.body.style.overflow = "hidden";
-      window.addEventListener(
-        "touchmove",
-        function (e) {
-          if (!e.target.closest(".scrollable-container")) {
-            e.preventDefault(); // Останавливаем скролл
-          }
-        },
-        { passive: false }
+
+      const scrollableContainer = document.querySelector(
+        ".scrollable-container"
       );
+
+      // Функция для проверки состояния скролла в контейнере
+      function handleScroll(e) {
+        const container = e.target;
+
+        // Проверяем, есть ли скролл внутри контейнера
+        const containerHasScrollableContent =
+          container.scrollHeight > container.clientHeight;
+
+        if (!containerHasScrollableContent) {
+          return; // Если скролла нет, выходим из функции
+        }
+
+        // Проверяем, дошли ли до начала или конца контейнера
+        const atTop = container.scrollTop === 0;
+        const atBottom =
+          container.scrollHeight - container.scrollTop ===
+          container.clientHeight;
+
+        if (atTop && e.deltaY <= 0) {
+          // Если в начале и прокручиваем вверх, блокируем скролл страницы
+          e.preventDefault();
+        }
+
+        if (atBottom && e.deltaY >= 0) {
+          // Если в конце и прокручиваем вниз, блокируем скролл страницы
+          e.preventDefault();
+        }
+      }
+
+      // Добавляем обработчик событий на колесо мыши
+      scrollableContainer.addEventListener("touchmove", handleScroll, {
+        passive: false,
+      });
     </script>
   </body>
 </html>
