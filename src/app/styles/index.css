@@ -26,8 +26,15 @@
 
 html,
 body {
-  overflow: hidden; /* Скролл полностью отключен */
-  overscroll-behavior: none; /* Отключение эффекта инерционного скролла */
+  /* overflow: hidden; /* Скролл полностью отключен */
+  /* overscroll-behavior: none; Отключение эффекта инерционного скролла  */
+  overflow: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+body * {
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 body {
