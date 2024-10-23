@@ -1,49 +1,50 @@
 .item {
   border-radius: 17px;
-  li {
-    font-family: "Involve", sans-serif;
+}
+
+li {
+  font-family: "Involve", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 12px;
+  & .user {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    & .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: #7f7f7f;
+      font-size: 18px;
+    }
+    & .name {
+      font-size: 14px;
+    }
+  }
+  & .coin {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-radius: 15px;
-    padding: 12px;
-    & .user {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      & .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background-color: #7f7f7f;
-        font-size: 18px;
-      }
-      & .name {
-        font-size: 14px;
-      }
+    gap: 5px;
+    & img {
+      max-width: 20px;
     }
-    & .coin {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      & img {
-        max-width: 20px;
-      }
-      & .coin-value {
-        font-family: "Bicubik", sans-serif;
-        font-size: 13px;
-        background: linear-gradient(
-          90deg,
-          rgb(48, 104, 208) 0%,
-          rgb(131, 107, 175) 50%,
-          rgb(151, 130, 98) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+    & .coin-value {
+      font-family: "Bicubik", sans-serif;
+      font-size: 13px;
+      background: linear-gradient(
+        90deg,
+        rgb(48, 104, 208) 0%,
+        rgb(131, 107, 175) 50%,
+        rgb(151, 130, 98) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
