@@ -2,7 +2,7 @@ import styled from "./FriendItem.module.scss";
 
 const FriendItem = ({ friend }) => {
   return (
-    <li className="background-br">
+    <li className={`background-br ${styled.item}`}>
       <div className={styled.user}>
         <div className={styled.icon}>
           {friend.username.charAt(0).toUpperCase()}

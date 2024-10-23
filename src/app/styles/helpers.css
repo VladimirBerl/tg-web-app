@@ -33,7 +33,7 @@ input {
   margin-right: 34px;
 }
 
-.background-br {
+/* .background-br {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border-color);
@@ -47,4 +47,11 @@ input {
   background-color: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0px 0px 58.67px 0px rgba(255, 255, 255, 0.05);
   z-index: -1;
+} */
+
+.background-br {
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(41.42px);
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0px 0px 58.67px 0px rgba(255, 255, 255, 0.05);
 }

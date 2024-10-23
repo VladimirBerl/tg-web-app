@@ -8,7 +8,7 @@ const User = () => {
   return (
     <Link to="profile">
       <Button showborder="true" padding="4px 5px" leftItem="/icon/user.svg">
-        {user?.user_name.toUpperCase()}
+        {user?.user_name.slice(0, 6).toUpperCase()}
       </Button>
     </Link>
   );
