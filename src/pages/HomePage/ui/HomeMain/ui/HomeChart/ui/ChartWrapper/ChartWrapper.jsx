@@ -20,7 +20,7 @@ const ChartWrapper = ({ data, color, icon, charts, colors, changeIndex }) => {
         ref={carouselRef}
         afterChange={changeIndex}
         dots={false}
-        infinite={false}
+        infinite
       >
         {charts.map((chart, index) => (
           <ChartContainer key={index} data={chart} color={colors[index]} />
