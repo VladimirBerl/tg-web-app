@@ -1,7 +1,6 @@
 import styled from "./HomeChart.module.scss";
 import { useState } from "react";
 import { useGetCountPostsByTypeQuery } from "@/app/api";
-import Loading from "@/widgets/Loading/Loading";
 import ChartWrapper from "./ui/ChartWrapper/ChartWrapper";
 
 const CHART_ICONS = {
@@ -9,7 +8,7 @@ const CHART_ICONS = {
   1: "/icon/bmt-min.png",
   2: "/icon/coin-min.png",
   3: "/icon/rub-min.png",
-  4: "/icon/star.png",
+  4: "/icon/star.svg",
   5: "",
 };
 
