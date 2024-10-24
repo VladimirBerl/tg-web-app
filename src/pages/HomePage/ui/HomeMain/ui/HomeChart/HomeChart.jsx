@@ -8,7 +8,7 @@ const CHART_ICONS = {
   1: "/icon/bmt-min.png",
   2: "/icon/coin-min.png",
   3: "/icon/rub-min.png",
-  4: "/icon/star.svg",
+  4: "/icon/star.png",
   5: "",
 };
 
