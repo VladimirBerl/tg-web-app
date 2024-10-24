@@ -1,9 +1,9 @@
 import styled from "./PriceCoin.module.scss";
 
-const PriceCoin = ({ price, icon, color }) => {
+const PriceCoin = ({ price, icon, color, nextSlide, prevSlide }) => {
   return (
     <div className={styled.info}>
-      <div className={styled["chart-bg"]}>
+      <div onClick={prevSlide} className={styled["chart-bg"]}>
         <img src="/images/chart-bg.png" alt="" />
       </div>
       <div className={styled["button-left"]}>
@@ -13,7 +13,7 @@ const PriceCoin = ({ price, icon, color }) => {
         {icon !== "" && <img src={icon} alt="coin" />}
         {icon !== "" && price}
       </span>
-      <div className={styled["button-right"]}>
+      <div onClick={nextSlide} className={styled["button-right"]}>
         <img src="/icon/rows.png" alt="" />
       </div>
     </div>
